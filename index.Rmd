@@ -1,30 +1,18 @@
 --- 
-title: "A Minimal Book Example"
-author: "Yihui Xie"
+title: "Plunger Valves"
+author: "DR. Raúl Trujillo Álvarez"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves."
 ---
 
 # Prerequisites
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
-
-The **bookdown** package can be installed from CRAN or Github:
-
-```{r eval=FALSE}
-install.packages("bookdown")
-# or the development version
-# devtools::install_github("rstudio/bookdown")
-```
-
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
+To understand this systematic method for the selection of control valves, you must have basic knowledge of hydraulics.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
