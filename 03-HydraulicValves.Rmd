@@ -1,0 +1,72 @@
+# Valves Hidraulic
+
+## The _Flow coefficient_ $k_{v}$ 
+
+Flow factor $k_{v}$  combines the effects of all flow restrictions in the valve into a single number.
+$k_{v}$ represents the flow of water with temperature ranging between $5°C$ and $30°C$ through a valve in cubic meters per hour with a pressure drop of $1 bar$.
+
+Do you need for the calculation of the valve flow factor ($k_{v}$) : 
+
+ - operating pressure differential; 
+ - flow rate for your application; 
+ - Density of the fluid; 
+ - and in some circumstances, temperature. 
+
+## _Flow coefficient_ $k_{v}$ and _Loss Coefficient_ $\zeta_{v}$ 
+
+  - With the test conditions ($\Delta p_0 = 1 \: bar$ and for water $\rho_{0} = \rho = 1000 \: kg/m3$) oss coefficient function is:
+
+$$
+k_{v} = q \cdot \sqrt{\frac{1}{\Delta p }} = \frac{q}{\sqrt{\Delta p} }
+$$
+
+ - If the $\zeta$ value of the valve is : 
+
+$$
+\zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{k_v}}}} \bigg)^2
+$$
+  - The $k_{v}$ in function of the $\zeta_{v}$ is:
+  
+$$
+k_v = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta}}
+$$
+
+
+## The flow basic characteristic curve.
+
+The characteristic of a control valve is defined as the flow rate depending on the position of the valve. The control valve generates a change in the flow by changing the active area of piston $A$. 
+
+To perform a required flow characteristic curve, it is necessary to determine the characteristic opening curve that delivers the needed flow rate, taking into account the variable area of the cylinder area, according to the path of the regulating cylinder.
+
+A unique assignment assumes a constant differential pressure $\Delta p$ and a constant density $\rho$.
+
+If the characteristic curve is determined under unit conditions, referred to below as the *"basic characteristic curve"*.
+
+The characteristic curve of a control valve is the dependence of the flow on the actuating path. If the characteristic curve is determined under unit conditions, then the flow rate is the $k_v$ value. 
+
+The basic characteristic of the control valves plus a cylinder  will be ($k_v/k_{vs}$) depending on the position of the valve ($pv$).
+
+## Zeta value in function of the $k_v$ characteristic curve
+
+$$
+\zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{k_v}}}} \bigg)^2 
+$$
+
+$$
+k_{vs} = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
+$$
+$$
+k_{v} = f(vp\%) \cdot k_{vs}  = f(vp\%) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
+$$
+
+$$
+\frac{1}{k_{v}^2} = \frac{\zeta_{vs}}{[f(vp\%)]^2} \cdot \frac{626.3}{d^4}
+$$
+
+$$
+\zeta_{v} = \frac{\zeta_{vs}}{[f(vp\%)]^2}
+$$
+
+
+
+

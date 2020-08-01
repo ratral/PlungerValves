@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Plunger Valves</title>
+  <title>Chapter 4 Quantifying Cavitation Potential | Plunger Valves</title>
   <meta name="description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Plunger Valves" />
+  <meta property="og:title" content="Chapter 4 Quantifying Cavitation Potential | Plunger Valves" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Plunger Valves" />
+  <meta name="twitter:title" content="Chapter 4 Quantifying Cavitation Potential | Plunger Valves" />
   
   <meta name="twitter:description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="hydraulic-basics.html"/>
+<link rel="prev" href="valves-hidraulic.html"/>
+<link rel="next" href="final-words.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -122,187 +122,112 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Plunger Valves</h1>
-<p class="author"><em>Dr. Raúl Trujillo Álvarez</em></p>
-<p class="date"><em>2020-08-01</em></p>
+<div id="quantifying-cavitation-potential" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Quantifying Cavitation Potential</h1>
+<div id="typical-pressure-curve-in-a-control-valve" class="section level2 flexbox vcenter">
+<h2><span class="header-section-number">4.1</span> Typical pressure curve in a control valve</h2>
+<p><img src="image/stellventil.png" /></p>
 </div>
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Plunger valves are mainly used where volume flows or pressure have to be reduced and regulated with out vibrations, noises or big changes in the pipeline.</p>
-<div id="norms" class="section level2">
-<h2><span class="header-section-number">1.1</span> Normative references</h2>
-<p>The following referenced documents are indispensable for the application of this document. For dated references, only the edition cited applies. For undated references, the latest version of the referenced material (including any amendments) applies.</p>
-<ul>
-<li><strong>EN 736-1:1995</strong>, Valves — Terminology — Part 1: Definition of types of valves</li>
-<li><strong>EN 736-3:2008</strong>, Valves — Terminology — Part 3: Definition of terms</li>
-<li><strong>EN 1057</strong>, Copper and copper alloys — Seamless, round copper tubes for water and gas in sanitary and heating applications</li>
-<li><strong>EN 24006:1993</strong>, Measurement of fluid flow in closed conduits — Vocabulary and symbols (ISO 4006:1991)</li>
-<li><strong>EN ISO 6708:1995</strong>, Pipework components — Definition and selection of DN (nominal size) (ISO 6708:1995)</li>
-<li><strong>ISO 7-1:1994</strong>, Pipe threads where pressure-tight joints are made on the threads — Part 1: Dimensions, tolerances and designation</li>
-<li><strong>ISO 7194:2008</strong>, Measurement of fluid flow in closed conduits — Velocity-area methods of flow measurement in swirling or asymmetric flow conditions in circular ducts by means of current-meters or Pitot static tubes</li>
-</ul>
-<p><strong>Other International Normative references</strong></p>
-<ul>
-<li><strong>ISA Guide</strong> Control Valves, Practical Guides for Measurement and Control</li>
-<li><strong>ISA S20.50</strong> Specification Forms for Process Measurement and Control Instruments, Primary Elements and Control Valves</li>
-<li><strong>ISA S75.01</strong> Flow Equations for Sizing Control Valves</li>
-<li><strong>ISA S75.05</strong> Control Valve Terminology</li>
-<li><strong>ISA S75.11</strong> Inherent Flow Characteristic and Rangeability of Control Valves</li>
-<li><strong>ISA SP75.17</strong> Control Valve Aerodynamic Noise Prediction</li>
-<li><strong>ISA RP75.23</strong> Considerations for Evaluating Control Valve Cavitation</li>
-<li><strong>ANSI/ISA-75.02-1996</strong>, Control Valve Capacity Test Procedures</li>
-<li><strong>ANSI/ISA-75.05.01-2000 (R2005)</strong>, Control Valve Terminology</li>
-<li><strong>IEC 60534-1:2005</strong>, Industrial-process control valves – Part 1: Control valve terminology and generalconsiderations</li>
-<li><strong>IEC 60534-2-3:1997</strong>, Industrial-process control valves – Part 2-3: Flow capacity – Test procedures</li>
-</ul>
+<div id="quantifying-cavitation-potential-1" class="section level2">
+<h2><span class="header-section-number">4.2</span> Quantifying Cavitation Potential</h2>
+<p>Its effect on the system varies with valve type, size, operating pressure, and details of the piping installation. To include cavitation in the design process is necessary to determine if cavitation will ist, evaluate its intensity, characterize the flow conditions, and estimate its effect on the system and environment. Possible consequences include noise, vibration, erosion damage, and a decrease in performance.</p>
+<p>To characterize the flow conditions corresponding to a selected level of cavitation requires defining a cavitation index derived from dimensional analysis. The process involves determining the fluid properties, geometric characteristics, and fluid parameters that influence the cavitation process. The main variables affecting the cavitation process are:</p>
+<ol style="list-style-type: decimal">
+<li>the geometric configuration of the device,</li>
+<li>absolute pressure in the cavitating region,</li>
+<li>the critical pressure, generally assumed to be the liquid vapor pressure and</li>
+<li>velocity or pressure drop</li>
+</ol>
 </div>
-<div id="fluidproperties" class="section level2">
-<h2><span class="header-section-number">1.2</span> Flow variable and fluid properties</h2>
-<p>The flow rate of a fluid through a control valve is a function of the following (where applicable):</p>
+<div id="sigma-values" class="section level2">
+<h2><span class="header-section-number">4.3</span> Sigma Values</h2>
+<p>For a valve, the force suppressing cavitation is proportional to the magnitude of the average pressure relative to absolute vapor pressure i.e. <span class="math inline">\((P-P_r)\)</span>. The force causing cavitation is proportional to the velocity head <span class="math inline">\(V^2/2g\)</span> or to the pressure drop across the valve <span class="math inline">\(\Delta P\)</span>. The resulting cavitation parameter sigma can be expressed as (using absolute units):</p>
+<p><span class="math display">\[
+\sigma = \frac{P_1-P_v}{\Delta P_{net}}
+\]</span></p>
+<p>in which:</p>
 <ul>
-<li>Inlet and outlet conditions
-<ul>
-<li>Pressure</li>
-<li>Temperature</li>
-<li>Piping geometry</li>
-</ul></li>
-<li>Water properties
-<ul>
-<li>Composition</li>
-<li>Density</li>
-<li>Vapor pressure</li>
-<li>Viscosity</li>
-<li>Surface tension</li>
-<li>Thermodynamic critical pressure</li>
-</ul></li>
-<li>Control valve properties
-<ul>
-<li>Size</li>
-<li>Valve travel</li>
-<li>Flow path geometry</li>
-</ul></li>
+<li><span class="math inline">\(P_1\)</span> is the absolute pressure just upstream from the valve <span class="math inline">\((P_l = P_u + P_b)\)</span>,</li>
+<li><span class="math inline">\(P_u\)</span> is <em>the gauge pressure just upstream from the valve</em>,</li>
+<li><span class="math inline">\(P_b\)</span> is <em>the atmospheric or barometric pressure</em>,</li>
+<li><span class="math inline">\(P_v\)</span> is <em>the absolute vapor pressure</em> and</li>
+<li><span class="math inline">\(\Delta P_{net}\)</span> <em>the net pressure drop across the valve</em>.</li>
 </ul>
+<p>The minimum value of sigma (<span class="math inline">\(\sigma\)</span>) is <span class="math inline">\(1.0\)</span> since the maximum <span class="math inline">\(\Delta P_{net}\)</span> across the valve is <span class="math inline">\(P_1 - P_v\)</span>.</p>
 </div>
-<div id="nomenclature" class="section level2">
-<h2><span class="header-section-number">1.3</span> Nomenclature</h2>
-<table>
-<colgroup>
-<col width="21%" />
-<col width="78%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Symbol</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(K_v\)</span></td>
-<td align="left">Valve flow coefficient</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(d\)</span></td>
-<td align="left">Valve inlet diameter</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(DN\)</span></td>
-<td align="left">Internal diameter of the pipe</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_d\)</span></td>
-<td align="left">Valve style modifier</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(F_F\)</span></td>
-<td align="left">Liquid critical pressure ratio factor, dimensionless</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_K\)</span></td>
-<td align="left">Ratio of specific heats factor, dimensionless</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(F_L\)</span></td>
-<td align="left">Liquid pressure recovery factor of a valve without attached fittings, dimensionless</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_{LP}\)</span></td>
-<td align="left">Product of the liquid pressure recovery factor of a valve with attached fittings (no symbol has been identified) and the piping geometry factor, dimensionless</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(F_P\)</span></td>
-<td align="left">Piping geometry factor, dimensionless</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_R\)</span></td>
-<td align="left">Reynolds number factor, dimensionless</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(F_s\)</span></td>
-<td align="left">Laminar, or streamline, flow factor, dimensionless</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(g\)</span></td>
-<td align="left">Local acceleration of gravity</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(p_1\)</span></td>
-<td align="left">Upstream <strong><em>absolute</em></strong> static pressure, measured two nominal pipe diameters upstream of valve-fitting assembly</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(p_2\)</span></td>
-<td align="left">Downstream <strong><em>absolute</em></strong> static pressure, measured six nominal pipe diameters downstream of valve-fitting assembly</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\Delta P\)</span></td>
-<td align="left">Pressure differential, <span class="math inline">\((p_1 - p_2)\)</span></td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(P_c\)</span></td>
-<td align="left">Absolute thermodynamic critical pressure</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(P_{vc}\)</span></td>
-<td align="left">Apparent absolute pressure at vena contracta</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(q\)</span></td>
-<td align="left">Volumetric flow rate</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(q_{max}\)</span></td>
-<td align="left">Maximum flow rate (choked flow conditions) at a given upstream condition</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(Re_v\)</span></td>
-<td align="left">Valve Reynolds number, dimensionless</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(T_1\)</span></td>
-<td align="left">Upstream temperature</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\gamma_{1} \; (Gamma)\)</span></td>
-<td align="left">Specific weight, upstream conditions</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\mu \; (mu)\)</span></td>
-<td align="left">Viscosity, absolute</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\rho\; (rho)\)</span></td>
-<td align="left">Density</td>
-</tr>
-</tbody>
-</table>
+<div id="sigma-value-2" class="section level2">
+<h2><span class="header-section-number">4.4</span> Sigma Value 2</h2>
+<p>For valves and other devices that create a pressure drop, the cavitation parameter can be defined in several ways. The reference pressure in the numerator of the equation of sigma can be either the upstream or the downstream pressure. Both have been used, and there are valid reasons supporting either choice.</p>
+<p>Using the downstream pressure <span class="math inline">\(P_2\)</span>, the equation becomes:</p>
+<p><span class="math display">\[
+\sigma_{1} = \frac{P_2-P_v}{\Delta P_{net}}
+\]</span>
+In which <span class="math inline">\(P_2\)</span> is the absolute downstream pressure (<span class="math inline">\(P_2 = P_d + P_b\)</span>), where <span class="math inline">\(P_d = P_u - \Delta P_{net}\)</span> and <span class="math inline">\(P_b\)</span> is the barometric pressure.</p>
+<p>This is the form originally preferred because the downstream pressure is the pressure closer to the zone where the cavitation occurs. Therefore, the downstream pressure more directly influences the cavitation. However, it is more convenient to use the upstream pressure for most applications, and the two sigma values differ by a constant value of <span class="math inline">\(1.0\)</span>. The following simple equation directly relates the equation:</p>
+<p><span class="math display">\[
+\sigma = \sigma_{1} + 1.0
+\]</span></p>
+<p>For cavitation caused by surface roughness, an isolated roughness, an offset in the boundary or by any device for which it is not possible or convenient to evaluate a pressure differential, the velocity head can be used in place of <span class="math inline">\(\Delta{P}\)</span> in Equation of <span class="math inline">\(\sigma\)</span>. The resulting equation is:</p>
+<p><span class="math display">\[
+\sigma_{2} = \frac{P_1-P_v}{(V^2/2g)}
+\]</span></p>
+<p>Some authors have chosen to use the reciprocal of Equation for <span class="math inline">\(\sigma\)</span> and have defined the cavitation index as <span class="math inline">\(k_c\)</span> instead of <span class="math inline">\(\sigma\)</span>. The equation defining <span class="math inline">\(k_c\)</span> is:</p>
+<p><span class="math display">\[
+k_c = \frac{1}{\sigma_{}} = \frac{\Delta P_{net}}{(P_1-P_v)} 
+\]</span></p>
+<p>If you want to take into account the sigma cavitation parameter and the cavitation caused by surface roughness, an isolated roughness, an offset in the boundary or by any device for which it is not possible or convenient to evaluate a pressure differential then:</p>
+<p><span class="math display">\[
+\frac{1}{\sigma_{}} + \frac{1}{\sigma_{2}} = \frac{\Delta P_{net}}{(P_1-P_v)} + \frac{(V^2/2g)}{(P_1-P_v)}
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{\sigma_{3}} = \frac{1}{\sigma_{}} + \frac{1}{\sigma_{2}} = \frac{\Delta P_{net} + (V^2/2g)}{(P_1-P_v)}
+\]</span>
+<span class="math display">\[
+\sigma_{3} = \frac{(P_1-P_v)}{\Delta P_{net} + (V^2/2g)}
+\]</span></p>
 </div>
-<div id="definitions" class="section level2">
-<h2><span class="header-section-number">1.4</span> Terms and definitions</h2>
+<div id="evaluating-cavitation-limits" class="section level2">
+<h2><span class="header-section-number">4.5</span> Evaluating Cavitation Limits</h2>
+<p>Cavitation causes noise, pressure fluctuations, vibrations, erosion damage, and in advanced stages, can reduce the valve’s capacity. The acceptable cavitation level for a valve in a given system varies with valve type, valve function, details of the piping layout and duration of the operation.</p>
+<p>It is necessary to identify and provide experimental data for several levels of cavitation intensity to have adequate information for analysis and design. There are defined six different cavitation design limits. The methods used to determine each limit experimentally are described, and suggestions are given as to when each limit might be appropriate. These limits are:</p>
+<ol style="list-style-type: decimal">
+<li>Incipient cavitation <span class="math inline">\(\sigma_{i}\)</span></li>
+<li>Critical (or constant) cavitation <span class="math inline">\(\sigma_{c}\)</span></li>
+<li>Incipient damage <span class="math inline">\(\sigma_{i_d}\)</span></li>
+<li>Incipient choking <span class="math inline">\(\sigma_{i_{ch}}\)</span> (or Kc)</li>
+<li>Choked flow <span class="math inline">\(\sigma_{ch}\)</span></li>
+<li>Maximum noise and vibration level <span class="math inline">\(\sigma_{max}\)</span></li>
+</ol>
+</div>
+<div id="cavitation-and-flow" class="section level2 flexbox vcenter">
+<h2><span class="header-section-number">4.6</span> cavitation and flow</h2>
+<p><img src="image/cavitation_flow.png" /></p>
+</div>
+<div id="maximum-flow" class="section level2">
+<h2><span class="header-section-number">4.7</span> Maximum Flow</h2>
+<p>The maximum rate at which flow will pass through a control valve at choked flow [in <span class="math inline">\(m^3/h\)</span>] conditions be calculated as follows:</p>
+<p><span class="math display">\[
+Q_{max} = k_v \cdot F_{L} \cdot F_R \cdot \sqrt{p_1 - F_F \cdot p_v}
+\]</span></p>
+<p>Where:</p>
 <ul>
-<li><p><strong>Valve:</strong> A valve is a device used for the control of fluid flow. It consists of a fluid retaining assembly, one or more ports between end openings and a movable closure member which opens, restricts or closes the port(s).</p></li>
-<li><p><strong>Control valve:</strong> A operated (manual or powered) device which modifies the fluid flow rate in a process control system. It consists of a valve connected to an actuator mechanism that is capable of changing the position of a flow controlling element in the valve in response to a signal from the controlling system.</p></li>
+<li><span class="math inline">\(F_R\)</span> is the Reynolds number factor</li>
+<li><span class="math inline">\(F_L \; and \; F_{LP}\)</span> are the Liquid pressure recovery factors</li>
+<li><span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</li>
 </ul>
+<p><span class="math display">\[
+\Delta P_{max} = {F_L}^2 \cdot (p_1 - F_F \cdot p_v) 
+\]</span></p>
+</div>
+<div id="maximum-flow-with-flow-limitation-and-with-fitting" class="section level2">
+<h2><span class="header-section-number">4.8</span> Maximum Flow with flow limitation and with fitting</h2>
+<p><img src="./image/valve_with_fittings.png" /></p>
+<p><span class="math display">\[
+Q_{max} = k_v \cdot F_{LP} \cdot F_R \cdot \sqrt{p_1 - F_F \cdot p_v}
+\]</span></p>
+<p><span class="math display">\[
+\Delta P_{max} = {\left(\frac{F_{LP}}{F_P}\right)}^2 \cdot (P_1 - F_F \cdot p_v) 
+\]</span></p>
 
 </div>
 </div>
@@ -311,8 +236,8 @@
           </div>
         </div>
       </div>
-
-<a href="hydraulic-basics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="valves-hidraulic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="final-words.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

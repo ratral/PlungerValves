@@ -1,0 +1,112 @@
+# Hydraulic Basics
+
+## Equations 
+
+ - If the Area for pipes is equal to: 
+
+$$
+A = \frac{\pi \cdot d^2}{4}
+$$
+  
+  - And the Velocity ist:
+  
+$$
+  V = \frac{Q}{A} = \frac{4 \cdot Q}{\pi \cdot d^2} 
+$$
+
+  - therefore it is:
+
+$$
+  \frac{V^2}{2g} = \frac{8 \cdot Q^2}{g \cdot \pi^{2} \cdot d^4} 
+$$
+
+## Energy Head
+
+  - **Energy Head:** 
+$$
+  H = \frac{v^2}{2 \cdot g} + \frac{p}{\rho \cdot g} + z
+$$
+
+  - **Beernoulli:**  
+  $$
+  \frac{v_1^2}{2 \cdot g} + \frac{p_1}{\rho \cdot g} + z_1 = \frac{v_2^2}{2 \cdot g} + \frac{p_2}{\rho \cdot g} + z_2 + \Delta h_{ls}
+  $$
+
+  - **Hydraulic losses:** 
+  $$
+  \Delta h_{ls} = H_1 - H_2 = h_{pl} + h_{ml}
+  $$
+  
+## Hydraulic Head losses
+
+  - **Pipe friction losses (_Darcy-Weisbach equation_):** 
+  $$
+  h_{pl} =  \left( f \cdot \frac{l}{d} \right) \cdot \left( \frac{v^2}{2 \cdot g} \right)
+  $$
+  
+  - **Minor losses:** 
+  $$
+  h_{ml} = \zeta_{l} \cdot \left( \frac{v^2}{2 \cdot g} \right)
+  $$
+    
+ - $\zeta_{l}$ **means (local) loss coefficient:**  is dimensionless, it is not correlated in the literature with the _Reynolds number_ $(\mathit{Re})$ and roughness ratio but rather simply with the raw size of the pipe. Almost all data are reported for turbulent-flow conditions.
+ 
+ - The Darcy friction factor, $f$, is usually selected from a chart known as the _Moody diagram_. The _Moody diagram_ is a family of curves that relate the friction factor, $f$, to _Reynolds number_, $Re$, and the relative roughness of a pipe, $\varepsilon/d$.
+
+## Darcy Friction Factor Formula
+
+   - **the friction factor $f$ depends on Reynolds number and relativa roughness:** 
+   $$
+   f= \varphi (Re, \varepsilon/d)
+   $$
+  
+   - **The Colebrook equation is the most widely used equation to solve the Darcy friction factor:**
+   $$
+   \frac{1}{\sqrt{f}} =-2.0 \; log \left( \frac{\varepsilon/d}{3.7} + \frac{2.51}{Re \sqrt{f}} \right)
+   $$
+
+   - **_Reynolds number_ ($Re$): is the Principal parameter used to specify the type of flow regime.** 
+   $$
+   Re = \frac{v \cdot d}{\nu} =  \frac{4 \cdot q}{\pi \cdot d \cdot \nu}
+   $$
+    
+    
+    
+## Calculation of the friction factor
+
+  - **Equation of Swammee and Jain (1976):** 
+  $$
+  \frac{1}{\sqrt{f}} = -2 \cdot log \left( \frac{\varepsilon}{3.7} + \frac{5.74}{Re^{0.9}} \right)
+  $$
+
+  - **Equation of Haaland (1983):**  
+  $$
+  \frac{1}{\sqrt{f}} = -1.8 \cdot log \left( \left( \frac{\varepsilon}{3.7}\right)^{1.11} + \frac{6.9}{Re} \right)
+  $$
+
+  - **Equation of Zigrang and Sylvester (1982):** 
+  $$
+  \frac{1}{\sqrt{f}} = -2 \cdot log \left[ \frac{\varepsilon}{3.7} - \frac{5.02}{Re}  \cdot log \left( \varepsilon - \frac{5.02}{Re}  \cdot log \left(\frac{\varepsilon}{3.7}+ \frac{13}{Re} \right) \right) \right]
+  $$
+  
+
+## Roughness coefficient $\varepsilon$ of the pipe in mm
+
+```{r echo=FALSE}
+
+# read data 
+
+  roughness_file <- here::here("data", "roughness_pipes.csv")
+
+  roughness_pipes <- read_csv( roughness_file,
+                               col_types = list( col_character(), col_character(),
+                                                 col_logical(), col_logical(), col_logical(),
+                                                 col_double(), col_double()))
+  knitr::kable(
+    roughness_pipes, booktabs = TRUE,
+    caption = 'Roughness coefficient in milimeter.'
+  )
+
+``` 
+
+

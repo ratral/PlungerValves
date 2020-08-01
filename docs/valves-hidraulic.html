@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Plunger Valves</title>
+  <title>Chapter 3 Valves Hidraulic | Plunger Valves</title>
   <meta name="description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Plunger Valves" />
+  <meta property="og:title" content="Chapter 3 Valves Hidraulic | Plunger Valves" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Plunger Valves" />
+  <meta name="twitter:title" content="Chapter 3 Valves Hidraulic | Plunger Valves" />
   
   <meta name="twitter:description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="hydraulic-basics.html"/>
+<link rel="prev" href="hydraulic-basics.html"/>
+<link rel="next" href="quantifying-cavitation-potential.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -122,187 +122,65 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Plunger Valves</h1>
-<p class="author"><em>Dr. Raúl Trujillo Álvarez</em></p>
-<p class="date"><em>2020-08-01</em></p>
-</div>
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>Plunger valves are mainly used where volume flows or pressure have to be reduced and regulated with out vibrations, noises or big changes in the pipeline.</p>
-<div id="norms" class="section level2">
-<h2><span class="header-section-number">1.1</span> Normative references</h2>
-<p>The following referenced documents are indispensable for the application of this document. For dated references, only the edition cited applies. For undated references, the latest version of the referenced material (including any amendments) applies.</p>
+<div id="valves-hidraulic" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Valves Hidraulic</h1>
+<div id="the-flow-coefficient-k_v" class="section level2">
+<h2><span class="header-section-number">3.1</span> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></h2>
+<p>Flow factor <span class="math inline">\(k_{v}\)</span> combines the effects of all flow restrictions in the valve into a single number.
+<span class="math inline">\(k_{v}\)</span> represents the flow of water with temperature ranging between <span class="math inline">\(5°C\)</span> and <span class="math inline">\(30°C\)</span> through a valve in cubic meters per hour with a pressure drop of <span class="math inline">\(1 bar\)</span>.</p>
+<p>Do you need for the calculation of the valve flow factor (<span class="math inline">\(k_{v}\)</span>) :</p>
 <ul>
-<li><strong>EN 736-1:1995</strong>, Valves — Terminology — Part 1: Definition of types of valves</li>
-<li><strong>EN 736-3:2008</strong>, Valves — Terminology — Part 3: Definition of terms</li>
-<li><strong>EN 1057</strong>, Copper and copper alloys — Seamless, round copper tubes for water and gas in sanitary and heating applications</li>
-<li><strong>EN 24006:1993</strong>, Measurement of fluid flow in closed conduits — Vocabulary and symbols (ISO 4006:1991)</li>
-<li><strong>EN ISO 6708:1995</strong>, Pipework components — Definition and selection of DN (nominal size) (ISO 6708:1995)</li>
-<li><strong>ISO 7-1:1994</strong>, Pipe threads where pressure-tight joints are made on the threads — Part 1: Dimensions, tolerances and designation</li>
-<li><strong>ISO 7194:2008</strong>, Measurement of fluid flow in closed conduits — Velocity-area methods of flow measurement in swirling or asymmetric flow conditions in circular ducts by means of current-meters or Pitot static tubes</li>
-</ul>
-<p><strong>Other International Normative references</strong></p>
-<ul>
-<li><strong>ISA Guide</strong> Control Valves, Practical Guides for Measurement and Control</li>
-<li><strong>ISA S20.50</strong> Specification Forms for Process Measurement and Control Instruments, Primary Elements and Control Valves</li>
-<li><strong>ISA S75.01</strong> Flow Equations for Sizing Control Valves</li>
-<li><strong>ISA S75.05</strong> Control Valve Terminology</li>
-<li><strong>ISA S75.11</strong> Inherent Flow Characteristic and Rangeability of Control Valves</li>
-<li><strong>ISA SP75.17</strong> Control Valve Aerodynamic Noise Prediction</li>
-<li><strong>ISA RP75.23</strong> Considerations for Evaluating Control Valve Cavitation</li>
-<li><strong>ANSI/ISA-75.02-1996</strong>, Control Valve Capacity Test Procedures</li>
-<li><strong>ANSI/ISA-75.05.01-2000 (R2005)</strong>, Control Valve Terminology</li>
-<li><strong>IEC 60534-1:2005</strong>, Industrial-process control valves – Part 1: Control valve terminology and generalconsiderations</li>
-<li><strong>IEC 60534-2-3:1997</strong>, Industrial-process control valves – Part 2-3: Flow capacity – Test procedures</li>
+<li>operating pressure differential;</li>
+<li>flow rate for your application;</li>
+<li>Density of the fluid;</li>
+<li>and in some circumstances, temperature.</li>
 </ul>
 </div>
-<div id="fluidproperties" class="section level2">
-<h2><span class="header-section-number">1.2</span> Flow variable and fluid properties</h2>
-<p>The flow rate of a fluid through a control valve is a function of the following (where applicable):</p>
+<div id="flow-coefficient-k_v-and-loss-coefficient-zeta_v" class="section level2">
+<h2><span class="header-section-number">3.2</span> <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span> and <em>Loss Coefficient</em> <span class="math inline">\(\zeta_{v}\)</span></h2>
 <ul>
-<li>Inlet and outlet conditions
-<ul>
-<li>Pressure</li>
-<li>Temperature</li>
-<li>Piping geometry</li>
-</ul></li>
-<li>Water properties
-<ul>
-<li>Composition</li>
-<li>Density</li>
-<li>Vapor pressure</li>
-<li>Viscosity</li>
-<li>Surface tension</li>
-<li>Thermodynamic critical pressure</li>
-</ul></li>
-<li>Control valve properties
-<ul>
-<li>Size</li>
-<li>Valve travel</li>
-<li>Flow path geometry</li>
-</ul></li>
+<li>With the test conditions (<span class="math inline">\(\Delta p_0 = 1 \: bar\)</span> and for water <span class="math inline">\(\rho_{0} = \rho = 1000 \: kg/m3\)</span>) oss coefficient function is:</li>
 </ul>
-</div>
-<div id="nomenclature" class="section level2">
-<h2><span class="header-section-number">1.3</span> Nomenclature</h2>
-<table>
-<colgroup>
-<col width="21%" />
-<col width="78%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Symbol</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><span class="math inline">\(K_v\)</span></td>
-<td align="left">Valve flow coefficient</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(d\)</span></td>
-<td align="left">Valve inlet diameter</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(DN\)</span></td>
-<td align="left">Internal diameter of the pipe</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_d\)</span></td>
-<td align="left">Valve style modifier</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(F_F\)</span></td>
-<td align="left">Liquid critical pressure ratio factor, dimensionless</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_K\)</span></td>
-<td align="left">Ratio of specific heats factor, dimensionless</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(F_L\)</span></td>
-<td align="left">Liquid pressure recovery factor of a valve without attached fittings, dimensionless</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_{LP}\)</span></td>
-<td align="left">Product of the liquid pressure recovery factor of a valve with attached fittings (no symbol has been identified) and the piping geometry factor, dimensionless</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(F_P\)</span></td>
-<td align="left">Piping geometry factor, dimensionless</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_R\)</span></td>
-<td align="left">Reynolds number factor, dimensionless</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(F_s\)</span></td>
-<td align="left">Laminar, or streamline, flow factor, dimensionless</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(g\)</span></td>
-<td align="left">Local acceleration of gravity</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(p_1\)</span></td>
-<td align="left">Upstream <strong><em>absolute</em></strong> static pressure, measured two nominal pipe diameters upstream of valve-fitting assembly</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(p_2\)</span></td>
-<td align="left">Downstream <strong><em>absolute</em></strong> static pressure, measured six nominal pipe diameters downstream of valve-fitting assembly</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\Delta P\)</span></td>
-<td align="left">Pressure differential, <span class="math inline">\((p_1 - p_2)\)</span></td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(P_c\)</span></td>
-<td align="left">Absolute thermodynamic critical pressure</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(P_{vc}\)</span></td>
-<td align="left">Apparent absolute pressure at vena contracta</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(q\)</span></td>
-<td align="left">Volumetric flow rate</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(q_{max}\)</span></td>
-<td align="left">Maximum flow rate (choked flow conditions) at a given upstream condition</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(Re_v\)</span></td>
-<td align="left">Valve Reynolds number, dimensionless</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(T_1\)</span></td>
-<td align="left">Upstream temperature</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\gamma_{1} \; (Gamma)\)</span></td>
-<td align="left">Specific weight, upstream conditions</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(\mu \; (mu)\)</span></td>
-<td align="left">Viscosity, absolute</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(\rho\; (rho)\)</span></td>
-<td align="left">Density</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="definitions" class="section level2">
-<h2><span class="header-section-number">1.4</span> Terms and definitions</h2>
+<p><span class="math display">\[
+k_{v} = q \cdot \sqrt{\frac{1}{\Delta p }} = \frac{q}{\sqrt{\Delta p} }
+\]</span></p>
 <ul>
-<li><p><strong>Valve:</strong> A valve is a device used for the control of fluid flow. It consists of a fluid retaining assembly, one or more ports between end openings and a movable closure member which opens, restricts or closes the port(s).</p></li>
-<li><p><strong>Control valve:</strong> A operated (manual or powered) device which modifies the fluid flow rate in a process control system. It consists of a valve connected to an actuator mechanism that is capable of changing the position of a flow controlling element in the valve in response to a signal from the controlling system.</p></li>
+<li>If the <span class="math inline">\(\zeta\)</span> value of the valve is :</li>
 </ul>
+<p><span class="math display">\[
+\zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{k_v}}}} \bigg)^2
+\]</span>
+- The <span class="math inline">\(k_{v}\)</span> in function of the <span class="math inline">\(\zeta_{v}\)</span> is:</p>
+<p><span class="math display">\[
+k_v = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta}}
+\]</span></p>
+</div>
+<div id="the-flow-basic-characteristic-curve." class="section level2">
+<h2><span class="header-section-number">3.3</span> The flow basic characteristic curve.</h2>
+<p>The characteristic of a control valve is defined as the flow rate depending on the position of the valve. The control valve generates a change in the flow by changing the active area of piston <span class="math inline">\(A\)</span>.</p>
+<p>To perform a required flow characteristic curve, it is necessary to determine the characteristic opening curve that delivers the needed flow rate, taking into account the variable area of the cylinder area, according to the path of the regulating cylinder.</p>
+<p>A unique assignment assumes a constant differential pressure <span class="math inline">\(\Delta p\)</span> and a constant density <span class="math inline">\(\rho\)</span>.</p>
+<p>If the characteristic curve is determined under unit conditions, referred to below as the <em>“basic characteristic curve”</em>.</p>
+<p>The characteristic curve of a control valve is the dependence of the flow on the actuating path. If the characteristic curve is determined under unit conditions, then the flow rate is the <span class="math inline">\(k_v\)</span> value.</p>
+<p>The basic characteristic of the control valves plus a cylinder will be (<span class="math inline">\(k_v/k_{vs}\)</span>) depending on the position of the valve (<span class="math inline">\(pv\)</span>).</p>
+</div>
+<div id="zeta-value-in-function-of-the-k_v-characteristic-curve" class="section level2">
+<h2><span class="header-section-number">3.4</span> Zeta value in function of the <span class="math inline">\(k_v\)</span> characteristic curve</h2>
+<p><span class="math display">\[
+\zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{k_v}}}} \bigg)^2 
+\]</span></p>
+<p><span class="math display">\[
+k_{vs} = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
+\]</span>
+<span class="math display">\[
+k_{v} = f(vp\%) \cdot k_{vs}  = f(vp\%) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
+\]</span></p>
+<p><span class="math display">\[
+\frac{1}{k_{v}^2} = \frac{\zeta_{vs}}{[f(vp\%)]^2} \cdot \frac{626.3}{d^4}
+\]</span></p>
+<p><span class="math display">\[
+\zeta_{v} = \frac{\zeta_{vs}}{[f(vp\%)]^2}
+\]</span></p>
 
 </div>
 </div>
@@ -311,8 +189,8 @@
           </div>
         </div>
       </div>
-
-<a href="hydraulic-basics.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hydraulic-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="quantifying-cavitation-potential.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

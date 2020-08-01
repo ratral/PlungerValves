@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Hydraulic Basics | Plunger Valves</title>
+  <meta name="description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Hydraulic Basics | Plunger Valves" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Hydraulic Basics | Plunger Valves" />
+  
+  <meta name="twitter:description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
+  
+
+<meta name="author" content="Dr. Raúl Trujillo Álvarez" />
+
+
+<meta name="date" content="2020-08-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="intro.html"/>
+<link rel="next" href="valves-hidraulic.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#norms"><i class="fa fa-check"></i><b>1.1</b> Normative references</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#fluidproperties"><i class="fa fa-check"></i><b>1.2</b> Flow variable and fluid properties</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#nomenclature"><i class="fa fa-check"></i><b>1.3</b> Nomenclature</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#definitions"><i class="fa fa-check"></i><b>1.4</b> Terms and definitions</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html"><i class="fa fa-check"></i><b>2</b> Hydraulic Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html#equations"><i class="fa fa-check"></i><b>2.1</b> Equations</a></li>
+<li class="chapter" data-level="2.2" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html#energy-head"><i class="fa fa-check"></i><b>2.2</b> Energy Head</a></li>
+<li class="chapter" data-level="2.3" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html#hydraulic-head-losses"><i class="fa fa-check"></i><b>2.3</b> Hydraulic Head losses</a></li>
+<li class="chapter" data-level="2.4" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html#darcy-friction-factor-formula"><i class="fa fa-check"></i><b>2.4</b> Darcy Friction Factor Formula</a></li>
+<li class="chapter" data-level="2.5" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html#calculation-of-the-friction-factor"><i class="fa fa-check"></i><b>2.5</b> Calculation of the friction factor</a></li>
+<li class="chapter" data-level="2.6" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html#roughness-coefficient-varepsilon-of-the-pipe-in-mm"><i class="fa fa-check"></i><b>2.6</b> Roughness coefficient <span class="math inline">\(\varepsilon\)</span> of the pipe in mm</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html"><i class="fa fa-check"></i><b>3</b> Valves Hidraulic</a><ul>
+<li class="chapter" data-level="3.1" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#the-flow-coefficient-k_v"><i class="fa fa-check"></i><b>3.1</b> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></a></li>
+<li class="chapter" data-level="3.2" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#flow-coefficient-k_v-and-loss-coefficient-zeta_v"><i class="fa fa-check"></i><b>3.2</b> <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span> and <em>Loss Coefficient</em> <span class="math inline">\(\zeta_{v}\)</span></a></li>
+<li class="chapter" data-level="3.3" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#the-flow-basic-characteristic-curve."><i class="fa fa-check"></i><b>3.3</b> The flow basic characteristic curve.</a></li>
+<li class="chapter" data-level="3.4" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#zeta-value-in-function-of-the-k_v-characteristic-curve"><i class="fa fa-check"></i><b>3.4</b> Zeta value in function of the <span class="math inline">\(k_v\)</span> characteristic curve</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html"><i class="fa fa-check"></i><b>4</b> Quantifying Cavitation Potential</a><ul>
+<li class="chapter" data-level="4.1" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html#typical-pressure-curve-in-a-control-valve"><i class="fa fa-check"></i><b>4.1</b> Typical pressure curve in a control valve</a></li>
+<li class="chapter" data-level="4.2" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html#quantifying-cavitation-potential-1"><i class="fa fa-check"></i><b>4.2</b> Quantifying Cavitation Potential</a></li>
+<li class="chapter" data-level="4.3" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html#sigma-values"><i class="fa fa-check"></i><b>4.3</b> Sigma Values</a></li>
+<li class="chapter" data-level="4.4" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html#sigma-value-2"><i class="fa fa-check"></i><b>4.4</b> Sigma Value 2</a></li>
+<li class="chapter" data-level="4.5" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html#evaluating-cavitation-limits"><i class="fa fa-check"></i><b>4.5</b> Evaluating Cavitation Limits</a></li>
+<li class="chapter" data-level="4.6" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html#cavitation-and-flow"><i class="fa fa-check"></i><b>4.6</b> cavitation and flow</a></li>
+<li class="chapter" data-level="4.7" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html#maximum-flow"><i class="fa fa-check"></i><b>4.7</b> Maximum Flow</a></li>
+<li class="chapter" data-level="4.8" data-path="quantifying-cavitation-potential.html"><a href="quantifying-cavitation-potential.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>4.8</b> Maximum Flow with flow limitation and with fitting</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Plunger Valves</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hydraulic-basics" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Hydraulic Basics</h1>
+<div id="equations" class="section level2">
+<h2><span class="header-section-number">2.1</span> Equations</h2>
+<ul>
+<li>If the Area for pipes is equal to:</li>
+</ul>
+<p><span class="math display">\[
+A = \frac{\pi \cdot d^2}{4}
+\]</span></p>
+<ul>
+<li>And the Velocity ist:</li>
+</ul>
+<p><span class="math display">\[
+  V = \frac{Q}{A} = \frac{4 \cdot Q}{\pi \cdot d^2} 
+\]</span></p>
+<ul>
+<li>therefore it is:</li>
+</ul>
+<p><span class="math display">\[
+  \frac{V^2}{2g} = \frac{8 \cdot Q^2}{g \cdot \pi^{2} \cdot d^4} 
+\]</span></p>
+</div>
+<div id="energy-head" class="section level2">
+<h2><span class="header-section-number">2.2</span> Energy Head</h2>
+<ul>
+<li><p><strong>Energy Head:</strong>
+<span class="math display">\[
+  H = \frac{v^2}{2 \cdot g} + \frac{p}{\rho \cdot g} + z
+\]</span></p></li>
+<li><p><strong>Beernoulli:</strong><br />
+<span class="math display">\[
+  \frac{v_1^2}{2 \cdot g} + \frac{p_1}{\rho \cdot g} + z_1 = \frac{v_2^2}{2 \cdot g} + \frac{p_2}{\rho \cdot g} + z_2 + \Delta h_{ls}
+  \]</span></p></li>
+<li><p><strong>Hydraulic losses:</strong>
+<span class="math display">\[
+  \Delta h_{ls} = H_1 - H_2 = h_{pl} + h_{ml}
+  \]</span></p></li>
+</ul>
+</div>
+<div id="hydraulic-head-losses" class="section level2">
+<h2><span class="header-section-number">2.3</span> Hydraulic Head losses</h2>
+<ul>
+<li><p><strong>Pipe friction losses (<em>Darcy-Weisbach equation</em>):</strong>
+<span class="math display">\[
+  h_{pl} =  \left( f \cdot \frac{l}{d} \right) \cdot \left( \frac{v^2}{2 \cdot g} \right)
+  \]</span></p></li>
+<li><p><strong>Minor losses:</strong>
+<span class="math display">\[
+  h_{ml} = \zeta_{l} \cdot \left( \frac{v^2}{2 \cdot g} \right)
+  \]</span></p></li>
+<li><p><span class="math inline">\(\zeta_{l}\)</span> <strong>means (local) loss coefficient:</strong> is dimensionless, it is not correlated in the literature with the <em>Reynolds number</em> <span class="math inline">\((\mathit{Re})\)</span> and roughness ratio but rather simply with the raw size of the pipe. Almost all data are reported for turbulent-flow conditions.</p></li>
+<li><p>The Darcy friction factor, <span class="math inline">\(f\)</span>, is usually selected from a chart known as the <em>Moody diagram</em>. The <em>Moody diagram</em> is a family of curves that relate the friction factor, <span class="math inline">\(f\)</span>, to <em>Reynolds number</em>, <span class="math inline">\(Re\)</span>, and the relative roughness of a pipe, <span class="math inline">\(\varepsilon/d\)</span>.</p></li>
+</ul>
+</div>
+<div id="darcy-friction-factor-formula" class="section level2">
+<h2><span class="header-section-number">2.4</span> Darcy Friction Factor Formula</h2>
+<ul>
+<li><p><strong>the friction factor <span class="math inline">\(f\)</span> depends on Reynolds number and relativa roughness:</strong>
+<span class="math display">\[
+   f= \varphi (Re, \varepsilon/d)
+   \]</span></p></li>
+<li><p><strong>The Colebrook equation is the most widely used equation to solve the Darcy friction factor:</strong>
+<span class="math display">\[
+   \frac{1}{\sqrt{f}} =-2.0 \; log \left( \frac{\varepsilon/d}{3.7} + \frac{2.51}{Re \sqrt{f}} \right)
+   \]</span></p></li>
+<li><p><strong><em>Reynolds number</em> (<span class="math inline">\(Re\)</span>): is the Principal parameter used to specify the type of flow regime.</strong>
+<span class="math display">\[
+   Re = \frac{v \cdot d}{\nu} =  \frac{4 \cdot q}{\pi \cdot d \cdot \nu}
+   \]</span></p></li>
+</ul>
+</div>
+<div id="calculation-of-the-friction-factor" class="section level2">
+<h2><span class="header-section-number">2.5</span> Calculation of the friction factor</h2>
+<ul>
+<li><p><strong>Equation of Swammee and Jain (1976):</strong>
+<span class="math display">\[
+  \frac{1}{\sqrt{f}} = -2 \cdot log \left( \frac{\varepsilon}{3.7} + \frac{5.74}{Re^{0.9}} \right)
+  \]</span></p></li>
+<li><p><strong>Equation of Haaland (1983):</strong><br />
+<span class="math display">\[
+  \frac{1}{\sqrt{f}} = -1.8 \cdot log \left( \left( \frac{\varepsilon}{3.7}\right)^{1.11} + \frac{6.9}{Re} \right)
+  \]</span></p></li>
+<li><p><strong>Equation of Zigrang and Sylvester (1982):</strong>
+<span class="math display">\[
+  \frac{1}{\sqrt{f}} = -2 \cdot log \left[ \frac{\varepsilon}{3.7} - \frac{5.02}{Re}  \cdot log \left( \varepsilon - \frac{5.02}{Re}  \cdot log \left(\frac{\varepsilon}{3.7}+ \frac{13}{Re} \right) \right) \right]
+  \]</span></p></li>
+</ul>
+</div>
+<div id="roughness-coefficient-varepsilon-of-the-pipe-in-mm" class="section level2">
+<h2><span class="header-section-number">2.6</span> Roughness coefficient <span class="math inline">\(\varepsilon\)</span> of the pipe in mm</h2>
+<table>
+<caption><span id="tab:unnamed-chunk-3">Table 2.1: </span>Roughness coefficient in milimeter.</caption>
+<thead>
+<tr class="header">
+<th align="left">material</th>
+<th align="left">comment</th>
+<th align="left">new</th>
+<th align="left">used</th>
+<th align="left">cleaned</th>
+<th align="right">min</th>
+<th align="right">max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Aluminium</td>
+<td align="left">drawn/pressed</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0013</td>
+<td align="right">0.0015</td>
+</tr>
+<tr class="even">
+<td align="left">Aluminium</td>
+<td align="left">drawn/pressed</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0300</td>
+<td align="right">0.0346</td>
+</tr>
+<tr class="odd">
+<td align="left">Asbestos-cement</td>
+<td align="left">smooth</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0300</td>
+<td align="right">0.1000</td>
+</tr>
+<tr class="even">
+<td align="left">Brass</td>
+<td align="left">drawn/pressed</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0013</td>
+<td align="right">0.0014</td>
+</tr>
+<tr class="odd">
+<td align="left">Brass</td>
+<td align="left">drawn/pressed</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0300</td>
+<td align="right">0.0323</td>
+</tr>
+<tr class="even">
+<td align="left">Cast iron</td>
+<td align="left">average city severage</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">1.2000</td>
+<td align="right">1.5600</td>
+</tr>
+<tr class="odd">
+<td align="left">Cast iron</td>
+<td align="left">incrusted</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">3.0000</td>
+<td align="right">3.9000</td>
+</tr>
+<tr class="even">
+<td align="left">Cast iron</td>
+<td align="left">bituminized</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.1000</td>
+<td align="right">0.1300</td>
+</tr>
+<tr class="odd">
+<td align="left">Cast iron</td>
+<td align="left">with skin</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.2000</td>
+<td align="right">0.6000</td>
+</tr>
+<tr class="even">
+<td align="left">Cast iron</td>
+<td align="left">operating several years- cleaned</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">1.5000</td>
+<td align="right">1.9500</td>
+</tr>
+<tr class="odd">
+<td align="left">Cast iron</td>
+<td align="left">slightly rusty</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">1.0000</td>
+<td align="right">1.5000</td>
+</tr>
+<tr class="even">
+<td align="left">Clay- Drainage-pipe</td>
+<td align="left">calcined</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.7000</td>
+<td align="right">1.0500</td>
+</tr>
+<tr class="odd">
+<td align="left">Concrete</td>
+<td align="left">medium rough</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">1.0000</td>
+<td align="right">2.0000</td>
+</tr>
+<tr class="even">
+<td align="left">Concrete</td>
+<td align="left">rough</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">2.0000</td>
+<td align="right">3.0000</td>
+</tr>
+<tr class="odd">
+<td align="left">Concrete</td>
+<td align="left">smooth</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.3000</td>
+<td align="right">0.8000</td>
+</tr>
+<tr class="even">
+<td align="left">Concrete</td>
+<td align="left">operating several years</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0.2000</td>
+<td align="right">0.3000</td>
+</tr>
+<tr class="odd">
+<td align="left">Concrete-Centrifugal-</td>
+<td align="left">smooth plastered</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.1000</td>
+<td align="right">0.1500</td>
+</tr>
+<tr class="even">
+<td align="left">Concrete-Centrifugal-</td>
+<td align="left">without plaster</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.2000</td>
+<td align="right">0.8000</td>
+</tr>
+<tr class="odd">
+<td align="left">Concrete-Steel-</td>
+<td align="left">smooth</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">1.0000</td>
+<td align="right">0.1500</td>
+</tr>
+<tr class="even">
+<td align="left">Copper</td>
+<td align="left">drawn/pressed</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0013</td>
+<td align="right">0.0015</td>
+</tr>
+<tr class="odd">
+<td align="left">Copper</td>
+<td align="left">drawn/pressed</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0300</td>
+<td align="right">0.0346</td>
+</tr>
+<tr class="even">
+<td align="left">Glass</td>
+<td align="left">drawn/pressed</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0013</td>
+<td align="right">0.0015</td>
+</tr>
+<tr class="odd">
+<td align="left">Glass</td>
+<td align="left">drawn/pressed</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0300</td>
+<td align="right">0.0346</td>
+</tr>
+<tr class="even">
+<td align="left">Plastic</td>
+<td align="left">drawn/pressed</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0013</td>
+<td align="right">0.0015</td>
+</tr>
+<tr class="odd">
+<td align="left">Plastic</td>
+<td align="left">drawn/pressed</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0300</td>
+<td align="right">0.0346</td>
+</tr>
+<tr class="even">
+<td align="left">Rubber</td>
+<td align="left">smoot</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0016</td>
+<td align="right">0.0018</td>
+</tr>
+<tr class="odd">
+<td align="left">Steel</td>
+<td align="left">after long operation cleaned</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="right">0.1500</td>
+<td align="right">0.2000</td>
+</tr>
+<tr class="even">
+<td align="left">Steel</td>
+<td align="left">homogeneous corrosion pits</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0.1500</td>
+<td align="right">0.2000</td>
+</tr>
+<tr class="odd">
+<td align="left">Steel</td>
+<td align="left">intensely incrusted</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">2.0000</td>
+<td align="right">4.0000</td>
+</tr>
+<tr class="even">
+<td align="left">Steel</td>
+<td align="left">slightly rusty and incrusted</td>
+<td align="left">FALSE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0.1500</td>
+<td align="right">0.4000</td>
+</tr>
+<tr class="odd">
+<td align="left">Steel-longitudinal welded</td>
+<td align="left">bituminized</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0100</td>
+<td align="right">0.0500</td>
+</tr>
+<tr class="even">
+<td align="left">Steel-longitudinal welded</td>
+<td align="left">galvanized</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0080</td>
+<td align="right">0.0400</td>
+</tr>
+<tr class="odd">
+<td align="left">Steel-longitudinal welded</td>
+<td align="left">rolling skin</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0400</td>
+<td align="right">0.1000</td>
+</tr>
+<tr class="even">
+<td align="left">Steel-weldless</td>
+<td align="left">comm.size galvanized</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.1000</td>
+<td align="right">0.1600</td>
+</tr>
+<tr class="odd">
+<td align="left">Steel-weldless</td>
+<td align="left">neatly galvanized</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0700</td>
+<td align="right">0.1000</td>
+</tr>
+<tr class="even">
+<td align="left">Steel-weldless</td>
+<td align="left">pickled</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0300</td>
+<td align="right">0.0400</td>
+</tr>
+<tr class="odd">
+<td align="left">Steel-weldless</td>
+<td align="left">rolling skin</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0200</td>
+<td align="right">0.0600</td>
+</tr>
+<tr class="even">
+<td align="left">Steel-weldless</td>
+<td align="left">unpickled</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0.0300</td>
+<td align="right">0.0600</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="valves-hidraulic.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["PlungerValves.pdf", "PlungerValves.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

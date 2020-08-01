@@ -1,6 +1,6 @@
 --- 
 title: "Plunger Valves"
-author: "DR. Raúl Trujillo Álvarez"
+author: "Dr. Raúl Trujillo Álvarez"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -10,13 +10,14 @@ link-citations: yes
 description: "In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves."
 ---
 
-# Prerequisites
+```{r include=FALSE}
+  library(tidyverse)
+  library(here)
+```
 
-To understand this systematic method for the selection of control valves, you must have basic knowledge of hydraulics.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
+  knitr::write_bib(c( .packages(), 
+                      'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
 ```

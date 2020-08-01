@@ -2,3 +2,84 @@
 
 Plunger valves are mainly used where volume flows or pressure have to be reduced and regulated with out vibrations, noises or big changes in the pipeline. 
 
+## Normative references {#norms}
+
+The following referenced documents are indispensable for the application of this document. For dated references, only the edition cited applies. For undated references, the latest version of the referenced material (including any amendments) applies.
+
+  - **EN 736-1:1995**, Valves — Terminology — Part 1: Definition of types of valves
+  - **EN 736-3:2008**, Valves — Terminology — Part 3: Definition of terms
+  - **EN 1057**, Copper and copper alloys — Seamless, round copper tubes for water and gas in sanitary and heating applications
+  - **EN 24006:1993**, Measurement of fluid flow in closed conduits — Vocabulary and symbols (ISO 4006:1991)
+  - **EN ISO 6708:1995**, Pipework components — Definition and selection of DN (nominal size) (ISO 6708:1995)
+  - **ISO 7-1:1994**, Pipe threads where pressure-tight joints are made on the threads — Part 1: Dimensions, tolerances and designation
+  - **ISO 7194:2008**, Measurement of fluid flow in closed conduits — Velocity-area methods of flow measurement in swirling or asymmetric flow conditions in circular ducts by means of current-meters or Pitot static tubes
+
+**Other International Normative references**
+
+  - **ISA Guide**     Control Valves, Practical Guides for Measurement and Control
+  - **ISA S20.50**    Specification Forms for Process Measurement and Control Instruments, Primary Elements and Control Valves
+  - **ISA S75.01**    Flow Equations for Sizing Control Valves
+  - **ISA S75.05**    Control Valve Terminology
+  - **ISA S75.11**    Inherent Flow Characteristic and Rangeability of Control Valves
+  - **ISA SP75.17**   Control Valve Aerodynamic Noise Prediction
+  - **ISA RP75.23**   Considerations for Evaluating Control Valve Cavitation
+  - **ANSI/ISA-75.02-1996**, Control Valve Capacity Test Procedures
+  - **ANSI/ISA-75.05.01-2000 (R2005)**, Control Valve Terminology
+  - **IEC 60534-1:2005**, Industrial-process control valves – Part 1: Control valve terminology and generalconsiderations
+  - **IEC 60534-2-3:1997**, Industrial-process control valves – Part 2-3: Flow capacity – Test procedures
+
+
+## Flow variable and fluid properties {#fluidproperties}
+
+The flow rate of a fluid through a control valve is a function of the following (where applicable):
+
+  - Inlet and outlet conditions
+      - Pressure
+      - Temperature
+      - Piping geometry
+  - Water properties
+      - Composition
+      - Density
+      - Vapor pressure
+      - Viscosity
+      - Surface tension
+      - Thermodynamic critical pressure
+  - Control valve properties
+      - Size
+      - Valve travel
+      - Flow path geometry
+
+## Nomenclature
+
+| Symbol        | Description                                          | 
+|:--------------|:-----------------------------------------------------|
+| $K_v$         | Valve flow coefficient                               |
+| $d$           | Valve inlet diameter                                 |
+| $DN$          | Internal diameter of the pipe                        |
+| $F_d$         | Valve style modifier                                 |
+| $F_F$         | Liquid critical pressure ratio factor, dimensionless |
+| $F_K$         | Ratio of specific heats factor, dimensionless        |
+| $F_L$         | Liquid pressure recovery factor of a valve without attached fittings, dimensionless |
+| $F_{LP}$      | Product of the liquid pressure recovery factor of a valve with attached fittings (no symbol has been identified) and the piping geometry factor, dimensionless |
+| $F_P$         | Piping geometry factor, dimensionless                |
+| $F_R$         | Reynolds number factor, dimensionless                |
+| $F_s$         | Laminar, or streamline, flow factor, dimensionless   |
+| $g$           | Local acceleration of gravity                        |
+| $p_1$         | Upstream **_absolute_** static pressure, measured two nominal pipe diameters upstream of valve-fitting assembly |
+| $p_2$         | Downstream **_absolute_** static pressure, measured six nominal pipe diameters downstream of valve-fitting assembly |
+| $\Delta P$    | Pressure differential, $(p_1 - p_2)$                 |
+| $P_c$         | Absolute thermodynamic critical pressure             |
+| $P_{vc}$      | Apparent absolute pressure at vena contracta         |
+| $q$           | Volumetric flow rate                                 |
+| $q_{max}$     | Maximum flow rate (choked flow conditions) at a given upstream condition |
+| $Re_v$        | Valve Reynolds number, dimensionless                 |
+| $T_1$         | Upstream temperature                                 |
+| $\gamma_{1} \; (Gamma)$ | Specific weight, upstream conditions       |
+| $\mu \; (mu)$           | Viscosity, absolute                        |
+| $\rho\; (rho)$          | Density                                    |
+
+## Terms and definitions {#definitions}
+
+- **Valve:** A valve is a device used for the control of fluid flow. It consists of a fluid retaining assembly, one or more ports between end openings and a movable closure member which opens, restricts or closes the port(s).
+
+- **Control valve:** A operated (manual or powered) device which modifies the fluid flow rate in a process control system. It consists of a valve connected to an actuator mechanism that is capable of changing the position of a flow controlling element in the valve in response to a signal from the controlling system.

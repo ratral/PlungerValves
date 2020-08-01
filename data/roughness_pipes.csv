@@ -1,0 +1,39 @@
+material,comment,new,used,cleaned,min,max
+Aluminium,drawn/pressed,1,0,0,0.00130,0.00150
+Aluminium,drawn/pressed,0,1,0,0.03000,0.03460
+Asbestos-cement,smooth,1,0,0,0.03000,0.10000
+Brass,drawn/pressed,1,0,0,0.00130,0.00140
+Brass,drawn/pressed,0,1,0,0.03000,0.03230
+Cast iron,average city severage,0,1,0,1.20000,1.56000
+Cast iron,incrusted,0,1,0,3.00000,3.90000
+Cast iron,bituminized,1,0,0,0.10000,0.13000
+Cast iron,with skin,1,0,0,0.20000,0.60000
+Cast iron,operating several years- cleaned,0,1,1,1.50000,1.95000
+Cast iron,slightly rusty,0,0,0,1.00000,1.50000
+Clay- Drainage-pipe,calcined,1,0,0,0.70000,1.05000
+Concrete,medium rough,1,0,0,1.00000,2.00000
+Concrete,rough,1,0,0,2.00000,3.00000
+Concrete,smooth,1,0,0,0.30000,0.80000
+Concrete,operating several years,0,1,0,0.20000,0.30000
+Concrete-Centrifugal-,smooth plastered,1,0,0,0.10000,0.15000
+Concrete-Centrifugal-,without plaster,1,0,0,0.20000,0.80000
+Concrete-Steel-,smooth,1,0,0,1.00000,0.15000
+Copper,drawn/pressed,1,0,0,0.00130,0.00150
+Copper,drawn/pressed,0,1,0,0.03000,0.03460
+Glass,drawn/pressed,1,0,0,0.00130,0.00150
+Glass,drawn/pressed,0,1,0,0.03000,0.03460
+Plastic,drawn/pressed,1,0,0,0.00130,0.00150
+Plastic,drawn/pressed,0,1,0,0.03000,0.03460
+Rubber,smoot,1,0,0,0.00160,0.00180
+Steel,after long operation cleaned,0,1,1,0.15000,0.20000
+Steel,homogeneous corrosion pits,0,1,0,0.15000,0.20000
+Steel,intensely incrusted,0,1,0,2.00000,4.00000
+Steel,slightly rusty and incrusted,0,1,0,0.15000,0.40000
+Steel-longitudinal welded,bituminized,1,0,0,0.01000,0.05000
+Steel-longitudinal welded,galvanized,1,0,0,0.00800,0.04000
+Steel-longitudinal welded,rolling skin,1,0,0,0.04000,0.10000
+Steel-weldless,comm.size galvanized,1,0,0,0.10000,0.16000
+Steel-weldless,neatly galvanized,1,0,0,0.07000,0.10000
+Steel-weldless,pickled,1,0,0,0.03000,0.04000
+Steel-weldless,rolling skin,1,0,0,0.02000,0.06000
+Steel-weldless,unpickled,1,0,0,0.03000,0.06000
