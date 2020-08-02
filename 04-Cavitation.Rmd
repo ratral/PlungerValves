@@ -87,7 +87,6 @@ It is necessary to identify and provide experimental data for several levels of 
 ![](./image/cavitation_flow.png)
 
 
-
 ## Maximum Flow without fitings
 
 The maximum rate at which flow will pass through a control valve at choked flow [in $m^3/h$] conditions be calculated as follows:
