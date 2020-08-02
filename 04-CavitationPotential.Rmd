@@ -1,11 +1,4 @@
-# Quantifying Cavitation Potential
-
-## Typical pressure curve in a control valve  {.flexbox .vcenter}
-
-![](./image/stellventil.png)
-
-
-## Quantifying Cavitation Potential
+# Quantifying the Cavitation Potential of the valve
 
 Its effect on the system varies with valve type, size, operating pressure, and details of the piping installation. To include cavitation in the design process is necessary to determine if cavitation will ist, evaluate its intensity, characterize the flow conditions, and estimate its effect on the system and environment. Possible consequences include noise, vibration, erosion damage, and a decrease in performance.
 
@@ -34,8 +27,6 @@ in which:
 
 The minimum value of sigma ($\sigma$) is $1.0$ since the maximum $\Delta P_{net}$  across the valve is $P_1 - P_v$.
 
-## Sigma Value 2
-
 For valves and other devices that create a pressure drop, the cavitation parameter can be defined in several ways. The reference pressure in the numerator of the equation of sigma can be either the upstream or the downstream pressure. Both have been used, and there are valid reasons supporting either choice.
 
 Using the downstream pressure $P_2$, the equation becomes:
@@ -43,14 +34,14 @@ Using the downstream pressure $P_2$, the equation becomes:
 $$
 \sigma_{1} = \frac{P_2-P_v}{\Delta P_{net}}
 $$
+
 In which $P_2$ is the absolute downstream pressure ($P_2 = P_d + P_b$), where $P_d = P_u - \Delta P_{net}$ and $P_b$ is the barometric pressure. 
 
-This is the form originally preferred because the downstream pressure is the pressure closer to the zone where the cavitation occurs. Therefore, the downstream pressure more directly influences the cavitation. However, it is more convenient to use the upstream pressure for most applications, and the two sigma values differ by a constant value of $1.0$. The following simple equation directly relates the equation:
+This is the form originally preferred because the _downstream pressure is the pressure closer to the zone where the cavitation occurs_. Therefore, the downstream pressure more directly influences the cavitation. However, it is more convenient to use the upstream pressure for most applications, and the two sigma values differ by a constant value of $1.0$. The following simple equation directly relates the equation:
 
 $$
-\sigma = \sigma_{1} + 1.0
+\sigma = \sigma_{1} + 1
 $$
-
 For cavitation caused by surface roughness, an isolated roughness, an offset in the boundary or by any device for which it is not possible or convenient to evaluate a pressure differential, the velocity head can be used in place of $\Delta{P}$ in Equation of $\sigma$. The resulting equation is:
 
 $$
@@ -60,10 +51,10 @@ $$
 Some authors have chosen to use the reciprocal of Equation for $\sigma$ and have defined the cavitation index as $k_c$ instead of $\sigma$. The equation defining $k_c$ is:
 
 $$
-k_c = \frac{1}{\sigma_{}} = \frac{\Delta P_{net}}{(P_1-P_v)} 
+k_c = \frac{1}{\sigma_{1}} = \frac{\Delta P_{net}}{(P_2-P_v)} 
 $$
 
-If you want to take into account the sigma cavitation parameter and the cavitation caused by surface roughness, an isolated roughness, an offset in the boundary or by any device for which it is not possible or convenient to evaluate a pressure differential then:
+If you want to add a factor of safety to the cavitation parameter $\sigma$ that includes the possible cavitation caused by any device for which it is not possible or convenient to evaluate a pressure differential close to the control valve, then:
 
 $$
 \frac{1}{\sigma_{}} + \frac{1}{\sigma_{2}} = \frac{\Delta P_{net}}{(P_1-P_v)} + \frac{(V^2/2g)}{(P_1-P_v)}
@@ -72,11 +63,13 @@ $$
 $$
 \frac{1}{\sigma_{3}} = \frac{1}{\sigma_{}} + \frac{1}{\sigma_{2}} = \frac{\Delta P_{net} + (V^2/2g)}{(P_1-P_v)}
 $$
+
 $$
 \sigma_{3} = \frac{(P_1-P_v)}{\Delta P_{net} + (V^2/2g)}
 $$
 
-## Evaluating Cavitation Limits
+
+## Evaluating the Cavitation Limits of the valve
 
 Cavitation causes noise, pressure fluctuations, vibrations, erosion damage, and in advanced stages, can reduce the valve's capacity. The acceptable cavitation level for a valve in a given system varies with valve type, valve function, details of the piping layout and duration of the operation. 
 
@@ -95,7 +88,7 @@ It is necessary to identify and provide experimental data for several levels of 
 
 
 
-## Maximum Flow 
+## Maximum Flow without fitings
 
 The maximum rate at which flow will pass through a control valve at choked flow [in $m^3/h$] conditions be calculated as follows:
 
@@ -116,11 +109,6 @@ $$
 
 
 ## Maximum Flow with flow limitation and with fitting
-
-![](./image/valve_with_fittings.png)
-
-
-
 
 $$
 Q_{max} = k_v \cdot F_{LP} \cdot F_R \cdot \sqrt{p_1 - F_F \cdot p_v}
