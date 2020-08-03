@@ -51,34 +51,56 @@ The flow rate of a fluid through a control valve is a function of the following 
 
 ## Nomenclature
 
-| Symbol        | Description                                          | 
-|:--------------|:-----------------------------------------------------|
-| $K_v$         | Valve flow coefficient                               |
-| $d$           | Valve inlet diameter                                 |
-| $DN$          | Internal diameter of the pipe                        |
-| $F_d$         | Valve style modifier                                 |
-| $F_F$         | Liquid critical pressure ratio factor, dimensionless |
-| $F_K$         | Ratio of specific heats factor, dimensionless        |
-| $F_L$         | Liquid pressure recovery factor of a valve without attached fittings, dimensionless |
-| $F_{LP}$      | Product of the liquid pressure recovery factor of a valve with attached fittings (no symbol has been identified) and the piping geometry factor, dimensionless |
-| $F_P$         | Piping geometry factor, dimensionless                |
-| $F_R$         | Reynolds number factor, dimensionless                |
-| $F_s$         | Laminar, or streamline, flow factor, dimensionless   |
-| $g$           | Local acceleration of gravity                        |
-| $p_1$         | Upstream **_absolute_** static pressure, measured two nominal pipe diameters upstream of valve-fitting assembly |
-| $p_2$         | Downstream **_absolute_** static pressure, measured six nominal pipe diameters downstream of valve-fitting assembly |
-| $\Delta P$    | Pressure differential, $(p_1 - p_2)$                 |
-| $P_c$         | Absolute thermodynamic critical pressure             |
-| $P_{vc}$      | Apparent absolute pressure at vena contracta         |
-| $q$           | Volumetric flow rate                                 |
-| $q_{max}$     | Maximum flow rate (choked flow conditions) at a given upstream condition |
-| $Re_v$        | Valve Reynolds number, dimensionless                 |
-| $T_1$         | Upstream temperature                                 |
-| $\gamma_{1} \; (Gamma)$ | Specific weight, upstream conditions       |
-| $\mu \; (mu)$           | Viscosity, absolute                        |
-| $\rho\; (rho)$          | Density                                    |
+| Symbol        | Description                                          | Units (notes) |
+|:--------------|:-----------------------------------------------------|:--------------|
+| $d$           | Valve inlet diameter                                 |mm|
+| $DN$          | Internal diameter of the pipe                        |mm|
+| $F_d$         | Valve style modifier                                 |dimensionless|
+| $F_F$         | Liquid critical pressure ratio factor, dimensionless |dimensionless|
+| $F_L$         | Liquid pressure recovery factor of a valve without attached fittings|dimensionless|
+| $F_{LP}$      | Product of the liquid pressure recovery factor of a valve with attached fittings (no symbol has been identified) and the piping geometry factor|dimensionless|
+| $F_P$         | Piping geometry factor, dimensionless                |dimensionless|
+| $F_R$         | Reynolds number factor, dimensionless                |dimensionless|
+| $K_c$         | coefficient of constant cavitation                   |dimensionless|
+| $g$           | Local acceleration of gravity                        |$m^2 / s$|
+| $K_v$         | Valve flow coefficient                               |$m^3/h$|
+| $p_1$         | Upstream **_absolute_** static pressure, measured two nominal pipe diameters upstream of valve-fitting assembly |$bar$ absolute|
+| $p_2$         | Downstream **_absolute_** static pressure, measured six nominal pipe diameters downstream of valve-fitting assembly |$bar$ absolute|
+| $P_c$         | Absolute thermodynamic critical pressure             |$bar$ absolute|
+| $P_v$         | Absolute vapor pressure of the liquid at inlet temperature |$bar$ absolute|
+| $P_{vc}$      | Apparent absolute pressure at vena contracta         |$bar$ absolute|
+| $\Delta{P}$   | pressure differential between upstream and downstream pressures $(p_1 - p_2)$ | $bar$|
+| $\Delta{P_{max}}$ | maximum allowable pressure differential for control valve sizing purposes for in-compressible fluids | $bar$|
+| $q$           | Volumetric flow rate                                 |$m^3/h$|
+| $q_{max}$     | Maximum flow rate (choked flow conditions) at a given upstream condition |$m^3/h$|
+| $Re_v$        | Valve Reynolds number                                |dimensionless|
+| $T_1$         | Upstream temperature (inlet absolute temperature)    |$K$|
+| $X$           | ratio of pressure differential to inlet absolute pressure| dimensionless|
+| $X_{cr}$      | ratio of pressure differential to inlet absolute pressure in critical conditions $(\Delta{p} / p_1)_{cr}$ | dimensionless |
+| $X_{FZ}$      | coefficient of incipient cavitation|dimensionless|
+| $\gamma_{1} \; (Gamma)$ | Specific weight, upstream conditions       ||
+| $\mu \; (mu)$           | dynamic viscosity, absolute                |$Pa \; s$|
+| $\rho_{0} \; (rho)$ | specific mass of water at 15.5 °C i.e. 999 $kg/m^3$   |$kg/m^3$|
+| $\rho_{1} \; (rho)$ | specific mass of fluid at $p_1$ and $T_1$  |$kg/m^3$|
+| $\rho_{0} / \rho_{1}$ | ratio of specific mass of fluid in upstream condition to specific mass of water at 15.5 °C  |dimensionless|
+| $\upsilon$| kinematic viscosity $(\upsilon= \mu / \rho )$|$m^2/s$|
+
 
 ## Terms and definitions {#definitions}
+
+- **cavitation:** A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure.
+
+- **cavitation coefficient:** A characteristic number for σ (e.g., $\sigma_{i}$, $\sigma_{c}$, $\sigma_{mv}$, $\sigma_{id}$, $\sigma_{ch}$), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur.
+
+- **cavitation index:** The value for the operating service conditions of a valve, expressed as $\sigma_{}$ and numerically equal to $(p_1 - p_v )/(p_1 - p_2 )$.
+
+- **cavitation level:** The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity $(k_v)$.
+
+- **choking cavitation:** A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate.
+
+- **duty cycle:** The ratio of the amount of time a valve spends performing one particular function to the valve's total installed time period. It may be expressed as a percentage of total time (service time vs. installed time).
+
+- **flashing:** A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure.
 
 - **Valve:** A valve is a device used for the control of fluid flow. It consists of a fluid retaining assembly, one or more ports between end openings and a movable closure member which opens, restricts or closes the port(s).
 

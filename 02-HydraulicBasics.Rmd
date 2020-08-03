@@ -11,28 +11,31 @@ $$
   - And the Velocity ist:
   
 $$
-  V = \frac{Q}{A} = \frac{4 \cdot Q}{\pi \cdot d^2} 
+  V = \frac{Q}{A} = \frac{4 \cdot q}{\pi \cdot d^2} 
 $$
 
   - therefore it is:
 
 $$
-  \frac{V^2}{2g} = \frac{8 \cdot Q^2}{g \cdot \pi^{2} \cdot d^4} 
+  \frac{V^2}{2g} = \frac{8 \cdot q^2}{g \cdot \pi^{2} \cdot d^4} 
 $$
 
 ## Energy Head
 
   - **Energy Head:** 
+  
 $$
   H = \frac{v^2}{2 \cdot g} + \frac{p}{\rho \cdot g} + z
 $$
 
   - **Beernoulli:**  
+  
   $$
   \frac{v_1^2}{2 \cdot g} + \frac{p_1}{\rho \cdot g} + z_1 = \frac{v_2^2}{2 \cdot g} + \frac{p_2}{\rho \cdot g} + z_2 + \Delta h_{ls}
   $$
 
   - **Hydraulic losses:** 
+  
   $$
   \Delta h_{ls} = H_1 - H_2 = h_{pl} + h_{ml}
   $$
@@ -40,11 +43,13 @@ $$
 ## Hydraulic Head losses
 
   - **Pipe friction losses (_Darcy-Weisbach equation_):** 
+  
   $$
   h_{pl} =  \left( f \cdot \frac{l}{d} \right) \cdot \left( \frac{v^2}{2 \cdot g} \right)
   $$
   
   - **Minor losses:** 
+  
   $$
   h_{ml} = \zeta_{l} \cdot \left( \frac{v^2}{2 \cdot g} \right)
   $$

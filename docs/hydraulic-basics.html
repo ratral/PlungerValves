@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-02" />
+<meta name="date" content="2020-08-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -88,16 +88,14 @@
 <li class="chapter" data-level="3.1" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#the-flow-coefficient-k_v"><i class="fa fa-check"></i><b>3.1</b> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></a></li>
 <li class="chapter" data-level="3.2" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#flow-coefficient-k_v-and-loss-coefficient-zeta_v"><i class="fa fa-check"></i><b>3.2</b> <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span> and <em>Loss Coefficient</em> <span class="math inline">\(\zeta_{v}\)</span></a></li>
 <li class="chapter" data-level="3.3" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#the-flow-basic-characteristic-curve."><i class="fa fa-check"></i><b>3.3</b> The flow basic characteristic curve.</a></li>
-<li class="chapter" data-level="3.4" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#zeta-value-in-function-of-the-k_v-characteristic-curve"><i class="fa fa-check"></i><b>3.4</b> Zeta value in function of the <span class="math inline">\(k_v\)</span> characteristic curve</a></li>
+<li class="chapter" data-level="3.4" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#zeta-value-in-function-of-the-k_vk_vs-characteristic-curve"><i class="fa fa-check"></i><b>3.4</b> Zeta value in function of the <span class="math inline">\(K_v/K_{vs}\)</span> characteristic curve</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>4</b> Quantifying the Cavitation Potential of the valve</a><ul>
-<li class="chapter" data-level="4.1" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html#sigma-values"><i class="fa fa-check"></i><b>4.1</b> Sigma Values</a></li>
+<li class="chapter" data-level="4" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html"><i class="fa fa-check"></i><b>4</b> Sizing equations for incompressible fluids</a><ul>
+<li class="chapter" data-level="4.1" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#maximum-flow-without-fitings"><i class="fa fa-check"></i><b>4.1</b> Maximum Flow without fitings</a></li>
+<li class="chapter" data-level="4.2" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>4.2</b> Maximum Flow with flow limitation and with fitting</a></li>
+<li class="chapter" data-level="4.3" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>4.3</b> Evaluating the Cavitation Limits of the valve</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="evaluating-the-cavitation-limits-of-the-valve.html"><a href="evaluating-the-cavitation-limits-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Evaluating the Cavitation Limits of the valve</a><ul>
-<li class="chapter" data-level="5.1" data-path="evaluating-the-cavitation-limits-of-the-valve.html"><a href="evaluating-the-cavitation-limits-of-the-valve.html#cavitation-and-flow"><i class="fa fa-check"></i><b>5.1</b> cavitation and flow</a></li>
-<li class="chapter" data-level="5.2" data-path="evaluating-the-cavitation-limits-of-the-valve.html"><a href="evaluating-the-cavitation-limits-of-the-valve.html#maximum-flow-without-fitings"><i class="fa fa-check"></i><b>5.2</b> Maximum Flow without fitings</a></li>
-<li class="chapter" data-level="5.3" data-path="evaluating-the-cavitation-limits-of-the-valve.html"><a href="evaluating-the-cavitation-limits-of-the-valve.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>5.3</b> Maximum Flow with flow limitation and with fitting</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Quantifying the Cavitation Potential of the valve</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -133,43 +131,51 @@ A = \frac{\pi \cdot d^2}{4}
 <li>And the Velocity ist:</li>
 </ul>
 <p><span class="math display">\[
-  V = \frac{Q}{A} = \frac{4 \cdot Q}{\pi \cdot d^2} 
+  V = \frac{Q}{A} = \frac{4 \cdot q}{\pi \cdot d^2} 
 \]</span></p>
 <ul>
 <li>therefore it is:</li>
 </ul>
 <p><span class="math display">\[
-  \frac{V^2}{2g} = \frac{8 \cdot Q^2}{g \cdot \pi^{2} \cdot d^4} 
+  \frac{V^2}{2g} = \frac{8 \cdot q^2}{g \cdot \pi^{2} \cdot d^4} 
 \]</span></p>
 </div>
 <div id="energy-head" class="section level2">
 <h2><span class="header-section-number">2.2</span> Energy Head</h2>
 <ul>
-<li><p><strong>Energy Head:</strong>
-<span class="math display">\[
-  H = \frac{v^2}{2 \cdot g} + \frac{p}{\rho \cdot g} + z
-\]</span></p></li>
-<li><p><strong>Beernoulli:</strong><br />
-<span class="math display">\[
-  \frac{v_1^2}{2 \cdot g} + \frac{p_1}{\rho \cdot g} + z_1 = \frac{v_2^2}{2 \cdot g} + \frac{p_2}{\rho \cdot g} + z_2 + \Delta h_{ls}
-  \]</span></p></li>
-<li><p><strong>Hydraulic losses:</strong>
-<span class="math display">\[
-  \Delta h_{ls} = H_1 - H_2 = h_{pl} + h_{ml}
-  \]</span></p></li>
+<li><strong>Energy Head:</strong></li>
 </ul>
+<p><span class="math display">\[
+  H = \frac{v^2}{2 \cdot g} + \frac{p}{\rho \cdot g} + z
+\]</span></p>
+<ul>
+<li><strong>Beernoulli:</strong></li>
+</ul>
+<p><span class="math display">\[
+  \frac{v_1^2}{2 \cdot g} + \frac{p_1}{\rho \cdot g} + z_1 = \frac{v_2^2}{2 \cdot g} + \frac{p_2}{\rho \cdot g} + z_2 + \Delta h_{ls}
+  \]</span></p>
+<ul>
+<li><strong>Hydraulic losses:</strong></li>
+</ul>
+<p><span class="math display">\[
+  \Delta h_{ls} = H_1 - H_2 = h_{pl} + h_{ml}
+  \]</span></p>
 </div>
 <div id="hydraulic-head-losses" class="section level2">
 <h2><span class="header-section-number">2.3</span> Hydraulic Head losses</h2>
 <ul>
-<li><p><strong>Pipe friction losses (<em>Darcy-Weisbach equation</em>):</strong>
-<span class="math display">\[
+<li><strong>Pipe friction losses (<em>Darcy-Weisbach equation</em>):</strong></li>
+</ul>
+<p><span class="math display">\[
   h_{pl} =  \left( f \cdot \frac{l}{d} \right) \cdot \left( \frac{v^2}{2 \cdot g} \right)
-  \]</span></p></li>
-<li><p><strong>Minor losses:</strong>
-<span class="math display">\[
+  \]</span></p>
+<ul>
+<li><strong>Minor losses:</strong></li>
+</ul>
+<p><span class="math display">\[
   h_{ml} = \zeta_{l} \cdot \left( \frac{v^2}{2 \cdot g} \right)
-  \]</span></p></li>
+  \]</span></p>
+<ul>
 <li><p><span class="math inline">\(\zeta_{l}\)</span> <strong>means (local) loss coefficient:</strong> is dimensionless, it is not correlated in the literature with the <em>Reynolds number</em> <span class="math inline">\((\mathit{Re})\)</span> and roughness ratio but rather simply with the raw size of the pipe. Almost all data are reported for turbulent-flow conditions.</p></li>
 <li><p>The Darcy friction factor, <span class="math inline">\(f\)</span>, is usually selected from a chart known as the <em>Moody diagram</em>. The <em>Moody diagram</em> is a family of curves that relate the friction factor, <span class="math inline">\(f\)</span>, to <em>Reynolds number</em>, <span class="math inline">\(Re\)</span>, and the relative roughness of a pipe, <span class="math inline">\(\varepsilon/d\)</span>.</p></li>
 </ul>

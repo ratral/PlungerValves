@@ -14,22 +14,50 @@ Do you need for the calculation of the valve flow factor ($k_{v}$) :
 
 ## _Flow coefficient_ $k_{v}$ and _Loss Coefficient_ $\zeta_{v}$ 
 
-  - With the test conditions ($\Delta p_0 = 1 \: bar$ and for water $\rho_{0} = \rho = 1000 \: kg/m3$) oss coefficient function is:
+The valve flow coefficient $k_v$ is defined as the number of cubic meters per hour of 5°C to 30°C water that will flow through a control valve at a specified position of the control valve (travel) $h$ with a differential pressure ($\Delta p=p_1-p_2$) of 105 Pa (1bar) across it.
 
-$$
-k_{v} = q \cdot \sqrt{\frac{1}{\Delta p }} = \frac{q}{\sqrt{\Delta p} }
-$$
+The standard conditions referred to in definitions of flow coefficients ($K_v$) are the following:
+
+  - flow in turbulent condition;
+  - no cavitation and vaporisation phenomena;
+  - valve diameter equal to pipe diameter;
+  - static pressure drop measured between upstream and downstream pressure taps;
+  - straight pipe lengths upstream and downstream the valve;
+  - Newtonian fluid.
+
+According to this European Standard, the flow rate characteristic parameter of a valve is the flow coefficient, $K_v$. The equation, the quantity subject to measurement and input quantities are the following.
+
+\begin{equation} 
+  K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}} 
+  (\#eq:Kv-01)
+\end{equation} 
+
+ - $\Delta P$ : operating pressure differential; 
+ - $q$ : flow rate for your application; 
+ - $\rho_{0}$ : Density of Liquids; 
+ - $d$ Nominal size 
+ - $K_v$: Flow $m^3/hour$ at $\Delta P = 1 \, bar$    
+ - and in some circumstances, temperature $T$. 
+
+
+\begin{equation} 
+  K_{v} = q \cdot \sqrt{\frac{1}{\Delta P }} = \frac{q}{\sqrt{\Delta P}}
+  (\#eq:Kv-02)
+\end{equation} 
 
  - If the $\zeta$ value of the valve is : 
 
-$$
-\zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{k_v}}}} \bigg)^2
-$$
-  - The $k_{v}$ in function of the $\zeta_{v}$ is:
+\begin{equation}
+  \zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2
+  (\#eq:zeta-01)
+\end{equation} 
+
+  - The $K_{v}$ in function of the $\zeta_{v}$ is:
   
-$$
-k_v = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta}}
-$$
+\begin{equation}
+  K_v = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta}}
+  (\#eq:Kv-03)  
+\end{equation} 
 
 
 ## The flow basic characteristic curve.
@@ -40,28 +68,39 @@ To perform a required flow characteristic curve, it is necessary to determine th
 
 A unique assignment assumes a constant differential pressure $\Delta p$ and a constant density $\rho$.
 
-If the characteristic curve is determined under unit conditions, referred to below as the *"basic characteristic curve"*.
+If the characteristic curve is determined under unit conditions, referred to below as the *"basic characteristic curve"*. The valve characteristic curve is a function of valve position (degree of opening) $vp$ in percentage. 
 
 The characteristic curve of a control valve is the dependence of the flow on the actuating path. If the characteristic curve is determined under unit conditions, then the flow rate is the $k_v$ value. 
 
-The basic characteristic of the control valves plus a cylinder  will be ($k_v/k_{vs}$) depending on the position of the valve ($pv$).
+The basic characteristic of the control valves plus a cylinder  will be ($K_v/K_{vs}$) depending on the position of the valve ($pv$).
 
-## Zeta value in function of the $k_v$ characteristic curve
+\begin{equation}
+  K_v/K_{vs} = f(vp\%)
+  (\#eq:Kv-Kvs)  
+\end{equation} 
+
+## Zeta value in function of the $K_v/K_{vs}$ characteristic curve
+
+If \@ref(eq:zeta-01) and \@ref(eq:Kv-03) for $K_{vs}$ then:
 
 $$
-\zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{k_v}}}} \bigg)^2 
+  \zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2 \: ; \: 
+  
+  K_{vs} = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
 $$
 
+and:
+
 $$
-k_{vs} = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
+K_{v} = f(vp\%) \cdot k_{vs}  = f(vp\%) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
 $$
-$$
-k_{v} = f(vp\%) \cdot k_{vs}  = f(vp\%) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
-$$
+
 
 $$
 \frac{1}{k_{v}^2} = \frac{\zeta_{vs}}{[f(vp\%)]^2} \cdot \frac{626.3}{d^4}
 $$
+
+then:
 
 $$
 \zeta_{v} = \frac{\zeta_{vs}}{[f(vp\%)]^2}

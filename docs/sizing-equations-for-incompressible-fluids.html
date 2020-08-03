@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Valves Hidraulic | Plunger Valves</title>
+  <title>Chapter 4 Sizing equations for incompressible fluids | Plunger Valves</title>
   <meta name="description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Valves Hidraulic | Plunger Valves" />
+  <meta property="og:title" content="Chapter 4 Sizing equations for incompressible fluids | Plunger Valves" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Valves Hidraulic | Plunger Valves" />
+  <meta name="twitter:title" content="Chapter 4 Sizing equations for incompressible fluids | Plunger Valves" />
   
   <meta name="twitter:description" content="In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="hydraulic-basics.html"/>
-<link rel="next" href="sizing-equations-for-incompressible-fluids.html"/>
+<link rel="prev" href="valves-hidraulic.html"/>
+<link rel="next" href="quantifying-the-cavitation-potential-of-the-valve.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -117,96 +117,57 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="valves-hidraulic" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Valves Hidraulic</h1>
-<div id="the-flow-coefficient-k_v" class="section level2">
-<h2><span class="header-section-number">3.1</span> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></h2>
-<p>Flow factor <span class="math inline">\(k_{v}\)</span> combines the effects of all flow restrictions in the valve into a single number.
-<span class="math inline">\(k_{v}\)</span> represents the flow of water with temperature ranging between <span class="math inline">\(5°C\)</span> and <span class="math inline">\(30°C\)</span> through a valve in cubic meters per hour with a pressure drop of <span class="math inline">\(1 bar\)</span>.</p>
-<p>Do you need for the calculation of the valve flow factor (<span class="math inline">\(k_{v}\)</span>) :</p>
-<ul>
-<li>operating pressure differential;</li>
-<li>flow rate for your application;</li>
-<li>Density of the fluid;</li>
-<li>and in some circumstances, temperature.</li>
-</ul>
+<div id="sizing-equations-for-incompressible-fluids" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Sizing equations for incompressible fluids</h1>
+<p>Sizing equations allow us to calculate a value of the flow coefficient starting from different operating conditions (the type of fluid, pressure drop, flow rate, type of flow, and installation) and making them mutually comparable as well as with the standard one. The equations outlined in this chapter are by the standards IEC 60534-2-1 and IEC 60534-2-3.</p>
+<p>In general actual flow rate, <span class="math inline">\(q_m\)</span> of a incompressible fluid through a valve is plotted in Figure 2 versus the square root of the pressure differential <span class="math inline">\(\sqrt{\Delta{P}}\)</span> under constant upstream conditions.</p>
+<div class="figure"><span id="fig:Flow-rate-diagram"></span>
+<img src="image/cavitation_flow.png" alt="Flow rate diagram of an incompressible fluid" width="380" />
+<p class="caption">
+Figure 4.1: Flow rate diagram of an incompressible fluid
+</p>
 </div>
-<div id="flow-coefficient-k_v-and-loss-coefficient-zeta_v" class="section level2">
-<h2><span class="header-section-number">3.2</span> <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span> and <em>Loss Coefficient</em> <span class="math inline">\(\zeta_{v}\)</span></h2>
-<p>The valve flow coefficient <span class="math inline">\(k_v\)</span> is defined as the number of cubic meters per hour of 5°C to 30°C water that will flow through a control valve at a specified position of the control valve (travel) <span class="math inline">\(h\)</span> with a differential pressure (<span class="math inline">\(\Delta p=p_1-p_2\)</span>) of 105 Pa (1bar) across it.</p>
-<p>The standard conditions referred to in definitions of flow coefficients (<span class="math inline">\(K_v\)</span>) are the following:</p>
-<ul>
-<li>flow in turbulent condition;</li>
-<li>no cavitation and vaporisation phenomena;</li>
-<li>valve diameter equal to pipe diameter;</li>
-<li>static pressure drop measured between upstream and downstream pressure taps;</li>
-<li>straight pipe lengths upstream and downstream the valve;</li>
-<li>Newtonian fluid.</li>
-</ul>
-<p>According to this European Standard, the flow rate characteristic parameter of a valve is the flow coefficient, <span class="math inline">\(K_v\)</span>. The equation, the quantity subject to measurement and input quantities are the following.</p>
-<p><span class="math display" id="eq:Kv-01">\[\begin{equation} 
-  K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}} 
-  \tag{3.1}
+<div id="maximum-flow-without-fitings" class="section level2">
+<h2><span class="header-section-number">4.1</span> Maximum Flow without fitings</h2>
+<p>The maximum rate at which flow will pass through a control valve at choked flow [in <span class="math inline">\(m^3/h\)</span>] conditions be calculated as follows:</p>
+<p><span class="math display" id="eq:Qmax-Without">\[\begin{equation} 
+  q_{max} = k_v \cdot F_{L} \cdot F_R \cdot \sqrt{p_1 - F_F \cdot p_v}
+  \tag{4.1}
 \end{equation}\]</span></p>
+<p>Where:</p>
 <ul>
-<li><span class="math inline">\(\Delta P\)</span> : operating pressure differential;</li>
-<li><span class="math inline">\(q\)</span> : flow rate for your application;</li>
-<li><span class="math inline">\(\rho_{0}\)</span> : Density of Liquids;</li>
-<li><span class="math inline">\(d\)</span> Nominal size</li>
-<li><span class="math inline">\(K_v\)</span>: Flow <span class="math inline">\(m^3/hour\)</span> at <span class="math inline">\(\Delta P = 1 \, bar\)</span><br />
-</li>
-<li>and in some circumstances, temperature <span class="math inline">\(T\)</span>.</li>
+<li><span class="math inline">\(F_R\)</span> is the Reynolds number factor</li>
+<li><span class="math inline">\(F_L \; and \; F_{LP}\)</span> are the Liquid pressure recovery factors</li>
+<li><span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</li>
 </ul>
-<p><span class="math display" id="eq:Kv-02">\[\begin{equation} 
-  K_{v} = q \cdot \sqrt{\frac{1}{\Delta P }} = \frac{q}{\sqrt{\Delta P}}
-  \tag{3.2}
-\end{equation}\]</span></p>
-<ul>
-<li>If the <span class="math inline">\(\zeta\)</span> value of the valve is :</li>
-</ul>
-<p><span class="math display" id="eq:zeta-01">\[\begin{equation}
-  \zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2
-  \tag{3.3}
-\end{equation}\]</span></p>
-<ul>
-<li>The <span class="math inline">\(K_{v}\)</span> in function of the <span class="math inline">\(\zeta_{v}\)</span> is:</li>
-</ul>
-<p><span class="math display" id="eq:Kv-03">\[\begin{equation}
-  K_v = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta}}
-  \tag{3.4}  
+<p><span class="math display" id="eq:Pmax-Without">\[\begin{equation} 
+  \Delta P_{max} = {F_L}^2 \cdot (p_1 - F_F \cdot p_v) 
+  \tag{4.2}
 \end{equation}\]</span></p>
 </div>
-<div id="the-flow-basic-characteristic-curve." class="section level2">
-<h2><span class="header-section-number">3.3</span> The flow basic characteristic curve.</h2>
-<p>The characteristic of a control valve is defined as the flow rate depending on the position of the valve. The control valve generates a change in the flow by changing the active area of piston <span class="math inline">\(A\)</span>.</p>
-<p>To perform a required flow characteristic curve, it is necessary to determine the characteristic opening curve that delivers the needed flow rate, taking into account the variable area of the cylinder area, according to the path of the regulating cylinder.</p>
-<p>A unique assignment assumes a constant differential pressure <span class="math inline">\(\Delta p\)</span> and a constant density <span class="math inline">\(\rho\)</span>.</p>
-<p>If the characteristic curve is determined under unit conditions, referred to below as the <em>“basic characteristic curve”</em>. The valve characteristic curve is a function of valve position (degree of opening) <span class="math inline">\(vp\)</span> in percentage.</p>
-<p>The characteristic curve of a control valve is the dependence of the flow on the actuating path. If the characteristic curve is determined under unit conditions, then the flow rate is the <span class="math inline">\(k_v\)</span> value.</p>
-<p>The basic characteristic of the control valves plus a cylinder will be (<span class="math inline">\(K_v/K_{vs}\)</span>) depending on the position of the valve (<span class="math inline">\(pv\)</span>).</p>
-<p><span class="math display" id="eq:Kv-Kvs">\[\begin{equation}
-  K_v/K_{vs} = f(vp\%)
-  \tag{3.5}  
+<div id="maximum-flow-with-flow-limitation-and-with-fitting" class="section level2">
+<h2><span class="header-section-number">4.2</span> Maximum Flow with flow limitation and with fitting</h2>
+<p><span class="math display" id="eq:Qmax-With">\[\begin{equation} 
+  Q_{max} = k_v \cdot F_{LP} \cdot F_R \cdot \sqrt{p_1 - F_F \cdot p_v}
+  \tag{4.3}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:Pmax-With">\[\begin{equation} 
+  \Delta P_{max} = {\left(\frac{F_{LP}}{F_P}\right)}^2 \cdot (P_1 - F_F \cdot p_v) 
+  \tag{4.4}
 \end{equation}\]</span></p>
 </div>
-<div id="zeta-value-in-function-of-the-k_vk_vs-characteristic-curve" class="section level2">
-<h2><span class="header-section-number">3.4</span> Zeta value in function of the <span class="math inline">\(K_v/K_{vs}\)</span> characteristic curve</h2>
-<p>If <a href="valves-hidraulic.html#eq:zeta-01">(3.3)</a> and <a href="valves-hidraulic.html#eq:Kv-03">(3.4)</a> for <span class="math inline">\(K_{vs}\)</span> then:</p>
-<p>$$
-_{v} = { ( {}} )^2 : ; :</p>
-<p>K_{vs} =  
-$$</p>
-<p>and:</p>
-<p><span class="math display">\[
-K_{v} = f(vp\%) \cdot k_{vs}  = f(vp\%) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
-\]</span></p>
-<p><span class="math display">\[
-\frac{1}{k_{v}^2} = \frac{\zeta_{vs}}{[f(vp\%)]^2} \cdot \frac{626.3}{d^4}
-\]</span></p>
-<p>then:</p>
-<p><span class="math display">\[
-\zeta_{v} = \frac{\zeta_{vs}}{[f(vp\%)]^2}
-\]</span></p>
+<div id="evaluating-the-cavitation-limits-of-the-valve" class="section level2">
+<h2><span class="header-section-number">4.3</span> Evaluating the Cavitation Limits of the valve</h2>
+<p>Cavitation causes noise, pressure fluctuations, vibrations, erosion damage, and in advanced stages, can reduce the valve’s capacity. The acceptable cavitation level for a valve in a given system varies with valve type, valve function, details of the piping layout and duration of the operation.</p>
+<p>It is necessary to identify and provide experimental data for several levels of cavitation intensity to have adequate information for analysis and design. There are defined six different cavitation design limits. The methods used to determine each limit experimentally are described, and suggestions are given as to when each limit might be appropriate. These limits are:</p>
+<ol style="list-style-type: decimal">
+<li>Incipient cavitation <span class="math inline">\(\sigma_{i}\)</span></li>
+<li>Critical (or constant) cavitation <span class="math inline">\(\sigma_{c}\)</span></li>
+<li>Incipient damage <span class="math inline">\(\sigma_{i_d}\)</span></li>
+<li>Incipient choking <span class="math inline">\(\sigma_{i_{ch}}\)</span> (or Kc)</li>
+<li>Choked flow <span class="math inline">\(\sigma_{ch}\)</span></li>
+<li>Maximum noise and vibration level <span class="math inline">\(\sigma_{max}\)</span></li>
+</ol>
 
 </div>
 </div>
@@ -215,8 +176,8 @@ K_{v} = f(vp\%) \cdot k_{vs}  = f(vp\%) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \f
           </div>
         </div>
       </div>
-<a href="hydraulic-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sizing-equations-for-incompressible-fluids.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="valves-hidraulic.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="quantifying-the-cavitation-potential-of-the-valve.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

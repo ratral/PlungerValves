@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-02" />
+<meta name="date" content="2020-08-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -88,16 +88,14 @@
 <li class="chapter" data-level="3.1" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#the-flow-coefficient-k_v"><i class="fa fa-check"></i><b>3.1</b> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></a></li>
 <li class="chapter" data-level="3.2" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#flow-coefficient-k_v-and-loss-coefficient-zeta_v"><i class="fa fa-check"></i><b>3.2</b> <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span> and <em>Loss Coefficient</em> <span class="math inline">\(\zeta_{v}\)</span></a></li>
 <li class="chapter" data-level="3.3" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#the-flow-basic-characteristic-curve."><i class="fa fa-check"></i><b>3.3</b> The flow basic characteristic curve.</a></li>
-<li class="chapter" data-level="3.4" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#zeta-value-in-function-of-the-k_v-characteristic-curve"><i class="fa fa-check"></i><b>3.4</b> Zeta value in function of the <span class="math inline">\(k_v\)</span> characteristic curve</a></li>
+<li class="chapter" data-level="3.4" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#zeta-value-in-function-of-the-k_vk_vs-characteristic-curve"><i class="fa fa-check"></i><b>3.4</b> Zeta value in function of the <span class="math inline">\(K_v/K_{vs}\)</span> characteristic curve</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>4</b> Quantifying the Cavitation Potential of the valve</a><ul>
-<li class="chapter" data-level="4.1" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html#sigma-values"><i class="fa fa-check"></i><b>4.1</b> Sigma Values</a></li>
+<li class="chapter" data-level="4" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html"><i class="fa fa-check"></i><b>4</b> Sizing equations for incompressible fluids</a><ul>
+<li class="chapter" data-level="4.1" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#maximum-flow-without-fitings"><i class="fa fa-check"></i><b>4.1</b> Maximum Flow without fitings</a></li>
+<li class="chapter" data-level="4.2" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>4.2</b> Maximum Flow with flow limitation and with fitting</a></li>
+<li class="chapter" data-level="4.3" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>4.3</b> Evaluating the Cavitation Limits of the valve</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="evaluating-the-cavitation-limits-of-the-valve.html"><a href="evaluating-the-cavitation-limits-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Evaluating the Cavitation Limits of the valve</a><ul>
-<li class="chapter" data-level="5.1" data-path="evaluating-the-cavitation-limits-of-the-valve.html"><a href="evaluating-the-cavitation-limits-of-the-valve.html#cavitation-and-flow"><i class="fa fa-check"></i><b>5.1</b> cavitation and flow</a></li>
-<li class="chapter" data-level="5.2" data-path="evaluating-the-cavitation-limits-of-the-valve.html"><a href="evaluating-the-cavitation-limits-of-the-valve.html#maximum-flow-without-fitings"><i class="fa fa-check"></i><b>5.2</b> Maximum Flow without fitings</a></li>
-<li class="chapter" data-level="5.3" data-path="evaluating-the-cavitation-limits-of-the-valve.html"><a href="evaluating-the-cavitation-limits-of-the-valve.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>5.3</b> Maximum Flow with flow limitation and with fitting</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Quantifying the Cavitation Potential of the valve</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -122,7 +120,7 @@
 <div id="header">
 <h1 class="title">Plunger Valves</h1>
 <p class="author"><em>Dr. Raúl Trujillo Álvarez</em></p>
-<p class="date"><em>2020-08-02</em></p>
+<p class="date"><em>2020-08-03</em></p>
 </div>
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
@@ -185,111 +183,172 @@
 <h2><span class="header-section-number">1.3</span> Nomenclature</h2>
 <table>
 <colgroup>
-<col width="21%" />
-<col width="78%" />
+<col width="17%" />
+<col width="64%" />
+<col width="17%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="left">Symbol</th>
 <th align="left">Description</th>
+<th align="left">Units (notes)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><span class="math inline">\(K_v\)</span></td>
-<td align="left">Valve flow coefficient</td>
-</tr>
-<tr class="even">
 <td align="left"><span class="math inline">\(d\)</span></td>
 <td align="left">Valve inlet diameter</td>
+<td align="left">mm</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><span class="math inline">\(DN\)</span></td>
 <td align="left">Internal diameter of the pipe</td>
-</tr>
-<tr class="even">
-<td align="left"><span class="math inline">\(F_d\)</span></td>
-<td align="left">Valve style modifier</td>
+<td align="left">mm</td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(F_F\)</span></td>
-<td align="left">Liquid critical pressure ratio factor, dimensionless</td>
+<td align="left"><span class="math inline">\(F_d\)</span></td>
+<td align="left">Valve style modifier</td>
+<td align="left">dimensionless</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(F_K\)</span></td>
-<td align="left">Ratio of specific heats factor, dimensionless</td>
+<td align="left"><span class="math inline">\(F_F\)</span></td>
+<td align="left">Liquid critical pressure ratio factor, dimensionless</td>
+<td align="left">dimensionless</td>
 </tr>
 <tr class="odd">
 <td align="left"><span class="math inline">\(F_L\)</span></td>
-<td align="left">Liquid pressure recovery factor of a valve without attached fittings, dimensionless</td>
+<td align="left">Liquid pressure recovery factor of a valve without attached fittings</td>
+<td align="left">dimensionless</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(F_{LP}\)</span></td>
-<td align="left">Product of the liquid pressure recovery factor of a valve with attached fittings (no symbol has been identified) and the piping geometry factor, dimensionless</td>
+<td align="left">Product of the liquid pressure recovery factor of a valve with attached fittings (no symbol has been identified) and the piping geometry factor</td>
+<td align="left">dimensionless</td>
 </tr>
 <tr class="odd">
 <td align="left"><span class="math inline">\(F_P\)</span></td>
 <td align="left">Piping geometry factor, dimensionless</td>
+<td align="left">dimensionless</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(F_R\)</span></td>
 <td align="left">Reynolds number factor, dimensionless</td>
+<td align="left">dimensionless</td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(F_s\)</span></td>
-<td align="left">Laminar, or streamline, flow factor, dimensionless</td>
+<td align="left"><span class="math inline">\(K_c\)</span></td>
+<td align="left">coefficient of constant cavitation</td>
+<td align="left">dimensionless</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(g\)</span></td>
 <td align="left">Local acceleration of gravity</td>
+<td align="left"><span class="math inline">\(m^2 / s\)</span></td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(p_1\)</span></td>
-<td align="left">Upstream <strong><em>absolute</em></strong> static pressure, measured two nominal pipe diameters upstream of valve-fitting assembly</td>
+<td align="left"><span class="math inline">\(K_v\)</span></td>
+<td align="left">Valve flow coefficient</td>
+<td align="left"><span class="math inline">\(m^3/h\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(p_2\)</span></td>
-<td align="left">Downstream <strong><em>absolute</em></strong> static pressure, measured six nominal pipe diameters downstream of valve-fitting assembly</td>
+<td align="left"><span class="math inline">\(p_1\)</span></td>
+<td align="left">Upstream <strong><em>absolute</em></strong> static pressure, measured two nominal pipe diameters upstream of valve-fitting assembly</td>
+<td align="left"><span class="math inline">\(bar\)</span> absolute</td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(\Delta P\)</span></td>
-<td align="left">Pressure differential, <span class="math inline">\((p_1 - p_2)\)</span></td>
+<td align="left"><span class="math inline">\(p_2\)</span></td>
+<td align="left">Downstream <strong><em>absolute</em></strong> static pressure, measured six nominal pipe diameters downstream of valve-fitting assembly</td>
+<td align="left"><span class="math inline">\(bar\)</span> absolute</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(P_c\)</span></td>
 <td align="left">Absolute thermodynamic critical pressure</td>
+<td align="left"><span class="math inline">\(bar\)</span> absolute</td>
 </tr>
 <tr class="odd">
+<td align="left"><span class="math inline">\(P_v\)</span></td>
+<td align="left">Absolute vapor pressure of the liquid at inlet temperature</td>
+<td align="left"><span class="math inline">\(bar\)</span> absolute</td>
+</tr>
+<tr class="even">
 <td align="left"><span class="math inline">\(P_{vc}\)</span></td>
 <td align="left">Apparent absolute pressure at vena contracta</td>
+<td align="left"><span class="math inline">\(bar\)</span> absolute</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\Delta{P}\)</span></td>
+<td align="left">pressure differential between upstream and downstream pressures <span class="math inline">\((p_1 - p_2)\)</span></td>
+<td align="left"><span class="math inline">\(bar\)</span></td>
 </tr>
 <tr class="even">
+<td align="left"><span class="math inline">\(\Delta{P_{max}}\)</span></td>
+<td align="left">maximum allowable pressure differential for control valve sizing purposes for in-compressible fluids</td>
+<td align="left"><span class="math inline">\(bar\)</span></td>
+</tr>
+<tr class="odd">
 <td align="left"><span class="math inline">\(q\)</span></td>
 <td align="left">Volumetric flow rate</td>
-</tr>
-<tr class="odd">
-<td align="left"><span class="math inline">\(q_{max}\)</span></td>
-<td align="left">Maximum flow rate (choked flow conditions) at a given upstream condition</td>
+<td align="left"><span class="math inline">\(m^3/h\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(Re_v\)</span></td>
-<td align="left">Valve Reynolds number, dimensionless</td>
+<td align="left"><span class="math inline">\(q_{max}\)</span></td>
+<td align="left">Maximum flow rate (choked flow conditions) at a given upstream condition</td>
+<td align="left"><span class="math inline">\(m^3/h\)</span></td>
 </tr>
 <tr class="odd">
+<td align="left"><span class="math inline">\(Re_v\)</span></td>
+<td align="left">Valve Reynolds number</td>
+<td align="left">dimensionless</td>
+</tr>
+<tr class="even">
 <td align="left"><span class="math inline">\(T_1\)</span></td>
-<td align="left">Upstream temperature</td>
+<td align="left">Upstream temperature (inlet absolute temperature)</td>
+<td align="left"><span class="math inline">\(K\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(X\)</span></td>
+<td align="left">ratio of pressure differential to inlet absolute pressure</td>
+<td align="left">dimensionless</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(X_{cr}\)</span></td>
+<td align="left">ratio of pressure differential to inlet absolute pressure in critical conditions <span class="math inline">\((\Delta{p} / p_1)_{cr}\)</span></td>
+<td align="left">dimensionless</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(X_{FZ}\)</span></td>
+<td align="left">coefficient of incipient cavitation</td>
+<td align="left">dimensionless</td>
 </tr>
 <tr class="even">
 <td align="left"><span class="math inline">\(\gamma_{1} \; (Gamma)\)</span></td>
 <td align="left">Specific weight, upstream conditions</td>
+<td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left"><span class="math inline">\(\mu \; (mu)\)</span></td>
-<td align="left">Viscosity, absolute</td>
+<td align="left">dynamic viscosity, absolute</td>
+<td align="left"><span class="math inline">\(Pa \; s\)</span></td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(\rho\; (rho)\)</span></td>
-<td align="left">Density</td>
+<td align="left"><span class="math inline">\(\rho_{0} \; (rho)\)</span></td>
+<td align="left">specific mass of water at 15.5 °C i.e. 999 <span class="math inline">\(kg/m^3\)</span></td>
+<td align="left"><span class="math inline">\(kg/m^3\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\rho_{1} \; (rho)\)</span></td>
+<td align="left">specific mass of fluid at <span class="math inline">\(p_1\)</span> and <span class="math inline">\(T_1\)</span></td>
+<td align="left"><span class="math inline">\(kg/m^3\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\rho_{0} / \rho_{1}\)</span></td>
+<td align="left">ratio of specific mass of fluid in upstream condition to specific mass of water at 15.5 °C</td>
+<td align="left">dimensionless</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\upsilon\)</span></td>
+<td align="left">kinematic viscosity <span class="math inline">\((\upsilon= \mu / \rho )\)</span></td>
+<td align="left"><span class="math inline">\(m^2/s\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -297,6 +356,13 @@
 <div id="definitions" class="section level2">
 <h2><span class="header-section-number">1.4</span> Terms and definitions</h2>
 <ul>
+<li><p><strong>cavitation:</strong> A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure.</p></li>
+<li><p><strong>cavitation coefficient:</strong> A characteristic number for σ (e.g., <span class="math inline">\(\sigma_{i}\)</span>, <span class="math inline">\(\sigma_{c}\)</span>, <span class="math inline">\(\sigma_{mv}\)</span>, <span class="math inline">\(\sigma_{id}\)</span>, <span class="math inline">\(\sigma_{ch}\)</span>), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur.</p></li>
+<li><p><strong>cavitation index:</strong> The value for the operating service conditions of a valve, expressed as <span class="math inline">\(\sigma_{}\)</span> and numerically equal to <span class="math inline">\((p_1 - p_v )/(p_1 - p_2 )\)</span>.</p></li>
+<li><p><strong>cavitation level:</strong> The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity <span class="math inline">\((k_v)\)</span>.</p></li>
+<li><p><strong>choking cavitation:</strong> A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate.</p></li>
+<li><p><strong>duty cycle:</strong> The ratio of the amount of time a valve spends performing one particular function to the valve’s total installed time period. It may be expressed as a percentage of total time (service time vs. installed time).</p></li>
+<li><p><strong>flashing:</strong> A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure.</p></li>
 <li><p><strong>Valve:</strong> A valve is a device used for the control of fluid flow. It consists of a fluid retaining assembly, one or more ports between end openings and a movable closure member which opens, restricts or closes the port(s).</p></li>
 <li><p><strong>Control valve:</strong> A operated (manual or powered) device which modifies the fluid flow rate in a process control system. It consists of a valve connected to an actuator mechanism that is capable of changing the position of a flow controlling element in the valve in response to a signal from the controlling system.</p></li>
 </ul>
