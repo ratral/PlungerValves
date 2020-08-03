@@ -1,5 +1,5 @@
 --- 
-title: "Plunger Valves"
+title: "Plunger Valves (UNDER CONSTRUCTION!!!)"
 author: "Dr. Raúl Trujillo Álvarez"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -21,3 +21,6 @@ description: "In this documentation, I want to clarify a systematic method for t
   knitr::write_bib(c( .packages(), 
                       'bookdown', 'knitr', 'rmarkdown'), 'packages.bib')
 ```
+
+
+The online version of this book is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
