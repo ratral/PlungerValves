@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-03" />
+<meta name="date" content="2020-08-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -124,57 +124,65 @@
 <ul>
 <li>If the Area for pipes is equal to:</li>
 </ul>
-<p><span class="math display">\[
-A = \frac{\pi \cdot d^2}{4}
-\]</span></p>
+<p><span class="math display" id="eq:pipe-area">\[\begin{equation} 
+  A = \frac{\pi \cdot d^2}{4}
+  \tag{2.1}
+\end{equation}\]</span></p>
 <ul>
 <li>And the Velocity ist:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:velocity">\[\begin{equation} 
   V = \frac{Q}{A} = \frac{4 \cdot q}{\pi \cdot d^2} 
-\]</span></p>
+  \tag{2.2}
+\end{equation}\]</span></p>
 <ul>
 <li>therefore it is:</li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:energy-velocity">\[\begin{equation}
   \frac{V^2}{2g} = \frac{8 \cdot q^2}{g \cdot \pi^{2} \cdot d^4} 
-\]</span></p>
+  \tag{2.3}
+\end{equation}\]</span></p>
 </div>
 <div id="energy-head" class="section level2">
 <h2><span class="header-section-number">2.2</span> Energy Head</h2>
 <ul>
 <li><strong>Energy Head:</strong></li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:energy-heady">\[\begin{equation}
   H = \frac{v^2}{2 \cdot g} + \frac{p}{\rho \cdot g} + z
-\]</span></p>
+  \tag{2.4}
+\end{equation}\]</span></p>
 <ul>
-<li><strong>Beernoulli:</strong></li>
+<li><strong>Bernoulli energy equation:</strong></li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:bernoulli">\[\begin{equation}
   \frac{v_1^2}{2 \cdot g} + \frac{p_1}{\rho \cdot g} + z_1 = \frac{v_2^2}{2 \cdot g} + \frac{p_2}{\rho \cdot g} + z_2 + \Delta h_{ls}
-  \]</span></p>
+  \tag{2.5}
+\end{equation}\]</span></p>
 <ul>
 <li><strong>Hydraulic losses:</strong></li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:hydraulic-losse">\[\begin{equation}
   \Delta h_{ls} = H_1 - H_2 = h_{pl} + h_{ml}
-  \]</span></p>
+  \tag{2.6}
+\end{equation}\]</span></p>
 </div>
 <div id="hydraulic-head-losses" class="section level2">
 <h2><span class="header-section-number">2.3</span> Hydraulic Head losses</h2>
 <ul>
 <li><strong>Pipe friction losses (<em>Darcy-Weisbach equation</em>):</strong></li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:darcy-weisbach">\[\begin{equation}
   h_{pl} =  \left( f \cdot \frac{l}{d} \right) \cdot \left( \frac{v^2}{2 \cdot g} \right)
-  \]</span></p>
+  \tag{2.7}
+\end{equation}\]</span></p>
 <ul>
 <li><strong>Minor losses:</strong></li>
 </ul>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:minor-losses">\[\begin{equation}
   h_{ml} = \zeta_{l} \cdot \left( \frac{v^2}{2 \cdot g} \right)
-  \]</span></p>
+  \tag{2.8}
+\end{equation}\]</span></p>
 <ul>
 <li><p><span class="math inline">\(\zeta_{l}\)</span> <strong>means (local) loss coefficient:</strong> is dimensionless, it is not correlated in the literature with the <em>Reynolds number</em> <span class="math inline">\((\mathit{Re})\)</span> and roughness ratio but rather simply with the raw size of the pipe. Almost all data are reported for turbulent-flow conditions.</p></li>
 <li><p>The Darcy friction factor, <span class="math inline">\(f\)</span>, is usually selected from a chart known as the <em>Moody diagram</em>. The <em>Moody diagram</em> is a family of curves that relate the friction factor, <span class="math inline">\(f\)</span>, to <em>Reynolds number</em>, <span class="math inline">\(Re\)</span>, and the relative roughness of a pipe, <span class="math inline">\(\varepsilon/d\)</span>.</p></li>
@@ -183,36 +191,50 @@ A = \frac{\pi \cdot d^2}{4}
 <div id="darcy-friction-factor-formula" class="section level2">
 <h2><span class="header-section-number">2.4</span> Darcy Friction Factor Formula</h2>
 <ul>
-<li><p><strong>the friction factor <span class="math inline">\(f\)</span> depends on Reynolds number and relativa roughness:</strong>
-<span class="math display">\[
-   f= \varphi (Re, \varepsilon/d)
-   \]</span></p></li>
-<li><p><strong>The Colebrook equation is the most widely used equation to solve the Darcy friction factor:</strong>
-<span class="math display">\[
-   \frac{1}{\sqrt{f}} =-2.0 \; log \left( \frac{\varepsilon/d}{3.7} + \frac{2.51}{Re \sqrt{f}} \right)
-   \]</span></p></li>
-<li><p><strong><em>Reynolds number</em> (<span class="math inline">\(Re\)</span>): is the Principal parameter used to specify the type of flow regime.</strong>
-<span class="math display">\[
-   Re = \frac{v \cdot d}{\nu} =  \frac{4 \cdot q}{\pi \cdot d \cdot \nu}
-   \]</span></p></li>
+<li><strong>the friction factor <span class="math inline">\(f\)</span> depends on Reynolds number and relativa roughness:</strong></li>
 </ul>
+<p><span class="math display" id="eq:friction-factor">\[\begin{equation}
+   f= \varphi (Re, \varepsilon/d)
+  \tag{2.9}
+\end{equation}\]</span></p>
+<ul>
+<li><strong>The Colebrook equation is the most widely used equation to solve the Darcy friction factor:</strong></li>
+</ul>
+<p><span class="math display" id="eq:Colebrook">\[\begin{equation}
+   \frac{1}{\sqrt{f}} =-2.0 \; log \left( \frac{\varepsilon/d}{3.7} + \frac{2.51}{Re \sqrt{f}} \right)
+  \tag{2.10}
+\end{equation}\]</span></p>
+<ul>
+<li><strong><em>Reynolds number</em> (<span class="math inline">\(Re\)</span>): is the Principal parameter used to specify the type of flow regime.</strong></li>
+</ul>
+<p><span class="math display" id="eq:reynolds-number">\[\begin{equation}
+   Re = \frac{v \cdot d}{\nu} =  \frac{4 \cdot q}{\pi \cdot d \cdot \nu}
+  \tag{2.11}
+\end{equation}\]</span></p>
 </div>
 <div id="calculation-of-the-friction-factor" class="section level2">
 <h2><span class="header-section-number">2.5</span> Calculation of the friction factor</h2>
 <ul>
-<li><p><strong>Equation of Swammee and Jain (1976):</strong>
-<span class="math display">\[
-  \frac{1}{\sqrt{f}} = -2 \cdot log \left( \frac{\varepsilon}{3.7} + \frac{5.74}{Re^{0.9}} \right)
-  \]</span></p></li>
-<li><p><strong>Equation of Haaland (1983):</strong><br />
-<span class="math display">\[
-  \frac{1}{\sqrt{f}} = -1.8 \cdot log \left( \left( \frac{\varepsilon}{3.7}\right)^{1.11} + \frac{6.9}{Re} \right)
-  \]</span></p></li>
-<li><p><strong>Equation of Zigrang and Sylvester (1982):</strong>
-<span class="math display">\[
-  \frac{1}{\sqrt{f}} = -2 \cdot log \left[ \frac{\varepsilon}{3.7} - \frac{5.02}{Re}  \cdot log \left( \varepsilon - \frac{5.02}{Re}  \cdot log \left(\frac{\varepsilon}{3.7}+ \frac{13}{Re} \right) \right) \right]
-  \]</span></p></li>
+<li><strong>Equation of Swammee and Jain (1976):</strong></li>
 </ul>
+<p><span class="math display" id="eq:swammee">\[\begin{equation}
+  \frac{1}{\sqrt{f}} = -2 \cdot log \left( \frac{\varepsilon}{3.7} + \frac{5.74}{Re^{0.9}} \right)
+  \tag{2.12}
+\end{equation}\]</span></p>
+<ul>
+<li><strong>Equation of Haaland (1983):</strong></li>
+</ul>
+<p><span class="math display" id="eq:haaland">\[\begin{equation}
+  \frac{1}{\sqrt{f}} = -1.8 \cdot log \left( \left( \frac{\varepsilon}{3.7}\right)^{1.11} + \frac{6.9}{Re} \right)
+  \tag{2.13}
+\end{equation}\]</span></p>
+<ul>
+<li><strong>Equation of Zigrang and Sylvester (1982):</strong></li>
+</ul>
+<p><span class="math display" id="eq:zigrang">\[\begin{equation}
+  \frac{1}{\sqrt{f}} = -2 \cdot log \left[ \frac{\varepsilon}{3.7} - \frac{5.02}{Re}  \cdot log \left( \varepsilon - \frac{5.02}{Re}  \cdot log \left(\frac{\varepsilon}{3.7}+ \frac{13}{Re} \right) \right) \right]
+  \tag{2.14}
+\end{equation}\]</span></p>
 </div>
 <div id="roughness-coefficient-varepsilon-of-the-pipe-in-mm" class="section level2">
 <h2><span class="header-section-number">2.6</span> Roughness coefficient <span class="math inline">\(\varepsilon\)</span> of the pipe in mm</h2>

@@ -72,12 +72,30 @@ If the characteristic curve is determined under unit conditions, referred to bel
 
 The characteristic curve of a control valve is the dependence of the flow on the actuating path. If the characteristic curve is determined under unit conditions, then the flow rate is the $k_v$ value. 
 
-The basic characteristic of the control valves plus a cylinder  will be ($K_v/K_{vs}$) depending on the position of the valve ($pv$).
+The basic characteristic of the control valves plus a cylinder  will be ($K_v/K_{vs}$) depending on the position of the valve ($pv$). For the most precise interpretation in the function, we will use $x = valve \; position$ to define the valve position.
 
 \begin{equation}
-  K_v/K_{vs} = f(vp\%)
-  (\#eq:Kv-Kvs)  
+  K_v/K_{vs} = f(x, (b, d, e))
+  (\#eq:characteristic-curve)  
 \end{equation} 
+
+In this document, the characteristic curves are approximated by means of the  Dose-Response Analysis ($dcr$).  Dose-response models are regression models where the independent variable referred to as the dose, or in our case, the opening degree of a valve. In contrast, the dependent variable is generally referred to as response or effect. 
+
+The full specification of a statistical dose-response (regression) model involves specifying how the mean is described by a parametric function of dose (valve position) as well as assumptions about the distribution of the response ($K_v$).
+
+A large number of more or less well-known model functions are builtin in $drc$.  These models are parameterized using a unified structure with the coefficients: 
+
+  - $b$ denoting the steepness of the dose-response curve, 
+  - $c$ (in this case 0) and $d$ the lower and upper asymptotes or limits of the response, and, 
+  - for some models, $e$ the effective dose. 
+
+By far the log-logistic models are the most used dose-response models. The four-parameter log-logistic model corresponds to the model function:
+
+\begin{equation}
+  f(x, (b, d, e)) =  \frac{d}{1 + \exp( b \cdot (\log{x} - \log{e}))}
+  (\#eq:Dose-response-model)  
+\end{equation} 
+
 
 ## Zeta value in function of the $K_v/K_{vs}$ characteristic curve
 
@@ -86,26 +104,30 @@ If \@ref(eq:zeta-01) and \@ref(eq:Kv-03) for $K_{vs}$ then:
 $$
   \zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2 \: ; \: 
   
-  K_{vs} = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
+  K_{v} = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{v}}}
 $$
 
-and:
+if
 
 $$
-K_{v} = f(vp\%) \cdot k_{vs}  = f(vp\%) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
+K_{v} = f(x, (b, d, e)) \cdot K_{vs} \\ K_{v} = f(x, (b, d, e)) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
 $$
+then
+
+$$
+\frac{1}{K_{v}^2} = \frac{\zeta_{vs}}{[f(x, (b, d, e))]^2} \cdot \frac{626.3}{d^4} \\
+
+{\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2 = \frac{\zeta_{vs}}{[f(vp\%)]^2}
 
 
-$$
-\frac{1}{k_{v}^2} = \frac{\zeta_{vs}}{[f(vp\%)]^2} \cdot \frac{626.3}{d^4}
 $$
 
 then:
 
-$$
-\zeta_{v} = \frac{\zeta_{vs}}{[f(vp\%)]^2}
-$$
-
+\begin{equation}
+  \zeta_{v} = \frac{\zeta_{vs}}{[f(x, (b, d, e))]^2}
+  (\#eq:zeta-02)
+\end{equation} 
 
 
 

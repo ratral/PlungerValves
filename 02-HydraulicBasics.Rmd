@@ -4,55 +4,63 @@
 
  - If the Area for pipes is equal to: 
 
-$$
-A = \frac{\pi \cdot d^2}{4}
-$$
+\begin{equation} 
+  A = \frac{\pi \cdot d^2}{4}
+  (\#eq:pipe-area)
+\end{equation}
   
   - And the Velocity ist:
   
-$$
+\begin{equation} 
   V = \frac{Q}{A} = \frac{4 \cdot q}{\pi \cdot d^2} 
-$$
+  (\#eq:velocity)
+\end{equation}
 
   - therefore it is:
 
-$$
+\begin{equation}
   \frac{V^2}{2g} = \frac{8 \cdot q^2}{g \cdot \pi^{2} \cdot d^4} 
-$$
+  (\#eq:energy-velocity)
+\end{equation}
 
 ## Energy Head
 
   - **Energy Head:** 
   
-$$
+\begin{equation}
   H = \frac{v^2}{2 \cdot g} + \frac{p}{\rho \cdot g} + z
-$$
+  (\#eq:energy-heady)
+\end{equation}
 
-  - **Beernoulli:**  
+  - **Bernoulli energy equation:**  
   
-  $$
+\begin{equation}
   \frac{v_1^2}{2 \cdot g} + \frac{p_1}{\rho \cdot g} + z_1 = \frac{v_2^2}{2 \cdot g} + \frac{p_2}{\rho \cdot g} + z_2 + \Delta h_{ls}
-  $$
+  (\#eq:bernoulli)
+\end{equation}
 
   - **Hydraulic losses:** 
   
-  $$
+\begin{equation}
   \Delta h_{ls} = H_1 - H_2 = h_{pl} + h_{ml}
-  $$
+  (\#eq:hydraulic-losse)
+\end{equation}
   
 ## Hydraulic Head losses
 
   - **Pipe friction losses (_Darcy-Weisbach equation_):** 
   
-  $$
+\begin{equation}
   h_{pl} =  \left( f \cdot \frac{l}{d} \right) \cdot \left( \frac{v^2}{2 \cdot g} \right)
-  $$
+  (\#eq:darcy-weisbach)
+\end{equation}
   
   - **Minor losses:** 
   
-  $$
+\begin{equation}
   h_{ml} = \zeta_{l} \cdot \left( \frac{v^2}{2 \cdot g} \right)
-  $$
+  (\#eq:minor-losses)
+\end{equation}
     
  - $\zeta_{l}$ **means (local) loss coefficient:**  is dimensionless, it is not correlated in the literature with the _Reynolds number_ $(\mathit{Re})$ and roughness ratio but rather simply with the raw size of the pipe. Almost all data are reported for turbulent-flow conditions.
  
@@ -61,38 +69,51 @@ $$
 ## Darcy Friction Factor Formula
 
    - **the friction factor $f$ depends on Reynolds number and relativa roughness:** 
-   $$
+
+\begin{equation}
    f= \varphi (Re, \varepsilon/d)
-   $$
+  (\#eq:friction-factor)
+\end{equation}
   
    - **The Colebrook equation is the most widely used equation to solve the Darcy friction factor:**
-   $$
+
+\begin{equation}
    \frac{1}{\sqrt{f}} =-2.0 \; log \left( \frac{\varepsilon/d}{3.7} + \frac{2.51}{Re \sqrt{f}} \right)
-   $$
+  (\#eq:Colebrook)
+\end{equation}
 
    - **_Reynolds number_ ($Re$): is the Principal parameter used to specify the type of flow regime.** 
-   $$
+
+\begin{equation}
    Re = \frac{v \cdot d}{\nu} =  \frac{4 \cdot q}{\pi \cdot d \cdot \nu}
-   $$
+  (\#eq:reynolds-number)
+\end{equation}
     
     
     
 ## Calculation of the friction factor
 
   - **Equation of Swammee and Jain (1976):** 
-  $$
+
+\begin{equation}
   \frac{1}{\sqrt{f}} = -2 \cdot log \left( \frac{\varepsilon}{3.7} + \frac{5.74}{Re^{0.9}} \right)
-  $$
+  (\#eq:swammee)
+\end{equation}
 
   - **Equation of Haaland (1983):**  
-  $$
+
+\begin{equation}
   \frac{1}{\sqrt{f}} = -1.8 \cdot log \left( \left( \frac{\varepsilon}{3.7}\right)^{1.11} + \frac{6.9}{Re} \right)
-  $$
+  (\#eq:haaland)
+\end{equation}
+
 
   - **Equation of Zigrang and Sylvester (1982):** 
-  $$
+
+\begin{equation}
   \frac{1}{\sqrt{f}} = -2 \cdot log \left[ \frac{\varepsilon}{3.7} - \frac{5.02}{Re}  \cdot log \left( \varepsilon - \frac{5.02}{Re}  \cdot log \left(\frac{\varepsilon}{3.7}+ \frac{13}{Re} \right) \right) \right]
-  $$
+  (\#eq:zigrang)
+\end{equation}
   
 
 ## Roughness coefficient $\varepsilon$ of the pipe in mm

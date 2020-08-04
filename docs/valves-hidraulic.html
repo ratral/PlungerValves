@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-03" />
+<meta name="date" content="2020-08-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -183,10 +183,23 @@
 <p>A unique assignment assumes a constant differential pressure <span class="math inline">\(\Delta p\)</span> and a constant density <span class="math inline">\(\rho\)</span>.</p>
 <p>If the characteristic curve is determined under unit conditions, referred to below as the <em>“basic characteristic curve”</em>. The valve characteristic curve is a function of valve position (degree of opening) <span class="math inline">\(vp\)</span> in percentage.</p>
 <p>The characteristic curve of a control valve is the dependence of the flow on the actuating path. If the characteristic curve is determined under unit conditions, then the flow rate is the <span class="math inline">\(k_v\)</span> value.</p>
-<p>The basic characteristic of the control valves plus a cylinder will be (<span class="math inline">\(K_v/K_{vs}\)</span>) depending on the position of the valve (<span class="math inline">\(pv\)</span>).</p>
-<p><span class="math display" id="eq:Kv-Kvs">\[\begin{equation}
-  K_v/K_{vs} = f(vp\%)
+<p>The basic characteristic of the control valves plus a cylinder will be (<span class="math inline">\(K_v/K_{vs}\)</span>) depending on the position of the valve (<span class="math inline">\(pv\)</span>). For the most precise interpretation in the function, we will use <span class="math inline">\(x = valve \; position\)</span> to define the valve position.</p>
+<p><span class="math display" id="eq:characteristic-curve">\[\begin{equation}
+  K_v/K_{vs} = f(x, (b, d, e))
   \tag{3.5}  
+\end{equation}\]</span></p>
+<p>In this document, the characteristic curves are approximated by means of the Dose-Response Analysis (<span class="math inline">\(dcr\)</span>). Dose-response models are regression models where the independent variable referred to as the dose, or in our case, the opening degree of a valve. In contrast, the dependent variable is generally referred to as response or effect.</p>
+<p>The full specification of a statistical dose-response (regression) model involves specifying how the mean is described by a parametric function of dose (valve position) as well as assumptions about the distribution of the response (<span class="math inline">\(K_v\)</span>).</p>
+<p>A large number of more or less well-known model functions are builtin in <span class="math inline">\(drc\)</span>. These models are parameterized using a unified structure with the coefficients:</p>
+<ul>
+<li><span class="math inline">\(b\)</span> denoting the steepness of the dose-response curve,</li>
+<li><span class="math inline">\(c\)</span> (in this case 0) and <span class="math inline">\(d\)</span> the lower and upper asymptotes or limits of the response, and,</li>
+<li>for some models, <span class="math inline">\(e\)</span> the effective dose.</li>
+</ul>
+<p>By far the log-logistic models are the most used dose-response models. The four-parameter log-logistic model corresponds to the model function:</p>
+<p><span class="math display" id="eq:Dose-response-model">\[\begin{equation}
+  f(x, (b, d, e)) =  \frac{d}{1 + \exp( b \cdot (\log{x} - \log{e}))}
+  \tag{3.6}  
 \end{equation}\]</span></p>
 </div>
 <div id="zeta-value-in-function-of-the-k_vk_vs-characteristic-curve" class="section level2">
@@ -194,19 +207,22 @@
 <p>If <a href="valves-hidraulic.html#eq:zeta-01">(3.3)</a> and <a href="valves-hidraulic.html#eq:Kv-03">(3.4)</a> for <span class="math inline">\(K_{vs}\)</span> then:</p>
 <p>$$
 _{v} = { ( {}} )^2 : ; :</p>
-<p>K_{vs} =  
+<p>K_{v} =  
 $$</p>
-<p>and:</p>
+<p>if</p>
 <p><span class="math display">\[
-K_{v} = f(vp\%) \cdot k_{vs}  = f(vp\%) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
-\]</span></p>
-<p><span class="math display">\[
-\frac{1}{k_{v}^2} = \frac{\zeta_{vs}}{[f(vp\%)]^2} \cdot \frac{626.3}{d^4}
-\]</span></p>
+K_{v} = f(x, (b, d, e)) \cdot K_{vs} \\ K_{v} = f(x, (b, d, e)) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
+\]</span>
+then</p>
+<p>$$
+ =   \</p>
+<p>{ ( {}} )^2 = </p>
+<p>$$</p>
 <p>then:</p>
-<p><span class="math display">\[
-\zeta_{v} = \frac{\zeta_{vs}}{[f(vp\%)]^2}
-\]</span></p>
+<p><span class="math display" id="eq:zeta-02">\[\begin{equation}
+  \zeta_{v} = \frac{\zeta_{vs}}{[f(x, (b, d, e))]^2}
+  \tag{3.7}
+\end{equation}\]</span></p>
 
 </div>
 </div>

@@ -49,12 +49,12 @@ The flow rate of a fluid through a control valve is a function of the following 
       - Valve travel
       - Flow path geometry
 
-## Nomenclature
+## Nomenclature {#nomenclature}
 
 | Symbol        | Description                                          | Units (notes) |
 |:--------------|:-----------------------------------------------------|:--------------|
 | $d$           | Valve inlet diameter                                 |mm|
-| $DN$          | Internal diameter of the pipe                        |mm|
+| $D$           | Internal diameter of the pipe                        |mm|
 | $F_d$         | Valve style modifier                                 |dimensionless|
 | $F_F$         | Liquid critical pressure ratio factor, dimensionless |dimensionless|
 | $F_L$         | Liquid pressure recovery factor of a valve without attached fittings|dimensionless|
@@ -84,6 +84,9 @@ The flow rate of a fluid through a control valve is a function of the following 
 | $\rho_{1} \; (rho)$ | specific mass of fluid at $p_1$ and $T_1$  |$kg/m^3$|
 | $\rho_{0} / \rho_{1}$ | ratio of specific mass of fluid in upstream condition to specific mass of water at 15.5 °C  |dimensionless|
 | $\upsilon$| kinematic viscosity $(\upsilon= \mu / \rho )$|$m^2/s$|
+| $\epsilon$ | Surface roughness often shortened to roughness, is a component of surface texture. |$mm$|
+| $\epsilon / D$ | The pipe's relative roughness, where ε is the pipe's effective roughness height and D the pipe (inside) diameter. |  dimensionless|
+| $f$| stands for the Darcy friction factor. Its value depends on the flow's Reynolds number $Re$ and on the pipe's relative roughness $\epsilon / d$.| dimensionless |
 
 
 ## Terms and definitions {#definitions}
