@@ -4,7 +4,7 @@ author: "Dr. Raúl Trujillo Álvarez"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib, packages.bib, Norms.bib]
 biblio-style: apalike
 link-citations: yes
 description: "(UNDER CONSTRUCTION!!!) ....In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves."

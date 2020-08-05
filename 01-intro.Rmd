@@ -16,18 +16,17 @@ The following referenced documents are indispensable for the application of this
 
 **Other International Normative references**
 
-  - **ISA Guide**     Control Valves, Practical Guides for Measurement and Control
-  - **ISA S20.50**    Specification Forms for Process Measurement and Control Instruments, Primary Elements and Control Valves
-  - **ISA S75.01**    Flow Equations for Sizing Control Valves
-  - **ISA S75.05**    Control Valve Terminology
-  - **ISA S75.11**    Inherent Flow Characteristic and Rangeability of Control Valves
-  - **ISA SP75.17**   Control Valve Aerodynamic Noise Prediction
-  - **ISA RP75.23**   Considerations for Evaluating Control Valve Cavitation
-  - **ANSI/ISA-75.02-1996**, Control Valve Capacity Test Procedures
-  - **ANSI/ISA-75.05.01-2000 (R2005)**, Control Valve Terminology
-  - **IEC 60534-1:2005**, Industrial-process control valves – Part 1: Control valve terminology and generalconsiderations
-  - **IEC 60534-2-3:1997**, Industrial-process control valves – Part 2-3: Flow capacity – Test procedures
-
+  - **ISA Guide**     Control Valves, Practical Guides for Measurement and Control.
+  - **ISA S20.50**    Specification Forms for Process Measurement and Control Instruments, Primary Elements and Control Valves.
+  - **ISA S75.01**    Flow Equations for Sizing Control Valves.
+  - **ISA S75.05**    Control Valve Terminology.
+  - **ISA S75.11**    Inherent Flow Characteristic and Rangeability of Control Valves.
+  - **ISA SP75.17**   Control Valve Aerodynamic Noise Prediction.
+  - **ISA RP75.23**   Considerations for Evaluating Control Valve Cavitation.
+  - **ANSI/ISA-75.02-1996**, Control Valve Capacity Test Procedures.
+  - **ANSI/ISA-75.05.01-2000 (R2005)**, Control Valve Terminology.
+  - **IEC 60534-1:2005**, Industrial-process control valves – Part 1: Control valve terminology and general considerations.
+  - **IEC 60534-2-3:1997**, Industrial-process control valves – Part 2-3: Flow capacity – Test procedures.
 
 ## Flow variable and fluid properties {#fluidproperties}
 
@@ -91,20 +90,41 @@ The flow rate of a fluid through a control valve is a function of the following 
 
 ## Terms and definitions {#definitions}
 
-- **cavitation:** A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure.
+```{definition, name="cavitation"}
+A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure [@ansi/isa1995].
 
-- **cavitation coefficient:** A characteristic number for σ (e.g., $\sigma_{i}$, $\sigma_{c}$, $\sigma_{mv}$, $\sigma_{id}$, $\sigma_{ch}$), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur.
+```{definition, name="cavitation coefficient"}
+A characteristic number for σ (e.g., $\sigma_{i}$, $\sigma_{c}$, $\sigma_{mv}$, $\sigma_{id}$, $\sigma_{ch}$), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur [@ansi/isa1995].
+```
 
-- **cavitation index:** The value for the operating service conditions of a valve, expressed as $\sigma_{}$ and numerically equal to $(p_1 - p_v )/(p_1 - p_2 )$.
+```{definition, name="cavitation index"}
+The value for the operating service conditions of a valve, expressed as $\sigma_{}$ and numerically equal to $(p_1 - p_v )/(p_1 - p_2 )$ [@ansi/isa1995].
+```
 
-- **cavitation level:** The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity $(k_v)$.
+```{definition, name="cavitation level"}
+The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity $(k_v)$ [@ansi/isa1995].
+```
 
-- **choking cavitation:** A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate.
+```{definition, name="choking cavitation"}
+A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate [@ansi/isa1995].
+```
 
-- **duty cycle:** The ratio of the amount of time a valve spends performing one particular function to the valve's total installed time period. It may be expressed as a percentage of total time (service time vs. installed time).
+```{definition, name="flashing"}
+A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure [@ansi/isa1995].
 
-- **flashing:** A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure.
+```
 
-- **Valve:** A valve is a device used for the control of fluid flow. It consists of a fluid retaining assembly, one or more ports between end openings and a movable closure member which opens, restricts or closes the port(s).
+```{definition, name="duty cycle"}
+The ratio of the amount of time a valve spends performing one particular function to the valve's total installed time period. It may be expressed as a percentage of total time (service time vs. installed time) [@ansi/isa1995].
 
-- **Control valve:** A operated (manual or powered) device which modifies the fluid flow rate in a process control system. It consists of a valve connected to an actuator mechanism that is capable of changing the position of a flow controlling element in the valve in response to a signal from the controlling system.
+```
+
+
+
+
+
+
+
+
+
+

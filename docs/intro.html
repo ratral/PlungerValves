@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-04" />
+<meta name="date" content="2020-08-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,14 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.14/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 
@@ -120,7 +128,7 @@
 <div id="header">
 <h1 class="title">Plunger Valves (UNDER CONSTRUCTION!!!)</h1>
 <p class="author"><em>Dr. Raúl Trujillo Álvarez</em></p>
-<p class="date"><em>2020-08-04</em></p>
+<p class="date"><em>2020-08-05</em></p>
 </div>
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
@@ -139,17 +147,17 @@
 </ul>
 <p><strong>Other International Normative references</strong></p>
 <ul>
-<li><strong>ISA Guide</strong> Control Valves, Practical Guides for Measurement and Control</li>
-<li><strong>ISA S20.50</strong> Specification Forms for Process Measurement and Control Instruments, Primary Elements and Control Valves</li>
-<li><strong>ISA S75.01</strong> Flow Equations for Sizing Control Valves</li>
-<li><strong>ISA S75.05</strong> Control Valve Terminology</li>
-<li><strong>ISA S75.11</strong> Inherent Flow Characteristic and Rangeability of Control Valves</li>
-<li><strong>ISA SP75.17</strong> Control Valve Aerodynamic Noise Prediction</li>
-<li><strong>ISA RP75.23</strong> Considerations for Evaluating Control Valve Cavitation</li>
-<li><strong>ANSI/ISA-75.02-1996</strong>, Control Valve Capacity Test Procedures</li>
-<li><strong>ANSI/ISA-75.05.01-2000 (R2005)</strong>, Control Valve Terminology</li>
-<li><strong>IEC 60534-1:2005</strong>, Industrial-process control valves – Part 1: Control valve terminology and generalconsiderations</li>
-<li><strong>IEC 60534-2-3:1997</strong>, Industrial-process control valves – Part 2-3: Flow capacity – Test procedures</li>
+<li><strong>ISA Guide</strong> Control Valves, Practical Guides for Measurement and Control.</li>
+<li><strong>ISA S20.50</strong> Specification Forms for Process Measurement and Control Instruments, Primary Elements and Control Valves.</li>
+<li><strong>ISA S75.01</strong> Flow Equations for Sizing Control Valves.</li>
+<li><strong>ISA S75.05</strong> Control Valve Terminology.</li>
+<li><strong>ISA S75.11</strong> Inherent Flow Characteristic and Rangeability of Control Valves.</li>
+<li><strong>ISA SP75.17</strong> Control Valve Aerodynamic Noise Prediction.</li>
+<li><strong>ISA RP75.23</strong> Considerations for Evaluating Control Valve Cavitation.</li>
+<li><strong>ANSI/ISA-75.02-1996</strong>, Control Valve Capacity Test Procedures.</li>
+<li><strong>ANSI/ISA-75.05.01-2000 (R2005)</strong>, Control Valve Terminology.</li>
+<li><strong>IEC 60534-1:2005</strong>, Industrial-process control valves – Part 1: Control valve terminology and general considerations.</li>
+<li><strong>IEC 60534-2-3:1997</strong>, Industrial-process control valves – Part 2-3: Flow capacity – Test procedures.</li>
 </ul>
 </div>
 <div id="fluidproperties" class="section level2">
@@ -370,18 +378,48 @@
 </div>
 <div id="definitions" class="section level2">
 <h2><span class="header-section-number">1.4</span> Terms and definitions</h2>
-<ul>
-<li><p><strong>cavitation:</strong> A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure.</p></li>
-<li><p><strong>cavitation coefficient:</strong> A characteristic number for σ (e.g., <span class="math inline">\(\sigma_{i}\)</span>, <span class="math inline">\(\sigma_{c}\)</span>, <span class="math inline">\(\sigma_{mv}\)</span>, <span class="math inline">\(\sigma_{id}\)</span>, <span class="math inline">\(\sigma_{ch}\)</span>), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur.</p></li>
-<li><p><strong>cavitation index:</strong> The value for the operating service conditions of a valve, expressed as <span class="math inline">\(\sigma_{}\)</span> and numerically equal to <span class="math inline">\((p_1 - p_v )/(p_1 - p_2 )\)</span>.</p></li>
-<li><p><strong>cavitation level:</strong> The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity <span class="math inline">\((k_v)\)</span>.</p></li>
-<li><p><strong>choking cavitation:</strong> A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate.</p></li>
-<li><p><strong>duty cycle:</strong> The ratio of the amount of time a valve spends performing one particular function to the valve’s total installed time period. It may be expressed as a percentage of total time (service time vs. installed time).</p></li>
-<li><p><strong>flashing:</strong> A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure.</p></li>
-<li><p><strong>Valve:</strong> A valve is a device used for the control of fluid flow. It consists of a fluid retaining assembly, one or more ports between end openings and a movable closure member which opens, restricts or closes the port(s).</p></li>
-<li><p><strong>Control valve:</strong> A operated (manual or powered) device which modifies the fluid flow rate in a process control system. It consists of a valve connected to an actuator mechanism that is capable of changing the position of a flow controlling element in the valve in response to a signal from the controlling system.</p></li>
-</ul>
 
+<div class="definition">
+<p><span id="def:unnamed-chunk-3" class="definition"><strong>Definition 1.1  (cavitation)  </strong></span>A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.</p>
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-4" class="definition"><strong>Definition 1.2  (cavitation coefficient)  </strong></span>A characteristic number for σ (e.g., <span class="math inline">\(\sigma_{i}\)</span>, <span class="math inline">\(\sigma_{c}\)</span>, <span class="math inline">\(\sigma_{mv}\)</span>, <span class="math inline">\(\sigma_{id}\)</span>, <span class="math inline">\(\sigma_{ch}\)</span>), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-5" class="definition"><strong>Definition 1.3  (cavitation index)  </strong></span>The value for the operating service conditions of a valve, expressed as <span class="math inline">\(\sigma_{}\)</span> and numerically equal to <span class="math inline">\((p_1 - p_v )/(p_1 - p_2 )\)</span> <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-6" class="definition"><strong>Definition 1.4  (cavitation level)  </strong></span>The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity <span class="math inline">\((k_v)\)</span> <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-7" class="definition"><strong>Definition 1.5  (choking cavitation)  </strong></span>A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-8" class="definition"><strong>Definition 1.6  (flashing)  </strong></span>A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-9" class="definition"><strong>Definition 1.7  (duty cycle)  </strong></span>The ratio of the amount of time a valve spends performing one particular function to the valve’s total installed time period. It may be expressed as a percentage of total time (service time vs. installed time) <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.</p>
+</div>
+
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-ansi/isa1995">
+<p>ANSI/ISA, ed. 1995. <em>ANSI/ISA–RP75.23–1995, Considerations for Evaluating Control Valve Cavitation</em>. Research Triangle Park, N.C.: Instrument Society of America.</p>
 </div>
 </div>
             </section>

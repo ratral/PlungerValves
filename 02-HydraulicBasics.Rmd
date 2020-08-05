@@ -48,6 +48,8 @@
   
 ## Hydraulic Head losses
 
+Reference: [@2020wa]
+
   - **Pipe friction losses (_Darcy-Weisbach equation_):** 
   
 \begin{equation}
@@ -67,6 +69,8 @@
  - The Darcy friction factor, $f$, is usually selected from a chart known as the _Moody diagram_. The _Moody diagram_ is a family of curves that relate the friction factor, $f$, to _Reynolds number_, $Re$, and the relative roughness of a pipe, $\varepsilon/d$.
 
 ## Darcy Friction Factor Formula
+
+Reference : [@2020w]
 
    - **the friction factor $f$ depends on Reynolds number and relativa roughness:** 
 
@@ -91,7 +95,7 @@
     
     
     
-## Calculation of the friction factor
+## Calculation of the friction factor 
 
   - **Equation of Swammee and Jain (1976):** 
 
@@ -118,21 +122,16 @@
 
 ## Roughness coefficient $\varepsilon$ of the pipe in mm
 
-```{r echo=FALSE}
+
+```{r roughnessTab, fig.cap="Roughness coefficient in milimeter.", echo=FALSE}
 
 # read data 
 
-  roughness_file <- here::here("data", "roughness_pipes.csv")
-
-  roughness_pipes <- read_csv( roughness_file,
-                               col_types = list( col_character(), col_character(),
-                                                 col_logical(), col_logical(), col_logical(),
-                                                 col_double(), col_double()))
-  knitr::kable(
-    roughness_pipes, booktabs = TRUE,
-    caption = 'Roughness coefficient in milimeter.'
-  )
-
-``` 
-
+  roughness_pipes <- here::here("data", "roughness_pipes.csv") %>% 
+      read_csv( col_types = list( col_character(), col_character(),
+                col_logical(), col_logical(), col_logical(),
+                col_double(), col_double()))
+  
+  DT::datatable(roughness_pipes)
+```
 
