@@ -1,19 +1,23 @@
-# Sizing equations for incompressible fluids
+# Sizing equations for incompressible fluids (flow of nonvaporizing liquid)
 
-Sizing equations allow us to calculate a value of the flow coefficient starting from different operating conditions (the type of fluid, pressure drop, flow rate, type of flow, and installation) and making them mutually comparable as well as with the standard one. The equations outlined in this chapter are by the standards IEC 60534-2-1 and IEC 60534-2-3.
+Sizing equations allow us to calculate a value of the flow coefficient starting from different operating conditions (the type of fluid, pressure drop, flow rate, type of flow, and installation) and making them mutually comparable as well as with the standard one. The equations outlined in this chapter are by the standards IEC 60534-2-1  and IEC 60534-2-3 [@ansi/isa2007].
 
-In general actual flow rate, $q_m$ of a incompressible fluid through a valve is plotted in Figure 2 versus the square root of the pressure differential $\sqrt{\Delta{P}}$ under constant upstream conditions.
+Choked flow is a limiting, or maximum, flow rate. With fixed inlet (upstream) conditions, it manifests by the failure of decreasing downstream pressure to increase the flow rate.
+
+Choking occurs as a result of the vaporization of the liquid. The vaporization occurs when the pressure within the valve falls below the vapor pressure of the fluid. Choked flow will be accompanied by either cavitation or flashing. If the downstream pressure is higher than the vapor pressure of the liquid, cavitation occurs. If the downstream pressure is equal to or less than the vapor pressure of the fluid, flashing occurs.This relationship between flow rate and pressure drop for a typical valve is shown in figure \@ref(fig:Flow-rate-diagram) [@ansi/isa1985a].
+
+In general actual flow rate, $q_m$ of a incompressible fluid through a valve is plotted in figure  \@ref(fig:Flow-rate-diagram) versus the square root of the pressure differential $\sqrt{\Delta{P}}$ under constant upstream conditions.
 
 
-```{r Flow-rate-diagram, echo=FALSE, fig.cap = 'Flow rate diagram of an incompressible fluid'}
-  file_image <- here::here("image", "cavitation_flow.png")
+```{r Flow-rate-diagram, echo=FALSE, fig.cap = 'Liquid flow rate versus pressure drop for a typical valve (constant upstream pressure and vapor pressure) [@ansi/isa1985a]', fig.width = 8, fig.asp = 0.7, fig.align = "center"}
+  file_image <- here::here("image", "flow_rate_versus_pressure_drop.png")
   knitr::include_graphics(file_image)
 ```
 
   
 ## Maximum Flow without fitings
 
-The maximum rate at which flow will pass through a control valve at choked flow [in $m^3/h$] conditions be calculated as follows:
+The maximum rate at which flow will pass through a control valve at choked flow [in $m^3/h$] conditions be calculated as follows [@wagner2008]:
 
 \begin{equation} 
   q_{max} = k_v \cdot F_{L} \cdot F_R \cdot \sqrt{p_1 - F_F \cdot p_v}
@@ -35,6 +39,8 @@ Where:
 
 ## Maximum Flow with flow limitation and with fitting
 
+[@wagner2008]
+
 \begin{equation} 
   Q_{max} = k_v \cdot F_{LP} \cdot F_R \cdot \sqrt{p_1 - F_F \cdot p_v}
   (\#eq:Qmax-With)
@@ -47,16 +53,105 @@ Where:
 \end{equation} 
 
 
-## Evaluating the Cavitation Limits of the valve
+## Liquid pressure recovery factor $F_{L}$
 
-Cavitation causes noise, pressure fluctuations, vibrations, erosion damage, and in advanced stages, can reduce the valve's capacity. The acceptable cavitation level for a valve in a given system varies with valve type, valve function, details of the piping layout and duration of the operation. 
+```{definition, name="pressure recovery factor"}
+A number used to describe the ratio between the pressure recovery after the vena contracta and the pressure drop at the vena contracta. It is a measure of the amount of pressure recovered between the vena contracta and the valve outlet. This number will be high (0.9) for a globe style valve with a torturous follow path and lower (0.8 to 0.6) for a rotary style valve with a streamlined flow path. On most rotary products the $F_L$ factor will vary with the degree of opening of the valve closure member [@ansi/isa1983].
+```
 
-It is necessary to identify and provide experimental data for several levels of cavitation intensity to have adequate information for analysis and design.  There are defined six different cavitation design limits. The methods used to determine each limit experimentally are described, and suggestions are given as to when each limit might be appropriate. These limits are:
+It is also important to understand that $F_L$ (the Liquid Pressure Recovery Factor) is not a cavitation parameter. It is a choked flow parameter and its only use is to determine the theoretical choked flow point based on the assumption that the choked flow point, $\sqrt{\Delta P_{choked}}$, is the intersection of the two straight dashed lines shown in Figures in red and green. Using $F_L$ as a cavitation parameter is almost sure to result in unacceptable levels of cavitation damage.
 
-  1. Incipient cavitation $\sigma_{i}$ 
-  2. Critical (or constant) cavitation $\sigma_{c}$
-  3. Incipient damage $\sigma_{i_d}$
-  4. Incipient choking $\sigma_{i_{ch}}$ (or Kc)
-  5. Choked flow $\sigma_{ch}$
-  6. Maximum noise and vibration level $\sigma_{max}$
-  
+
+## Piping geometry factor $F_{p}$
+
+```{definition, name="Piping geometry factor"}
+The piping geometry factor $F_{p}$ accounts for fittings attached to either the valve inlet or the outlet that disturb the flow to the extent that valve capacity is affected. $F_P$ is actually the ratio of the flow coefficient of a valve with attached fittings to the flow coefficient ($K_v$) of a valve installed in a straight pipe of the same size as the valve [@ansi/isa1985a].
+```
+
+```{r valve-with-fittings, echo=FALSE, fig.cap = 'Valve with fittings [@wagner2008]', fig.width = 10, fig.asp = 0.7, fig.align = "center"}
+  file_image <- here::here("image", "valve_with_fittings.PNG")
+  knitr::include_graphics(file_image)
+```
+
+
+$F_P$, the factor for the pipe geometry, takes into account the influence of the fittings that are attached directly to the inlet and/or outlet of a control valve (figure \@ref(fig:valve-with-fittings)). The $F_P$ factor is the ratio of the flow rate of a control valve with fittings to the flow rate that would result if the control valve were tested without fittings under identical conditions [@wagner2008].
+
+\begin{equation} 
+  F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
+    (\#eq:Fp)
+\end{equation} 
+
+
+In this equation, the factor $\sum \zeta$ is the algebraic sum of all effective resistance coefficients of all fittings that are attached to the control valve. This does not include the drag coefficient of the control valve itself.
+
+\begin{equation} 
+  \sum{\zeta} = (\zeta_{1} + \zeta_{2}) + (\zeta_{B_1} - \zeta_{B_2})
+  (\#eq:sumZ)
+\end{equation} 
+
+Where:
+
+- $\zeta_{1}$ resistance coefficient of the valve in the inlet
+- $\zeta_{2}$ resistance coefficient of the valve in the outlet
+- $\zeta_{B_1}$  Bernoulli pressure number in the valve inlet
+- $\zeta_{B_2}$  Bernoulli pressure number in the valve outlet
+
+If the diameters of the inlet and outlet fittings are the same, $\zeta_{B_1}$ and $\zeta_{B_1}$ become equal and fall out of the equation. In cases where the pipe diameters in front of and behind the control valve are different, the $\zeta_{coefficients}$ are calculated as follows:
+
+\begin{equation} 
+  \zeta_{B_1} = 1- \left( \frac{d}{D_1}  \right)^4
+  (\#eq:Zb1)
+\end{equation} 
+
+
+\begin{equation} 
+  \zeta_{B_2} = 1- \left( \frac{d}{D_2}  \right)^4
+  (\#eq:Zb2)
+\end{equation} 
+
+If the inlet and outlet ports are short, commercially available concentric reducers and diffusers, then the coefficients $\zeta_1$ and $\zeta_2$ can be calculated roughly as follows:
+
+\begin{equation} 
+  \zeta_1 = 0.5 \cdot \left( 1 - \left( \frac{d}{D_1}\right)^2 \right)^2
+  (\#eq:Z1)
+\end{equation} 
+
+\begin{equation}
+  \zeta_2 = \left( 1 - \left( \frac{d}{D_2}\right)^2 \right)^2
+  (\#eq:Z2)
+\end{equation} 
+
+Then for inlet reduction and outlet expansion with the same pipe size:
+
+\begin{equation}
+  \sum \zeta = \zeta_1 + \zeta_2 = 1.5 \cdot \left( 1 - \left( \frac{d}{D_1}\right)^2 \right)^2
+  (\#eq:sumZ2)
+\end{equation} 
+
+
+## Combined liquid pressure recovery factor $F_{LP}$
+
+```{definition, name="Combined liquid pressure recovery factor"}
+
+```
+
+## Reynolds number factor $F_{R}$
+
+```{definition, name="Reynolds number factor"}
+The Reynolds number factor $F_R$ is required when non-turbulent flow conditions are established through a control valve because of a low pressure differential, a high viscosity, a very small flow coefficient, or a combination thereof.
+```
+
+## $F_F$ is the Liquid critical pressure ratio factor
+
+```{definition, name="Liquid critical pressure ratio factor"}
+$F_F$ is the liquid critical pressure ratio factor. This factor is the ratio of the apparent vena contracta pressure at choked flow conditions to the vapor pressure of the liquid at inlet temperature. At vapor pressures near zero, this factor is $0.96$.
+```
+
+Values of $F_F$ may be determined approximated from the following equation:
+
+\begin{equation} 
+  F_F = 0.96 - 0.28 \cdot \sqrt{p_v / p_c}
+  (\#eq:critical-pressure)
+\end{equation}
+
+Where: $p_c$ is the thermodynamic critical pressure. For water, this value is $p_c = 221.2 \cdot bar$ and $p_v$ vapor pressure of the liquid.

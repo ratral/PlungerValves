@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-05" />
+<meta name="date" content="2020-08-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="hydraulic-basics.html"/>
-<link rel="next" href="sizing-equations-for-incompressible-fluids.html"/>
+<link rel="next" href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.14/datatables.js"></script>
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -84,6 +84,7 @@
 <li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#nomenclature"><i class="fa fa-check"></i><b>1.3</b> Nomenclature</a></li>
 <li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#definitions"><i class="fa fa-check"></i><b>1.4</b> Terms and definitions</a></li>
 </ul></li>
+<li class="part"><span><b>I Theory</b></span></li>
 <li class="chapter" data-level="2" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html"><i class="fa fa-check"></i><b>2</b> Hydraulic Basics</a><ul>
 <li class="chapter" data-level="2.1" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html#equations"><i class="fa fa-check"></i><b>2.1</b> Equations</a></li>
 <li class="chapter" data-level="2.2" data-path="hydraulic-basics.html"><a href="hydraulic-basics.html#energy-head"><i class="fa fa-check"></i><b>2.2</b> Energy Head</a></li>
@@ -98,12 +99,19 @@
 <li class="chapter" data-level="3.3" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#the-flow-basic-characteristic-curve."><i class="fa fa-check"></i><b>3.3</b> The flow basic characteristic curve.</a></li>
 <li class="chapter" data-level="3.4" data-path="valves-hidraulic.html"><a href="valves-hidraulic.html#zeta-value-in-function-of-the-k_vk_vs-characteristic-curve"><i class="fa fa-check"></i><b>3.4</b> Zeta value in function of the <span class="math inline">\(K_v/K_{vs}\)</span> characteristic curve</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html"><i class="fa fa-check"></i><b>4</b> Sizing equations for incompressible fluids</a><ul>
-<li class="chapter" data-level="4.1" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#maximum-flow-without-fitings"><i class="fa fa-check"></i><b>4.1</b> Maximum Flow without fitings</a></li>
-<li class="chapter" data-level="4.2" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>4.2</b> Maximum Flow with flow limitation and with fitting</a></li>
-<li class="chapter" data-level="4.3" data-path="sizing-equations-for-incompressible-fluids.html"><a href="sizing-equations-for-incompressible-fluids.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>4.3</b> Evaluating the Cavitation Limits of the valve</a></li>
+<li class="chapter" data-level="4" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><i class="fa fa-check"></i><b>4</b> Sizing equations for incompressible fluids (flow of nonvaporizing liquid)</a><ul>
+<li class="chapter" data-level="4.1" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#maximum-flow-without-fitings"><i class="fa fa-check"></i><b>4.1</b> Maximum Flow without fitings</a></li>
+<li class="chapter" data-level="4.2" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>4.2</b> Maximum Flow with flow limitation and with fitting</a></li>
+<li class="chapter" data-level="4.3" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#liquid-pressure-recovery-factor-f_l"><i class="fa fa-check"></i><b>4.3</b> Liquid pressure recovery factor <span class="math inline">\(F_{L}\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#piping-geometry-factor-f_p"><i class="fa fa-check"></i><b>4.4</b> Piping geometry factor <span class="math inline">\(F_{p}\)</span></a></li>
+<li class="chapter" data-level="4.5" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#combined-liquid-pressure-recovery-factor-f_lp"><i class="fa fa-check"></i><b>4.5</b> Combined liquid pressure recovery factor <span class="math inline">\(F_{LP}\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#reynolds-number-factor-f_r"><i class="fa fa-check"></i><b>4.6</b> Reynolds number factor <span class="math inline">\(F_{R}\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_f-is-the-liquid-critical-pressure-ratio-factor"><i class="fa fa-check"></i><b>4.7</b> <span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Quantifying the Cavitation Potential of the valve</a></li>
+<li class="chapter" data-level="5" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Quantifying the Cavitation Potential of the valve</a><ul>
+<li class="chapter" data-level="5.1" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>5.1</b> Evaluating the Cavitation Limits of the valve</a></li>
+</ul></li>
+<li class="part"><span><b>II Praxis</b></span></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -130,7 +138,7 @@
 <div id="the-flow-coefficient-k_v" class="section level2">
 <h2><span class="header-section-number">3.1</span> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></h2>
 <p>Flow factor <span class="math inline">\(k_{v}\)</span> combines the effects of all flow restrictions in the valve into a single number.
-<span class="math inline">\(k_{v}\)</span> represents the flow of water with temperature ranging between <span class="math inline">\(5°C\)</span> and <span class="math inline">\(30°C\)</span> through a valve in cubic meters per hour with a pressure drop of <span class="math inline">\(1 bar\)</span>.</p>
+<span class="math inline">\(k_{v}\)</span> represents the flow of water with temperature ranging between <span class="math inline">\(5°C\)</span> and <span class="math inline">\(30°C\)</span> through a valve in cubic meters per hour with a pressure drop of <span class="math inline">\(1 bar\)</span> <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>.</p>
 <p>Do you need for the calculation of the valve flow factor (<span class="math inline">\(k_{v}\)</span>) :</p>
 <ul>
 <li>operating pressure differential;</li>
@@ -151,7 +159,7 @@
 <li>straight pipe lengths upstream and downstream the valve;</li>
 <li>Newtonian fluid.</li>
 </ul>
-<p>According to this European Standard, the flow rate characteristic parameter of a valve is the flow coefficient, <span class="math inline">\(K_v\)</span>. The equation, the quantity subject to measurement and input quantities are the following.</p>
+<p>According to this European Standard, the flow rate characteristic parameter of a valve is the flow coefficient, <span class="math inline">\(K_v\)</span>. The equation, the quantity subject to measurement and input quantities are the following <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>.</p>
 <p><span class="math display" id="eq:Kv-01">\[\begin{equation} 
   K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}} 
   \tag{3.1}
@@ -213,19 +221,19 @@
 <div id="zeta-value-in-function-of-the-k_vk_vs-characteristic-curve" class="section level2">
 <h2><span class="header-section-number">3.4</span> Zeta value in function of the <span class="math inline">\(K_v/K_{vs}\)</span> characteristic curve</h2>
 <p>If <a href="valves-hidraulic.html#eq:zeta-01">(3.3)</a> and <a href="valves-hidraulic.html#eq:Kv-03">(3.4)</a> for <span class="math inline">\(K_{vs}\)</span> then:</p>
-<p>$$
-_{v} = { ( {}} )^2 : ; :</p>
-<p>K_{v} =  
-$$</p>
+<p><span class="math display">\[\begin{equation}
+  \zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2 \: ; \: 
+  K_{v} = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{v}}}
+\end{equation}\]</span></p>
 <p>if</p>
-<p><span class="math display">\[
-K_{v} = f(x, (b, d, e)) \cdot K_{vs} \\ K_{v} = f(x, (b, d, e)) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
-\]</span>
-then</p>
-<p>$$
- =   \</p>
-<p>{ ( {}} )^2 = </p>
-<p>$$</p>
+<p><span class="math display">\[\begin{equation}
+  K_{v} = f(x, (b, d, e)) \cdot K_{vs} \\ K_{v} = f(x, (b, d, e)) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot     \frac{1}{\sqrt{\zeta_{vs}}}
+\end{equation}\]</span></p>
+<p>then</p>
+<p><span class="math display">\[\begin{equation}
+  \frac{1}{K_{v}^2} = \frac{\zeta_{vs}}{[f(x, (b, d, e))]^2} \cdot \frac{626.3}{d^4} \\
+  {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2 = \frac{\zeta_{vs}}{[f(vp\%)]^2}
+\end{equation}\]</span></p>
 <p>then:</p>
 <p><span class="math display" id="eq:zeta-02">\[\begin{equation}
   \zeta_{v} = \frac{\zeta_{vs}}{[f(x, (b, d, e))]^2}
@@ -234,13 +242,19 @@ then</p>
 
 </div>
 </div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-wagner2008">
+<p>Wagner, Walter. 2008. <em>Regel- und Sicherheitsarmaturen</em>. 1. Aufl. dieser Ausg. Vogel-Fachbuch. Würzburg: Vogel.</p>
+</div>
+</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="hydraulic-basics.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="sizing-equations-for-incompressible-fluids.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

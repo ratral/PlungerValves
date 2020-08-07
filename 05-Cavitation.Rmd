@@ -15,7 +15,7 @@ The cavitation index sigma $\sigma$ is a form of another dimensionless parameter
 
 This index (σ) is the ratio of fluid forces trying to prevent cavitation (the system or service pressure) to the forces trying to cause cavitation (the pressure drop). The smaller the value of the cavitation index for a flow system, the more likely or the more severe cavitation will be.
 
-The force suppressing cavitation is proportional to the magnitude of the average pressure relative to absolute vapor pressure i.e. $(P-P_r)$. The force causing cavitation is proportional to the velocity head  $V^2/2g$ or to the pressure drop across the valve $\Delta P$. The resulting cavitation parameter sigma can be expressed as (using absolute units):
+The force suppressing cavitation is proportional to the magnitude of the average pressure relative to absolute vapor pressure i.e. $(P-P_r)$. The force causing cavitation is proportional to the velocity head  $V^2/2g$ or to the pressure drop across the valve $\Delta P$. The resulting cavitation parameter sigma can be expressed as [@tullis1993]:
 
 \begin{equation} 
   \sigma = \frac{P_1-P_v}{\Delta P_{net}}
@@ -82,3 +82,17 @@ So:
   \sigma_{3} = \frac{(P_1-P_v)}{\Delta P_{net} + (V^2/2g)}
   (\#eq:igma-value-03)
 \end{equation}
+
+
+## Evaluating the Cavitation Limits of the valve
+
+Cavitation causes noise, pressure fluctuations, vibrations, erosion damage, and in advanced stages, can reduce the valve's capacity. The acceptable cavitation level for a valve in a given system varies with valve type, valve function, details of the piping layout and duration of the operation. 
+
+It is necessary to identify and provide experimental data for several levels of cavitation intensity to have adequate information for analysis and design.  There are defined six different cavitation design limits. The methods used to determine each limit experimentally are described, and suggestions are given as to when each limit might be appropriate. These limits are:
+
+  1. Incipient cavitation $\sigma_{i}$ 
+  2. Critical (or constant) cavitation $\sigma_{c}$
+  3. Incipient damage $\sigma_{i_d}$
+  4. Incipient choking $\sigma_{i_{ch}}$ (or Kc)
+  5. Choked flow $\sigma_{ch}$
+  6. Maximum noise and vibration level $\sigma_{max}$

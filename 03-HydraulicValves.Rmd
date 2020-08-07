@@ -3,7 +3,7 @@
 ## The _Flow coefficient_ $k_{v}$ 
 
 Flow factor $k_{v}$  combines the effects of all flow restrictions in the valve into a single number.
-$k_{v}$ represents the flow of water with temperature ranging between $5°C$ and $30°C$ through a valve in cubic meters per hour with a pressure drop of $1 bar$.
+$k_{v}$ represents the flow of water with temperature ranging between $5°C$ and $30°C$ through a valve in cubic meters per hour with a pressure drop of $1 bar$ [@wagner2008].
 
 Do you need for the calculation of the valve flow factor ($k_{v}$) : 
 
@@ -25,7 +25,7 @@ The standard conditions referred to in definitions of flow coefficients ($K_v$) 
   - straight pipe lengths upstream and downstream the valve;
   - Newtonian fluid.
 
-According to this European Standard, the flow rate characteristic parameter of a valve is the flow coefficient, $K_v$. The equation, the quantity subject to measurement and input quantities are the following.
+According to this European Standard, the flow rate characteristic parameter of a valve is the flow coefficient, $K_v$. The equation, the quantity subject to measurement and input quantities are the following [@wagner2008].
 
 \begin{equation} 
   K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}} 
@@ -101,28 +101,29 @@ By far the log-logistic models are the most used dose-response models. The four-
 
 If \@ref(eq:zeta-01) and \@ref(eq:Kv-03) for $K_{vs}$ then:
 
-$$
+
+\begin{equation}
   \zeta_{v} = {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2 \: ; \: 
-  
   K_{v} = \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{v}}}
-$$
+\end{equation} 
 
 if
 
-$$
-K_{v} = f(x, (b, d, e)) \cdot K_{vs} \\ K_{v} = f(x, (b, d, e)) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot \frac{1}{\sqrt{\zeta_{vs}}}
-$$
+
+\begin{equation}
+  K_{v} = f(x, (b, d, e)) \cdot K_{vs} \\ K_{v} = f(x, (b, d, e)) \cdot  \frac{d^2}{\sqrt{626.3}} \cdot     \frac{1}{\sqrt{\zeta_{vs}}}
+\end{equation} 
+
 then
 
-$$
-\frac{1}{K_{v}^2} = \frac{\zeta_{vs}}{[f(x, (b, d, e))]^2} \cdot \frac{626.3}{d^4} \\
 
-{\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2 = \frac{\zeta_{vs}}{[f(vp\%)]^2}
-
-
-$$
+\begin{equation}
+  \frac{1}{K_{v}^2} = \frac{\zeta_{vs}}{[f(x, (b, d, e))]^2} \cdot \frac{626.3}{d^4} \\
+  {\frac{1}{626.3} \cdot  \bigg( {\frac{d^2}{{K_v}}}} \bigg)^2 = \frac{\zeta_{vs}}{[f(vp\%)]^2}
+\end{equation} 
 
 then:
+
 
 \begin{equation}
   \zeta_{v} = \frac{\zeta_{vs}}{[f(x, (b, d, e))]^2}
