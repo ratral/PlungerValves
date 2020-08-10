@@ -147,6 +147,19 @@ The Reynolds number factor $F_R$ is required when non-turbulent flow conditions 
 
 $F_{R}$, the correction factor for the influence of the Reynolds number, is to be used for non-turbulent flow in the control valve because there is either a low differential pressure or a highly viscous liquid or a very low flow coefficient or a combination thereof. The $F_{R}$ factor is determined by dividing the flow coefficient for non-turbulent flow conditions by the flow coefficient determined under the same installation conditions under turbulent circumstances. If no test results are available, $F_{R}$ can be determined from the curve according to **Figure 5.5** by using a valve Reynolds number that is calculated from the following equation:
 
+\begin{equation} 
+  Re_v = \frac{7.07 \cdot 10^4 \cdot F_d \cdot Q}{\upsilon \cdot \sqrt{F_p \cdot F_L \cdot K_v}} \cdot 
+  \left( \frac{{F_P}^2 \cdot  {F_L}^2 {K_v}^2   }{0.0016 \cdot D^4} + 1 \right)
+  (\#eq:reynolds-valve)
+\end{equation}
+
+
+with: $\upsilon$ in $[mm^2 / s ]$
+
+Values for $F_d:
+
+
+
 ## $F_F$ is the Liquid critical pressure ratio factor
 
 ```{definition, name="Liquid critical pressure ratio factor"}

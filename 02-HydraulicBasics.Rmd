@@ -1,7 +1,7 @@
 
 # (PART) Theory {-} 
 
-# Hydraulic Basics
+# Hydraulic Basics {#HydraulicBasics}
 
 ## Equations 
 

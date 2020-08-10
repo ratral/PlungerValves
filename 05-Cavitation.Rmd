@@ -96,3 +96,32 @@ It is necessary to identify and provide experimental data for several levels of 
   4. Incipient choking $\sigma_{i_{ch}}$ (or Kc)
   5. Choked flow $\sigma_{ch}$
   6. Maximum noise and vibration level $\sigma_{max}$
+  
+```{definition, name="cavitation"}
+A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure [@ansi/isa1995].
+
+```{definition, name="cavitation coefficient"}
+A characteristic number for σ (e.g., $\sigma_{i}$, $\sigma_{c}$, $\sigma_{mv}$, $\sigma_{id}$, $\sigma_{ch}$), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur [@ansi/isa1995].
+```
+
+```{definition, name="cavitation index"}
+The value for the operating service conditions of a valve, expressed as $\sigma_{}$ and numerically equal to $(p_1 - p_v )/(p_1 - p_2 )$ [@ansi/isa1995].
+```
+
+```{definition, name="cavitation level"}
+The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity $(k_v)$ [@ansi/isa1995].
+```
+
+```{definition, name="choking cavitation"}
+A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate [@ansi/isa1995].
+```
+
+```{definition, name="flashing"}
+A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure [@ansi/isa1995].
+
+```
+
+```{definition, name="duty cycle"}
+The ratio of the amount of time a valve spends performing one particular function to the valve's total installed time period. It may be expressed as a percentage of total time (service time vs. installed time) [@ansi/isa1995].
+
+```

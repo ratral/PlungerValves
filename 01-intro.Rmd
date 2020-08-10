@@ -1,4 +1,18 @@
-# Introduction {#intro}
+
+# Preface {-}
+
+## Structure of the document {-}
+
+This document focuses on the sizing of plunger control valves in the transportation and distribution of drinking and raw water. 
+
+It is recommended that readers have a basic understanding of hydraulic. Part I Theory introduces the fundamental usage and syntax, which should be sufficient to get most readers started in sizing a control valve.  This part provides an overview of the basics hydraulic functions and is recommended reading for any new users of this document. 
+
+Reading these documents does not exclude knowledge of the different European, American, and regional standards norms regarding valve sizing. It is also necessary to have access to technical literature about valve sizing to delve into the different concepts.
+
+In part II praxis, I will concentrate on the development of examples, based on the information published by the different manufacturers of plunger valves. 
+
+
+# Introduction {#intro} 
 
 Plunger valves are mainly used where volume flows or pressure have to be reduced and regulated with out vibrations, noises or big changes in the pipeline system.
 
@@ -56,25 +70,20 @@ To avoid in any way, the following design criteria must be met [@baumann2009]:
     - Is the packings field-replaceable? 
     - Is the control cylinders (fix and mobile) are field-replaceable? 
     - Is the actuator able to diagnose the valve? 
+    
+Another essential point to consider is the information available. Sizing the flow to the fifth place after the decimal point is all well and good, but only if you know the right process conditions [@baumann2009]: 
 
-  - The flow rate of a fluid through a control valve is a function of the following (where applicable):
-    - Inlet and outlet conditions
-        - Pressure
-        - Temperature
-        - Piping geometry
-    - Water properties
-        - Composition
-        - Density
-        - Vapor pressure
-        - Viscosity
-        - Thermodynamic critical pressure
-    - Control valve properties
-        - Size
-        - Valve travel
-        - Flow path geometry
+  - First of all, the valve should be sized to control the maximum flow rate under the lowest-possible differential pressure. But what is maximum flow this exactly? 
+  - How about emergency conditions? 
+  - On the other hand, should the valve fail full open, would the resultant flow be more than the downstream pipe or valve could handle? 
+  - what is the correct inlet pressure? 
+  - What are the variations in inlet pressure?
+  - Can you use the head pressure of the pump from the manufacturer’s published curve? (If you do, use the head pressure corresponding to the maximum flow the valve has to pass, and don’t ignore the static head at the pump’s location.) 
+  - How about line losses? 
 
-Only after reviewing these criteria and deciding on the proper valve type should the subject of cost be considered.
+My experience is that all these questions will be answered in a vague form from the design people. They don’t know either and have to rely on the input from other departments. The result is usually guesswork with ample safety factors thrown in. 
 
+Only after reviewing these criteria and deciding on the proper valve type should the subject of cost be considered. 
 
 ## Normative references {#norms}
 
@@ -142,37 +151,6 @@ The following referenced documents are indispensable for the application of this
 | $\epsilon / D$ | The pipe's relative roughness, where ε is the pipe's effective roughness height and D the pipe (inside) diameter. |  dimensionless|
 | $f$| stands for the Darcy friction factor. Its value depends on the flow's Reynolds number $Re$ and on the pipe's relative roughness $\epsilon / d$.| dimensionless |
 
-
-## Terms and definitions {#definitions}
-
-```{definition, name="cavitation"}
-A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure [@ansi/isa1995].
-
-```{definition, name="cavitation coefficient"}
-A characteristic number for σ (e.g., $\sigma_{i}$, $\sigma_{c}$, $\sigma_{mv}$, $\sigma_{id}$, $\sigma_{ch}$), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur [@ansi/isa1995].
-```
-
-```{definition, name="cavitation index"}
-The value for the operating service conditions of a valve, expressed as $\sigma_{}$ and numerically equal to $(p_1 - p_v )/(p_1 - p_2 )$ [@ansi/isa1995].
-```
-
-```{definition, name="cavitation level"}
-The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity $(k_v)$ [@ansi/isa1995].
-```
-
-```{definition, name="choking cavitation"}
-A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate [@ansi/isa1995].
-```
-
-```{definition, name="flashing"}
-A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure [@ansi/isa1995].
-
-```
-
-```{definition, name="duty cycle"}
-The ratio of the amount of time a valve spends performing one particular function to the valve's total installed time period. It may be expressed as a percentage of total time (service time vs. installed time) [@ansi/isa1995].
-
-```
 
 
 
