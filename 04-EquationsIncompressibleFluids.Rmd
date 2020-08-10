@@ -59,8 +59,7 @@ Where:
 A number used to describe the ratio between the pressure recovery after the vena contracta and the pressure drop at the vena contracta. It is a measure of the amount of pressure recovered between the vena contracta and the valve outlet. This number will be high (0.9) for a globe style valve with a torturous follow path and lower (0.8 to 0.6) for a rotary style valve with a streamlined flow path. On most rotary products the $F_L$ factor will vary with the degree of opening of the valve closure member [@ansi/isa1983].
 ```
 
-It is also important to understand that $F_L$ (the Liquid Pressure Recovery Factor) is not a cavitation parameter. It is a choked flow parameter and its only use is to determine the theoretical choked flow point based on the assumption that the choked flow point, $\sqrt{\Delta P_{choked}}$, is the intersection of the two straight dashed lines shown in Figures in red and green. Using $F_L$ as a cavitation parameter is almost sure to result in unacceptable levels of cavitation damage.
-
+It is also important to understand that $F_L$ is not a cavitation parameter. It is a choked flow parameter and its only use is to determine the theoretical choked flow point based on the assumption that the choked flow point, $\sqrt{\Delta P_{choked}}$, is the intersection of the two straight dashed lines shown in Figures in red and green. Using $F_L$ as a cavitation parameter is almost sure to result in unacceptable levels of cavitation damage.
 
 ## Piping geometry factor $F_{p}$
 
@@ -91,10 +90,10 @@ In this equation, the factor $\sum \zeta$ is the algebraic sum of all effective 
 
 Where:
 
-- $\zeta_{1}$ resistance coefficient of the valve in the inlet
-- $\zeta_{2}$ resistance coefficient of the valve in the outlet
-- $\zeta_{B_1}$  Bernoulli pressure number in the valve inlet
-- $\zeta_{B_2}$  Bernoulli pressure number in the valve outlet
+  - $\zeta_{1}$ resistance coefficient of the valve in the inlet
+  - $\zeta_{2}$ resistance coefficient of the valve in the outlet
+  - $\zeta_{B_1}$  Bernoulli pressure number in the valve inlet
+  - $\zeta_{B_2}$  Bernoulli pressure number in the valve outlet
 
 If the diameters of the inlet and outlet fittings are the same, $\zeta_{B_1}$ and $\zeta_{B_1}$ become equal and fall out of the equation. In cases where the pipe diameters in front of and behind the control valve are different, the $\zeta_{coefficients}$ are calculated as follows:
 
@@ -131,15 +130,22 @@ Then for inlet reduction and outlet expansion with the same pipe size:
 
 ## Combined liquid pressure recovery factor $F_{LP}$
 
-```{definition, name="Combined liquid pressure recovery factor"}
+When a valve is installed with reducers or other attached fittings, the liquid pressure recovery of the valve-fitting combination is not the same as that for the valve alone.  For calculations involving choked flow, it is convenient to treat the piping geometry factor ( $F_p$ ) and the $F_L$ factor for the valve-fitting combination as a single factor. The factor $F_{LP} is determined in the same way as FL, with laboratory test results (For maximum accuracy, F LP must be determined by using the test procedures specified in [@ansi/isa1996}).
 
-```
+If the permissible deviation is to remain ≤ 5%, $F_{LP}$ must be determined through tests. If estimates are allowed, sufficient accuracy can be achieved by using the following equation [@wagner2008]:
+
+\begin{equation} 
+  F_{LP} = \frac{F_L}{\sqrt{1+ F_l \cdot \frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
+    (\#eq:Flp)
+\end{equation} 
 
 ## Reynolds number factor $F_{R}$
 
 ```{definition, name="Reynolds number factor"}
 The Reynolds number factor $F_R$ is required when non-turbulent flow conditions are established through a control valve because of a low pressure differential, a high viscosity, a very small flow coefficient, or a combination thereof.
 ```
+
+$F_{R}$, the correction factor for the influence of the Reynolds number, is to be used for non-turbulent flow in the control valve because there is either a low differential pressure or a highly viscous liquid or a very low flow coefficient or a combination thereof. The $F_{R}$ factor is determined by dividing the flow coefficient for non-turbulent flow conditions by the flow coefficient determined under the same installation conditions under turbulent circumstances. If no test results are available, $F_{R}$ can be determined from the curve according to **Figure 5.5** by using a valve Reynolds number that is calculated from the following equation:
 
 ## $F_F$ is the Liquid critical pressure ratio factor
 

@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-07" />
+<meta name="date" content="2020-08-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -182,7 +182,7 @@ Figure 4.1: Liquid flow rate versus pressure drop for a typical valve (constant 
 <span id="def:unnamed-chunk-10" class="definition"><strong>Definition 4.1  (pressure recovery factor)  </strong></span>A number used to describe the ratio between the pressure recovery after the vena contracta and the pressure drop at the vena contracta. It is a measure of the amount of pressure recovered between the vena contracta and the valve outlet. This number will be high (0.9) for a globe style valve with a torturous follow path and lower (0.8 to 0.6) for a rotary style valve with a streamlined flow path. On most rotary products the <span class="math inline">\(F_L\)</span> factor will vary with the degree of opening of the valve closure member <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1983" role="doc-biblioref">1983</a>)</span>.
 </div>
 
-<p>It is also important to understand that <span class="math inline">\(F_L\)</span> (the Liquid Pressure Recovery Factor) is not a cavitation parameter. It is a choked flow parameter and its only use is to determine the theoretical choked flow point based on the assumption that the choked flow point, <span class="math inline">\(\sqrt{\Delta P_{choked}}\)</span>, is the intersection of the two straight dashed lines shown in Figures in red and green. Using <span class="math inline">\(F_L\)</span> as a cavitation parameter is almost sure to result in unacceptable levels of cavitation damage.</p>
+<p>It is also important to understand that <span class="math inline">\(F_L\)</span> is not a cavitation parameter. It is a choked flow parameter and its only use is to determine the theoretical choked flow point based on the assumption that the choked flow point, <span class="math inline">\(\sqrt{\Delta P_{choked}}\)</span>, is the intersection of the two straight dashed lines shown in Figures in red and green. Using <span class="math inline">\(F_L\)</span> as a cavitation parameter is almost sure to result in unacceptable levels of cavitation damage.</p>
 </div>
 <div id="piping-geometry-factor-f_p" class="section level2">
 <h2><span class="header-section-number">4.4</span> Piping geometry factor <span class="math inline">\(F_{p}\)</span></h2>
@@ -197,7 +197,7 @@ Figure 4.1: Liquid flow rate versus pressure drop for a typical valve (constant 
 Figure 4.2: Valve with fittings <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>
 </p>
 </div>
-<p><span class="math inline">\(F_P\)</span>, the factor for the pipe geometry, takes into account the influence of the fittings that are attached directly to the inlet and/or outlet of a control valve <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#fig:valve-with-fittings">4.2</a>. The <span class="math inline">\(F_P\)</span> factor is the ratio of the flow rate of a control valve with fittings to the flow rate that would result if the control valve were tested without fittings under identical conditions <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>.</p>
+<p><span class="math inline">\(F_P\)</span>, the factor for the pipe geometry, takes into account the influence of the fittings that are attached directly to the inlet and/or outlet of a control valve (figure <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#fig:valve-with-fittings">4.2</a>). The <span class="math inline">\(F_P\)</span> factor is the ratio of the flow rate of a control valve with fittings to the flow rate that would result if the control valve were tested without fittings under identical conditions <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>.</p>
 <p><span class="math display" id="eq:Fp">\[\begin{equation} 
   F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
     \tag{4.5}
@@ -240,31 +240,33 @@ Figure 4.2: Valve with fittings <span class="citation">(Wagner <a href="#ref-wag
 </div>
 <div id="combined-liquid-pressure-recovery-factor-f_lp" class="section level2">
 <h2><span class="header-section-number">4.5</span> Combined liquid pressure recovery factor <span class="math inline">\(F_{LP}\)</span></h2>
-
-<div class="definition">
-<span id="def:unnamed-chunk-12" class="definition"><strong>Definition 4.3  (Combined liquid pressure recovery factor)  </strong></span>
-</div>
-
+<p>When a valve is installed with reducers or other attached fittings, the liquid pressure recovery of the valve-fitting combination is not the same as that for the valve alone. For calculations involving choked flow, it is convenient to treat the piping geometry factor ( <span class="math inline">\(F_p\)</span> ) and the <span class="math inline">\(F_L\)</span> factor for the valve-fitting combination as a single factor. The factor $F_{LP} is determined in the same way as FL, with laboratory test results (For maximum accuracy, F LP must be determined by using the test procedures specified in [<span class="citation">ANSI/ISA (<a href="#ref-ansi/isa1996" role="doc-biblioref">1996</a>)</span>}).</p>
+<p>If the permissible deviation is to remain ≤ 5%, <span class="math inline">\(F_{LP}\)</span> must be determined through tests. If estimates are allowed, sufficient accuracy can be achieved by using the following equation <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>:</p>
+<p><span class="math display" id="eq:Flp">\[\begin{equation} 
+  F_{LP} = \frac{F_L}{\sqrt{1+ F_l \cdot \frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
+    \tag{4.12}
+\end{equation}\]</span></p>
 </div>
 <div id="reynolds-number-factor-f_r" class="section level2">
 <h2><span class="header-section-number">4.6</span> Reynolds number factor <span class="math inline">\(F_{R}\)</span></h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-13" class="definition"><strong>Definition 4.4  (Reynolds number factor)  </strong></span>The Reynolds number factor <span class="math inline">\(F_R\)</span> is required when non-turbulent flow conditions are established through a control valve because of a low pressure differential, a high viscosity, a very small flow coefficient, or a combination thereof.
+<span id="def:unnamed-chunk-12" class="definition"><strong>Definition 4.3  (Reynolds number factor)  </strong></span>The Reynolds number factor <span class="math inline">\(F_R\)</span> is required when non-turbulent flow conditions are established through a control valve because of a low pressure differential, a high viscosity, a very small flow coefficient, or a combination thereof.
 </div>
 
+<p><span class="math inline">\(F_{R}\)</span>, the correction factor for the influence of the Reynolds number, is to be used for non-turbulent flow in the control valve because there is either a low differential pressure or a highly viscous liquid or a very low flow coefficient or a combination thereof. The <span class="math inline">\(F_{R}\)</span> factor is determined by dividing the flow coefficient for non-turbulent flow conditions by the flow coefficient determined under the same installation conditions under turbulent circumstances. If no test results are available, <span class="math inline">\(F_{R}\)</span> can be determined from the curve according to <strong>Figure 5.5</strong> by using a valve Reynolds number that is calculated from the following equation:</p>
 </div>
 <div id="f_f-is-the-liquid-critical-pressure-ratio-factor" class="section level2">
 <h2><span class="header-section-number">4.7</span> <span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</h2>
 
 <div class="definition">
-<span id="def:unnamed-chunk-14" class="definition"><strong>Definition 4.5  (Liquid critical pressure ratio factor)  </strong></span><span class="math inline">\(F_F\)</span> is the liquid critical pressure ratio factor. This factor is the ratio of the apparent vena contracta pressure at choked flow conditions to the vapor pressure of the liquid at inlet temperature. At vapor pressures near zero, this factor is <span class="math inline">\(0.96\)</span>.
+<span id="def:unnamed-chunk-13" class="definition"><strong>Definition 4.4  (Liquid critical pressure ratio factor)  </strong></span><span class="math inline">\(F_F\)</span> is the liquid critical pressure ratio factor. This factor is the ratio of the apparent vena contracta pressure at choked flow conditions to the vapor pressure of the liquid at inlet temperature. At vapor pressures near zero, this factor is <span class="math inline">\(0.96\)</span>.
 </div>
 
 <p>Values of <span class="math inline">\(F_F\)</span> may be determined approximated from the following equation:</p>
 <p><span class="math display" id="eq:critical-pressure">\[\begin{equation} 
   F_F = 0.96 - 0.28 \cdot \sqrt{p_v / p_c}
-  \tag{4.12}
+  \tag{4.13}
 \end{equation}\]</span></p>
 <p>Where: <span class="math inline">\(p_c\)</span> is the thermodynamic critical pressure. For water, this value is <span class="math inline">\(p_c = 221.2 \cdot bar\)</span> and <span class="math inline">\(p_v\)</span> vapor pressure of the liquid.</p>
 
@@ -277,6 +279,9 @@ Figure 4.2: Valve with fittings <span class="citation">(Wagner <a href="#ref-wag
 </div>
 <div id="ref-ansi/isa1985a">
 <p>ANSI/ISA, ed. 1985. <em>ANSI/Isa-75.01-1985 (R1995), Flow Equations for Sizing Control Valves</em>.</p>
+</div>
+<div id="ref-ansi/isa1996">
+<p>———, ed. 1996. <em>ANSI/ISA-S75.02, Control Valve Capacity Test Procedures</em>. Instrument Society of America.</p>
 </div>
 <div id="ref-ansi/isa2007">
 <p>———, ed. 2007. <em>ANSI/Isa-75.01.01-2007, Flow Equations for Sizing Control Valves</em>. ISA.</p>

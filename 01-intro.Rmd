@@ -1,6 +1,23 @@
 # Introduction {#intro}
 
-Plunger valves are mainly used where volume flows or pressure have to be reduced and regulated with out vibrations, noises or big changes in the pipeline. 
+Plunger valves are mainly used where volume flows or pressure have to be reduced and regulated with out vibrations, noises or big changes in the pipeline system.
+
+The following advantages are obtained from the plunger valves [@r.heiler]:
+
+  - universal use wide controllable range;
+  - low cavitation coefficient, stable flow, low noise;
+  - flow block is variable: optimum flow for every operating conditions;
+  - low drive forces with pressure-relieving fix and mobile cylinder (pistons);
+
+Plunger valves are control devices that cause pressure loss in pipeline systems by throttling to throttling to modify the flow or pressure so that the desired values are obtained, depending on the degree of opening adjustment.
+
+To size a control valve, the following points must be considered [@r.heiler]:
+
+  - The control valve must be permit the maximum flow under the lowest-possible differential pressure.
+  - The flow range (maximum, median and minimum) relative to the degree of opening of the control valve must be such that the regulation circuit is stable.
+  - In the entire control range (maximum, median and minimum), there should be no occurrence of cavitation.
+  - The pipeline systems are planned and installed, bearing in mind future requirements, and it is often forgotten that control valves designed for this end capacities are oversized at the start of the operation but not for the future requirements. Reducing the size of the control valve means generating additional costs in the future of system operation.
+  
 
 ## Normative references {#norms}
 
