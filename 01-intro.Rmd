@@ -16,8 +16,65 @@ To size a control valve, the following points must be considered [@r.heiler]:
   - The control valve must be permit the maximum flow under the lowest-possible differential pressure.
   - The flow range (maximum, median and minimum) relative to the degree of opening of the control valve must be such that the regulation circuit is stable.
   - In the entire control range (maximum, median and minimum), there should be no occurrence of cavitation.
-  - The pipeline systems are planned and installed, bearing in mind future requirements, and it is often forgotten that control valves designed for this end capacities are oversized at the start of the operation but not for the future requirements. Reducing the size of the control valve means generating additional costs in the future of system operation.
-  
+  - The pipeline systems are planned and installed, bearing in mind future requirements, and it is often forgotten that control valves designed for this end capacities are oversized at the start of the operation but not for the future requirements. Reducing the size of the control valve means generating additional problems and costs in the future of system operation.
+
+One of the most uncomfortable things that can a hydraulic design Ingenieur happens is a valve that he/she chose for six months ago deteriorate and having to listen to the unflattering comments made by the maintenance department. The most common causes of premature valve failure are:
+
+  - cavitation damage.
+  - cavitation and flashing of water (shock flow).
+  - erosion of the valve.
+  - vibration, (unstable flow pattern with liquids).
+  - corrosion.
+  - leakages (valve/actuator may be cycling).
+
+To avoid in any way, the following design criteria must be met [@baumann2009]:
+
+  - Criteria for valve selection :
+    - Is the valve appropriately sized? 
+    - Does the valve have a low dead band, sometimes confused with hysteresis? 
+    - Will it be able to operate without a positioner (also a cost factor)? 
+    - Does it have adequate rangeability? 
+    - Is the flow characteristic acceptable (installed characteristic)? 
+    - How is its dynamic performance (frequency response, time constant)? 
+
+  - Installation and affects on the environment:
+    - Is the face-to-face such that it can be replaced with another make? 
+    - How heavy is it? 
+    - Are supports needed? 
+    - Is it too tall?
+    - Is it going to be noisy under the given flow conditions? 
+    - Is there energy supply (in the case of electric actuators)? 
+    - Can it withstand the corrosive effects of fluid and the environment? 
+    - Would the valve be cavitating under the given flow conditions? 
+    - If outdoors, can the valve and actuator stand extreme weather conditions? 
+
+  - Maintainability and long-term cost:
+    - Is it easy to repair? 
+    - What are the costs of spare parts? 
+    - Can the actuator tolerate a vibrating environment? 
+    - How is the actuator protected from corrosion? 
+    - Is the packings field-replaceable? 
+    - Is the control cylinders (fix and mobile) are field-replaceable? 
+    - Is the actuator able to diagnose the valve? 
+
+  - The flow rate of a fluid through a control valve is a function of the following (where applicable):
+    - Inlet and outlet conditions
+        - Pressure
+        - Temperature
+        - Piping geometry
+    - Water properties
+        - Composition
+        - Density
+        - Vapor pressure
+        - Viscosity
+        - Thermodynamic critical pressure
+    - Control valve properties
+        - Size
+        - Valve travel
+        - Flow path geometry
+
+Only after reviewing these criteria and deciding on the proper valve type should the subject of cost be considered.
+
 
 ## Normative references {#norms}
 
@@ -45,25 +102,6 @@ The following referenced documents are indispensable for the application of this
   - **IEC 60534-1:2005**, Industrial-process control valves – Part 1: Control valve terminology and general considerations.
   - **IEC 60534-2-3:1997**, Industrial-process control valves – Part 2-3: Flow capacity – Test procedures.
 
-## Flow variable and fluid properties {#fluidproperties}
-
-The flow rate of a fluid through a control valve is a function of the following (where applicable):
-
-  - Inlet and outlet conditions
-      - Pressure
-      - Temperature
-      - Piping geometry
-  - Water properties
-      - Composition
-      - Density
-      - Vapor pressure
-      - Viscosity
-      - Surface tension
-      - Thermodynamic critical pressure
-  - Control valve properties
-      - Size
-      - Valve travel
-      - Flow path geometry
 
 ## Nomenclature {#nomenclature}
 
