@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-10" />
+<meta name="date" content="2020-08-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -97,7 +97,7 @@
 <li class="chapter" data-level="3" data-path="HydraulicValves.html"><a href="HydraulicValves.html"><i class="fa fa-check"></i><b>3</b> Valves Hidraulic</a><ul>
 <li class="chapter" data-level="3.1" data-path="HydraulicValves.html"><a href="HydraulicValves.html#the-flow-coefficient-k_v"><i class="fa fa-check"></i><b>3.1</b> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></a></li>
 <li class="chapter" data-level="3.2" data-path="HydraulicValves.html"><a href="HydraulicValves.html#flow-coefficient-k_v-and-loss-coefficient-zeta_v"><i class="fa fa-check"></i><b>3.2</b> <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span> and <em>Loss Coefficient</em> <span class="math inline">\(\zeta_{v}\)</span></a></li>
-<li class="chapter" data-level="3.3" data-path="HydraulicValves.html"><a href="HydraulicValves.html#the-flow-basic-characteristic-curve."><i class="fa fa-check"></i><b>3.3</b> The flow basic characteristic curve.</a></li>
+<li class="chapter" data-level="3.3" data-path="HydraulicValves.html"><a href="HydraulicValves.html#the-flow-basic-characteristic-curve-inherent-flow-characteristic."><i class="fa fa-check"></i><b>3.3</b> The flow basic characteristic curve (inherent flow characteristic).</a></li>
 <li class="chapter" data-level="3.4" data-path="HydraulicValves.html"><a href="HydraulicValves.html#zeta-value-in-function-of-the-k_vk_vs-characteristic-curve"><i class="fa fa-check"></i><b>3.4</b> Zeta value in function of the <span class="math inline">\(K_v/K_{vs}\)</span> characteristic curve</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><i class="fa fa-check"></i><b>4</b> Sizing equations for incompressible fluids (flow of nonvaporizing liquid)</a><ul>
@@ -112,7 +112,13 @@
 <li class="chapter" data-level="5" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Quantifying the Cavitation Potential of the valve</a><ul>
 <li class="chapter" data-level="5.1" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>5.1</b> Evaluating the Cavitation Limits of the valve</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="inherent-and-installed-flow-characteristics.html"><a href="inherent-and-installed-flow-characteristics.html"><i class="fa fa-check"></i><b>6</b> Inherent and installed flow characteristics</a></li>
 <li class="part"><span><b>II Praxis</b></span></li>
+<li class="chapter" data-level="7" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html"><i class="fa fa-check"></i><b>7</b> How to Size a control valve</a><ul>
+<li class="chapter" data-level="7.1" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html#example-1"><i class="fa fa-check"></i><b>7.1</b> Example 1:</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>7.1.1</b> Step 1. Specify the variables required to size the valve.</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -255,14 +261,24 @@ Figure 4.2: Valve with fittings <span class="citation">(Wagner <a href="#ref-wag
 <span id="def:unnamed-chunk-5" class="definition"><strong>Definition 4.3  (Reynolds number factor)  </strong></span>The Reynolds number factor <span class="math inline">\(F_R\)</span> is required when non-turbulent flow conditions are established through a control valve because of a low pressure differential, a high viscosity, a very small flow coefficient, or a combination thereof.
 </div>
 
-<p><span class="math inline">\(F_{R}\)</span>, the correction factor for the influence of the Reynolds number, is to be used for non-turbulent flow in the control valve because there is either a low differential pressure or a highly viscous liquid or a very low flow coefficient or a combination thereof. The <span class="math inline">\(F_{R}\)</span> factor is determined by dividing the flow coefficient for non-turbulent flow conditions by the flow coefficient determined under the same installation conditions under turbulent circumstances. If no test results are available, <span class="math inline">\(F_{R}\)</span> can be determined from the curve according to <strong>Figure 5.5</strong> by using a valve Reynolds number that is calculated from the following equation:</p>
+<p><span class="math inline">\(F_{R}\)</span>, the correction factor for the influence of the Reynolds number, is to be used for non-turbulent flow in the control valve because there is either a low differential pressure or a highly viscous liquid or a very low flow coefficient or a combination thereof. The <span class="math inline">\(F_{R}\)</span> factor is determined by dividing the flow coefficient for non-turbulent flow conditions by the flow coefficient determined under the same installation conditions under turbulent circumstances. If no test results are available, <span class="math inline">\(F_{R}\)</span> can be determined from the curve according to figure <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#fig:Reynolds-Valve-Sizing">4.3</a> by using a valve Reynolds number that is calculated from the following equation <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>:</p>
 <p><span class="math display" id="eq:reynolds-valve">\[\begin{equation} 
   Re_v = \frac{7.07 \cdot 10^4 \cdot F_d \cdot Q}{\upsilon \cdot \sqrt{F_p \cdot F_L \cdot K_v}} \cdot 
   \left( \frac{{F_P}^2 \cdot  {F_L}^2 {K_v}^2   }{0.0016 \cdot D^4} + 1 \right)
   \tag{4.13}
 \end{equation}\]</span></p>
 <p>with: <span class="math inline">\(\upsilon\)</span> in <span class="math inline">\([mm^2 / s ]\)</span></p>
-<p>Values for $F_d:</p>
+<p>Values for <span class="math inline">\(F_d\)</span>:</p>
+<ul>
+<li>0.7 for control valves with two parallel flow paths;</li>
+<li>1.0 for valves with a V-shaped throttle cross-section, normal single-seat, and ball valves.</li>
+</ul>
+<div class="figure" style="text-align: center"><span id="fig:Reynolds-Valve-Sizing"></span>
+<img src="image/ReynoldsValveSizing.png" alt="Reynolds number factor for valve sizing [@ansi/isa1985a]" width="660" />
+<p class="caption">
+Figure 4.3: Reynolds number factor for valve sizing <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1985a" role="doc-biblioref">1985</a>)</span>
+</p>
+</div>
 </div>
 <div id="f_f-is-the-liquid-critical-pressure-ratio-factor" class="section level2">
 <h2><span class="header-section-number">4.7</span> <span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</h2>

@@ -59,8 +59,7 @@ According to this European Standard, the flow rate characteristic parameter of a
   (\#eq:Kv-03)  
 \end{equation} 
 
-
-## The flow basic characteristic curve.
+## The flow basic characteristic curve (inherent flow characteristic).
 
 The characteristic of a control valve is defined as the flow rate depending on the position of the valve. The control valve generates a change in the flow by changing the active area of piston $A$. 
 

@@ -1,0 +1,22 @@
+# Inherent and installed flow characteristics
+
+First: After the valve is installed into a piping system, the above flow characteristics are only applicable when:
+
+  - the pressure drop upstream and downstream remains constant with flow changes.
+  - there are be no onset of flashing or cavitation at certain flow conditions; and
+  - the valve isn't installed between reducer.
+  
+As you can see from the above, this is ideal conditions that will be only possible in the manufacturer's flow lab.
+
+So, we have to deal with the “installed flow characteristic.” The installed flow characteristic is the relationship of flowing quantity to valve travel, accounting for the difference in pressure drop between the maximum and minimum flow, and the distortion that the reducer head losses create in the inherent valve flow characteristic. This installed characteristic is what finally affects the controller stability [@baumann2009].
+
+In another form, The relationship between the valve stem position and the flow rate through a control valve is the characteristic of the valve.
+
+An equal percentage flow characteristic is a non-linear curve whose slope increases as the valve opens; A linear flow characteristic is a straight line. 
+
+Control valves manipulate the rate of liquid flow through them by altering the open area through which the liquid passes. 
+
+Linear valves increase open area linearly with valve travel, while equal percentage valves progressively open more area with the valve travel.
+
+
+

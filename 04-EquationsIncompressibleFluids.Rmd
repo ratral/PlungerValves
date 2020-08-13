@@ -145,7 +145,7 @@ If the permissible deviation is to remain ≤ 5%, $F_{LP}$ must be determined th
 The Reynolds number factor $F_R$ is required when non-turbulent flow conditions are established through a control valve because of a low pressure differential, a high viscosity, a very small flow coefficient, or a combination thereof.
 ```
 
-$F_{R}$, the correction factor for the influence of the Reynolds number, is to be used for non-turbulent flow in the control valve because there is either a low differential pressure or a highly viscous liquid or a very low flow coefficient or a combination thereof. The $F_{R}$ factor is determined by dividing the flow coefficient for non-turbulent flow conditions by the flow coefficient determined under the same installation conditions under turbulent circumstances. If no test results are available, $F_{R}$ can be determined from the curve according to **Figure 5.5** by using a valve Reynolds number that is calculated from the following equation:
+$F_{R}$, the correction factor for the influence of the Reynolds number, is to be used for non-turbulent flow in the control valve because there is either a low differential pressure or a highly viscous liquid or a very low flow coefficient or a combination thereof. The $F_{R}$ factor is determined by dividing the flow coefficient for non-turbulent flow conditions by the flow coefficient determined under the same installation conditions under turbulent circumstances. If no test results are available, $F_{R}$ can be determined from the curve according to figure  \@ref(fig:Reynolds-Valve-Sizing)  by using a valve Reynolds number that is calculated from the following equation [@wagner2008]:
 
 \begin{equation} 
   Re_v = \frac{7.07 \cdot 10^4 \cdot F_d \cdot Q}{\upsilon \cdot \sqrt{F_p \cdot F_L \cdot K_v}} \cdot 
@@ -153,10 +153,18 @@ $F_{R}$, the correction factor for the influence of the Reynolds number, is to b
   (\#eq:reynolds-valve)
 \end{equation}
 
-
 with: $\upsilon$ in $[mm^2 / s ]$
 
-Values for $F_d:
+Values for $F_d$:
+  
+  - 0.7 for control valves with two parallel flow paths; 
+  - 1.0 for valves with a V-shaped throttle cross-section, normal single-seat, and ball valves. 
+
+
+```{r Reynolds-Valve-Sizing, echo=FALSE, fig.cap = 'Reynolds number factor for valve sizing [@ansi/isa1985a]', fig.width = 8, fig.asp = 0.7, fig.align = "center"}
+  file_image <- here::here("image", "ReynoldsValveSizing.png")
+  knitr::include_graphics(file_image)
+```
 
 
 

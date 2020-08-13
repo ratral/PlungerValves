@@ -1,1 +1,57 @@
 # (PART) Praxis {-} 
+
+# How to Size a control valve
+
+## Example 1:
+
+   - Step 1. Specify the variables required  to size the valve.
+   - Step 2. Determine the equation constants.
+   - Step 3. Determine the piping geometry factor ($F_P$) and liquid pressure recovery factor ($F_L$).
+   - Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
+   - Step 5. Calculate the required flow coefficient ($K_v$).
+
+### Step 1. Specify the variables required  to size the valve.
+
+```{r include=FALSE}
+  temp <- 20
+  elev <- 500
+  p1   <- 30
+  p2   <- 6
+  flow <- 0.250
+  d    <- 0.3
+  
+  # kv curve SZ-40
+  
+  kv.b	<- -2.755
+  kv.d	<- 1.979
+  kv.e	<- 99.215
+  zvs	  <- 15.830
+  fl	  <- 0.775
+  
+
+```
+
+
+Water pressure must be managed from 30 bars to 6 bars.
+
+  - Fluid : Water 
+  - Water Temperature : `r temp` °C
+  - Altitude: `r elev` msal.
+  - $P_1 =$ `r p1` bar
+  - $P_2 =$ `r p2` bar
+  - $q =$ `r flow` LPS
+
+Valve Design (first approx.):
+  
+  - Valve: Plunger Valve
+  - Diameter: `r round(d*1000,0)` mm  
+  - PN-40
+  - Control Element : Cylinder SZ-40
+  - Control Characteristic: Equal-Percentage Characteristic
+  - $100%$ open 
+    - Zeta Value : `r zvs`
+    - flow coefficient: $K_{vs}$ : 
+    - $F_L$ : `r fl`
+
+Service Conditions:
+
