@@ -1,57 +1,92 @@
 # (PART) Praxis {-} 
 
-# How to Size a control valve
+# Use of flow rate equations for sizing valves
 
-## Example 1:
+## Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.
 
    - Step 1. Specify the variables required  to size the valve.
    - Step 2. Determine the equation constants.
-   - Step 3. Determine the piping geometry factor ($F_P$) and liquid pressure recovery factor ($F_L$).
+   - Step 3. Determine the piping geometry factor ($F_P$).
    - Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
    - Step 5. Calculate the required flow coefficient ($K_v$).
 
 ### Step 1. Specify the variables required  to size the valve.
 
 ```{r include=FALSE}
-  temp <- 20
-  elev <- 500
-  p1   <- 30
-  p2   <- 6
-  flow <- 0.250
-  d    <- 0.3
-  
-  # kv curve SZ-40
-  
-  kv.b	<- -2.755
-  kv.d	<- 1.979
-  kv.e	<- 99.215
-  zvs	  <- 15.830
-  fl	  <- 0.775
+
+  library(tidyverse)
+  library(wcontrolvalve)
+
+  temp <- 23.30   # °C
+  elev <-  0.00   # m 
+  p1   <-  5.70   # bar
+  p2   <-  4.80   # bar
+  flow <- 795.6   # m3/h
+  d    <- 0.250   # m
+  D1   <- 0.250   # m (DN Pipe Upstream)
+  D2   <- 0.250   # m (DN Pipe Downstream)
   
 
+  # cylinter_type <- "E"
+  # kv.b  <- -2.393
+  # kv.d	<- 1.389
+  # kv.e	<- 67.422
+  # zvs	  <- 1.780
+  # fl	  <- 0.617
+  
+  # cylinter_type <- "SZ-40"
+  # kv.b	<- -2.755
+  # kv.d	<-  1.979
+  # kv.e	<- 99.215
+  # zvs	  <- 15.830
+  # fl	  <-  0.775  
+  
+  cylinder	<- "SZK-30-20%"
+  kv.b      <- -3.893
+  kv.d	    <- 1.146
+  kv.e      <- 61.038
+  zvs	      <- 3.000
+  fl	      <- 0.598
+  
+  
 ```
 
+Service data : 
+  1. Water pressure must be managed from 30 bars to 6 bars.
+  2. The control valve has a diameter of `r round(d*1000,0)` mm and is smaller than the diameters of the pipe upstream (`r round(D1*1000,0)` mm) and downstream (`r round(D2*1000,0)` mm)  of the valve.
 
-Water pressure must be managed from 30 bars to 6 bars.
+Service Conditions:
 
   - Fluid : Water 
   - Water Temperature : `r temp` °C
   - Altitude: `r elev` msal.
   - $P_1 =$ `r p1` bar
   - $P_2 =$ `r p2` bar
-  - $q =$ `r flow` LPS
+  - $q =$ `r flow` $m^3/h$ 
+  - Diameter Pipe Upstream $D_1$: `r round(D1*1000,0)` mm  
+  - Diameter Pipe Downstream $D_2$: `r round(D2*1000,0)` mm  
 
 Valve Design (first approx.):
   
-  - Valve: Plunger Valve
-  - Diameter: `r round(d*1000,0)` mm  
-  - PN-40
-  - Control Element : Cylinder SZ-40
+  - Valve: Plunger Valve **VAG RIKO**
+  - Diameter Valve $d$: `r round(d*1000,0)` mm  
+  - PN-10
+  - Control Element : Cylinder type `r cylinder`
   - Control Characteristic: Equal-Percentage Characteristic
-  - $100%$ open 
-    - Zeta Value : `r zvs`
-    - flow coefficient: $K_{vs}$ : 
-    - $F_L$ : `r fl`
 
-Service Conditions:
+### Step 2. Determine the equation constants.
+
+  - with the valve 100% open: 
+    - Zeta Value $\zeta_{vs}$ : `r zvs`
+    - Flow coefficient : $K_{vs}$ : `r round(kv_value(d, zvs),0)` $m^3 / h$
+    - liquid pressure recovery factor ${F_{L}}_{s}$ : `r fl`
+  - Atmosphere Pressure : `r atm_pressure(masl = elev)` bar
+  - Vapor Pressure : `r vapour_pressure(temp)*0.01` bar
+  - Kinematic viscosity : `r kinematic_viscosity(temp)` $(m^2/s)*1e-6$
+
+### Step 3. Determine the piping geometry factor ($F_P$).
+
+according to equation \@ref(eq:Fp) $F_p$ is equal to one ($1.0$); in the next examples, we will analyze dimensions with diameters smaller than the transport line size.
+
+### Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
 
