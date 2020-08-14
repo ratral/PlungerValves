@@ -6,7 +6,8 @@
 
    - Step 1. Specify the variables required  to size the valve.
    - Step 2. Determine the equation constants.
-   - Step 3. Determine the piping geometry factor ($F_P$).
+   - Step 3. Determine the flow coefficient $k_v$, the opening degree for the flow and $F_L$.
+   
    - Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
    - Step 5. Calculate the required flow coefficient ($K_v$).
 
@@ -74,19 +75,29 @@ Valve Design (first approx.):
   - Control Element : Cylinder type `r cylinder`
   - Control Characteristic: Equal-Percentage Characteristic
 
-### Step 2. Determine the equation constants.
+### Step 2. Read the constants of the valve.
 
   - with the valve 100% open: 
     - Zeta Value $\zeta_{vs}$ : `r zvs`
-    - Flow coefficient : $K_{vs}$ : `r round(kv_value(d, zvs),0)` $m^3 / h$
+    - Flow coefficient : $K_{vs}$ : `r round(kv_value(d, zvs),1)` $m^3 / h$
     - liquid pressure recovery factor ${F_{L}}_{s}$ : `r fl`
   - Atmosphere Pressure : `r atm_pressure(masl = elev)` bar
   - Vapor Pressure : `r vapour_pressure(temp)*0.01` bar
   - Kinematic viscosity : `r kinematic_viscosity(temp)` $(m^2/s)*1e-6$
 
-### Step 3. Determine the piping geometry factor ($F_P$).
+### Step 3. Determine the $k_v$, the openindegree for the flow and $F_L$.
 
-according to equation \@ref(eq:Fp) $F_p$ is equal to one ($1.0$); in the next examples, we will analyze dimensions with diameters smaller than the transport line size.
+from the equqtion \@ref(eq:Kv-01) :
+
+$$
+   K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}}
+$$
+
+  - $K_v=$ `r round(kv(p1, p2, flow, temp),1)` $m^3 / h$
+  - $K_v / K_{vs}=$ `r round(kv(p1, p2, flow, temp)/kv_value(d, zvs)*100,2)`%
+  - Position of the valve: `r round(inv_LL3(kv(p1, p2, flow, temp)/kv_value(d, zvs), kv.b, kv.d, kv.e),2)`%
+  - $F_L=$ 
+
 
 ### Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
 
