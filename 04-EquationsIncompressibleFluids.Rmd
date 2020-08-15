@@ -137,7 +137,7 @@ Then for inlet reduction and outlet expansion with the same pipe size:
 
 ## Combined liquid pressure recovery factor $F_{LP}$
 
-When a valve is installed with reducers or other attached fittings, the liquid pressure recovery of the valve-fitting combination is not the same as that for the valve alone.  For calculations involving choked flow, it is convenient to treat the piping geometry factor ( $F_p$ ) and the $F_L$ factor for the valve-fitting combination as a single factor. The factor $F_{LP} is determined in the same way as FL, with laboratory test results (For maximum accuracy, F LP must be determined by using the test procedures specified in [@ansi/isa1996}).
+When a valve is installed with reducers or other attached fittings, the liquid pressure recovery of the valve-fitting combination is not the same as that for the valve alone.  For calculations involving choked flow, it is convenient to treat the piping geometry factor $F_p$ and the $F_L$ factor for the valve-fitting combination as a single factor. The factor $F_{LP}$ is determined in the same way as FL, with laboratory test results (For maximum accuracy, F LP must be determined by using the test procedures specified in [@ansi/isa1996}).
 
 If the permissible deviation is to remain ≤ 5%, $F_{LP}$ must be determined through tests. If estimates are allowed, sufficient accuracy can be achieved by using the following equation [@wagner2008]:
 
@@ -187,20 +187,18 @@ Values of $F_F$ may be determined approximated from the following equation:
 
 Where: $p_c$ is the thermodynamic critical pressure. For water, this value is $p_c = 221.2 \cdot bar$ and $p_v$ vapor pressure of the liquid.
 
-
 ## $F_L$ and $F_{LP}$ as function of ....
 
-$$
-  \Delta{P_{max}} = {F_L}^2 \cdot (P_1 - F_F \cdot p_v)
-$$
+| Syntax      | Description |
+| ----------- | ----------- |
+| $\Delta{P_{max}} = {F_L}^2 \cdot (P_1 - F_F \cdot p_v)$|${\left(\frac{1}{F_{L}}\right)}^2 = \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}$|
+| $\Delta P_{max} = {\left(\frac{F_{LP}}{F_P}\right)}^2 \cdot (P_1 - F_F \cdot p_v)$|${\left(\frac{F_P}{F_{LP}}\right)}^2= \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}$|
+
+Here it is essential to understand that being $\sqrt{F_L}$ or $\sqrt{(F_{LP}/{F_P})}$ determines the limit of the choked flow; this value of $\Delta{P}$ is the maximum acceptable for the valve in the current opening position, so:
 
 $$
-  {F_L}^{-2} = \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}} 
+  \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}  \leq \frac{(P_1 - p_v)}{P_1 - P_2}
 $$
-However, it is more convenient to use the upstream pressure for most applications and the left equation values differ by a constant value of 1.0. 
 
-$$
-  {F_L}^{-2} = \frac{(P_2 - F_F \cdot p_v)}{\Delta{P_{max}}} + 1
-$$
 
 

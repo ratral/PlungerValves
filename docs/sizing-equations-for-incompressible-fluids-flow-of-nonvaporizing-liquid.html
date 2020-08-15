@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-14" />
+<meta name="date" content="2020-08-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -271,7 +271,7 @@ Figure 4.3: Valve with fittings <span class="citation">(Wagner <a href="#ref-wag
 </div>
 <div id="combined-liquid-pressure-recovery-factor-f_lp" class="section level2">
 <h2><span class="header-section-number">4.5</span> Combined liquid pressure recovery factor <span class="math inline">\(F_{LP}\)</span></h2>
-<p>When a valve is installed with reducers or other attached fittings, the liquid pressure recovery of the valve-fitting combination is not the same as that for the valve alone. For calculations involving choked flow, it is convenient to treat the piping geometry factor ( <span class="math inline">\(F_p\)</span> ) and the <span class="math inline">\(F_L\)</span> factor for the valve-fitting combination as a single factor. The factor $F_{LP} is determined in the same way as FL, with laboratory test results (For maximum accuracy, F LP must be determined by using the test procedures specified in [<span class="citation">ANSI/ISA (<a href="#ref-ansi/isa1996" role="doc-biblioref">1996</a>)</span>}).</p>
+<p>When a valve is installed with reducers or other attached fittings, the liquid pressure recovery of the valve-fitting combination is not the same as that for the valve alone. For calculations involving choked flow, it is convenient to treat the piping geometry factor <span class="math inline">\(F_p\)</span> and the <span class="math inline">\(F_L\)</span> factor for the valve-fitting combination as a single factor. The factor <span class="math inline">\(F_{LP}\)</span> is determined in the same way as FL, with laboratory test results (For maximum accuracy, F LP must be determined by using the test procedures specified in [<span class="citation">ANSI/ISA (<a href="#ref-ansi/isa1996" role="doc-biblioref">1996</a>)</span>}).</p>
 <p>If the permissible deviation is to remain ≤ 5%, <span class="math inline">\(F_{LP}\)</span> must be determined through tests. If estimates are allowed, sufficient accuracy can be achieved by using the following equation <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>:</p>
 <p><span class="math display" id="eq:Flp">\[\begin{equation} 
   F_{LP} = \frac{F_L}{\sqrt{1 + F_L \cdot \frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
@@ -320,15 +320,31 @@ Figure 4.4: Reynolds number factor for valve sizing <span class="citation">(ANSI
 </div>
 <div id="f_l-and-f_lp-as-function-of-." class="section level2">
 <h2><span class="header-section-number">4.8</span> <span class="math inline">\(F_L\)</span> and <span class="math inline">\(F_{LP}\)</span> as function of ….</h2>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\Delta{P_{max}} = {F_L}^2 \cdot (P_1 - F_F \cdot p_v)\)</span></td>
+<td><span class="math inline">\({\left(\frac{1}{F_{L}}\right)}^2 = \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Delta P_{max} = {\left(\frac{F_{LP}}{F_P}\right)}^2 \cdot (P_1 - F_F \cdot p_v)\)</span></td>
+<td><span class="math inline">\({\left(\frac{F_P}{F_{LP}}\right)}^2= \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Here it is essential to understand that being <span class="math inline">\(F_L\)</span> or <span class="math inline">\(F_{LP}/{F_P}\)</span> determines the limit of the choked flow; this value of <span class="math inline">\(\Delta{P}\)</span> is the maximum acceptable for the valve in the current opening position, so:</p>
 <p><span class="math display">\[
-  \Delta{P_{max}} = {F_L}^2 \cdot (P_1 - F_F \cdot p_v)
-\]</span></p>
-<p><span class="math display">\[
-  {F_L}^{-2} = \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}} 
-\]</span>
-However, it is more convenient to use the upstream pressure for most applications and the left equation values differ by a constant value of 1.0.</p>
-<p><span class="math display">\[
-  {F_L}^{-2} = \frac{(P_2 - F_F \cdot p_v)}{\Delta{P_{max}}} + 1
+  \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}  \leq \frac{(P_1 - p_v)}{P_1 - P_2}
 \]</span></p>
 
 </div>
