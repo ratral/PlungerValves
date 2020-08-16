@@ -10,6 +10,8 @@
    
    - Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
    - Step 5. Calculate the required flow coefficient ($K_v$).
+   
+   
 
 ### Step 1. Specify the variables required  to size the valve.
 

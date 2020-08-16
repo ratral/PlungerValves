@@ -7,7 +7,11 @@ This document focuses on the sizing of plunger control valves in the transportat
 
 It is recommended that readers have a basic understanding of hydraulic. Part I Theory introduces the fundamental usage and syntax, which should be sufficient to get most readers started in sizing a control valve.  This part provides an overview of the basics hydraulic functions and is recommended reading for any new users of this document. 
 
-Reading these documents does not exclude knowledge of the different European, American, and regional standards norms regarding valve sizing. It is also necessary to have access to technical literature about valve sizing to delve into the different concepts.
+Reading these documents does not exclude knowledge of the different European, American, and regional standards regarding control valve sizing. It is also necessary to have access to the norms, technical literature, and information of the producer about control valve sizing to delve into the different concepts.
+
+This document is a compilation of existing information in both European and American standards, in books and articles by different authors and articles by different manufacturers of valves. I have tried to cite all the above sources, but I apologize if, at any time, this has not correct. Also, apologize in advance if any of the mathematical functions have any errors. 
+
+I ask that you please inform me to correct both the references to the different authors and the errors in the formulas.
 
 In part II praxis, I will concentrate on the development of examples, based on the information published by the different manufacturers of plunger valves. 
 

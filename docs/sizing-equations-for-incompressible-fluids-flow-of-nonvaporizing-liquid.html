@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-15" />
+<meta name="date" content="2020-08-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -108,7 +108,8 @@
 <li class="chapter" data-level="4.5" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#combined-liquid-pressure-recovery-factor-f_lp"><i class="fa fa-check"></i><b>4.5</b> Combined liquid pressure recovery factor <span class="math inline">\(F_{LP}\)</span></a></li>
 <li class="chapter" data-level="4.6" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#reynolds-number-factor-f_r"><i class="fa fa-check"></i><b>4.6</b> Reynolds number factor <span class="math inline">\(F_{R}\)</span></a></li>
 <li class="chapter" data-level="4.7" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_f-is-the-liquid-critical-pressure-ratio-factor"><i class="fa fa-check"></i><b>4.7</b> <span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</a></li>
-<li class="chapter" data-level="4.8" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_l-and-f_lp-as-function-of-."><i class="fa fa-check"></i><b>4.8</b> <span class="math inline">\(F_L\)</span> and <span class="math inline">\(F_{LP}\)</span> as function of ….</a></li>
+<li class="chapter" data-level="4.8" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_l-and-f_lp-as-limit-for-the-choked-flow."><i class="fa fa-check"></i><b>4.8</b> <span class="math inline">\(F_L\)</span> and <span class="math inline">\(F_{LP}\)</span> as limit for the choked flow.</a></li>
+<li class="chapter" data-level="4.9" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#flow-rate-diagram"><i class="fa fa-check"></i><b>4.9</b> Flow Rate Diagram</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Quantifying the Cavitation Potential of the valve</a><ul>
 <li class="chapter" data-level="5.1" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>5.1</b> Evaluating the Cavitation Limits of the valve</a></li>
@@ -318,8 +319,8 @@ Figure 4.4: Reynolds number factor for valve sizing <span class="citation">(ANSI
 \end{equation}\]</span></p>
 <p>Where: <span class="math inline">\(p_c\)</span> is the thermodynamic critical pressure. For water, this value is <span class="math inline">\(p_c = 221.2 \cdot bar\)</span> and <span class="math inline">\(p_v\)</span> vapor pressure of the liquid.</p>
 </div>
-<div id="f_l-and-f_lp-as-function-of-." class="section level2">
-<h2><span class="header-section-number">4.8</span> <span class="math inline">\(F_L\)</span> and <span class="math inline">\(F_{LP}\)</span> as function of ….</h2>
+<div id="f_l-and-f_lp-as-limit-for-the-choked-flow." class="section level2">
+<h2><span class="header-section-number">4.8</span> <span class="math inline">\(F_L\)</span> and <span class="math inline">\(F_{LP}\)</span> as limit for the choked flow.</h2>
 <table>
 <colgroup>
 <col width="50%" />
@@ -342,9 +343,23 @@ Figure 4.4: Reynolds number factor for valve sizing <span class="citation">(ANSI
 </tr>
 </tbody>
 </table>
-<p>Here it is essential to understand that being <span class="math inline">\(F_L\)</span> or <span class="math inline">\(F_{LP}/{F_P}\)</span> determines the limit of the choked flow; this value of <span class="math inline">\(\Delta{P}\)</span> is the maximum acceptable for the valve in the current opening position, so:</p>
+<p>Here it is essential to understand that being <span class="math inline">\(\sqrt{F_L}\)</span> or <span class="math inline">\(\sqrt{(F_{LP}/{F_P})}\)</span> determines the limit of the choked flow; this value of <span class="math inline">\(\Delta{P}\)</span> is the maximum acceptable for the valve in the current opening position, so:</p>
 <p><span class="math display">\[
-  \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}  \leq \frac{(P_1 - p_v)}{P_1 - P_2}
+  \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}  \leq \frac{(P_1 - p_v)}{\Delta{P}}
+\]</span></p>
+</div>
+<div id="flow-rate-diagram" class="section level2">
+<h2><span class="header-section-number">4.9</span> Flow Rate Diagram</h2>
+<div class="figure" style="text-align: center"><span id="fig:Flow-rate-diagram2"></span>
+<img src="image/Flow_Rate_Diagram.png" alt="Flow rate diagram through a control valve versus downstream pressure under constant upstream conditions." width="493" />
+<p class="caption">
+Figure 4.5: Flow rate diagram through a control valve versus downstream pressure under constant upstream conditions.
+</p>
+</div>
+<p>Usually the beginning of cavitation is identified by the coefficient of incipient cavitation <span class="math inline">\(X_{FZ}\)</span> :</p>
+<p><span class="math inline">\(K_C\)</span> identifies where the cavitation begins to appear in water flow through the control valve with such an intensity that, under constant upstream conditions, the flow rate deviation from the linearity versus <span class="math inline">\(\sqrt{\Delta{P}}\)</span> exceeds <strong>2%</strong>. A simple calculation rule uses the formula:</p>
+<p><span class="math display">\[
+  K_C = 0.80 \cdot {F_L}^2
 \]</span></p>
 
 </div>
