@@ -1,4 +1,4 @@
-# Quantifying the Cavitation Potential of the valve
+# Quantifying the Cavitation Potential of the valve 
 
 Its effect on the system varies with valve type, size, operating pressure, and details of the piping installation. To include cavitation in the design process is necessary to determine if cavitation will it's, evaluate its intensity, characterize the flow conditions, and estimate its effect on the system and environment. Possible consequences include noise, vibration, erosion damage, and a decrease in performance.
 

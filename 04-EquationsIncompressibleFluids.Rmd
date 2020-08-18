@@ -194,12 +194,51 @@ Where: $p_c$ is the thermodynamic critical pressure. For water, this value is $p
 | $\Delta{P_{max}} = {F_L}^2 \cdot (P_1 - F_F \cdot p_v)$|${\left(\frac{1}{F_{L}}\right)}^2 = \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}$|
 | $\Delta P_{max} = {\left(\frac{F_{LP}}{F_P}\right)}^2 \cdot (P_1 - F_F \cdot p_v)$|${\left(\frac{F_P}{F_{LP}}\right)}^2= \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}$|
 
-Here it is essential to understand that being $\sqrt{F_L}$ or $\sqrt{(F_{LP}/{F_P})}$ determines the limit of the choked flow; this value of $\Delta{P}$ is the maximum acceptable for the valve in the current opening position, so:
+Here it is essential to understand that being $\sqrt{F_L}$ or $\sqrt{(F_{LP}/{F_P})}$ determines the limit of the choked flow; this value of $\Delta{P_{max}}$ is the maximum differential pressure acceptable for the valve in the current opening position, so:
 
 $$
   \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}  \leq \frac{(P_1 - p_v)}{\Delta{P}}
 $$
 
+##  $F_L$ as function of the $K_v / K{vs}$
+
+
+
+
+$$
+   \frac{1}{F_{L}^2} = \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}} = \frac{(P_2 - F_F \cdot p_v)}{\Delta{P_{max}}} + 1
+$$
+If we define $\sigma_1$ that:
+
+$$
+   \frac{1}{F_{L}^2} - 1 = \frac{(P_2 - F_F \cdot p_v)}{\Delta{P_{max}}} = \sigma_{1}
+$$
+
+The maximum value of sigma $\sigma_{1_S}$ (for the fully open valve) where $F_{L_S}$ is the Liquid pressure recovery factor by 100% open the valve, would be:
+
+
+$$
+  \sigma_{1_S} = \frac{1}{F_{L_S}^2} -1  
+$$
+The Sigma $\sigma_{1_S}$ maximum changes proportionally to the value of $K_V/K_{VS}$ therefore:
+
+$$
+  \sigma_{1_S} * (K_V / K_{VS}) = \frac{1}{F_{L}^2} -1  
+$$
+
+$$
+  {F_{L}^2} = \frac{1}{\sigma_{s} * (K_V / K_{VS}) +1 }  
+$$
+
+$$
+  {F_{L}^2} = \frac{1}{ \left( \frac{1}{F_{L_S}^2} -1 \right)  * (K_V / K_{VS}) +1 }  
+$$
+
+
+\begin{equation} 
+  F_{L} = \sqrt{ \frac{1}{ \left( \frac{1}{F_{L_S}^2} -1 \right)  * (K_V / K_{VS}) + 1} }
+  (\#eq:Fl-function)
+\end{equation}
 
 ## Flow Rate Diagram
 
@@ -214,9 +253,10 @@ Usually the beginning of cavitation is identified by the coefficient of incipien
 The coefficient of constant cavitation $K_C$ identifies where the cavitation begins to appear in water flow through the control valve with such an intensity that, under constant upstream conditions, the flow rate deviation from the linearity versus $\sqrt{\Delta{P}}$ exceeds **2%**. A simple calculation rule uses the formula:
 
 
-$$
+\begin{equation} 
   K_C = 0.80 \cdot {F_L}^2
-$$
+  (\#eq:Kc-function)
+\end{equation}
 
 The coefficient of incipient cavitation $X_{FZ}$ identifies the beginning of cavitation. 
 

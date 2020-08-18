@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-16" />
+<meta name="date" content="2020-08-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -109,7 +109,8 @@
 <li class="chapter" data-level="4.6" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#reynolds-number-factor-f_r"><i class="fa fa-check"></i><b>4.6</b> Reynolds number factor <span class="math inline">\(F_{R}\)</span></a></li>
 <li class="chapter" data-level="4.7" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_f-is-the-liquid-critical-pressure-ratio-factor"><i class="fa fa-check"></i><b>4.7</b> <span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</a></li>
 <li class="chapter" data-level="4.8" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_l-and-f_lp-as-limit-for-the-choked-flow."><i class="fa fa-check"></i><b>4.8</b> <span class="math inline">\(F_L\)</span> and <span class="math inline">\(F_{LP}\)</span> as limit for the choked flow.</a></li>
-<li class="chapter" data-level="4.9" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#flow-rate-diagram"><i class="fa fa-check"></i><b>4.9</b> Flow Rate Diagram</a></li>
+<li class="chapter" data-level="4.9" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_l-as-function-of-the-k_v-kvs"><i class="fa fa-check"></i><b>4.9</b> <span class="math inline">\(F_L\)</span> as function of the <span class="math inline">\(K_v / K{vs}\)</span></a></li>
+<li class="chapter" data-level="4.10" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#flow-rate-diagram"><i class="fa fa-check"></i><b>4.10</b> Flow Rate Diagram</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Quantifying the Cavitation Potential of the valve</a><ul>
 <li class="chapter" data-level="5.1" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>5.1</b> Evaluating the Cavitation Limits of the valve</a></li>
@@ -343,13 +344,41 @@ Figure 4.4: Reynolds number factor for valve sizing <span class="citation">(ANSI
 </tr>
 </tbody>
 </table>
-<p>Here it is essential to understand that being <span class="math inline">\(\sqrt{F_L}\)</span> or <span class="math inline">\(\sqrt{(F_{LP}/{F_P})}\)</span> determines the limit of the choked flow; this value of <span class="math inline">\(\Delta{P}\)</span> is the maximum acceptable for the valve in the current opening position, so:</p>
+<p>Here it is essential to understand that being <span class="math inline">\(\sqrt{F_L}\)</span> or <span class="math inline">\(\sqrt{(F_{LP}/{F_P})}\)</span> determines the limit of the choked flow; this value of <span class="math inline">\(\Delta{P_{max}}\)</span> is the maximum differential pressure acceptable for the valve in the current opening position, so:</p>
 <p><span class="math display">\[
   \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}}  \leq \frac{(P_1 - p_v)}{\Delta{P}}
 \]</span></p>
 </div>
+<div id="f_l-as-function-of-the-k_v-kvs" class="section level2">
+<h2><span class="header-section-number">4.9</span> <span class="math inline">\(F_L\)</span> as function of the <span class="math inline">\(K_v / K{vs}\)</span></h2>
+<p><span class="math display">\[
+   \frac{1}{F_{L}^2} = \frac{(P_1 - F_F \cdot p_v)}{\Delta{P_{max}}} = \frac{(P_2 - F_F \cdot p_v)}{\Delta{P_{max}}} + 1
+\]</span>
+If we define <span class="math inline">\(\sigma_1\)</span> that:</p>
+<p><span class="math display">\[
+   \frac{1}{F_{L}^2} - 1 = \frac{(P_2 - F_F \cdot p_v)}{\Delta{P_{max}}} = \sigma_{1}
+\]</span></p>
+<p>The maximum value of sigma <span class="math inline">\(\sigma_{1_S}\)</span> (for the fully open valve) where <span class="math inline">\(F_{L_S}\)</span> is the Liquid pressure recovery factor by 100% open the valve, would be:</p>
+<p><span class="math display">\[
+  \sigma_{1_S} = \frac{1}{F_{L_S}^2} -1  
+\]</span>
+The Sigma <span class="math inline">\(\sigma_{1_S}\)</span> maximum changes proportionally to the value of <span class="math inline">\(K_V/K_{VS}\)</span> therefore:</p>
+<p><span class="math display">\[
+  \sigma_{1_S} * (K_V / K_{VS}) = \frac{1}{F_{L}^2} -1  
+\]</span></p>
+<p><span class="math display">\[
+  {F_{L}^2} = \frac{1}{\sigma_{s} * (K_V / K_{VS}) +1 }  
+\]</span></p>
+<p><span class="math display">\[
+  {F_{L}^2} = \frac{1}{ \left( \frac{1}{F_{L_S}^2} -1 \right)  * (K_V / K_{VS}) +1 }  
+\]</span></p>
+<p><span class="math display" id="eq:Fl-function">\[\begin{equation} 
+  F_{L} = \sqrt{ \frac{1}{ \left( \frac{1}{F_{L_S}^2} -1 \right)  * (K_V / K_{VS}) + 1} }
+  \tag{4.15}
+\end{equation}\]</span></p>
+</div>
 <div id="flow-rate-diagram" class="section level2">
-<h2><span class="header-section-number">4.9</span> Flow Rate Diagram</h2>
+<h2><span class="header-section-number">4.10</span> Flow Rate Diagram</h2>
 <div class="figure" style="text-align: center"><span id="fig:Flow-rate-diagram2"></span>
 <img src="image/Flow_Rate_Diagram.png" alt="Flow rate diagram through a control valve versus downstream pressure under constant upstream conditions." width="493" />
 <p class="caption">
@@ -357,10 +386,13 @@ Figure 4.5: Flow rate diagram through a control valve versus downstream pressure
 </p>
 </div>
 <p>Usually the beginning of cavitation is identified by the coefficient of incipient cavitation <span class="math inline">\(X_{FZ}\)</span> :</p>
-<p><span class="math inline">\(K_C\)</span> identifies where the cavitation begins to appear in water flow through the control valve with such an intensity that, under constant upstream conditions, the flow rate deviation from the linearity versus <span class="math inline">\(\sqrt{\Delta{P}}\)</span> exceeds <strong>2%</strong>. A simple calculation rule uses the formula:</p>
-<p><span class="math display">\[
+<p>The coefficient of constant cavitation <span class="math inline">\(K_C\)</span> identifies where the cavitation begins to appear in water flow through the control valve with such an intensity that, under constant upstream conditions, the flow rate deviation from the linearity versus <span class="math inline">\(\sqrt{\Delta{P}}\)</span> exceeds <strong>2%</strong>. A simple calculation rule uses the formula:</p>
+<p><span class="math display" id="eq:Kc-function">\[\begin{equation} 
   K_C = 0.80 \cdot {F_L}^2
-\]</span></p>
+  \tag{4.16}
+\end{equation}\]</span></p>
+<p>The coefficient of incipient cavitation <span class="math inline">\(X_{FZ}\)</span> identifies the beginning of cavitation.</p>
+<p>The <span class="math inline">\(X_{FZ}\)</span> coefficient can be determined by a test using sound level meters or accelerometers connected to the pipe and relating noise and vibration increase with the beginning of bubble formation [<strong>IEC 60534-8-2</strong> <em>“Laboratory measurement of the noise generated by a liquid flow through a control valve”</em>].</p>
 
 </div>
 </div>
