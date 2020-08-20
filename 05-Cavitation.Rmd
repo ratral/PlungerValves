@@ -125,3 +125,24 @@ A flow condition in which vapor pockets formed inside a valve persist downstream
 The ratio of the amount of time a valve spends performing one particular function to the valve's total installed time period. It may be expressed as a percentage of total time (service time vs. installed time) [@ansi/isa1995].
 
 ```
+
+SIGMA Values:
+
+1. Incipient cavitation. ($\sigma_{i}$):
+   • Onset of cavitation
+   • Detect using high frequency vibration measurement
+   • Very local phenomenon
+   • Transient: random “ticks” sound
+   • Low level cavitation: usually not damaging
+   • Occurs prior to loss of capacity
+2. Constant cavitation ($\sigma_{c}$):
+   • More regular cavitation events
+   • Lower frequency sound and vibration sensed: “rumbling” sound
+   • Some damage to surfaces may occur: dependent upon valve and trim styles, and materials.
+3. Maximum Cavitation ($\sigma_{mv}$):
+   • Highest vibration amplitude: sounds like “marbles” or “gravel”
+   • Vigorous, large scale cavitation
+   • Predicted by steady flow pressure distribution ( = $F_L$ )
+   • Very high damage potential
+4. Manufacturer’s Recommended Limit ($\sigma_{mr}$)
+

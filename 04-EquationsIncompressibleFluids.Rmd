@@ -80,11 +80,12 @@ The piping geometry factor $F_{p}$ accounts for fittings attached to either the 
 ```
 
 
-$F_P$, the factor for the pipe geometry, takes into account the influence of the fittings that are attached directly to the inlet and/or outlet of a control valve (figure \@ref(fig:valve-with-fittings)). The $F_P$ factor is the ratio of the flow rate of a control valve with fittings to the flow rate that would result if the control valve were tested without fittings under identical conditions [@wagner2008].
+$F_P$, the factor for the pipe geometry, takes into account the influence of the fittings that are attached directly to the inlet and/or outlet of a control valve (figure \@ref(fig:valve-with-fittings)). The $F_P$ factor is the ratio of the flow rate of a control valve with fittings to the flow rate that would result if the control valve were tested without fittings under identical conditions [@wagner2008] and [@ansi/isa2007].
 
 \begin{equation} 
-  F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
-    (\#eq:Fp)
+    F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.00214}}}
+    = \left( \frac{\sum{\zeta} \cdot K_v^2}{0.00214 \cdot d^4} + 1 \right)^{-1/2}
+(\#eq:Fp)
 \end{equation} 
 
 
@@ -139,11 +140,12 @@ Then for inlet reduction and outlet expansion with the same pipe size:
 
 When a valve is installed with reducers or other attached fittings, the liquid pressure recovery of the valve-fitting combination is not the same as that for the valve alone.  For calculations involving choked flow, it is convenient to treat the piping geometry factor $F_p$ and the $F_L$ factor for the valve-fitting combination as a single factor. The factor $F_{LP}$ is determined in the same way as FL, with laboratory test results (For maximum accuracy, F LP must be determined by using the test procedures specified in [@ansi/isa1996}).
 
-If the permissible deviation is to remain ≤ 5%, $F_{LP}$ must be determined through tests. If estimates are allowed, sufficient accuracy can be achieved by using the following equation [@wagner2008]:
+If the permissible deviation is to remain ≤ 5%, $F_{LP}$ must be determined through tests. If estimates are allowed, sufficient accuracy can be achieved by using the following equation [@wagner2008] and [@ansi/isa2007]:
 
 \begin{equation} 
-  F_{LP} = \frac{F_L}{\sqrt{1 + F_L \cdot \frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
-    (\#eq:Flp)
+  F_{LP} = \frac{F_L}{\sqrt{1 + F_L \cdot \frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.00214}}} 
+  = F_L \cdot \left(\frac{\sum{\zeta} \cdot F_L^2 \cdot K_v^2}{0.00214 \cdot d^4} + 1 \right)^{-1/2}
+(\#eq:Flp)
 \end{equation} 
 
 ## Reynolds number factor $F_{R}$
