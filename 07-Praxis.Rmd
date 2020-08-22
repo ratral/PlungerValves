@@ -75,7 +75,11 @@ Valve Design (first approx.):
   - Diameter Valve $d$: `r round(d*1000,0)` mm  
   - PN-10
   - Control Element : Cylinder type `r cylinder`
-  - Control Characteristic: Equal-Percentage Characteristic
+  - Control Characteristic: 
+
+```{r kv-kvs-Example-1, echo=FALSE, fig.cap="Inherent Valve Characteristics"}
+  plot_kv_kvs(kv.b, kv.d, kv.e, cylinder)
+```
 
 ### Step 2. Read the constants of the valve.
 
@@ -86,6 +90,16 @@ Valve Design (first approx.):
   - Atmosphere Pressure : `r atm_pressure(masl = elev)` bar
   - Vapor Pressure : `r vapour_pressure(temp)*0.01` bar
   - Kinematic viscosity : `r kinematic_viscosity(temp)` $(m^2/s)*1e-6$
+
+```{r kv-Example-1, echo=FALSE, fig.cap="Flow coefficient"}
+  plot_kv(kv.b, kv.d, kv.e, d, zvs, cylinder)
+```
+
+```{r zv-Example-1, echo=FALSE, fig.cap="Zeta Value"}
+  plot_zv(kv.b, kv.d, kv.e, zvs, cylinder)
+```
+
+
 
 ### Step 3. Determine the $k_v$, the openindegree for the flow and $F_L$.
 
