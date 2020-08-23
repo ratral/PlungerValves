@@ -13,6 +13,7 @@ description: "(UNDER CONSTRUCTION!!!) ....In this documentation, I want to clari
 ```{r include=FALSE}
   library(tidyverse)
   library(here)
+  library(DiagrammeR)
 ```
 
 

@@ -2,6 +2,34 @@
 
 # Use of flow rate equations for sizing valves
 
+
+
+```{r echo=FALSE}
+
+  # https://bookdown.org/yihui/rmarkdown-cookbook/diagrams.html
+  # http://rich-iannone.github.io/DiagrammeR/index.html
+
+  DiagrammeR::grViz(
+  
+  "digraph {
+    graph [layout = dot, rankdir = TB]
+    
+    # 
+    node [shape = rectangle]        
+    rec1 [label = 'Step 1. Wake up']
+    rec2 [label = 'Step 2. Write code']
+    rec3 [label =  'Step 3. ???']
+    rec4 [label = 'Step 4. PROFIT']
+  
+    # edge definitions with the node IDs
+    rec1 -> rec2 -> rec3 -> rec4
+  }",
+  
+  height = 500)
+
+```
+  
+
 ## Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.
 
    - Step 1. Specify the variables required  to size the valve.
@@ -20,37 +48,21 @@
   library(tidyverse)
   library(wcontrolvalve)
 
-  temp <- 23.30   # °C
-  elev <-  0.00   # m 
-  p1   <-  5.70   # bar
-  p2   <-  4.80   # bar
-  flow <- 795.6   # m3/h
-  d    <- 0.250   # m
-  D1   <- 0.250   # m (DN Pipe Upstream)
-  D2   <- 0.250   # m (DN Pipe Downstream)
-  
-
-  # cylinter_type <- "E"
-  # kv.b  <- -2.393
-  # kv.d	<- 1.389
-  # kv.e	<- 67.422
-  # zvs	  <- 1.780
-  # fl	  <- 0.617
-  
-  # cylinter_type <- "SZ-40"
-  # kv.b	<- -2.755
-  # kv.d	<-  1.979
-  # kv.e	<- 99.215
-  # zvs	  <- 15.830
-  # fl	  <-  0.775  
+  temp <-  23.300   # °C
+  elev <-   0.000   # m 
+  p1   <-   5.700   # bar
+  p2   <-   4.800   # bar
+  flow <- 795.600   # m3/h
+  d    <-   0.250   # m
+  D1   <-   0.250   # m (DN Pipe Upstream)
+  D2   <-   0.250   # m (DN Pipe Downstream)
   
   cylinder	<- "SZK-30-20%"
   kv.b      <- -3.893
-  kv.d	    <- 1.146
+  kv.d	    <-  1.146
   kv.e      <- 61.038
-  zvs	      <- 3.000
-  fl	      <- 0.598
-  
+  zvs	      <-  3.000
+  fl	      <-  0.598
   
 ```
 
@@ -58,15 +70,23 @@ Service data :
   1. Water pressure must be managed from 30 bars to 6 bars.
   2. The control valve has a diameter of `r round(d*1000,0)` mm and is smaller than the diameters of the pipe upstream (`r round(D1*1000,0)` mm) and downstream (`r round(D2*1000,0)` mm)  of the valve.
 
+
+physical constants:
+  
+  - Fluid : Water 
+  - Water Temperature :   `r temp` °C
+  - Altitude:             `r elev` msal.
+  - Atmosphere Pressure : `r atm_pressure(masl = elev)` bar
+  - Vapor Pressure :      `r vapour_pressure(temp)*0.01` bar
+  - Kinematic viscosity : `r kinematic_viscosity(temp)` $(m^2/s)*1e-6$
+
 Service Conditions:
 
-  - Fluid : Water 
-  - Water Temperature : `r temp` °C
-  - Altitude: `r elev` msal.
-  - $P_1 =$ `r p1` bar
-  - $P_2 =$ `r p2` bar
-  - $q =$ `r flow` $m^3/h$ 
-  - Diameter Pipe Upstream $D_1$: `r round(D1*1000,0)` mm  
+  - $P_1 =$                         `r p1` bar
+  - $P_2 =$                         `r p2` bar
+  - $\Delta{P}$                     `r p1 - p2` bar
+  - $q =$                           `r flow` $m^3/h$ 
+  - Diameter Pipe Upstream $D_1$:   `r round(D1*1000,0)` mm  
   - Diameter Pipe Downstream $D_2$: `r round(D2*1000,0)` mm  
 
 Valve Design (first approx.):
@@ -82,14 +102,12 @@ Valve Design (first approx.):
 ```
 
 ### Step 2. Read the constants of the valve.
-
+  
   - with the valve 100% open: 
     - Zeta Value $\zeta_{vs}$ : `r zvs`
     - Flow coefficient : $K_{vs}$ : `r round(kv_value(d, zvs),1)` $m^3 / h$
     - liquid pressure recovery factor ${F_{L}}_{s}$ : `r fl`
-  - Atmosphere Pressure : `r atm_pressure(masl = elev)` bar
-  - Vapor Pressure : `r vapour_pressure(temp)*0.01` bar
-  - Kinematic viscosity : `r kinematic_viscosity(temp)` $(m^2/s)*1e-6$
+
 
 ```{r kv-Example-1, echo=FALSE, fig.cap="Flow coefficient"}
   plot_kv(kv.b, kv.d, kv.e, d, zvs, cylinder)
@@ -101,13 +119,9 @@ Valve Design (first approx.):
 
 
 
-### Step 3. Determine the $k_v$, the openindegree for the flow and $F_L$.
+### Step 3. Determine the $k_v$, and $F_L$.
 
-from the equqtion \@ref(eq:Kv-01) :
-
-$$
-   K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}}
-$$
+from the equation \@ref(eq:Kv-01) :
 
   - $K_v=$ `r round(kv(p1, p2, flow, temp),1)` $m^3 / h$
   - $K_v / K_{vs}=$ `r round(kv(p1, p2, flow, temp)/kv_value(d, zvs)*100,2)`%

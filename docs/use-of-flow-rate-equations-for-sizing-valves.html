@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Use of flow rate equations for sizing valves | Plunger Valves (UNDER CONSTRUCTION!!!)</title>
+  <title>Chapter 7 Use of flow rate equations for sizing valves | Plunger Valves (UNDER CONSTRUCTION!!!)</title>
   <meta name="description" content="(UNDER CONSTRUCTION!!!) ….In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Use of flow rate equations for sizing valves | Plunger Valves (UNDER CONSTRUCTION!!!)" />
+  <meta property="og:title" content="Chapter 7 Use of flow rate equations for sizing valves | Plunger Valves (UNDER CONSTRUCTION!!!)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Use of flow rate equations for sizing valves | Plunger Valves (UNDER CONSTRUCTION!!!)" />
+  <meta name="twitter:title" content="Chapter 7 Use of flow rate equations for sizing valves | Plunger Valves (UNDER CONSTRUCTION!!!)" />
   
   <meta name="twitter:description" content="(UNDER CONSTRUCTION!!!) ….In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-22" />
+<meta name="date" content="2020-08-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -51,6 +51,17 @@
 
 
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.15/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.9000/grViz.js"></script>
 
 
 
@@ -72,53 +83,56 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a><ul>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html#structure-of-the-document"><i class="fa fa-check"></i>Structure of the document</a></li>
-<li class="chapter" data-level="0.1" data-path="preface.html"><a href="preface.html#norms"><i class="fa fa-check"></i><b>0.1</b> Normative references</a></li>
-<li class="chapter" data-level="0.2" data-path="preface.html"><a href="preface.html#nomenclature"><i class="fa fa-check"></i><b>0.2</b> Nomenclature</a></li>
 </ul></li>
-<li class="part"><span><b>I Theory</b></span><ul>
-<li class="chapter" data-level="0.3" data-path="preface.html"><a href="preface.html#equations"><i class="fa fa-check"></i><b>0.3</b> Equations</a></li>
-<li class="chapter" data-level="0.4" data-path="preface.html"><a href="preface.html#energy-head"><i class="fa fa-check"></i><b>0.4</b> Energy Head</a></li>
-<li class="chapter" data-level="0.5" data-path="preface.html"><a href="preface.html#hydraulic-head-losses"><i class="fa fa-check"></i><b>0.5</b> Hydraulic Head losses</a></li>
-<li class="chapter" data-level="0.6" data-path="preface.html"><a href="preface.html#darcy-friction-factor-formula"><i class="fa fa-check"></i><b>0.6</b> Darcy Friction Factor Formula</a></li>
-<li class="chapter" data-level="0.7" data-path="preface.html"><a href="preface.html#calculation-of-the-friction-factor"><i class="fa fa-check"></i><b>0.7</b> Calculation of the friction factor</a></li>
-<li class="chapter" data-level="0.8" data-path="preface.html"><a href="preface.html#roughness-coefficient-varepsilon-of-the-pipe-in-mm"><i class="fa fa-check"></i><b>0.8</b> Roughness coefficient <span class="math inline">\(\varepsilon\)</span> of the pipe in mm</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#norms"><i class="fa fa-check"></i><b>1.1</b> Normative references</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#nomenclature"><i class="fa fa-check"></i><b>1.2</b> Nomenclature</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="HydraulicValves.html"><a href="HydraulicValves.html"><i class="fa fa-check"></i><b>1</b> Valves Hidraulic</a><ul>
-<li class="chapter" data-level="1.1" data-path="HydraulicValves.html"><a href="HydraulicValves.html#the-flow-coefficient-k_v"><i class="fa fa-check"></i><b>1.1</b> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></a></li>
-<li class="chapter" data-level="1.2" data-path="HydraulicValves.html"><a href="HydraulicValves.html#flow-coefficient-k_v-and-loss-coefficient-zeta_v"><i class="fa fa-check"></i><b>1.2</b> <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span> and <em>Loss Coefficient</em> <span class="math inline">\(\zeta_{v}\)</span></a></li>
-<li class="chapter" data-level="1.3" data-path="HydraulicValves.html"><a href="HydraulicValves.html#the-flow-basic-characteristic-curve-inherent-flow-characteristic."><i class="fa fa-check"></i><b>1.3</b> The flow basic characteristic curve (inherent flow characteristic).</a></li>
-<li class="chapter" data-level="1.4" data-path="HydraulicValves.html"><a href="HydraulicValves.html#zeta-value-in-function-of-the-k_vk_vs-characteristic-curve"><i class="fa fa-check"></i><b>1.4</b> Zeta value in function of the <span class="math inline">\(K_v/K_{vs}\)</span> characteristic curve</a></li>
+<li class="part"><span><b>I Theory</b></span></li>
+<li class="chapter" data-level="2" data-path="HydraulicBasics.html"><a href="HydraulicBasics.html"><i class="fa fa-check"></i><b>2</b> Hydraulic Basics</a><ul>
+<li class="chapter" data-level="2.1" data-path="HydraulicBasics.html"><a href="HydraulicBasics.html#equations"><i class="fa fa-check"></i><b>2.1</b> Equations</a></li>
+<li class="chapter" data-level="2.2" data-path="HydraulicBasics.html"><a href="HydraulicBasics.html#energy-head"><i class="fa fa-check"></i><b>2.2</b> Energy Head</a></li>
+<li class="chapter" data-level="2.3" data-path="HydraulicBasics.html"><a href="HydraulicBasics.html#hydraulic-head-losses"><i class="fa fa-check"></i><b>2.3</b> Hydraulic Head losses</a></li>
+<li class="chapter" data-level="2.4" data-path="HydraulicBasics.html"><a href="HydraulicBasics.html#darcy-friction-factor-formula"><i class="fa fa-check"></i><b>2.4</b> Darcy Friction Factor Formula</a></li>
+<li class="chapter" data-level="2.5" data-path="HydraulicBasics.html"><a href="HydraulicBasics.html#calculation-of-the-friction-factor"><i class="fa fa-check"></i><b>2.5</b> Calculation of the friction factor</a></li>
+<li class="chapter" data-level="2.6" data-path="HydraulicBasics.html"><a href="HydraulicBasics.html#roughness-coefficient-varepsilon-of-the-pipe-in-mm"><i class="fa fa-check"></i><b>2.6</b> Roughness coefficient <span class="math inline">\(\varepsilon\)</span> of the pipe in mm</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><i class="fa fa-check"></i><b>2</b> Sizing equations for incompressible fluids (flow of nonvaporizing liquid)</a><ul>
-<li class="chapter" data-level="2.1" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#maximum-flow-without-fitings"><i class="fa fa-check"></i><b>2.1</b> Maximum Flow without fitings</a></li>
-<li class="chapter" data-level="2.2" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>2.2</b> Maximum Flow with flow limitation and with fitting</a></li>
-<li class="chapter" data-level="2.3" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#liquid-pressure-recovery-factor-f_l"><i class="fa fa-check"></i><b>2.3</b> Liquid pressure recovery factor <span class="math inline">\(F_{L}\)</span></a></li>
-<li class="chapter" data-level="2.4" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#piping-geometry-factor-f_p"><i class="fa fa-check"></i><b>2.4</b> Piping geometry factor <span class="math inline">\(F_{p}\)</span></a></li>
-<li class="chapter" data-level="2.5" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#combined-liquid-pressure-recovery-factor-f_lp"><i class="fa fa-check"></i><b>2.5</b> Combined liquid pressure recovery factor <span class="math inline">\(F_{LP}\)</span></a></li>
-<li class="chapter" data-level="2.6" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#reynolds-number-factor-f_r"><i class="fa fa-check"></i><b>2.6</b> Reynolds number factor <span class="math inline">\(F_{R}\)</span></a></li>
-<li class="chapter" data-level="2.7" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_f-is-the-liquid-critical-pressure-ratio-factor"><i class="fa fa-check"></i><b>2.7</b> <span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</a></li>
-<li class="chapter" data-level="2.8" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_l-and-f_lp-as-limit-for-the-choked-flow."><i class="fa fa-check"></i><b>2.8</b> <span class="math inline">\(F_L\)</span> and <span class="math inline">\(F_{LP}\)</span> as limit for the choked flow.</a></li>
-<li class="chapter" data-level="2.9" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_l-as-function-of-the-k_v-kvs"><i class="fa fa-check"></i><b>2.9</b> <span class="math inline">\(F_L\)</span> as function of the <span class="math inline">\(K_v / K{vs}\)</span></a></li>
-<li class="chapter" data-level="2.10" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#flow-rate-diagram"><i class="fa fa-check"></i><b>2.10</b> Flow Rate Diagram</a></li>
+<li class="chapter" data-level="3" data-path="HydraulicValves.html"><a href="HydraulicValves.html"><i class="fa fa-check"></i><b>3</b> Valves Hidraulic</a><ul>
+<li class="chapter" data-level="3.1" data-path="HydraulicValves.html"><a href="HydraulicValves.html#the-flow-coefficient-k_v"><i class="fa fa-check"></i><b>3.1</b> The <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span></a></li>
+<li class="chapter" data-level="3.2" data-path="HydraulicValves.html"><a href="HydraulicValves.html#flow-coefficient-k_v-and-loss-coefficient-zeta_v"><i class="fa fa-check"></i><b>3.2</b> <em>Flow coefficient</em> <span class="math inline">\(k_{v}\)</span> and <em>Loss Coefficient</em> <span class="math inline">\(\zeta_{v}\)</span></a></li>
+<li class="chapter" data-level="3.3" data-path="HydraulicValves.html"><a href="HydraulicValves.html#the-flow-basic-characteristic-curve-inherent-flow-characteristic."><i class="fa fa-check"></i><b>3.3</b> The flow basic characteristic curve (inherent flow characteristic).</a></li>
+<li class="chapter" data-level="3.4" data-path="HydraulicValves.html"><a href="HydraulicValves.html#zeta-value-in-function-of-the-k_vk_vs-characteristic-curve"><i class="fa fa-check"></i><b>3.4</b> Zeta value in function of the <span class="math inline">\(K_v/K_{vs}\)</span> characteristic curve</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>3</b> Quantifying the Cavitation Potential of the valve</a><ul>
-<li class="chapter" data-level="3.1" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>3.1</b> Evaluating the Cavitation Limits of the valve</a></li>
+<li class="chapter" data-level="4" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><i class="fa fa-check"></i><b>4</b> Sizing equations for incompressible fluids (flow of nonvaporizing liquid)</a><ul>
+<li class="chapter" data-level="4.1" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#maximum-flow-without-fitings"><i class="fa fa-check"></i><b>4.1</b> Maximum Flow without fitings</a></li>
+<li class="chapter" data-level="4.2" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#maximum-flow-with-flow-limitation-and-with-fitting"><i class="fa fa-check"></i><b>4.2</b> Maximum Flow with flow limitation and with fitting</a></li>
+<li class="chapter" data-level="4.3" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#liquid-pressure-recovery-factor-f_l"><i class="fa fa-check"></i><b>4.3</b> Liquid pressure recovery factor <span class="math inline">\(F_{L}\)</span></a></li>
+<li class="chapter" data-level="4.4" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#piping-geometry-factor-f_p"><i class="fa fa-check"></i><b>4.4</b> Piping geometry factor <span class="math inline">\(F_{p}\)</span></a></li>
+<li class="chapter" data-level="4.5" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#combined-liquid-pressure-recovery-factor-f_lp"><i class="fa fa-check"></i><b>4.5</b> Combined liquid pressure recovery factor <span class="math inline">\(F_{LP}\)</span></a></li>
+<li class="chapter" data-level="4.6" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#reynolds-number-factor-f_r"><i class="fa fa-check"></i><b>4.6</b> Reynolds number factor <span class="math inline">\(F_{R}\)</span></a></li>
+<li class="chapter" data-level="4.7" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_f-is-the-liquid-critical-pressure-ratio-factor"><i class="fa fa-check"></i><b>4.7</b> <span class="math inline">\(F_F\)</span> is the Liquid critical pressure ratio factor</a></li>
+<li class="chapter" data-level="4.8" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_l-and-f_lp-as-limit-for-the-choked-flow."><i class="fa fa-check"></i><b>4.8</b> <span class="math inline">\(F_L\)</span> and <span class="math inline">\(F_{LP}\)</span> as limit for the choked flow.</a></li>
+<li class="chapter" data-level="4.9" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#f_l-as-function-of-the-k_v-kvs"><i class="fa fa-check"></i><b>4.9</b> <span class="math inline">\(F_L\)</span> as function of the <span class="math inline">\(K_v / K{vs}\)</span></a></li>
+<li class="chapter" data-level="4.10" data-path="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"><a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#flow-rate-diagram"><i class="fa fa-check"></i><b>4.10</b> Flow Rate Diagram</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="inherent-and-installed-flow-characteristics.html"><a href="inherent-and-installed-flow-characteristics.html"><i class="fa fa-check"></i><b>4</b> Inherent and installed flow characteristics</a></li>
+<li class="chapter" data-level="5" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html"><i class="fa fa-check"></i><b>5</b> Quantifying the Cavitation Potential of the valve</a><ul>
+<li class="chapter" data-level="5.1" data-path="quantifying-the-cavitation-potential-of-the-valve.html"><a href="quantifying-the-cavitation-potential-of-the-valve.html#evaluating-the-cavitation-limits-of-the-valve"><i class="fa fa-check"></i><b>5.1</b> Evaluating the Cavitation Limits of the valve</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="inherent-and-installed-flow-characteristics.html"><a href="inherent-and-installed-flow-characteristics.html"><i class="fa fa-check"></i><b>6</b> Inherent and installed flow characteristics</a></li>
 <li class="part"><span><b>II Praxis</b></span></li>
-<li class="chapter" data-level="5" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html"><i class="fa fa-check"></i><b>5</b> Use of flow rate equations for sizing valves</a><ul>
-<li class="chapter" data-level="5.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#example-1-sizing-a-valve-with-constant-flow-constant-upstream-and-constant-downstream-pressures."><i class="fa fa-check"></i><b>5.1</b> Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.</a><ul>
-<li class="chapter" data-level="5.1.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>5.1.1</b> Step 1. Specify the variables required to size the valve.</a></li>
-<li class="chapter" data-level="5.1.2" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-2.-read-the-constants-of-the-valve."><i class="fa fa-check"></i><b>5.1.2</b> Step 2. Read the constants of the valve.</a></li>
-<li class="chapter" data-level="5.1.3" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-3.-determine-the-k_v-the-openindegree-for-the-flow-and-f_l."><i class="fa fa-check"></i><b>5.1.3</b> Step 3. Determine the <span class="math inline">\(k_v\)</span>, the openindegree for the flow and <span class="math inline">\(F_L\)</span>.</a></li>
-<li class="chapter" data-level="5.1.4" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-4.-determine-the-pressure-drop-to-use-for-sizing-deltap_sizing."><i class="fa fa-check"></i><b>5.1.4</b> Step 4. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></a></li>
+<li class="chapter" data-level="7" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html"><i class="fa fa-check"></i><b>7</b> Use of flow rate equations for sizing valves</a><ul>
+<li class="chapter" data-level="7.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#example-1-sizing-a-valve-with-constant-flow-constant-upstream-and-constant-downstream-pressures."><i class="fa fa-check"></i><b>7.1</b> Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>7.1.1</b> Step 1. Specify the variables required to size the valve.</a></li>
+<li class="chapter" data-level="7.1.2" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-2.-read-the-constants-of-the-valve."><i class="fa fa-check"></i><b>7.1.2</b> Step 2. Read the constants of the valve.</a></li>
+<li class="chapter" data-level="7.1.3" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-3.-determine-the-k_v-and-f_l."><i class="fa fa-check"></i><b>7.1.3</b> Step 3. Determine the <span class="math inline">\(k_v\)</span>, and <span class="math inline">\(F_L\)</span>.</a></li>
+<li class="chapter" data-level="7.1.4" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-4.-determine-the-pressure-drop-to-use-for-sizing-deltap_sizing."><i class="fa fa-check"></i><b>7.1.4</b> Step 4. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html"><i class="fa fa-check"></i><b>6</b> How to Size a control valve</a><ul>
-<li class="chapter" data-level="6.1" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html#example-2"><i class="fa fa-check"></i><b>6.1</b> Example 2:</a><ul>
-<li class="chapter" data-level="6.1.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>6.1.1</b> Step 1. Specify the variables required to size the valve.</a></li>
-<li class="chapter" data-level="6.1.2" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html#step-2.-determine-the-equation-constants."><i class="fa fa-check"></i><b>6.1.2</b> Step 2. Determine the equation constants.</a></li>
-<li class="chapter" data-level="6.1.3" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html#step-3.-determine-the-piping-geometry-factor-f_p."><i class="fa fa-check"></i><b>6.1.3</b> Step 3. Determine the piping geometry factor (<span class="math inline">\(F_P\)</span>).</a></li>
+<li class="chapter" data-level="8" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html"><i class="fa fa-check"></i><b>8</b> How to Size a control valve</a><ul>
+<li class="chapter" data-level="8.1" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html#example-2"><i class="fa fa-check"></i><b>8.1</b> Example 2:</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>8.1.1</b> Step 1. Specify the variables required to size the valve.</a></li>
+<li class="chapter" data-level="8.1.2" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html#step-2.-determine-the-equation-constants."><i class="fa fa-check"></i><b>8.1.2</b> Step 2. Determine the equation constants.</a></li>
+<li class="chapter" data-level="8.1.3" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html#step-3.-determine-the-piping-geometry-factor-f_p."><i class="fa fa-check"></i><b>8.1.3</b> Step 3. Determine the piping geometry factor (<span class="math inline">\(F_P\)</span>).</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -143,9 +157,11 @@
 
             <section class="normal" id="section-">
 <div id="use-of-flow-rate-equations-for-sizing-valves" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Use of flow rate equations for sizing valves</h1>
+<h1><span class="header-section-number">Chapter 7</span> Use of flow rate equations for sizing valves</h1>
+<div id="htmlwidget-ec178131cd41e4812b47" style="width:672px;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ec178131cd41e4812b47">{"x":{"diagram":"digraph {\n    graph [layout = dot, rankdir = TB]\n    \n    # \n    node [shape = rectangle]        \n    rec1 [label = \"Step 1. Wake up\"]\n    rec2 [label = \"Step 2. Write code\"]\n    rec3 [label =  \"Step 3. ???\"]\n    rec4 [label = \"Step 4. PROFIT\"]\n  \n    # edge definitions with the node IDs\n    rec1 -> rec2 -> rec3 -> rec4\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 <div id="example-1-sizing-a-valve-with-constant-flow-constant-upstream-and-constant-downstream-pressures." class="section level2">
-<h2><span class="header-section-number">5.1</span> Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.</h2>
+<h2><span class="header-section-number">7.1</span> Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.</h2>
 <ul>
 <li><p>Step 1. Specify the variables required to size the valve.</p></li>
 <li><p>Step 2. Determine the equation constants.</p></li>
@@ -154,17 +170,24 @@
 <li><p>Step 5. Calculate the required flow coefficient (<span class="math inline">\(K_v\)</span>).</p></li>
 </ul>
 <div id="step-1.-specify-the-variables-required-to-size-the-valve." class="section level3">
-<h3><span class="header-section-number">5.1.1</span> Step 1. Specify the variables required to size the valve.</h3>
+<h3><span class="header-section-number">7.1.1</span> Step 1. Specify the variables required to size the valve.</h3>
 <p>Service data :
 1. Water pressure must be managed from 30 bars to 6 bars.
 2. The control valve has a diameter of 250 mm and is smaller than the diameters of the pipe upstream (250 mm) and downstream (250 mm) of the valve.</p>
-<p>Service Conditions:</p>
+<p>physical constants:</p>
 <ul>
 <li>Fluid : Water</li>
 <li>Water Temperature : 23.3 °C</li>
 <li>Altitude: 0 msal.</li>
+<li>Atmosphere Pressure : 1.01325 bar</li>
+<li>Vapor Pressure : 0.0286128 bar</li>
+<li>Kinematic viscosity : 0.9430404 <span class="math inline">\((m^2/s)*1e-6\)</span></li>
+</ul>
+<p>Service Conditions:</p>
+<ul>
 <li><span class="math inline">\(P_1 =\)</span> 5.7 bar</li>
 <li><span class="math inline">\(P_2 =\)</span> 4.8 bar</li>
+<li><span class="math inline">\(\Delta{P}\)</span> 0.9 bar</li>
 <li><span class="math inline">\(q =\)</span> 795.6 <span class="math inline">\(m^3/h\)</span></li>
 <li>Diameter Pipe Upstream <span class="math inline">\(D_1\)</span>: 250 mm<br />
 </li>
@@ -182,12 +205,12 @@
 <div class="figure"><span id="fig:kv-kvs-Example-1"></span>
 <img src="PlungerValves_files/figure-html/kv-kvs-Example-1-1.png" alt="Inherent Valve Characteristics" width="672" />
 <p class="caption">
-Figure 5.1: Inherent Valve Characteristics
+Figure 7.1: Inherent Valve Characteristics
 </p>
 </div>
 </div>
 <div id="step-2.-read-the-constants-of-the-valve." class="section level3">
-<h3><span class="header-section-number">5.1.2</span> Step 2. Read the constants of the valve.</h3>
+<h3><span class="header-section-number">7.1.2</span> Step 2. Read the constants of the valve.</h3>
 <ul>
 <li>with the valve 100% open:
 <ul>
@@ -195,29 +218,23 @@ Figure 5.1: Inherent Valve Characteristics
 <li>Flow coefficient : <span class="math inline">\(K_{vs}\)</span> : 1441.9 <span class="math inline">\(m^3 / h\)</span></li>
 <li>liquid pressure recovery factor <span class="math inline">\({F_{L}}_{s}\)</span> : 0.598</li>
 </ul></li>
-<li>Atmosphere Pressure : 1.01325 bar</li>
-<li>Vapor Pressure : 0.0286128 bar</li>
-<li>Kinematic viscosity : 0.9430404 <span class="math inline">\((m^2/s)*1e-6\)</span></li>
 </ul>
 <div class="figure"><span id="fig:kv-Example-1"></span>
 <img src="PlungerValves_files/figure-html/kv-Example-1-1.png" alt="Flow coefficient" width="672" />
 <p class="caption">
-Figure 5.2: Flow coefficient
+Figure 7.2: Flow coefficient
 </p>
 </div>
 <div class="figure"><span id="fig:zv-Example-1"></span>
 <img src="PlungerValves_files/figure-html/zv-Example-1-1.png" alt="Zeta Value" width="672" />
 <p class="caption">
-Figure 5.3: Zeta Value
+Figure 7.3: Zeta Value
 </p>
 </div>
 </div>
-<div id="step-3.-determine-the-k_v-the-openindegree-for-the-flow-and-f_l." class="section level3">
-<h3><span class="header-section-number">5.1.3</span> Step 3. Determine the <span class="math inline">\(k_v\)</span>, the openindegree for the flow and <span class="math inline">\(F_L\)</span>.</h3>
-<p>from the equqtion <a href="#eq:Kv-01">(<strong>??</strong>)</a> :</p>
-<p><span class="math display">\[
-   K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}}
-\]</span></p>
+<div id="step-3.-determine-the-k_v-and-f_l." class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Step 3. Determine the <span class="math inline">\(k_v\)</span>, and <span class="math inline">\(F_L\)</span>.</h3>
+<p>from the equation <a href="HydraulicValves.html#eq:Kv-01">(3.1)</a> :</p>
 <ul>
 <li><span class="math inline">\(K_v=\)</span> 836.6 <span class="math inline">\(m^3 / h\)</span></li>
 <li><span class="math inline">\(K_v / K_{vs}=\)</span> 58.02%</li>
@@ -226,7 +243,7 @@ Figure 5.3: Zeta Value
 </ul>
 </div>
 <div id="step-4.-determine-the-pressure-drop-to-use-for-sizing-deltap_sizing." class="section level3">
-<h3><span class="header-section-number">5.1.4</span> Step 4. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></h3>
+<h3><span class="header-section-number">7.1.4</span> Step 4. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></h3>
 
 </div>
 </div>
