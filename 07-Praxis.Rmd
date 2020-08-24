@@ -2,30 +2,33 @@
 
 # Use of flow rate equations for sizing valves
 
-
-
 ```{r echo=FALSE}
 
   # https://bookdown.org/yihui/rmarkdown-cookbook/diagrams.html
   # http://rich-iannone.github.io/DiagrammeR/index.html
+  # https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
 
-  DiagrammeR::grViz(
-  
-  "digraph {
-    graph [layout = dot, rankdir = TB]
-    
-    # 
-    node [shape = rectangle]        
-    rec1 [label = 'Step 1. Wake up']
-    rec2 [label = 'Step 2. Write code']
-    rec3 [label =  'Step 3. ???']
-    rec4 [label = 'Step 4. PROFIT']
-  
-    # edge definitions with the node IDs
-    rec1 -> rec2 -> rec3 -> rec4
-  }",
-  
-  height = 500)
+  # DiagrammeR::grViz(
+  # 
+  # "digraph {
+  #   graph [layout = dot, rankdir = TB]
+  #   
+  #   #
+  #   node [shape = oval]
+  #   start [label = 'Start']
+  #   
+  #   # 
+  #   node [shape = box]        
+  #   rec1 [label = 'Select FL using valve typ and size' ]
+  #   rec2 [label = 'Step 2. Write code']
+  #   rec3 [label = 'Step 3. ???']
+  #   rec4 [label = 'Step 4. PROFIT']
+  # 
+  #   # edge definitions with the node IDs
+  #   start -> rec1 -> rec2 -> rec3 -> rec4
+  # }",
+  # 
+  # height = 500)
 
 ```
   
@@ -33,7 +36,7 @@
 ## Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.
 
    - Step 1. Specify the variables required  to size the valve.
-   - Step 2. Determine the equation constants.
+   - Step 2. Read the values of the selected valve.
    - Step 3. Determine the flow coefficient $k_v$, the opening degree for the flow and $F_L$.
    
    - Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
@@ -45,9 +48,6 @@
 
 ```{r include=FALSE}
 
-  library(tidyverse)
-  library(wcontrolvalve)
-
   temp <-  23.300   # °C
   elev <-   0.000   # m 
   p1   <-   5.700   # bar
@@ -57,12 +57,28 @@
   D1   <-   0.250   # m (DN Pipe Upstream)
   D2   <-   0.250   # m (DN Pipe Downstream)
   
-  cylinder	<- "SZK-30-20%"
+  cylinder	<- "Equal Percentage"
   kv.b      <- -3.893
   kv.d	    <-  1.146
   kv.e      <- 61.038
   zvs	      <-  3.000
-  fl	      <-  0.598
+  fls	      <-  0.598
+  
+  kvs       <- kv_value(d, zvs)
+  kv_needed <- kv(p1, p2, flow, temp)
+  kv_kvs    <- kv_needed/kvs*100
+  position  <- inv_LL3(kv_needed/kvs, kv.b, kv.d, kv.e)
+  
+  fl        <- fl_function(position, kv.b, kv.d, kv.e, fls)
+  zeta      <- zeta_vaule(d, kv_needed)
+    
+  # df <- data.frame( value = c("Kv", "Zv", "Fl"), 
+  #                   x = c(kv_needed, ) , 
+  #                   y = c(position, position, position))
+  
+  df <- tibble( factor = c( "Kv", "Fl" ), 
+                    y = c( kv_needed, fl ), 
+                    x = c( position, position ))
   
 ```
 
@@ -101,33 +117,43 @@ Valve Design (first approx.):
   plot_kv_kvs(kv.b, kv.d, kv.e, cylinder)
 ```
 
-### Step 2. Read the constants of the valve.
+### Step 2. Read the values of the selected valve.
   
-  - with the valve 100% open: 
-    - Zeta Value $\zeta_{vs}$ : `r zvs`
-    - Flow coefficient : $K_{vs}$ : `r round(kv_value(d, zvs),1)` $m^3 / h$
-    - liquid pressure recovery factor ${F_{L}}_{s}$ : `r fl`
-
+  - With the valve 100% open: 
+    - Zeta Value $\zeta_{vs}$ :                       `r zvs`
+    - Flow coefficient : $K_{vs}$ :                   `r round(kvs, 1)` $m^3 / h$
+    - liquid pressure recovery factor ${F_{L}}_{s}$ : `r fls`
+    
+  - Position With a  `r round(position,2)`% open: 
+    - Needed $K_v$ : `r round(kv_needed, 1)` $m^3 / h$
+    - Percent of Maximum flow (Flow rate): $K_v / K_{vs}=$ `r round(kv_kvs,2)`%
+    - Liquid pressure recovery factor $F_L$: `r round(fl,3)`
+    
 
 ```{r kv-Example-1, echo=FALSE, fig.cap="Flow coefficient"}
-  plot_kv(kv.b, kv.d, kv.e, d, zvs, cylinder)
+  
+  data_points <- df %>%  filter(factor == "Kv")
+  
+  plot_kv(kv.b, kv.d, kv.e, d, zvs, cylinder) +
+    geom_point( data = data_points, aes( y = y, x = x ), 
+                colour = "red", size = 3)
+
 ```
 
 ```{r zv-Example-1, echo=FALSE, fig.cap="Zeta Value"}
   plot_zv(kv.b, kv.d, kv.e, zvs, cylinder)
 ```
 
+```{r fl-Example-1, echo=FALSE, fig.cap="test"}
+
+  data_points <- df %>%  filter(factor == "Fl")
+
+  plot_fl( kv.b, kv.d, kv.e, fls, cylinder) +
+    geom_point( data = data_points, aes( y = y, x = x ), 
+                colour = "red", size = 3)
+```
 
 
-### Step 3. Determine the $k_v$, and $F_L$.
 
-from the equation \@ref(eq:Kv-01) :
-
-  - $K_v=$ `r round(kv(p1, p2, flow, temp),1)` $m^3 / h$
-  - $K_v / K_{vs}=$ `r round(kv(p1, p2, flow, temp)/kv_value(d, zvs)*100,2)`%
-  - Position of the valve: `r round(inv_LL3(kv(p1, p2, flow, temp)/kv_value(d, zvs), kv.b, kv.d, kv.e),2)`%
-  - $F_L=$ 
-
-
-### Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
+### Step 3. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
 

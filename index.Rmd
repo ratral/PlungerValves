@@ -14,6 +14,8 @@ description: "(UNDER CONSTRUCTION!!!) ....In this documentation, I want to clari
   library(tidyverse)
   library(here)
   library(DiagrammeR)
+  library(latex2exp)
+  library(wcontrolvalve)
 ```
 
 

@@ -82,7 +82,7 @@ In this document, the characteristic curves are approximated by means of the  Do
 
 The full specification of a statistical dose-response (regression) model involves specifying how the mean is described by a parametric function of dose (valve position) as well as assumptions about the distribution of the response ($K_v$).
 
-A large number of more or less well-known model functions are builtin in $drc$.  These models are parameterized using a unified structure with the coefficients: 
+A large number of more or less well-known model functions are building in $drc$.  These models are parameterized using a unified structure with the coefficients: 
 
   - $b$ denoting the steepness of the dose-response curve, 
   - $c$ (in this case 0) and $d$ the lower and upper asymptotes or limits of the response, and, 
