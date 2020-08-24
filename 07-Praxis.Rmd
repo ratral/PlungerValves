@@ -71,14 +71,12 @@
   
   fl        <- fl_function(position, kv.b, kv.d, kv.e, fls)
   zeta      <- zeta_vaule(d, kv_needed)
+  sig_1     <- sigma_1(p1, p2, elev, temp)
+
     
-  # df <- data.frame( value = c("Kv", "Zv", "Fl"), 
-  #                   x = c(kv_needed, ) , 
-  #                   y = c(position, position, position))
-  
-  df <- tibble( factor = c( "Kv", "Fl" ), 
-                    y = c( kv_needed, fl ), 
-                    x = c( position, position ))
+  df <- tibble( factor = c( "Kv", "Fl", "sigma_1" ), 
+                     y = c( kv_needed, fl, sig_1 ), 
+                     x = c( position, position, position ))
   
 ```
 

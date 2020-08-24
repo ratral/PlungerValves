@@ -59,9 +59,6 @@
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 
@@ -123,9 +120,8 @@
 <li class="chapter" data-level="7" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html"><i class="fa fa-check"></i><b>7</b> Use of flow rate equations for sizing valves</a><ul>
 <li class="chapter" data-level="7.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#example-1-sizing-a-valve-with-constant-flow-constant-upstream-and-constant-downstream-pressures."><i class="fa fa-check"></i><b>7.1</b> Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.</a><ul>
 <li class="chapter" data-level="7.1.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>7.1.1</b> Step 1. Specify the variables required to size the valve.</a></li>
-<li class="chapter" data-level="7.1.2" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-2.-read-the-constants-of-the-valve."><i class="fa fa-check"></i><b>7.1.2</b> Step 2. Read the constants of the valve.</a></li>
-<li class="chapter" data-level="7.1.3" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-3.-determine-the-k_v-and-f_l."><i class="fa fa-check"></i><b>7.1.3</b> Step 3. Determine the <span class="math inline">\(k_v\)</span>, and <span class="math inline">\(F_L\)</span>.</a></li>
-<li class="chapter" data-level="7.1.4" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-4.-determine-the-pressure-drop-to-use-for-sizing-deltap_sizing."><i class="fa fa-check"></i><b>7.1.4</b> Step 4. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></a></li>
+<li class="chapter" data-level="7.1.2" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-2.-read-the-values-of-the-selected-valve."><i class="fa fa-check"></i><b>7.1.2</b> Step 2. Read the values of the selected valve.</a></li>
+<li class="chapter" data-level="7.1.3" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-3.-determine-the-pressure-drop-to-use-for-sizing-deltap_sizing."><i class="fa fa-check"></i><b>7.1.3</b> Step 3. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html"><i class="fa fa-check"></i><b>8</b> How to Size a control valve</a><ul>
@@ -229,7 +225,7 @@
 \end{equation}\]</span></p>
 <p>In this document, the characteristic curves are approximated by means of the Dose-Response Analysis (<span class="math inline">\(dcr\)</span>). Dose-response models are regression models where the independent variable referred to as the dose, or in our case, the opening degree of a valve. In contrast, the dependent variable is generally referred to as response or effect.</p>
 <p>The full specification of a statistical dose-response (regression) model involves specifying how the mean is described by a parametric function of dose (valve position) as well as assumptions about the distribution of the response (<span class="math inline">\(K_v\)</span>).</p>
-<p>A large number of more or less well-known model functions are builtin in <span class="math inline">\(drc\)</span>. These models are parameterized using a unified structure with the coefficients:</p>
+<p>A large number of more or less well-known model functions are building in <span class="math inline">\(drc\)</span>. These models are parameterized using a unified structure with the coefficients:</p>
 <ul>
 <li><span class="math inline">\(b\)</span> denoting the steepness of the dose-response curve,</li>
 <li><span class="math inline">\(c\)</span> (in this case 0) and <span class="math inline">\(d\)</span> the lower and upper asymptotes or limits of the response, and,</li>
