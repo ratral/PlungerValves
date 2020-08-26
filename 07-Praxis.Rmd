@@ -129,9 +129,9 @@ Using the function \@ref(eq:Kv-01):
 $$
   K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}}
 $$
-the Required $K_v$ is `r round(kv_needed, 1)` $m^3 / h$ and the relative flow coefficient is $K_v / K_{vs}=$ `r round(kv_kvs,1)`%.
+the Required $K_v$ is `r round(kv_needed, 1)` $m^3/h$ and the relative flow coefficient is $K_v/K_{vs}=$ `r round(kv_kvs,1)`%.
 
-Entering the graph of $k_V / K_{VS}$ with the value of `r round(kv_kvs,1)` we find the position of the valve required for the flow of `r flow` $m^3/h$ and $\Delta{P}$ of `r p1 - p2` bar is `r round(position,2)`%.
+Entering the graph of $k_V/K_{VS}$ with the value of `r round(kv_kvs,1)`% we find the position of the valve required for the flow of `r flow` $m^3/h$ and $\Delta{P}$ of `r p1 - p2` bar is `r round(position,2)`%.
 
 
 ```{r kv-kvs-Example-1, echo=FALSE, fig.cap="Inherent Valve Characteristics"}
@@ -168,7 +168,7 @@ Or it can be done directly with the $K_V =$ `r round(kv_needed,0)` $m^3/h$  valu
 
   plot_kv(kv.b, kv.d, kv.e, d, zvs, cylinder) +
     geom_point( data = data_points, aes( y = y, x = x ), 
-                colour = "red", size = 3)+
+                colour = "red", size = 3) +
      geom_segment(data = arrows_points, 
                   aes(x = x0, y = y0, xend = x1, yend = y1),
                   arrow = arrow(length = unit(0.03, "npc"), type = "closed"))+
@@ -179,29 +179,53 @@ Or it can be done directly with the $K_V =$ `r round(kv_needed,0)` $m^3/h$  valu
 ```
 
 
+Knowing that the valve position is `r round(position,2)`%, it is possible to read the Zeta Value $\zeta_{v}$ and the Liquid Pressure Recovery Factor ${F_L}$.:
+
+  - $\zeta_{v}=$ `r round(zeta,2) `
+  - ${F_L}= `r round(fl,3) `$
 
 
 ```{r zv-Example-1, echo=FALSE, fig.cap="Zeta Value"}
 
   data_points <- df %>%  filter(factor == "zeta")
 
+
+  arrows_points <- tibble( x0 = position, y0 = 0,
+                           x1 = position, y1 = zeta,
+                           x2 = 0,        y2 = zeta)
+
+
   plot_zv(kv.b, kv.d, kv.e, zvs, cylinder) +
     geom_point( data = data_points, aes( y = y, x = x ), 
-                colour = "red", size = 3)
+                colour = "red", size = 3)  +
+     geom_segment(data = arrows_points, 
+                  aes(x = x0, y = y0, xend = x1, yend = y1),
+                  arrow = arrow(length = unit(0.03, "npc"), type = "closed"))+
+     geom_segment(data = arrows_points, 
+                  aes(x = x1, y = y1, xend = x2, yend = y2),
+                  arrow = arrow(length = unit(0.03, "npc"), type = "closed"))
 ```
-
-
-Liquid pressure recovery factor $F_L$: `r round(fl,3)`
 
 
 ```{r fl-Example-1, echo=FALSE, fig.cap="Liquid pressure Recovery Factor"}
 
   data_points <- df %>%  filter(factor == "Fl")
 
+  arrows_points <- tibble( x0 = position, y0 = 0,
+                           x1 = position, y1 = fl,
+                           x2 = 0,        y2 = fl)
+
   plot_fl( kv.b, kv.d, kv.e, fls, cylinder) +
     geom_point( data = data_points, aes( y = y, x = x ), 
-                colour = "red", size = 3)
+                colour = "red", size = 3) +
+     geom_segment(data = arrows_points, 
+                  aes(x = x0, y = y0, xend = x1, yend = y1),
+                  arrow = arrow(length = unit(0.03, "npc"), type = "closed"))+
+     geom_segment(data = arrows_points, 
+                  aes(x = x1, y = y1, xend = x2, yend = y2),
+                  arrow = arrow(length = unit(0.03, "npc"), type = "closed"))
 ```
+
 
 ```{r sigma-Example-1, echo=FALSE, fig.cap="Sigma Value"}
 
