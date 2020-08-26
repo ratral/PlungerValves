@@ -76,9 +76,9 @@
   sig_1     <- sigma_1(p1, p2, elev, temp)
 
   # Table for the plot
-  df <- tibble( factor = c( "Kv", "Fl", "sigma_1", "zeta" ), 
-                     y = c( kv_needed, fl, sig_1, zeta ), 
-                     x = c( position, position, position, position))
+  df <- tibble( factor = c( "Kv", "Kv_Kvs", "Fl", "sigma_1", "zeta" ), 
+                     y = c( kv_needed, kv_kvs, fl, sig_1, zeta ), 
+                     x = c( position, position, position, position, position))
   
 ```
 
@@ -129,31 +129,57 @@ Using the function \@ref(eq:Kv-01):
 $$
   K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}}
 $$
-the Required $K_v$ is `r round(kv_needed, 1)` $m^3 / h$ and the relative flow coefficient is $K_v / K_{vs}=$ `r round(kv_kvs,2)`%.
+the Required $K_v$ is `r round(kv_needed, 1)` $m^3 / h$ and the relative flow coefficient is $K_v / K_{vs}=$ `r round(kv_kvs,1)`%.
 
-
-
-  - Position With a  `r round(position,2)`% open: 
+Entering the graph of $k_V / K_{VS}$ with the value of `r round(kv_kvs,1)` we find the position of the valve required for the flow of `r flow` $m^3/h$ and $\Delta{P}$ of `r p1 - p2` bar is `r round(position,2)`%.
 
 
 ```{r kv-kvs-Example-1, echo=FALSE, fig.cap="Inherent Valve Characteristics"}
-  plot_kv_kvs(kv.b, kv.d, kv.e, cylinder)
+  
+  data_points <- df %>%  filter(factor == "Kv_Kvs")
+  
+  arrows_points <- tibble( x0 = 0,        y0 = kv_kvs,
+                           x1 = position, y1 = kv_kvs,
+                           x2 = position, y2 = 0)
+  
+
+  plot_kv_kvs(kv.b, kv.d, kv.e, cylinder) +
+    geom_point( data = data_points, aes( y = y, x = x ), 
+                colour = "red", size = 3) +
+     geom_segment(data = arrows_points, 
+                  aes(x = x0, y = y0, xend = x1, yend = y1),
+                  arrow = arrow(length = unit(0.03, "npc"), type = "closed"))+
+     geom_segment(data = arrows_points, 
+                  aes(x = x1, y = y1, xend = x2, yend = y2),
+                  arrow = arrow(length = unit(0.03, "npc"), type = "closed"))
+  
 ```
 
-
-
-    - Liquid pressure recovery factor $F_L$: `r round(fl,3)`
-    
+Or it can be done directly with the $K_V =$ `r round(kv_needed,0)` $m^3/h$  value of on the $K_V$ graph.
 
 ```{r kv-Example-1, echo=FALSE, fig.cap="Flow coefficient"}
   
   data_points <- df %>%  filter(factor == "Kv")
   
+  arrows_points <- tibble( x0 = 0,        y0 = kv_needed,
+                           x1 = position, y1 = kv_needed,
+                           x2 = position, y2 = 0)
+
+
   plot_kv(kv.b, kv.d, kv.e, d, zvs, cylinder) +
     geom_point( data = data_points, aes( y = y, x = x ), 
-                colour = "red", size = 3)
+                colour = "red", size = 3)+
+     geom_segment(data = arrows_points, 
+                  aes(x = x0, y = y0, xend = x1, yend = y1),
+                  arrow = arrow(length = unit(0.03, "npc"), type = "closed"))+
+     geom_segment(data = arrows_points, 
+                  aes(x = x1, y = y1, xend = x2, yend = y2),
+                  arrow = arrow(length = unit(0.03, "npc"), type = "closed"))
 
 ```
+
+
+
 
 ```{r zv-Example-1, echo=FALSE, fig.cap="Zeta Value"}
 
@@ -163,6 +189,10 @@ the Required $K_v$ is `r round(kv_needed, 1)` $m^3 / h$ and the relative flow co
     geom_point( data = data_points, aes( y = y, x = x ), 
                 colour = "red", size = 3)
 ```
+
+
+Liquid pressure recovery factor $F_L$: `r round(fl,3)`
+
 
 ```{r fl-Example-1, echo=FALSE, fig.cap="Liquid pressure Recovery Factor"}
 
