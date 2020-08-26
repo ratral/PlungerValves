@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-08-24" />
+<meta name="date" content="2020-08-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -120,8 +120,9 @@
 <li class="chapter" data-level="7" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html"><i class="fa fa-check"></i><b>7</b> Use of flow rate equations for sizing valves</a><ul>
 <li class="chapter" data-level="7.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#example-1-sizing-a-valve-with-constant-flow-constant-upstream-and-constant-downstream-pressures."><i class="fa fa-check"></i><b>7.1</b> Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.</a><ul>
 <li class="chapter" data-level="7.1.1" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>7.1.1</b> Step 1. Specify the variables required to size the valve.</a></li>
-<li class="chapter" data-level="7.1.2" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-2.-read-the-values-of-the-selected-valve."><i class="fa fa-check"></i><b>7.1.2</b> Step 2. Read the values of the selected valve.</a></li>
-<li class="chapter" data-level="7.1.3" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-3.-determine-the-pressure-drop-to-use-for-sizing-deltap_sizing."><i class="fa fa-check"></i><b>7.1.3</b> Step 3. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></a></li>
+<li class="chapter" data-level="7.1.2" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-2.-read-the-values-of-the-selected-control-characteristic."><i class="fa fa-check"></i><b>7.1.2</b> Step 2. Read the values of the selected Control Characteristic.</a></li>
+<li class="chapter" data-level="7.1.3" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-3.-calculate-the-required-flow-coefficient-k_v."><i class="fa fa-check"></i><b>7.1.3</b> Step 3. Calculate the required flow coefficient (<span class="math inline">\(K_v\)</span>).</a></li>
+<li class="chapter" data-level="7.1.4" data-path="use-of-flow-rate-equations-for-sizing-valves.html"><a href="use-of-flow-rate-equations-for-sizing-valves.html#step-3.-determine-the-pressure-drop-to-use-for-sizing-deltap_sizing."><i class="fa fa-check"></i><b>7.1.4</b> Step 3. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="how-to-size-a-control-valve.html"><a href="how-to-size-a-control-valve.html"><i class="fa fa-check"></i><b>8</b> How to Size a control valve</a><ul>
@@ -196,15 +197,9 @@
 <li>Control Element : Cylinder type Equal Percentage</li>
 <li>Control Characteristic:</li>
 </ul>
-<div class="figure"><span id="fig:kv-kvs-Example-1"></span>
-<img src="PlungerValves_files/figure-html/kv-kvs-Example-1-1.png" alt="Inherent Valve Characteristics" width="672" />
-<p class="caption">
-Figure 7.1: Inherent Valve Characteristics
-</p>
 </div>
-</div>
-<div id="step-2.-read-the-values-of-the-selected-valve." class="section level3">
-<h3><span class="header-section-number">7.1.2</span> Step 2. Read the values of the selected valve.</h3>
+<div id="step-2.-read-the-values-of-the-selected-control-characteristic." class="section level3">
+<h3><span class="header-section-number">7.1.2</span> Step 2. Read the values of the selected Control Characteristic.</h3>
 <ul>
 <li>With the valve 100% open:
 <ul>
@@ -212,13 +207,25 @@ Figure 7.1: Inherent Valve Characteristics
 <li>Flow coefficient : <span class="math inline">\(K_{vs}\)</span> : 1441.9 <span class="math inline">\(m^3 / h\)</span></li>
 <li>liquid pressure recovery factor <span class="math inline">\({F_{L}}_{s}\)</span> : 0.598</li>
 </ul></li>
-<li>Position With a 61.44% open:
-<ul>
-<li>Needed <span class="math inline">\(K_v\)</span> : 836.6 <span class="math inline">\(m^3 / h\)</span></li>
-<li>Percent of Maximum flow (Flow rate): <span class="math inline">\(K_v / K_{vs}=\)</span> 58.02%</li>
-<li>Liquid pressure recovery factor <span class="math inline">\(F_L\)</span>: 0.7</li>
-</ul></li>
 </ul>
+</div>
+<div id="step-3.-calculate-the-required-flow-coefficient-k_v." class="section level3">
+<h3><span class="header-section-number">7.1.3</span> Step 3. Calculate the required flow coefficient (<span class="math inline">\(K_v\)</span>).</h3>
+<p>Using the function <a href="HydraulicValves.html#eq:Kv-01">(3.1)</a>:</p>
+<p><span class="math display">\[
+  K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}}
+\]</span>
+the Required <span class="math inline">\(K_v\)</span> is 836.6 <span class="math inline">\(m^3 / h\)</span> and the Percent of Maximum flow (Flow rate) is <span class="math inline">\(K_v / K_{vs}=\)</span> 58.02%</p>
+<ul>
+<li>Position With a 61.44% open:</li>
+</ul>
+<div class="figure"><span id="fig:kv-kvs-Example-1"></span>
+<img src="PlungerValves_files/figure-html/kv-kvs-Example-1-1.png" alt="Inherent Valve Characteristics" width="672" />
+<p class="caption">
+Figure 7.1: Inherent Valve Characteristics
+</p>
+</div>
+<pre><code>- Liquid pressure recovery factor $F_L$: 0.7</code></pre>
 <div class="figure"><span id="fig:kv-Example-1"></span>
 <img src="PlungerValves_files/figure-html/kv-Example-1-1.png" alt="Flow coefficient" width="672" />
 <p class="caption">
@@ -232,14 +239,20 @@ Figure 7.3: Zeta Value
 </p>
 </div>
 <div class="figure"><span id="fig:fl-Example-1"></span>
-<img src="PlungerValves_files/figure-html/fl-Example-1-1.png" alt="test" width="672" />
+<img src="PlungerValves_files/figure-html/fl-Example-1-1.png" alt="Liquid pressure Recovery Factor" width="672" />
 <p class="caption">
-Figure 7.4: test
+Figure 7.4: Liquid pressure Recovery Factor
+</p>
+</div>
+<div class="figure"><span id="fig:sigma-Example-1"></span>
+<img src="PlungerValves_files/figure-html/sigma-Example-1-1.png" alt="Sigma Value" width="672" />
+<p class="caption">
+Figure 7.5: Sigma Value
 </p>
 </div>
 </div>
 <div id="step-3.-determine-the-pressure-drop-to-use-for-sizing-deltap_sizing." class="section level3">
-<h3><span class="header-section-number">7.1.3</span> Step 3. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></h3>
+<h3><span class="header-section-number">7.1.4</span> Step 3. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></h3>
 
 </div>
 </div>

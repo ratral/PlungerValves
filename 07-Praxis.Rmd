@@ -48,15 +48,17 @@
 
 ```{r include=FALSE}
 
+  # Basic information
   temp <-  23.300   # °C
   elev <-   0.000   # m 
   p1   <-   5.700   # bar
   p2   <-   4.800   # bar
   flow <- 795.600   # m3/h
-  d    <-   0.250   # m
+  d    <-   0.250   # m (DN of the valve)
   D1   <-   0.250   # m (DN Pipe Upstream)
   D2   <-   0.250   # m (DN Pipe Downstream)
   
+  # Control Characteristics
   cylinder	<- "Equal Percentage"
   kv.b      <- -3.893
   kv.d	    <-  1.146
@@ -64,19 +66,19 @@
   zvs	      <-  3.000
   fls	      <-  0.598
   
+  # Calculation
   kvs       <- kv_value(d, zvs)
   kv_needed <- kv(p1, p2, flow, temp)
   kv_kvs    <- kv_needed/kvs*100
   position  <- inv_LL3(kv_needed/kvs, kv.b, kv.d, kv.e)
-  
   fl        <- fl_function(position, kv.b, kv.d, kv.e, fls)
   zeta      <- zeta_vaule(d, kv_needed)
   sig_1     <- sigma_1(p1, p2, elev, temp)
 
-    
-  df <- tibble( factor = c( "Kv", "Fl", "sigma_1" ), 
-                     y = c( kv_needed, fl, sig_1 ), 
-                     x = c( position, position, position ))
+  # Table for the plot
+  df <- tibble( factor = c( "Kv", "Fl", "sigma_1", "zeta" ), 
+                     y = c( kv_needed, fl, sig_1, zeta ), 
+                     x = c( position, position, position, position))
   
 ```
 
@@ -111,20 +113,35 @@ Valve Design (first approx.):
   - Control Element : Cylinder type `r cylinder`
   - Control Characteristic: 
 
-```{r kv-kvs-Example-1, echo=FALSE, fig.cap="Inherent Valve Characteristics"}
-  plot_kv_kvs(kv.b, kv.d, kv.e, cylinder)
-```
 
-### Step 2. Read the values of the selected valve.
+### Step 2. Read the values of the selected Control Characteristic.
   
   - With the valve 100% open: 
     - Zeta Value $\zeta_{vs}$ :                       `r zvs`
     - Flow coefficient : $K_{vs}$ :                   `r round(kvs, 1)` $m^3 / h$
     - liquid pressure recovery factor ${F_{L}}_{s}$ : `r fls`
-    
+
+
+### Step 3. Calculate the required flow coefficient ($K_v$).
+
+Using the function \@ref(eq:Kv-01):
+
+$$
+  K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}}
+$$
+the Required $K_v$ is `r round(kv_needed, 1)` $m^3 / h$ and the relative flow coefficient is $K_v / K_{vs}=$ `r round(kv_kvs,2)`%.
+
+
+
   - Position With a  `r round(position,2)`% open: 
-    - Needed $K_v$ : `r round(kv_needed, 1)` $m^3 / h$
-    - Percent of Maximum flow (Flow rate): $K_v / K_{vs}=$ `r round(kv_kvs,2)`%
+
+
+```{r kv-kvs-Example-1, echo=FALSE, fig.cap="Inherent Valve Characteristics"}
+  plot_kv_kvs(kv.b, kv.d, kv.e, cylinder)
+```
+
+
+
     - Liquid pressure recovery factor $F_L$: `r round(fl,3)`
     
 
@@ -139,10 +156,15 @@ Valve Design (first approx.):
 ```
 
 ```{r zv-Example-1, echo=FALSE, fig.cap="Zeta Value"}
-  plot_zv(kv.b, kv.d, kv.e, zvs, cylinder)
+
+  data_points <- df %>%  filter(factor == "zeta")
+
+  plot_zv(kv.b, kv.d, kv.e, zvs, cylinder) +
+    geom_point( data = data_points, aes( y = y, x = x ), 
+                colour = "red", size = 3)
 ```
 
-```{r fl-Example-1, echo=FALSE, fig.cap="test"}
+```{r fl-Example-1, echo=FALSE, fig.cap="Liquid pressure Recovery Factor"}
 
   data_points <- df %>%  filter(factor == "Fl")
 
@@ -151,7 +173,14 @@ Valve Design (first approx.):
                 colour = "red", size = 3)
 ```
 
+```{r sigma-Example-1, echo=FALSE, fig.cap="Sigma Value"}
 
+  data_points <- df %>%  filter(factor == "sigma_1")
+
+  plot_sigma( kv.b, kv.d, kv.e, fls, cylinder) +
+    geom_point( data = data_points, aes( y = y, x = x ), 
+                colour = "red", size = 3)
+```
 
 ### Step 3. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
 
