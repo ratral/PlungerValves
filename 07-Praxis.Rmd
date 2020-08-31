@@ -227,6 +227,8 @@ Knowing that the valve position is `r round(position,2)`%, it is possible to rea
 ```
 
 
+<<<<<<< HEAD
+
 ```{r sigma-Example-1, echo=FALSE, fig.cap="Sigma Value"}
 
   data_points <- df %>%  filter(factor == "sigma_1")
