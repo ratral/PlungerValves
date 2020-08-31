@@ -2,48 +2,15 @@
 
 # Use of flow rate equations for sizing valves
 
-```{r echo=FALSE}
+## Example 1. 
 
-  # https://bookdown.org/yihui/rmarkdown-cookbook/diagrams.html
-  # http://rich-iannone.github.io/DiagrammeR/index.html
-  # https://rich-iannone.github.io/DiagrammeR/graphviz_and_mermaid.html
-
-  # DiagrammeR::grViz(
-  # 
-  # "digraph {
-  #   graph [layout = dot, rankdir = TB]
-  #   
-  #   #
-  #   node [shape = oval]
-  #   start [label = 'Start']
-  #   
-  #   # 
-  #   node [shape = box]        
-  #   rec1 [label = 'Select FL using valve typ and size' ]
-  #   rec2 [label = 'Step 2. Write code']
-  #   rec3 [label = 'Step 3. ???']
-  #   rec4 [label = 'Step 4. PROFIT']
-  # 
-  #   # edge definitions with the node IDs
-  #   start -> rec1 -> rec2 -> rec3 -> rec4
-  # }",
-  # 
-  # height = 500)
-
-```
-  
-
-## Example 1: Sizing a valve with constant flow, constant upstream, and constant downstream pressures.
+Sizing a valve without fittings, constant flow, constant upstream, and constant downstream pressures.
 
    - Step 1. Specify the variables required  to size the valve.
    - Step 2. Read the values of the selected valve.
    - Step 3. Determine the flow coefficient $k_v$, the opening degree for the flow and $F_L$.
-   
-   - Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
-   - Step 5. Calculate the required flow coefficient ($K_v$).
-   
-   
-
+   - Step 4. calculate the value of sigma ($\sigma$) and its boundaries.
+  
 ### Step 1. Specify the variables required  to size the valve.
 
 ```{r include=FALSE}
@@ -75,10 +42,18 @@
   zeta      <- zeta_vaule(d, kv_needed)
   sig_1     <- sigma_1(p1, p2, elev, temp)
 
+  Sig_i     <- Sigma_i(position,  kv.b,  kv.d,  kv.e, fls) # Incipient Cavitation
+  Sig_c     <- Sigma_c(position,  kv.b,  kv.d,  kv.e, fls) # Constant Cavitation
+  Sig_mv    <- Sigma_mv(position,  kv.b,  kv.d,  kv.e, fls) #  Maximum Vibration Cavitation
+
+
   # Table for the plot
-  df <- tibble( factor = c( "Kv", "Kv_Kvs", "Fl", "sigma_1", "zeta" ), 
-                     y = c( kv_needed, kv_kvs, fl, sig_1, zeta ), 
-                     x = c( position, position, position, position, position))
+  df <- tibble( factor = c( "Kv", "Kv_Kvs", "Fl", "zeta",
+                            "sig_1", "Sig_i", "Sig_c", "Sig_mv"), 
+                     y = c( kv_needed, kv_kvs, fl, zeta, 
+                            sig_1, Sig_i, Sig_c, Sig_mv ), 
+                     x = c( position, position, position, position,
+                            position, position, position, position))
   
 ```
 
@@ -94,20 +69,20 @@ physical constants:
   - Altitude:             `r elev` msal.
   - Atmosphere Pressure : `r atm_pressure(masl = elev)` bar
   - Vapor Pressure :      `r vapour_pressure(temp)*0.01` bar
-  - Kinematic viscosity : `r kinematic_viscosity(temp)` $(m^2/s)*1e-6$
+  - Kinematic viscosity : `r scientific(kinematic_viscosity(temp))` $(mm^2/s)$
 
 Service Conditions:
 
   - $P_1 =$                         `r p1` bar
   - $P_2 =$                         `r p2` bar
   - $\Delta{P}$                     `r p1 - p2` bar
-  - $q =$                           `r flow` $m^3/h$ 
+  - $q =$                           `r (flow)` $m^3/h$ 
   - Diameter Pipe Upstream $D_1$:   `r round(D1*1000,0)` mm  
   - Diameter Pipe Downstream $D_2$: `r round(D2*1000,0)` mm  
 
 Valve Design (first approx.):
   
-  - Valve: Plunger Valve **VAG RIKO**
+  - Valve: Plunger Valve
   - Diameter Valve $d$: `r round(d*1000,0)` mm  
   - PN-10
   - Control Element : Cylinder type `r cylinder`
@@ -115,10 +90,12 @@ Valve Design (first approx.):
 
 
 ### Step 2. Read the values of the selected Control Characteristic.
+
+check the values of the preselected valve (values supplied by the valve producer). 
   
   - With the valve 100% open: 
-    - Zeta Value $\zeta_{vs}$ :                       `r zvs`
-    - Flow coefficient : $K_{vs}$ :                   `r round(kvs, 1)` $m^3 / h$
+    - Zeta Value $\zeta_{vs}$ :                       `r comma(zvs)`
+    - Flow coefficient : $K_{vs}$ :                   `r comma(kvs)` $m^3/h$
     - liquid pressure recovery factor ${F_{L}}_{s}$ : `r fls`
 
 
@@ -129,9 +106,9 @@ Using the function \@ref(eq:Kv-01):
 $$
   K_v = q \cdot \sqrt{\frac {(\rho / \rho_{0})}{\Delta P}}
 $$
-the Required $K_v$ is `r round(kv_needed, 1)` $m^3/h$ and the relative flow coefficient is $K_v/K_{vs}=$ `r round(kv_kvs,1)`%.
+the Required $K_v$ is `r comma(kv_needed)` $m^3/h$ and the relative flow coefficient is $K_v/K_{vs}=$ `r percent(kv_kvs/100)`.
 
-Entering the graph of $k_V/K_{VS}$ with the value of `r round(kv_kvs,1)`% we find the position of the valve required for the flow of `r flow` $m^3/h$ and $\Delta{P}$ of `r p1 - p2` bar is `r round(position,2)`%.
+Entering the graph of $k_V/K_{VS}$ with the value of `r percent(kv_kvs/100)` we find the position of the valve required for the flow of `r comma(flow)` $m^3/h$ and $\Delta{P}$ of `r p1 - p2` bar is `r percent(position/100)`.
 
 
 ```{r kv-kvs-Example-1, echo=FALSE, fig.cap="Inherent Valve Characteristics"}
@@ -155,7 +132,7 @@ Entering the graph of $k_V/K_{VS}$ with the value of `r round(kv_kvs,1)`% we fin
   
 ```
 
-Or it can be done directly with the $K_V =$ `r round(kv_needed,0)` $m^3/h$  value of on the $K_V$ graph.
+Or it can be done directly with the $K_V =$ `r (kv_needed)` $m^3/h$  value of on the $K_V$ graph.
 
 ```{r kv-Example-1, echo=FALSE, fig.cap="Flow coefficient"}
   
@@ -181,8 +158,9 @@ Or it can be done directly with the $K_V =$ `r round(kv_needed,0)` $m^3/h$  valu
 
 Knowing that the valve position is `r round(position,2)`%, it is possible to read the Zeta Value $\zeta_{v}$ and the Liquid Pressure Recovery Factor ${F_L}$.:
 
-  - $\zeta_{v}=$ `r round(zeta,2) `
-  - ${F_L}= `r round(fl,3) `$
+  - $\zeta_{v}=$ `r comma(zeta) `
+  - ${F_L}=$ `r round(fl,3) `
+  - Reynolds Number of the valve `r comma(Reynolds_valve(flow, kv_needed, d*1000, D1*1000, D2*1000, temp, fl, 1)) `
 
 
 ```{r zv-Example-1, echo=FALSE, fig.cap="Zeta Value"}
@@ -226,19 +204,155 @@ Knowing that the valve position is `r round(position,2)`%, it is possible to rea
                   arrow = arrow(length = unit(0.03, "npc"), type = "closed"))
 ```
 
+### Step 4. calculate the value of sigma ($\sigma$) and its boundaries.
+
+Using the function \@ref(eq:sigma-value-01):
+
+$$
+  \sigma_{1} = \frac{P_2-P_v}{\Delta P_{net}}
+$$
+
+  - Sigma value ($\sigma_{1}$): `r round(sig_1,3)`
+
+  - Incipient Cavitation ($\sigma_{i}$): `r round(Sig_i,3)`
+  
+  - Constant Cavitation ($\sigma_{c}$):  `r round(Sig_c,3)`
+
+  - Maximum Vibration Cavitation ($\sigma_{mv}$): `r round(Sig_mv,3)`
 
 
 
+```{r sigma-Example-1, echo=FALSE, warning=FALSE, fig.cap="Sigma"}
+  
+  # https://sebastiansauer.github.io/dplyr_filter/
+  
+  data_points <- df %>%  
+    filter(factor %in% c("sig_1", "Sig_i", "Sig_c", "Sig_mv"))
 
+  arrows_points <- tibble( x0 = 0,         y0 = sig_1,
+                           x1 = position,  y1 = sig_1,
+                           x2 = 0,         y2 = Sig_i,
+                           x3 = position,  y3 = Sig_i,
+                           x4 = 0,         y4 = Sig_c,
+                           x5 = position,  y5 = Sig_c,
+                           x6 = 0,         y6 = Sig_mv,
+                           x7 = position,  y7 = Sig_mv,
+                           x8 = position,  y8 = 0)
 
-```{r sigma-Example-1, echo=FALSE, fig.cap="Sigma Value"}
-
-  data_points <- df %>%  filter(factor == "sigma_1")
-
+  # Line type : "solid", "dashed", "dotted", "dotdash", "longdash", "twodash")
+  
+  lty <- "dotted"
+  
   plot_sigma( kv.b, kv.d, kv.e, fls, cylinder) +
     geom_point( data = data_points, aes( y = y, x = x ), 
-                colour = "red", size = 3)
+                colour = "black", size = 2) +
+     geom_segment(data = arrows_points, aes(x = x0, y = y0, xend = x1, yend = y1), linetype = lty) +
+     geom_segment(data = arrows_points, aes(x = x1, y = y1, xend = x8, yend = y8), linetype = lty) +
+     geom_segment(data = arrows_points, aes(x = x2, y = y2, xend = x3, yend = y3), linetype = lty) +
+     geom_segment(data = arrows_points, aes(x = x4, y = y4, xend = x5, yend = y5), linetype = lty) +
+     geom_segment(data = arrows_points, aes(x = x6, y = y6, xend = x7, yend = y7), linetype = lty)
+    
+  
 ```
 
-### Step 3. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
+## Example 2. 
+
+   - Step 1. Specify the variables required  to size the valve.
+   - Step 2. Determine the equation constants.
+   - Step 3. Determine the piping geometry factor ($F_P$).
+   - Step 4. Determine the pressure drop to use for sizing ($\Delta{P_{sizing}}).$
+   - Step 5. Calculate the required flow coefficient ($K_v$).
+
+### Step 1. Specify the variables required  to size the valve.
+
+```{r include=FALSE}
+
+  library(tidyverse)
+  library(wcontrolvalve)
+
+  temp <- 20.00   # °C
+  elev <- 500.0   # m 
+  p1   <- 30.00   # bar
+  p2   <- 6.000   # bar
+  flow <- 0.250   # m3/s
+  d    <- 0.300   # m
+  D1   <- 0.500   # m (DN Pipe Upstream)
+  D2   <- 0.400   # m (DN Pipe Downstream)
+  
+  # kv curve SZ-40
+  
+  kv.b	<- -2.755
+  kv.d	<-  1.979
+  kv.e	<- 99.215
+  zvs	  <- 15.830
+  fl	  <-  0.775
+```
+
+  1. Water pressure must be managed from 30 bars to 6 bars.
+  2. The control valve has a diameter of `r round(d*1000,0)` mm and is smaller than the diameters of the pipe upstream (`r round(D1*1000,0)` mm) and downstream (`r round(D2*1000,0)` mm)  of the valve.
+
+Service Conditions:
+
+  - Fluid : Water 
+  - Water Temperature : `r temp` °C
+  - Altitude: `r elev` msal.
+  - $P_1 =$ `r p1` bar
+  - $P_2 =$ `r p2` bar
+  - $q =$ `r flow` LPS
+  - Diameter Pipe Upstream $D_1$: `r round(D1*1000,0)` mm  
+  - Diameter Pipe Downstream $D_2$: `r round(D2*1000,0)` mm  
+
+Valve Design (first approx.):
+  
+  - Valve: Plunger Valve
+  - Diameter Valve $d$: `r round(d*1000,0)` mm  
+  - PN-40
+  - Control Element : Cylinder SZ-40
+  - Control Characteristic: Equal-Percentage Characteristic
+
+### Step 2. Determine the equation constants.
+
+  - 100% open 
+    - Zeta Value $\zeta_{vs}$: `r zvs`
+    - Flow coefficient: $K_{vs}$ : `r round(kv_value(d, zvs),0)` $m^3 / h$
+    - liquid pressure recovery factor ${F_{L}}_{s}$ : `r fl`
+  - Atmosphere Pressure : `r atm_pressure(masl = elev)` bar
+  - Vapor Pressure : `r vapour_pressure(temp)*0.01` bar
+  - Kinematic viscosity : `r kinematic_viscosity(temp)` $(m^2/s)*1e-6$
+
+### Step 3. Determine the piping geometry factor ($F_P$).
+
+```{r valve-with-fittings2, echo=FALSE, fig.cap = 'Valve with fittings [@wagner2008]', fig.width = 10, fig.asp = 0.7, fig.align = "center"}
+  file_image <- here::here("image", "valve_with_fittings.PNG")
+  knitr::include_graphics(file_image)
+```
+
+according to equation \@ref(eq:Fp) :
+
+$$
+  F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
+$$
+Where \@ref(eq:sumZ)
+
+$$
+  \sum{\zeta} = (\zeta_{1} + \zeta_{2}) + (\zeta_{B_1} - \zeta_{B_2})
+$$
+
+and
+
+Resistance coefficient of the valve in the inlet \@ref(eq:Z1): 
+    $\zeta_{1} = 0.5 \cdot \left( 1 - \left( \frac{d}{D_1}\right)^2 \right)^2 =$ `r round(0.5*(1-(d/D1)^2)^2,4)`
+  
+Resistance coefficient of the valve in the outlet \@ref(eq:Z2): 
+    $\zeta_{2} = \left( 1 - \left( \frac{d}{D_2}\right)^2 \right)^2 =$ `r round((1-(d/D2)^2)^2,4)`
+  
+Bernoulli pressure number in the valve inlet \@ref(eq:Zb1): 
+    $\zeta_{B_1} = 1- \left( \frac{d}{D_1}  \right)^4 =$  `r round((1-(d/D1))^4,4)`
+  
+Bernoulli pressure number in the valve outlet \@ref(eq:Zb2): 
+    $\zeta_{B_2} = 1- \left( \frac{d}{D_2}  \right)^4 =$ `r round((1-(d/D2))^4,4)`
+
+$\sum{\zeta} =$ `r round(0.5*(1-(d/D1)^2)^2 + (1-(d/D2)^2)^2 + (1-(d/D1))^4 - (1-(d/D2))^4, 4)`
+
+$F_P =$ `r fp(kv_value(d, zvs), d, D1, D2)`
 

@@ -11,11 +11,12 @@ description: "(UNDER CONSTRUCTION!!!) ....In this documentation, I want to clari
 ---
 
 ```{r include=FALSE}
-  library(tidyverse)
-  library(here)
-  library(DiagrammeR)
-  library(latex2exp)
-  library(wcontrolvalve)
+  library("tidyverse")
+  library("here")
+  library("scales")
+  library("DiagrammeR")
+  library("latex2exp")
+  library("wcontrolvalve")
 ```
 
 
