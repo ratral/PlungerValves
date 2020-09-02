@@ -6,9 +6,6 @@
 
 The goal of this exercise is to demonstrate the verification conditions of a preset control valve. The sizing of a valve without fittings (diameter of the valve equal to the diameter of the pipes), constant flow, constant upstream, and downstream pressures will be controlled..
 
-
-
-
    - Step 1. Specify the variables required for the verification of the valve size.
    - Step 2. Read the values of the selected valve.
    - Step 3. Determine the flow coefficient $k_v$, the opening degree for the flow and $F_L$.
