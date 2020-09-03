@@ -279,22 +279,23 @@ with a $\sigma_{1}$ of `r round(sig_1,3)`, the valve is in the range of **`r cav
   library(tidyverse)
   library(wcontrolvalve)
 
-  temp <- 20.00   # °C
+  temp <- 15.00   # °C
   elev <- 500.0   # m 
   p1   <- 30.00   # bar
   p2   <- 6.000   # bar
   flow <- 0.250   # m3/s
-  d    <- 0.300   # m
-  D1   <- 0.500   # m (DN Pipe Upstream)
-  D2   <- 0.400   # m (DN Pipe Downstream)
+  d    <- 1.00    # m
+  D1   <- 1.353   # m (DN Pipe Upstream)
+  D2   <- 1.353   # m (DN Pipe Downstream)
   
-  # kv curve SZ-40
+  # Cylinder parameter
   
-  kv.b	<- -2.755
-  kv.d	<-  1.979
-  kv.e	<- 99.215
-  zvs	  <- 15.830
-  fl	  <-  0.775
+  parameters <- tribble(
+    ~typ,          ~kv.b,  ~kv.d,   ~kv.e,   zvs,    fls,
+    "E",          -2.393,	1.389,	67.422,	  1.780,	0.617,
+    "SZ-40",      -2.755, 1.979,  99.215,  15.830,  0.775,
+    "SZK-30-20%", -3.893,	1.146,  61.038, 	3.000,	0.598
+  )
 ```
 
   1. Water pressure must be managed from 30 bars to 6 bars.
