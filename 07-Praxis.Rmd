@@ -4,14 +4,14 @@
 
 ## Example 1. 
 
-Sizing a valve without fittings, constant flow, constant upstream, and constant downstream pressures.
+The goal of this exercise is to demonstrate the verification conditions of a preset control valve. The sizing of a valve without fittings (diameter of the valve equal to the diameter of the pipes), constant flow, constant upstream, and downstream pressures will be controlled..
 
-   - Step 1. Specify the variables required  to size the valve.
+   - Step 1. Specify the variables required for the verification of the valve size.
    - Step 2. Read the values of the selected valve.
    - Step 3. Determine the flow coefficient $k_v$, the opening degree for the flow and $F_L$.
    - Step 4. calculate the value of sigma ($\sigma$) and its boundaries.
   
-### Step 1. Specify the variables required  to size the valve.
+### Step 1. Specify the variables required for the verification of the valve size.
 
 ```{r include=FALSE}
 
@@ -132,7 +132,7 @@ Entering the graph of $k_V/K_{VS}$ with the value of `r percent(kv_kvs/100)` we 
   
 ```
 
-Or it can be done directly with the $K_V =$ `r (kv_needed)` $m^3/h$  value of on the $K_V$ graph.
+Or it can be done directly with the $K_V =$ `r comma(kv_needed)` $m^3/h$  value of on the $K_V$ graph.
 
 ```{r kv-Example-1, echo=FALSE, fig.cap="Flow coefficient"}
   
@@ -255,6 +255,15 @@ $$
   
 ```
 
+### Step 5. Conclusions.
+
+It is good design practice to have a Safety Factor (Surcharge factor) for the maximum expected Kv. It is recommended that $K_{v}$ be less than or equal to 75% of the $K_{vs}$. In this exercise, it is `r percent(kv_needed/kvs)` which is `r ifelse(percent(kv_needed/kvs)<0.75, "not acceptable.", "ok.")`
+
+The characteristic number $\sigma_{1}$ determined for the given valve, valve opening, and pressure conditions must be greater than the corresponding numerical values of the cavitation index at which the incipient cavitation ($\sigma_{i}$), constant cavitation $\sigma_{c}$, and maximum vibration levels ($\sigma_{mv}$) occur.
+
+with a $\sigma_{1}$ of `r round(sig_1,3)`, the valve is in the range of **`r cavtation_regime(position,  kv.b,  kv.d,  kv.e, fls, sig_1)`**
+
+
 ## Example 2. 
 
    - Step 1. Specify the variables required  to size the valve.
@@ -270,22 +279,23 @@ $$
   library(tidyverse)
   library(wcontrolvalve)
 
-  temp <- 20.00   # °C
+  temp <- 15.00   # °C
   elev <- 500.0   # m 
   p1   <- 30.00   # bar
   p2   <- 6.000   # bar
   flow <- 0.250   # m3/s
-  d    <- 0.300   # m
-  D1   <- 0.500   # m (DN Pipe Upstream)
-  D2   <- 0.400   # m (DN Pipe Downstream)
+  d    <- 1.00    # m
+  D1   <- 1.353   # m (DN Pipe Upstream)
+  D2   <- 1.353   # m (DN Pipe Downstream)
   
-  # kv curve SZ-40
+  # Cylinder parameter
   
-  kv.b	<- -2.755
-  kv.d	<-  1.979
-  kv.e	<- 99.215
-  zvs	  <- 15.830
-  fl	  <-  0.775
+  parameters <- tribble(
+    ~typ,          ~kv.b,  ~kv.d,   ~kv.e,   ~zvs,    ~fls,
+    "E",          -2.393,	1.389,  67.422,	1.780,	0.617,
+    "SZ-40",      -2.755,  1.979,  99.215,  15.830,   0.775,
+    "SZK-30-20%", -3.893,	1.146,  61.038, 	3.000,	0.598
+  )
 ```
 
   1. Water pressure must be managed from 30 bars to 6 bars.
