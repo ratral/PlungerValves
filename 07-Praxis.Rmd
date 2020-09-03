@@ -291,9 +291,9 @@ with a $\sigma_{1}$ of `r round(sig_1,3)`, the valve is in the range of **`r cav
   # Cylinder parameter
   
   parameters <- tribble(
-    ~typ,          ~kv.b,  ~kv.d,   ~kv.e,   zvs,    fls,
-    "E",          -2.393,	1.389,	67.422,	  1.780,	0.617,
-    "SZ-40",      -2.755, 1.979,  99.215,  15.830,  0.775,
+    ~typ,          ~kv.b,  ~kv.d,   ~kv.e,   ~zvs,    ~fls,
+    "E",          -2.393,	1.389,  67.422,	1.780,	0.617,
+    "SZ-40",      -2.755,  1.979,  99.215,  15.830,   0.775,
     "SZK-30-20%", -3.893,	1.146,  61.038, 	3.000,	0.598
   )
 ```
