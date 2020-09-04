@@ -4,7 +4,9 @@
 
 ## Example 1. 
 
-The goal of this exercise is to demonstrate the verification conditions of a preset control valve. The sizing of a valve without fittings (diameter of the valve equal to the diameter of the pipes), constant flow, constant upstream, and downstream pressures will be controlled..
+The goal of this exercise is to verify the operating conditions of a preset control valve. The sizing of a valve without accessories will be controlled (valve diameter equal to the diameter of the pipes), constant flow, constant pressures both upstream and downstream.
+
+The steps to follow are those:
 
    - Step 1. Specify the variables required for the verification of the valve size.
    - Step 2. Read the values of the selected valve.
@@ -266,6 +268,15 @@ with a $\sigma_{1}$ of `r round(sig_1,3)`, the valve is in the range of **`r cav
 
 ## Example 2. 
 
+The objective of this exercise is to select from three possible types of control valves (the same valve but different cylinders) the most suitable for the operation of the system.
+the conditions are as follows:
+
+  - The diameter of the valve is smaller than the diameter of the pipes, and the piping system requires a constant flow,
+  - the pressures vary both upstream and downstream of the valve, and
+  - Initially, only three operational points will be evaluated.
+  
+The steps to follow are those:
+
    - Step 1. Specify the variables required  to size the valve.
    - Step 2. Determine the equation constants.
    - Step 3. Determine the piping geometry factor ($F_P$).
@@ -291,10 +302,10 @@ with a $\sigma_{1}$ of `r round(sig_1,3)`, the valve is in the range of **`r cav
   # Cylinder parameter
   
   parameters <- tribble(
-    ~typ,          ~kv.b,  ~kv.d,   ~kv.e,   ~zvs,    ~fls,
-    "E",          -2.393,	1.389,  67.422,	1.780,	0.617,
-    "SZ-40",      -2.755,  1.979,  99.215,  15.830,   0.775,
-    "SZK-30-20%", -3.893,	1.146,  61.038, 	3.000,	0.598
+    ~typ,     ~kv.b,  ~kv.d,   ~kv.e,   ~zvs,    ~fls,
+    "typ_01", -2.393,	1.389,  67.422,	1.780,	0.617,
+    "typ_02", -2.755,  1.979,  99.215,  15.830,   0.775,
+    "typ_03", -3.893,	1.146,  61.038, 	3.000,	0.598
   )
 ```
 
