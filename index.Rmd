@@ -16,6 +16,7 @@ description: "(UNDER CONSTRUCTION!!!) ....In this documentation, I want to clari
   library("scales")
   library("DiagrammeR")
   library("latex2exp")
+  library("kableExtra")
   library("wcontrolvalve")
 ```
 

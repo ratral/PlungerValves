@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Quantifying the Cavitation Potential of the valve | Plunger Valves (UNDER CONSTRUCTION!!!)</title>
+  <title>Chapter 8 Example 2. | Plunger Valves (UNDER CONSTRUCTION!!!)</title>
   <meta name="description" content="(UNDER CONSTRUCTION!!!) ….In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Quantifying the Cavitation Potential of the valve | Plunger Valves (UNDER CONSTRUCTION!!!)" />
+  <meta property="og:title" content="Chapter 8 Example 2. | Plunger Valves (UNDER CONSTRUCTION!!!)" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Quantifying the Cavitation Potential of the valve | Plunger Valves (UNDER CONSTRUCTION!!!)" />
+  <meta name="twitter:title" content="Chapter 8 Example 2. | Plunger Valves (UNDER CONSTRUCTION!!!)" />
   
   <meta name="twitter:description" content="(UNDER CONSTRUCTION!!!) ….In this documentation, I want to clarify a systematic method for the selection of cylinder types, sizes, pressure ratings, and trim sizes of the plunger control valves." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html"/>
-<link rel="next" href="inherent-and-installed-flow-characteristics.html"/>
+<link rel="prev" href="example-1-.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -152,145 +152,266 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="quantifying-the-cavitation-potential-of-the-valve" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Quantifying the Cavitation Potential of the valve</h1>
-<p>Its effect on the system varies with valve type, size, operating pressure, and details of the piping installation. To include cavitation in the design process is necessary to determine if cavitation will it’s, evaluate its intensity, characterize the flow conditions, and estimate its effect on the system and environment. Possible consequences include noise, vibration, erosion damage, and a decrease in performance.</p>
-<p>In the case of control valves it is conventional to describe the application in terms of a single parameter and then to compare this parameter to different limits of operation for a given control element.</p>
-<p>To characterize the flow conditions corresponding to a selected level of cavitation requires defining a cavitation index derived from dimensional analysis. The process involves determining the fluid properties, geometric characteristics, and fluid parameters that influence the cavitation process. The main variables affecting the cavitation process are:</p>
-<ol style="list-style-type: decimal">
-<li>the geometric configuration of the device,</li>
-<li>absolute pressure in the cavitating region,</li>
-<li>the critical pressure, generally assumed to be the liquid vapor pressure and</li>
-<li>velocity or pressure drop</li>
-</ol>
-<p>The cavitation index sigma <span class="math inline">\(\sigma\)</span> is a form of another dimensionless parameter.Sigma is constant for either <em>SI</em> or <em>US</em> Customary units as long as the same units of pressure are used throughout the equations for the parameter.</p>
-<p>This index (σ) is the ratio of fluid forces trying to prevent cavitation (the system or service pressure) to the forces trying to cause cavitation (the pressure drop). The smaller the value of the cavitation index for a flow system, the more likely or the more severe cavitation will be.</p>
-<p>The force suppressing cavitation is proportional to the magnitude of the average pressure relative to absolute vapor pressure i.e. <span class="math inline">\((P-P_r)\)</span>. The force causing cavitation is proportional to the velocity head <span class="math inline">\(V^2/2g\)</span> or to the pressure drop across the valve <span class="math inline">\(\Delta P\)</span>. The resulting cavitation parameter sigma can be expressed as <span class="citation">(Tullis <a href="#ref-tullis1993" role="doc-biblioref">1993</a>)</span>:</p>
-<p><span class="math display" id="eq:sigma-value-00a">\[\begin{equation} 
-  \sigma = \frac{P_1-P_v}{\Delta P_{net}}
-  \tag{5.1}
-\end{equation}\]</span></p>
-<p>in which:</p>
+<div id="example-2." class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Example 2.</h1>
+<p>The objective of this exercise is to select from three possible types of control valves (the same valve but different cylinders) the most suitable for the operation of the system.
+the conditions are as follows:</p>
 <ul>
-<li><span class="math inline">\(P_1\)</span> is the absolute pressure just upstream from the valve <span class="math inline">\((P_l = P_u + P_b)\)</span>,</li>
-<li><span class="math inline">\(P_u\)</span> is <em>the gauge pressure just upstream from the valve</em>,</li>
-<li><span class="math inline">\(P_b\)</span> is <em>the atmospheric or barometric pressure</em>,</li>
-<li><span class="math inline">\(P_v\)</span> is <em>the absolute vapor pressure</em> and</li>
-<li><span class="math inline">\(\Delta P_{net}\)</span> <em>the net pressure drop across the valve</em>.</li>
+<li>The diameter of the valve is smaller than the diameter of the pipes, and the piping system requires a constant flow,</li>
+<li>the pressures vary both upstream and downstream of the valve, and</li>
+<li>Initially, only three operational points will be evaluated.</li>
 </ul>
-<p>The minimum value of sigma (<span class="math inline">\(\sigma\)</span>) is <span class="math inline">\(1.0\)</span> since the maximum <span class="math inline">\(\Delta P_{net}\)</span> across the valve is <span class="math inline">\((P_1 - P_v)\)</span>.</p>
-<p>For valves and other devices that create a pressure drop, the cavitation parameter can be defined in several ways. The reference pressure in the numerator of the equation of sigma equation <a href="quantifying-the-cavitation-potential-of-the-valve.html#eq:sigma-value-00a">(5.1)</a> can be either the upstream or the downstream pressure. Both have been used, and there are valid reasons supporting either choice.</p>
-<p>Using the downstream pressure <span class="math inline">\(P_2\)</span>, the equation becomes:</p>
-<p><span class="math display" id="eq:sigma-value-01">\[\begin{equation}
-  \sigma_{1} = \frac{P_2-P_v}{\Delta P_{net}}
-  \tag{5.2}
-\end{equation}\]</span></p>
-<p>In which <span class="math inline">\(P_2\)</span> is the absolute downstream pressure (<span class="math inline">\(P_2 = P_d + P_b\)</span>), where <span class="math inline">\(P_d = P_u - \Delta P_{net}\)</span> and <span class="math inline">\(P_b\)</span> is the barometric pressure.</p>
-<p>This is the form originally preferred because the <em>downstream pressure is the pressure closer to the zone where the cavitation occurs</em>. Therefore, the downstream pressure more directly influences the cavitation. However, it is more convenient to use the upstream pressure for most applications, and the two sigma values differ by a constant value of <span class="math inline">\(1.0\)</span>. The following simple equation directly relates the equation:</p>
-<p><span class="math display" id="eq:sigma-value-00b">\[\begin{equation}
-  \sigma = \sigma_{1} + 1
-  \tag{5.3}
-\end{equation}\]</span></p>
-<p>For cavitation caused by surface roughness, an isolated roughness, an offset in the boundary or by any device for which it is not possible or convenient to evaluate a pressure differential, the velocity head can be used in place of <span class="math inline">\(\Delta{P}\)</span> in Equation of <span class="math inline">\(\sigma\)</span>. The resulting equation is:</p>
-<p><span class="math display" id="eq:sigma-value-02">\[\begin{equation}
-  \sigma_{2} = \frac{P_1-P_v}{(V^2/2g)}
-  \tag{5.4}
-\end{equation}\]</span></p>
-<p>Some authors have chosen to use the reciprocal of Equation for <span class="math inline">\(\sigma\)</span> and have defined the cavitation index as <span class="math inline">\(K_c\)</span> instead of <span class="math inline">\(\sigma\)</span>. The equation defining <span class="math inline">\(K_c\)</span> is:</p>
-<p><span class="math display" id="eq:cavitation-index">\[\begin{equation}
-  K_c = \frac{1}{\sigma_{1}} = \frac{\Delta P_{net}}{(P_2-P_v)} 
-  \tag{5.5}
-\end{equation}\]</span></p>
-<p>If you want to add a factor of safety to the cavitation parameter <span class="math inline">\(\sigma\)</span> <a href="quantifying-the-cavitation-potential-of-the-valve.html#eq:sigma-value-00a">(5.1)</a> that includes the possible cavitation caused by any device for which it is not possible or convenient to evaluate a pressure differential close to the control valve, then:</p>
-<p><span class="math display">\[\begin{equation} 
-  \begin{split}
-    \frac{1}{\sigma_{}} + \frac{1}{\sigma_{2}} 
-      &amp; =  \frac{\Delta P_{net}}{(P_1-P_v)} + \frac{(V^2/2g)}{(P_1-P_v)} \\
-      &amp; = \frac{\Delta P_{net} + (V^2/2g)}{(P_1-P_v)}
-  \end{split}
-\end{equation}\]</span></p>
-<p>So:</p>
-<p><span class="math display" id="eq:igma-value-03">\[\begin{equation}
-  \sigma_{3} = \frac{(P_1-P_v)}{\Delta P_{net} + (V^2/2g)}
-  \tag{5.6}
-\end{equation}\]</span></p>
-<div id="evaluating-the-cavitation-limits-of-the-valve" class="section level2">
-<h2><span class="header-section-number">5.1</span> Evaluating the Cavitation Limits of the valve</h2>
-<p>Cavitation causes noise, pressure fluctuations, vibrations, erosion damage, and in advanced stages, can reduce the valve’s capacity. The acceptable cavitation level for a valve in a given system varies with valve type, valve function, details of the piping layout and duration of the operation.</p>
-<p>It is necessary to identify and provide experimental data for several levels of cavitation intensity to have adequate information for analysis and design. There are defined six different cavitation design limits. The methods used to determine each limit experimentally are described, and suggestions are given as to when each limit might be appropriate. These limits are:</p>
+<p>The steps to follow are those:</p>
+<ul>
+<li>Step 1. Specify the variables required to size the valve.</li>
+<li>Step 2. Determine the equation constants.</li>
+<li>Step 3. Determine the piping geometry factor (<span class="math inline">\(F_P\)</span>).</li>
+<li>Step 4. Determine the pressure drop to use for sizing (<span class="math inline">\(\Delta{P_{sizing}}).\)</span></li>
+<li>Step 5. Calculate the required flow coefficient (<span class="math inline">\(K_v\)</span>).</li>
+</ul>
+<div id="step-1.-specify-the-variables-required-to-size-the-valve." class="section level2">
+<h2><span class="header-section-number">8.1</span> Step 1. Specify the variables required to size the valve.</h2>
 <ol style="list-style-type: decimal">
-<li>Incipient cavitation <span class="math inline">\(\sigma_{i}\)</span></li>
-<li>Critical (or constant) cavitation <span class="math inline">\(\sigma_{c}\)</span></li>
-<li>Incipient damage <span class="math inline">\(\sigma_{i_d}\)</span></li>
-<li>Incipient choking <span class="math inline">\(\sigma_{i_{ch}}\)</span> (or Kc)</li>
-<li>Choked flow <span class="math inline">\(\sigma_{ch}\)</span></li>
-<li>Maximum noise and vibration level <span class="math inline">\(\sigma_{max}\)</span></li>
+<li>The flow should be a constant 9396 <span class="math inline">\(m^3/h\)</span> (2.61 <span class="math inline">\(m^3/s\)</span>).</li>
+<li>The control valve has a diameter of 1000 mm and is smaller than the diameters of the pipe upstream (1400 mm) and downstream (1200 mm) of the valve.</li>
 </ol>
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-7" class="definition"><strong>Definition 5.1  (cavitation)  </strong></span>A two-stage process associated with the flow of liquids. The first stage involves the formation of vapor bubbles in the flow stream as a result of the local static pressure in the flow stream dropping below the liquid vapor pressure. The second stage of the process is the subsequent collapse or implosion of the vapor cavities back to the liquid state when the local static pressure again becomes greater than the fluid vapor pressure <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.</p>
+<p>Service Conditions:</p>
+<ul>
+<li>Fluid : Water</li>
+<li>Water Temperature: 15 °C</li>
+<li>Vapour pressure: 0.017 <span class="math inline">\(bar\)</span></li>
+<li>Altitude: 2700 msal.</li>
+<li>Atm. Pressure: 0.736 <span class="math inline">\(bar\)</span></li>
+<li>Diameter Pipe Upstream <span class="math inline">\(D_1\)</span>: 1400 mm<br />
+</li>
+<li>Diameter Pipe Downstream <span class="math inline">\(D_2\)</span>: 1200 mm<br />
+</li>
+<li>Diameter Valve <span class="math inline">\(d\)</span>: 1000 mm<br />
+</li>
+<li>Valve: Plunger Valve</li>
+</ul>
+<p>The maximum mean and minimum pressures calculated and the valve (upstream and downstream) for the necessary constant flow can be seen in table <a href="example-2-.html#tab:pressures-Example-02">8.1</a>.</p>
+<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; '>
+<caption>
+<span id="tab:pressures-Example-02">Table 8.1: </span>Pressures and flow data at the valve
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
 </div>
-
-
-<div class="definition">
-<span id="def:unnamed-chunk-8" class="definition"><strong>Definition 5.2  (cavitation coefficient)  </strong></span>A characteristic number for σ (e.g., <span class="math inline">\(\sigma_{i}\)</span>, <span class="math inline">\(\sigma_{c}\)</span>, <span class="math inline">\(\sigma_{mv}\)</span>, <span class="math inline">\(\sigma_{id}\)</span>, <span class="math inline">\(\sigma_{ch}\)</span>), determined for a given valve, valve opening, and pressure conditions, which corresponds to the numerical value of the cavitation index at which the levels of incipient cavitation, constant cavitation, maximum vibration cavitation, incipient damage, and choking cavitation occur <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
 </div>
-
-
-<div class="definition">
-<span id="def:unnamed-chunk-9" class="definition"><strong>Definition 5.3  (cavitation index)  </strong></span>The value for the operating service conditions of a valve, expressed as <span class="math inline">\(\sigma_{}\)</span> and numerically equal to <span class="math inline">\((p_1 - p_v )/(p_1 - p_2 )\)</span> <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(m^3/h\)</span>
 </div>
-
-
-<div class="definition">
-<span id="def:unnamed-chunk-10" class="definition"><strong>Definition 5.4  (cavitation level)  </strong></span>The degree to which cavitation is occurring, i.e., incipient, constant, incipient damage, choking, or maximum vibration. Levels can be determined by testing for vibration, pitting or metal loss, and changes in valve capacity <span class="math inline">\((k_v)\)</span> <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
 </div>
-
-
-<div class="definition">
-<span id="def:unnamed-chunk-11" class="definition"><strong>Definition 5.5  (choking cavitation)  </strong></span>A limiting flow condition in which vapor formation is enough to limit the rate of flow through the valve to some maximum value. Further increases in flow rate through the valve are only possible by increasing the valve inlet pressure, because reducing downstream pressure will no longer increase flow rate <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Measurement
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(P_1\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(P_2\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(Flow\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\Delta{P}\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Min.
+</td>
+<td style="text-align:right;">
+1.234
+</td>
+<td style="text-align:right;">
+1.090
+</td>
+<td style="text-align:right;">
+9396
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mean
+</td>
+<td style="text-align:right;">
+1.424
+</td>
+<td style="text-align:right;">
+0.636
+</td>
+<td style="text-align:right;">
+9396
+</td>
+<td style="text-align:right;">
+0.788
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Max.
+</td>
+<td style="text-align:right;">
+1.778
+</td>
+<td style="text-align:right;">
+0.646
+</td>
+<td style="text-align:right;">
+9396
+</td>
+<td style="text-align:right;">
+1.132
+</td>
+</tr>
+</tbody>
+</table>
+<p>The different types of Control Characteristic Parameters for the valve can be seen in the table <a href="example-2-.html#tab:valvetyp-Example-02">8.2</a> and in the figures <a href="example-2-.html#fig:kvkvs-typ-01-Example-2">8.1</a>, <a href="example-2-.html#fig:kvkvs-typ-02-Example-2">8.2</a>, and <a href="example-2-.html#fig:kvkvs-typ-03-Example-2">8.3</a>.</p>
+<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; '>
+<caption>
+<span id="tab:valvetyp-Example-02">Table 8.2: </span>Parameter of the Control Characteristic
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+<span class="math inline">\(Typ\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(K_{v_s}\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\zeta_{v_s}\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(F_{L_s}\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+typ_01
+</td>
+<td style="text-align:right;">
+29950
+</td>
+<td style="text-align:right;">
+1.78
+</td>
+<td style="text-align:right;">
+0.62
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+typ_02
+</td>
+<td style="text-align:right;">
+23070
+</td>
+<td style="text-align:right;">
+3.00
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+typ_03
+</td>
+<td style="text-align:right;">
+10043
+</td>
+<td style="text-align:right;">
+15.83
+</td>
+<td style="text-align:right;">
+0.78
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span id="fig:kvkvs-typ-01-Example-2"></span>
+<img src="PlungerValves_files/figure-html/kvkvs-typ-01-Example-2-1.png" alt="Inherent Valve Characteristics valve typ 01" width="672" />
+<p class="caption">
+Figure 8.1: Inherent Valve Characteristics valve typ 01
+</p>
 </div>
-
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-12" class="definition"><strong>Definition 5.6  (flashing)  </strong></span>A flow condition in which vapor pockets formed inside a valve persist downstream of the valve because the valve outlet pressure is at or below the fluid vapor pressure <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.</p>
+<div class="figure"><span id="fig:kvkvs-typ-02-Example-2"></span>
+<img src="PlungerValves_files/figure-html/kvkvs-typ-02-Example-2-1.png" alt="Inherent Valve Characteristics valve typ 02" width="672" />
+<p class="caption">
+Figure 8.2: Inherent Valve Characteristics valve typ 02
+</p>
 </div>
-
-
-<div class="definition">
-<p><span id="def:unnamed-chunk-13" class="definition"><strong>Definition 5.7  (duty cycle)  </strong></span>The ratio of the amount of time a valve spends performing one particular function to the valve’s total installed time period. It may be expressed as a percentage of total time (service time vs. installed time) <span class="citation">(ANSI/ISA <a href="#ref-ansi/isa1995" role="doc-biblioref">1995</a>)</span>.</p>
+<div class="figure"><span id="fig:kvkvs-typ-03-Example-2"></span>
+<img src="PlungerValves_files/figure-html/kvkvs-typ-03-Example-2-1.png" alt="Inherent Valve Characteristics valve typ 03" width="672" />
+<p class="caption">
+Figure 8.3: Inherent Valve Characteristics valve typ 03
+</p>
 </div>
+<div id="step-2.-determine-the-equation-constants." class="section level3">
+<h3><span class="header-section-number">8.1.1</span> Step 2. Determine the equation constants.</h3>
+</div>
+<div id="step-3.-determine-the-piping-geometry-factor-f_p." class="section level3">
+<h3><span class="header-section-number">8.1.2</span> Step 3. Determine the piping geometry factor (<span class="math inline">\(F_P\)</span>).</h3>
+<div class="figure" style="text-align: center"><span id="fig:valve-with-fittings2"></span>
+<img src="image/valve_with_fittings.PNG" alt="Valve with fittings [@wagner2008]" width="252" />
+<p class="caption">
+Figure 8.4: Valve with fittings <span class="citation">(Wagner <a href="#ref-wagner2008" role="doc-biblioref">2008</a>)</span>
+</p>
+</div>
+<p>according to equation <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Fp">(4.5)</a> :</p>
+<p><span class="math display">\[
+  F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
+\]</span>
+Where <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:sumZ">(4.6)</a></p>
+<p><span class="math display">\[
+  \sum{\zeta} = (\zeta_{1} + \zeta_{2}) + (\zeta_{B_1} - \zeta_{B_2})
+\]</span></p>
+<p>and</p>
+<p>Resistance coefficient of the valve in the inlet <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Z1">(4.9)</a>:
+<span class="math inline">\(\zeta_{1} = 0.5 \cdot \left( 1 - \left( \frac{d}{D_1}\right)^2 \right)^2 =\)</span> 0.12</p>
+<p>Resistance coefficient of the valve in the outlet <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Z2">(4.10)</a>:
+<span class="math inline">\(\zeta_{2} = \left( 1 - \left( \frac{d}{D_2}\right)^2 \right)^2 =\)</span> 0.0934</p>
+<p>Bernoulli pressure number in the valve inlet <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Zb1">(4.7)</a>:
+<span class="math inline">\(\zeta_{B_1} = 1- \left( \frac{d}{D_1} \right)^4 =\)</span> 0.0067</p>
+<p>Bernoulli pressure number in the valve outlet <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Zb2">(4.8)</a>:
+<span class="math inline">\(\zeta_{B_2} = 1- \left( \frac{d}{D_2} \right)^4 =\)</span> 810^{-4}</p>
 
-<p>SIGMA Values:</p>
-<ol style="list-style-type: decimal">
-<li>Incipient cavitation. (<span class="math inline">\(\sigma_{i}\)</span>):
-• Onset of cavitation
-• Detect using high frequency vibration measurement
-• Very local phenomenon
-• Transient: random “ticks” sound
-• Low level cavitation: usually not damaging
-• Occurs prior to loss of capacity</li>
-<li>Constant cavitation (<span class="math inline">\(\sigma_{c}\)</span>):
-• More regular cavitation events
-• Lower frequency sound and vibration sensed: “rumbling” sound
-• Some damage to surfaces may occur: dependent upon valve and trim styles, and materials.</li>
-<li>Maximum Cavitation (<span class="math inline">\(\sigma_{mv}\)</span>):
-• Highest vibration amplitude: sounds like “marbles” or “gravel”
-• Vigorous, large scale cavitation
-• Predicted by steady flow pressure distribution ( = <span class="math inline">\(F_L\)</span> )
-• Very high damage potential</li>
-<li>Manufacturer’s Recommended Limit (<span class="math inline">\(\sigma_{mr}\)</span>)</li>
-</ol>
-
+</div>
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-ansi/isa1995">
-<p>———, ed. 1995. <em>ANSI/ISA–RP75.23–1995, Considerations for Evaluating Control Valve Cavitation</em>. Instrument Society of America.</p>
-</div>
-<div id="ref-tullis1993">
-<p>Tullis, J. Paul. 1993. <em>Cavitation Guide for Control Valves</em>. Division of Engineering, Office of Nuclear Regulatory Research, U.S. Nuclear Regulatory Commission (1993).</p>
+<div id="ref-wagner2008">
+<p>Wagner, Walter. 2008. <em>Regel- und Sicherheitsarmaturen</em>. 1. Aufl. dieser Ausg. Vogel-Fachbuch. Würzburg: Vogel.</p>
 </div>
 </div>
             </section>
@@ -298,8 +419,8 @@
           </div>
         </div>
       </div>
-<a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="inherent-and-installed-flow-characteristics.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="example-1-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
