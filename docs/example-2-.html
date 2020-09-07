@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Raúl Trujillo Álvarez" />
 
 
-<meta name="date" content="2020-09-06" />
+<meta name="date" content="2020-09-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -126,10 +126,15 @@
 <li class="chapter" data-level="7.5" data-path="example-1-.html"><a href="example-1-.html#step-5.-conclusions."><i class="fa fa-check"></i><b>7.5</b> Step 5. Conclusions.</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="example-2-.html"><a href="example-2-.html"><i class="fa fa-check"></i><b>8</b> Example 2.</a><ul>
-<li class="chapter" data-level="8.1" data-path="example-2-.html"><a href="example-2-.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>8.1</b> Step 1. Specify the variables required to size the valve.</a><ul>
-<li class="chapter" data-level="8.1.1" data-path="example-2-.html"><a href="example-2-.html#step-2.-determine-the-equation-constants."><i class="fa fa-check"></i><b>8.1.1</b> Step 2. Determine the equation constants.</a></li>
-<li class="chapter" data-level="8.1.2" data-path="example-2-.html"><a href="example-2-.html#step-3.-determine-the-piping-geometry-factor-f_p."><i class="fa fa-check"></i><b>8.1.2</b> Step 3. Determine the piping geometry factor (<span class="math inline">\(F_P\)</span>).</a></li>
+<li class="chapter" data-level="8.1" data-path="example-2-.html"><a href="example-2-.html#step-1.-specify-the-variables-required-to-size-the-valve."><i class="fa fa-check"></i><b>8.1</b> Step 1. Specify the variables required to size the valve.</a></li>
+<li class="chapter" data-level="8.2" data-path="example-2-.html"><a href="example-2-.html#step-3.-determine-the-piping-geometry-factor-f_p_s-and-the-combined-liquid-pressure-recovery-factor-f_lp_s."><i class="fa fa-check"></i><b>8.2</b> Step 3. Determine the piping geometry factor (<span class="math inline">\(F_{P_s}\)</span>) and the combined liquid pressure recovery factor (<span class="math inline">\(F_{LP_s}\)</span>).</a></li>
+<li class="chapter" data-level="8.3" data-path="example-2-.html"><a href="example-2-.html#step-4.-calculation-of-needes-kv-zv-sigma-valve-position-and-kvkvs"><i class="fa fa-check"></i><b>8.3</b> Step 4. Calculation of needes Kv, Zv, sigma, valve position, and kv/kvs</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="example-2-.html"><a href="example-2-.html#with-the-valve-typ_01"><i class="fa fa-check"></i><b>8.3.1</b> With the valve typ_01</a></li>
+<li class="chapter" data-level="8.3.2" data-path="example-2-.html"><a href="example-2-.html#with-the-valve-typ_02"><i class="fa fa-check"></i><b>8.3.2</b> With the valve typ_02</a></li>
+<li class="chapter" data-level="8.3.3" data-path="example-2-.html"><a href="example-2-.html#with-the-valve-typ_03"><i class="fa fa-check"></i><b>8.3.3</b> With the valve typ_03</a></li>
+<li class="chapter" data-level="8.3.4" data-path="example-2-.html"><a href="example-2-.html#conclusion"><i class="fa fa-check"></i><b>8.3.4</b> Conclusion ……</a></li>
 </ul></li>
+<li class="chapter" data-level="8.4" data-path="example-2-.html"><a href="example-2-.html#step-5."><i class="fa fa-check"></i><b>8.4</b> Step 5.</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -154,8 +159,8 @@
             <section class="normal" id="section-">
 <div id="example-2." class="section level1">
 <h1><span class="header-section-number">Chapter 8</span> Example 2.</h1>
-<p>The objective of this exercise is to select from three possible types of control valves (the same valve but different cylinders) the most suitable for the operation of the system.
-the conditions are as follows:</p>
+<p>The objective of this exercise is to select from three possible types of control valves (the same valve but different cylinders) the most suitable for the operation of the system.</p>
+<p>the conditions are as follows:</p>
 <ul>
 <li>The diameter of the valve is smaller than the diameter of the pipes, and the piping system requires a constant flow,</li>
 <li>the pressures vary both upstream and downstream of the valve, and</li>
@@ -376,11 +381,9 @@ Figure 8.2: Inherent Valve Characteristics valve typ 02
 Figure 8.3: Inherent Valve Characteristics valve typ 03
 </p>
 </div>
-<div id="step-2.-determine-the-equation-constants." class="section level3">
-<h3><span class="header-section-number">8.1.1</span> Step 2. Determine the equation constants.</h3>
 </div>
-<div id="step-3.-determine-the-piping-geometry-factor-f_p." class="section level3">
-<h3><span class="header-section-number">8.1.2</span> Step 3. Determine the piping geometry factor (<span class="math inline">\(F_P\)</span>).</h3>
+<div id="step-3.-determine-the-piping-geometry-factor-f_p_s-and-the-combined-liquid-pressure-recovery-factor-f_lp_s." class="section level2">
+<h2><span class="header-section-number">8.2</span> Step 3. Determine the piping geometry factor (<span class="math inline">\(F_{P_s}\)</span>) and the combined liquid pressure recovery factor (<span class="math inline">\(F_{LP_s}\)</span>).</h2>
 <div class="figure" style="text-align: center"><span id="fig:valve-with-fittings2"></span>
 <img src="image/valve_with_fittings.PNG" alt="Valve with fittings [@wagner2008]" width="252" />
 <p class="caption">
@@ -389,23 +392,663 @@ Figure 8.4: Valve with fittings <span class="citation">(Wagner <a href="#ref-wag
 </div>
 <p>according to equation <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Fp">(4.5)</a> :</p>
 <p><span class="math display">\[
-  F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
+  F_{P} = \left( \frac{\sum{\zeta} \cdot K_v^2}{0.0016 \cdot d^4} + 1 \right)^{-1/2}
 \]</span>
-Where <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:sumZ">(4.6)</a></p>
+and equation <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Flp">(4.12)</a> :</p>
+<p><span class="math display">\[
+  F_{LP} = F_L \cdot \left(\frac{\sum{\zeta} \cdot F_L^2 \cdot K_v^2}{0.0016 \cdot d^4} + 1 \right)^{-1/2}
+\]</span></p>
+<p>Where the factor <span class="math inline">\(\sum{\zeta}\)</span> <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:sumZ">(4.6)</a> is the algebraic sum of the effective velocity head coefficients of all fittings attached to but not including the valve. For instance,</p>
 <p><span class="math display">\[
   \sum{\zeta} = (\zeta_{1} + \zeta_{2}) + (\zeta_{B_1} - \zeta_{B_2})
 \]</span></p>
-<p>and</p>
+<p>where</p>
 <p>Resistance coefficient of the valve in the inlet <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Z1">(4.9)</a>:
-<span class="math inline">\(\zeta_{1} = 0.5 \cdot \left( 1 - \left( \frac{d}{D_1}\right)^2 \right)^2 =\)</span> 0.12</p>
+<span class="math inline">\(\zeta_{1} = 0.5 \cdot \left( 1 - \left( \frac{d}{D_1}\right)^2 \right)^2 =\)</span> 0.11995</p>
 <p>Resistance coefficient of the valve in the outlet <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Z2">(4.10)</a>:
-<span class="math inline">\(\zeta_{2} = \left( 1 - \left( \frac{d}{D_2}\right)^2 \right)^2 =\)</span> 0.0934</p>
+<span class="math inline">\(\zeta_{2} = \left( 1 - \left( \frac{d}{D_2}\right)^2 \right)^2 =\)</span> 0.0933642</p>
 <p>Bernoulli pressure number in the valve inlet <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Zb1">(4.7)</a>:
-<span class="math inline">\(\zeta_{B_1} = 1- \left( \frac{d}{D_1} \right)^4 =\)</span> 0.0067</p>
+<span class="math inline">\(\zeta_{B_1} = 1- \left( \frac{d}{D_1} \right)^4 =\)</span> 0.7396918</p>
 <p>Bernoulli pressure number in the valve outlet <a href="sizing-equations-for-incompressible-fluids-flow-of-nonvaporizing-liquid.html#eq:Zb2">(4.8)</a>:
-<span class="math inline">\(\zeta_{B_2} = 1- \left( \frac{d}{D_2} \right)^4 =\)</span> 810^{-4}</p>
-
+<span class="math inline">\(\zeta_{B_2} = 1- \left( \frac{d}{D_2} \right)^4 =\)</span> 0.5177469</p>
+<p><span class="math inline">\(\sum{\zeta} =\)</span> 0.4352591</p>
+<p>so:</p>
+<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; '>
+<caption>
+<span id="tab:flp-Example-02">Table 8.3: </span>Piping geometry factor and the combined liquid pressure recovery factor
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+<span class="math inline">\(Typ\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(K_{v_s}\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\zeta_{v_s}\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(F_{L_s}\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(F_{P_s}\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(F_{LP_s}\)</span>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+typ_01
+</td>
+<td style="text-align:right;">
+29950
+</td>
+<td style="text-align:right;">
+1.78
+</td>
+<td style="text-align:right;">
+0.62
+</td>
+<td style="text-align:right;">
+0.90
+</td>
+<td style="text-align:right;">
+0.59
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+typ_02
+</td>
+<td style="text-align:right;">
+23070
+</td>
+<td style="text-align:right;">
+3.00
+</td>
+<td style="text-align:right;">
+0.60
+</td>
+<td style="text-align:right;">
+0.93
+</td>
+<td style="text-align:right;">
+0.58
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+typ_03
+</td>
+<td style="text-align:right;">
+10043
+</td>
+<td style="text-align:right;">
+15.83
+</td>
+<td style="text-align:right;">
+0.78
+</td>
+<td style="text-align:right;">
+0.99
+</td>
+<td style="text-align:right;">
+0.77
+</td>
+</tr>
+</tbody>
+</table>
 </div>
+<div id="step-4.-calculation-of-needes-kv-zv-sigma-valve-position-and-kvkvs" class="section level2">
+<h2><span class="header-section-number">8.3</span> Step 4. Calculation of needes Kv, Zv, sigma, valve position, and kv/kvs</h2>
+<div id="with-the-valve-typ_01" class="section level3">
+<h3><span class="header-section-number">8.3.1</span> With the valve typ_01</h3>
+<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; '>
+<caption>
+<span id="tab:positions1-Example-02">Table 8.4: </span>Pressures and flow data at the valve
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(m^3/h\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(m^3/h\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+–
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+%
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+%
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Measurement
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(P_1\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(P_2\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(Flow\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\Delta{P}\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(K_v\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\sigma_{1}\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(K_v/K_{vs}\)</span>
+</th>
+<th style="text-align:left;">
+Opening
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Min.
+</td>
+<td style="text-align:right;">
+1.234
+</td>
+<td style="text-align:right;">
+1.090
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+<td style="text-align:left;">
+24,765
+</td>
+<td style="text-align:right;">
+12.56
+</td>
+<td style="text-align:left;">
+82.7%
+</td>
+<td style="text-align:left;">
+79.2%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mean
+</td>
+<td style="text-align:right;">
+1.424
+</td>
+<td style="text-align:right;">
+0.636
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+0.788
+</td>
+<td style="text-align:left;">
+10,587
+</td>
+<td style="text-align:right;">
+1.72
+</td>
+<td style="text-align:left;">
+35.3%
+</td>
+<td style="text-align:left;">
+43.0%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Max.
+</td>
+<td style="text-align:right;">
+1.778
+</td>
+<td style="text-align:right;">
+0.646
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+1.132
+</td>
+<td style="text-align:left;">
+8,833
+</td>
+<td style="text-align:right;">
+1.21
+</td>
+<td style="text-align:left;">
+29.5%
+</td>
+<td style="text-align:left;">
+39.0%
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup>*</sup> NA values in <span class="math inline">\(K_v/K_{vs}\)</span>, this means that the required flow capacity is not available.
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div id="with-the-valve-typ_02" class="section level3">
+<h3><span class="header-section-number">8.3.2</span> With the valve typ_02</h3>
+<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; '>
+<caption>
+<span id="tab:positions2-Example-02">Table 8.5: </span>Pressures and flow data at the valve
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(m^3/h\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(m^3/h\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+–
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+%
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+%
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Measurement
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(P_1\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(P_2\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(Flow\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\Delta{P}\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(K_v\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\sigma_{1}\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(K_v/K_{vs}\)</span>
+</th>
+<th style="text-align:left;">
+Opening
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Min.
+</td>
+<td style="text-align:right;">
+1.234
+</td>
+<td style="text-align:right;">
+1.090
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+<td style="text-align:left;">
+24,765
+</td>
+<td style="text-align:right;">
+12.56
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mean
+</td>
+<td style="text-align:right;">
+1.424
+</td>
+<td style="text-align:right;">
+0.636
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+0.788
+</td>
+<td style="text-align:left;">
+10,587
+</td>
+<td style="text-align:right;">
+1.72
+</td>
+<td style="text-align:left;">
+45.9%
+</td>
+<td style="text-align:left;">
+55.0%
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Max.
+</td>
+<td style="text-align:right;">
+1.778
+</td>
+<td style="text-align:right;">
+0.646
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+1.132
+</td>
+<td style="text-align:left;">
+8,833
+</td>
+<td style="text-align:right;">
+1.21
+</td>
+<td style="text-align:left;">
+38.3%
+</td>
+<td style="text-align:left;">
+51.1%
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup>*</sup> NA values in <span class="math inline">\(K_v/K_{vs}\)</span>, this means that the required flow capacity is not available.
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div id="with-the-valve-typ_03" class="section level3">
+<h3><span class="header-section-number">8.3.3</span> With the valve typ_03</h3>
+<table class=" lightable-classic" style='font-family: "Arial Narrow", "Source Sans Pro", sans-serif; width: auto !important; '>
+<caption>
+<span id="tab:positions3-Example-02">Table 8.6: </span>Pressures and flow data at the valve
+</caption>
+<thead>
+<tr>
+<th style="empty-cells: hide;border-bottom:hidden;" colspan="1">
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(m^3/h\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(bar\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+<span class="math inline">\(m^3/h\)</span>
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+–
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+%
+</div>
+</th>
+<th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1">
+<div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+%
+</div>
+</th>
+</tr>
+<tr>
+<th style="text-align:left;">
+Measurement
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(P_1\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(P_2\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(Flow\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\Delta{P}\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(K_v\)</span>
+</th>
+<th style="text-align:right;">
+<span class="math inline">\(\sigma_{1}\)</span>
+</th>
+<th style="text-align:left;">
+<span class="math inline">\(K_v/K_{vs}\)</span>
+</th>
+<th style="text-align:left;">
+Opening
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Min.
+</td>
+<td style="text-align:right;">
+1.234
+</td>
+<td style="text-align:right;">
+1.090
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+0.144
+</td>
+<td style="text-align:left;">
+24,765
+</td>
+<td style="text-align:right;">
+12.56
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Mean
+</td>
+<td style="text-align:right;">
+1.424
+</td>
+<td style="text-align:right;">
+0.636
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+0.788
+</td>
+<td style="text-align:left;">
+10,587
+</td>
+<td style="text-align:right;">
+1.72
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Max.
+</td>
+<td style="text-align:right;">
+1.778
+</td>
+<td style="text-align:right;">
+0.646
+</td>
+<td style="text-align:left;">
+9,396
+</td>
+<td style="text-align:right;">
+1.132
+</td>
+<td style="text-align:left;">
+8,833
+</td>
+<td style="text-align:right;">
+1.21
+</td>
+<td style="text-align:left;">
+88%
+</td>
+<td style="text-align:left;">
+91%
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; border: 0;" colspan="100%">
+<sup>*</sup> NA values in <span class="math inline">\(K_v/K_{vs}\)</span>, this means that the required flow capacity is not available.
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<div id="conclusion" class="section level3">
+<h3><span class="header-section-number">8.3.4</span> Conclusion ……</h3>
+</div>
+</div>
+<div id="step-5." class="section level2">
+<h2><span class="header-section-number">8.4</span> Step 5.</h2>
+
 </div>
 </div>
 <h3>References</h3>

@@ -83,8 +83,8 @@ The piping geometry factor $F_{p}$ accounts for fittings attached to either the 
 $F_P$, the factor for the pipe geometry, takes into account the influence of the fittings that are attached directly to the inlet and/or outlet of a control valve (figure \@ref(fig:valve-with-fittings)). The $F_P$ factor is the ratio of the flow rate of a control valve with fittings to the flow rate that would result if the control valve were tested without fittings under identical conditions [@wagner2008] and [@ansi/isa2007].
 
 \begin{equation} 
-    F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.00214}}}
-    = \left( \frac{\sum{\zeta} \cdot K_v^2}{0.00214 \cdot d^4} + 1 \right)^{-1/2}
+    F_{P} = \frac{1}{\sqrt{1+\frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}}
+    = \left( \frac{\sum{\zeta} \cdot K_v^2}{0.0016 \cdot d^4} + 1 \right)^{-1/2}
 (\#eq:Fp)
 \end{equation} 
 
@@ -143,8 +143,8 @@ When a valve is installed with reducers or other attached fittings, the liquid p
 If the permissible deviation is to remain ≤ 5%, $F_{LP}$ must be determined through tests. If estimates are allowed, sufficient accuracy can be achieved by using the following equation [@wagner2008] and [@ansi/isa2007]:
 
 \begin{equation} 
-  F_{LP} = \frac{F_L}{\sqrt{1 + F_L \cdot \frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.00214}}} 
-  = F_L \cdot \left(\frac{\sum{\zeta} \cdot F_L^2 \cdot K_v^2}{0.00214 \cdot d^4} + 1 \right)^{-1/2}
+  F_{LP} = \frac{F_L}{\sqrt{1 + F_L \cdot \frac{\sum{\zeta} \cdot \left(\frac{K_v}{d^2} \right)^2}{0.0016}}} 
+  = F_L \cdot \left(\frac{\sum{\zeta} \cdot F_L^2 \cdot K_v^2}{0.0016 \cdot d^4} + 1 \right)^{-1/2}
 (\#eq:Flp)
 \end{equation} 
 
