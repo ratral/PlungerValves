@@ -30,9 +30,9 @@ The steps to follow are those:
   # base_data Pressures (bar)
   base_data <- tribble(
     ~measurement, ~p1,   ~p2, ~flow,
-    "Min.",      1.234, 1.090,  9396,
-    "Mean",      1.424, 0.636,  9396,
-    "Max.",      1.778, 0.646,  9396
+    "Min.",      1.720, 0.614,  9396,
+    "Mean",      1.410, 0.684,  9396,
+    "Max.",      1.370, 1.009,  9396
   ) 
   
   # Cylinder parameter/Characteristics
@@ -75,7 +75,7 @@ The steps to follow are those:
   }
   
   data_analyse <- data_analyse %>% 
-    mutate( fl     = ifelse(kv > kvs, NA, fl_function( position, kv.b, kv.d, kv.e, flps)),
+    mutate( flp    = ifelse(kv > kvs, NA, fl_function( position, kv.b, kv.d, kv.e, flps)),
             Sig_i  = ifelse(kv > kvs, NA, Sigma_i( position,  kv.b,  kv.d,  kv.e, flps)),  # Incipient Cavitation
             Sig_c  = ifelse(kv > kvs, NA, Sigma_c( position,  kv.b,  kv.d,  kv.e, flps)),  # Constant Cavitation
             Sig_mv = ifelse(kv > kvs, NA, Sigma_mv( position,  kv.b,  kv.d,  kv.e, flps)), #  Maximum Vibration Cavitation
@@ -202,7 +202,6 @@ so:
     
 ```
 
-
 ## Step 4. Calculation of needes Kv, Zv, sigma, valve position, and  kv/kvs
 
 ### With the valve  `r data_analyse$typ[1]`
@@ -260,7 +259,73 @@ so:
     footnote( symbol = c("NA values in $K_v/K_{vs}$, this means that the required flow capacity is not available.") )
 ```
 
-### Conclusion ......
+## Step 5. Calcultion of the Cavitation's borders.
 
+### For the valve  `r data_analyse$typ[1]`
 
-## Step 5. 
+```{r sigma1-Example-02, echo=FALSE}
+  data_analyse$data[[1]] %>%  
+    mutate( sig_1  = round(sig_1,  2),
+            Sig_i  = round(Sig_i,  2),
+            Sig_c  = round(Sig_c,  2), 
+            Sig_mv = round(Sig_mv, 2),
+            flp    = round(flp,  2),
+            position = scales::percent(position/100)) %>% 
+    select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
+    kbl(caption ="Sigma value and cavitation's borders",
+        col.names = c("Measurement", "$P_1$" , "$P_2$", "$\\Delta{P}$",
+                      "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
+    add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
+    kable_classic( bootstrap_options = "striped",
+                   full_width = F, position = "left") %>%
+    footnote( symbol = c("NA values in $position$ and $\\sigma$, this means that the required flow capacity is not available.") )
+```
+
+### For the valve  `r data_analyse$typ[2]`
+
+```{r sigma2-Example-02, echo=FALSE}
+  data_analyse$data[[2]] %>%  
+    mutate( sig_1  = round(sig_1,  2),
+            Sig_i  = round(Sig_i,  2),
+            Sig_c  = round(Sig_c,  2), 
+            Sig_mv = round(Sig_mv, 2),
+            flp    = round(flp,  2),
+            position = scales::percent(position/100)) %>% 
+    select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
+    kbl(caption ="Sigma value and cavitation's borders",
+        col.names = c("Measurement", "$P_1$" , "$P_2$", "$\\Delta{P}$",
+                      "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
+    add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
+    kable_classic( bootstrap_options = "striped",
+                   full_width = F, position = "left") %>%
+    footnote( symbol = c("NA values in $position$ and $\\sigma$, this means that the required flow capacity is not available.") )
+```
+
+### For the valve  `r data_analyse$typ[3]`
+
+```{r sigma3-Example-02, echo=FALSE}
+  data_analyse$data[[3]] %>%  
+    mutate( sig_1  = round(sig_1, 2),
+            Sig_i  = round(Sig_i, 2),
+            Sig_c  = round(Sig_c, 2), 
+            Sig_mv = round(Sig_mv, 2),
+            flp    = round(flp, 2),
+            position = scales::percent(position/100)) %>% 
+    select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
+    kbl(caption ="Sigma value and cavitation's borders",
+        col.names = c("Measurement", "$P_1$" , "$P_2$", "$\\Delta{P}$",
+                      "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
+    add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
+    kable_classic( bootstrap_options = "striped",
+                   full_width = F, position = "left") %>%
+    footnote( symbol = c("NA values in $position$ and $\\sigma$, this means that the required flow capacity is not available.") )
+```
+
+## Step 6. Conclusion
+
+the initial conclusions would be the following: 
+
+  - Only type 1 and 2 valves meet the required conditions; 
+  - With the information of the minimum, average and maximum values, only a first approximation of the behavior of the valve is achieved. And it is used for the preselection of the type of valve required. Depending on the importance of the valve for the operation of the system, it is recommended to know all the values corresponding to all the operating scenarios. 
+  - This exercise is derived from the actual selection of two control valves on a water treatment plant. The valves are used to control the backwashing of the filters, and for this reason, it is extremely important to review all operating scenarios (see Example 3).
+  
