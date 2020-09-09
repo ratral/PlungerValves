@@ -1,0 +1,10 @@
+# Example 3. 
+
+The objective of this exercise is to select from three possible types of control valves (the same valve but different cylinders) the most suitable for the operation of the system.
+
+the conditions are as follows:
+
+  - The diameter of the valve is smaller than the diameter of the pipes, and the piping system requires a constant flow,
+  - the pressures vary both upstream and downstream of the valve, and
+  - Initially, only three operational points will be evaluated.
+  

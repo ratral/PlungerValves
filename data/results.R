@@ -3,6 +3,7 @@
   library("tidyverse")
   library("wcontrolvalve")
   library("here")
+  library("ggExtra")
 
   # Basic data
   temp <- 15.00   # °C
@@ -12,7 +13,7 @@
   d1   <- 1.4     # m (DN Pipe Upstream)
   d2   <- 1.2     # m (DN Pipe Downstream)
   
-  adfactor <- 1.3  # Kv additional factor (Zuschlagfaktor)
+  adfactor <- 1.01 # Kv additional factor (Zuschlagfaktor)
   
   # Read data Wiesner WTP
   base_data <- readRDS(here::here("data", "results.rds"))
@@ -80,5 +81,26 @@
   data_analyse <- data_analyse %>%
     group_by(typ, kv.b, kv.d, kv.e, zvs, kvs, fls, fps, flps) %>% 
     nest()
+  
+#----------------------------------------------------------
+# https://cran.r-project.org/web/packages/ggExtra/vignettes/ggExtra.html
+  
+  
+  p <- data_analyse$data[[1]] %>% filter(!is.na(sig_1)) %>% 
+        ggplot(aes(x = position, y = sig_1)) +
+        geom_point() +
+        scale_x_continuous( breaks = seq(0, 100, 10)) + 
+    labs( title    = TeX("Flow Characteristics $(k_{v}/k_{vs})$"),
+          subtitle = paste("Flow characteristics: ", cylindertyp),
+          caption  = "Dr.Trujillo",
+          x        = "Opening degree (%)",
+          y        = TeX('$k_{v}/k_{vS}$')) 
+
+  # with marginal histogram
+  p1 <- ggMarginal(p, type="histogram", size=10)
+
+
+  p1
+  
   
   
