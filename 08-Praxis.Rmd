@@ -223,6 +223,29 @@ so:
 ```
 
 
+
+```{r kv-kvs1-Example-2, echo=FALSE, fig.cap="Inherent Characteristic of the valve", warning=TRUE}
+  i <- 1
+  
+  data_points <- data_analyse$data[[i]] %>% 
+    select( kv_kvs, position)
+  
+  # arrows_points <- tribble(
+  #   ~x,                      ~y, 
+  #   0,                       data_points$kv_kvs[1],
+  #   data_points$position[1], data_points$kv_kvs[1],
+  #   data_points$kv_kvs[1],   0
+  # )
+  
+  plot_kv_kvs( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
+               data_analyse[i,]$kv.e, data_analyse[i,]$typ) +
+    geom_point( data = data_points, 
+                aes( y = kv_kvs*100, x = position ), 
+                colour = "black", size = 2) 
+
+```
+
+
 ### With the valve  `r data_analyse$typ[2]`
 
 ```{r positions2-Example-02, echo=FALSE}
@@ -240,6 +263,30 @@ so:
                    full_width = F, position = "left")%>%
     footnote( symbol = c("NA values in $K_v/K_{vs}$, this means that the required flow capacity is not available.") )
 ```
+
+
+```{r kv-kvs2-Example-2, echo=FALSE, fig.cap="Inherent Characteristic of the valve", warning=TRUE}
+  i <- 2
+  
+  data_points <- data_analyse$data[[i]] %>% 
+    select( kv_kvs, position)
+  
+  # arrows_points <- tribble(
+  #   ~x,                      ~y, 
+  #   0,                       data_points$kv_kvs[i],
+  #   data_points$position[i], data_points$kv_kvs[i],
+  #   data_points$kv_kvs[i],   0
+  # )
+  
+  plot_kv_kvs( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
+               data_analyse[i,]$kv.e, data_analyse[i,]$typ) +
+    geom_point( data = data_points, 
+                aes( y = kv_kvs*100, x = position ), 
+                colour = "black", size = 2) 
+
+```
+
+
 
 ### With the valve  `r data_analyse$typ[3]`
 
