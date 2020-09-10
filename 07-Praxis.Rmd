@@ -241,8 +241,7 @@ $$
   lty <- "dotted"
   
   plot_sigma( kv.b, kv.d, kv.e, fls, cylinder) +
-    geom_point( data = data_points, aes( y = y, x = x ), 
-                colour = "black", size = 2) +
+    geom_point( data = data_points, aes( y = y, x = x ), colour = "black", size = 2) +
      geom_segment(data = arrows_points, aes(x = x0, y = y0, xend = x1, yend = y1), linetype = lty) +
      geom_segment(data = arrows_points, aes(x = x1, y = y1, xend = x8, yend = y8), linetype = lty) +
      geom_segment(data = arrows_points, aes(x = x2, y = y2, xend = x3, yend = y3), linetype = lty) +

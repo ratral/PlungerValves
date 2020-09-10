@@ -225,23 +225,30 @@ so:
 
 
 ```{r kv-kvs1-Example-2, echo=FALSE, fig.cap="Inherent Characteristic of the valve", warning=TRUE}
+
   i <- 1
   
   data_points <- data_analyse$data[[i]] %>% 
-    select( kv_kvs, position)
+    select( position, kv_kvs) %>% 
+    mutate( kv_kvs = kv_kvs * 100) %>% 
+    rename( x = position, y = kv_kvs )
   
-  # arrows_points <- tribble(
-  #   ~x,                      ~y, 
-  #   0,                       data_points$kv_kvs[1],
-  #   data_points$position[1], data_points$kv_kvs[1],
-  #   data_points$kv_kvs[1],   0
-  # )
+  segment_data <- tibble ( x = data_points$x,
+                           y    = data_points$y*0,
+                           xend = data_points$x,
+                           yend = data_points$y) %>% 
+                  add_row( x    = data_points$x*0,
+                           y    = data_points$y,
+                           xend = data_points$x,
+                           yend = data_points$y)
+  
   
   plot_kv_kvs( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
                data_analyse[i,]$kv.e, data_analyse[i,]$typ) +
     geom_point( data = data_points, 
-                aes( y = kv_kvs*100, x = position ), 
-                colour = "black", size = 2) 
+                aes( x = x, y = y ), 
+                colour = "black", size = 2) +
+    geom_segment(data = segment_data, aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")
 
 ```
 
@@ -249,6 +256,7 @@ so:
 ### With the valve  `r data_analyse$typ[2]`
 
 ```{r positions2-Example-02, echo=FALSE}
+
   data_analyse$data[[2]] %>%  
     mutate( flow = scales::comma(flow),
             kv = scales::comma(kv),
@@ -262,27 +270,35 @@ so:
     kable_classic( bootstrap_options = "striped", 
                    full_width = F, position = "left")%>%
     footnote( symbol = c("NA values in $K_v/K_{vs}$, this means that the required flow capacity is not available.") )
+
 ```
 
 
 ```{r kv-kvs2-Example-2, echo=FALSE, fig.cap="Inherent Characteristic of the valve", warning=TRUE}
+
   i <- 2
   
   data_points <- data_analyse$data[[i]] %>% 
-    select( kv_kvs, position)
+    select( position, kv_kvs) %>% 
+    mutate( kv_kvs = kv_kvs * 100) %>% 
+    rename( x = position, y = kv_kvs )
   
-  # arrows_points <- tribble(
-  #   ~x,                      ~y, 
-  #   0,                       data_points$kv_kvs[i],
-  #   data_points$position[i], data_points$kv_kvs[i],
-  #   data_points$kv_kvs[i],   0
-  # )
+  segment_data <- tibble ( x = data_points$x,
+                           y    = data_points$y*0,
+                           xend = data_points$x,
+                           yend = data_points$y) %>% 
+                  add_row( x    = data_points$x*0,
+                           y    = data_points$y,
+                           xend = data_points$x,
+                           yend = data_points$y)
+  
   
   plot_kv_kvs( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
                data_analyse[i,]$kv.e, data_analyse[i,]$typ) +
     geom_point( data = data_points, 
-                aes( y = kv_kvs*100, x = position ), 
-                colour = "black", size = 2) 
+                aes( x = x, y = y ), 
+                colour = "black", size = 2) +
+    geom_segment(data = segment_data, aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")
 
 ```
 
@@ -291,6 +307,7 @@ so:
 ### With the valve  `r data_analyse$typ[3]`
 
 ```{r positions3-Example-02, echo=FALSE}
+
   data_analyse$data[[3]] %>%  
     mutate( flow = scales::comma(flow),
             kv = scales::comma(kv),
@@ -304,6 +321,7 @@ so:
     kable_classic( bootstrap_options = "striped", 
                    full_width = F, position = "left")%>%
     footnote( symbol = c("NA values in $K_v/K_{vs}$, this means that the required flow capacity is not available.") )
+
 ```
 
 ## Step 5. Calcultion of the Cavitation's borders.
@@ -328,6 +346,32 @@ so:
     footnote( symbol = c("NA values in $position$ and $\\sigma$, this means that the required flow capacity is not available.") )
 ```
 
+```{r sigma1-Example-2, echo=FALSE, warning=FALSE, fig.cap="Sigma"}
+
+  i <- 1
+
+  data_points <- data_analyse$data[[i]] %>% 
+    select( position, Sig_i) %>% 
+    rename( x = position, y = Sig_i )
+  
+  segment_data <- tibble ( x = data_points$x,
+                           y    = data_points$y*0,
+                           xend = data_points$x,
+                           yend = data_points$y) %>% 
+                  add_row( x    = data_points$x*0,
+                           y    = data_points$y,
+                           xend = data_points$x,
+                           yend = data_points$y)
+    
+  plot_sigma( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
+              data_analyse[i,]$kv.e, data_analyse[i,]$fls, 
+              data_analyse[i,]$typ) +
+    geom_point( data = data_points, aes( y = y, x = x ), colour = "black", size = 2) +
+    geom_segment(data = segment_data, aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")  
+
+```
+
+
 ### For the valve  `r data_analyse$typ[2]`
 
 ```{r sigma2-Example-02, echo=FALSE}
@@ -347,6 +391,33 @@ so:
                    full_width = F, position = "left") %>%
     footnote( symbol = c("NA values in $position$ and $\\sigma$, this means that the required flow capacity is not available.") )
 ```
+
+
+```{r sigma2-Example-2, echo=FALSE, warning=FALSE, fig.cap="Sigma"}
+
+  i <- 2
+
+  data_points <- data_analyse$data[[i]] %>% 
+    select( position, Sig_i) %>% 
+    rename( x = position, y = Sig_i )
+
+    segment_data <- tibble ( x = data_points$x,
+                           y    = data_points$y*0,
+                           xend = data_points$x,
+                           yend = data_points$y) %>% 
+                  add_row( x    = data_points$x*0,
+                           y    = data_points$y,
+                           xend = data_points$x,
+                           yend = data_points$y)
+
+  plot_sigma( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
+              data_analyse[i,]$kv.e, data_analyse[i,]$fls, 
+              data_analyse[i,]$typ) +
+    geom_point( data = data_points, aes( y = y, x = x ), colour = "black", size = 2)  +
+    geom_segment(data = segment_data, aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")   
+
+```
+
 
 ### For the valve  `r data_analyse$typ[3]`
 
