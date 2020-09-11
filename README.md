@@ -1,4 +1,4 @@
-# Introduction {#intro} 
+# Introduction
 
 Plunger valves are mainly used where volume flows or pressure have to be reduced and regulated with out vibrations, noises or big changes in the pipeline system.
 
@@ -71,7 +71,7 @@ My experience is that all these questions will be answered in a vague form from 
 
 Only after reviewing these criteria and deciding on the proper valve type should the subject of cost be considered
 
-## Structure of the document {-}
+## Structure of the document 
 
 This document focuses on the sizing of plunger control valves in the transportation and distribution of drinking and raw water. 
 
