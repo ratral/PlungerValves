@@ -111,7 +111,7 @@ The maximum mean and minimum pressures calculated and the valve (upstream and do
   base_data %>% 
     select(measurement, p1, p2, flow, dp) %>% 
     kbl(caption ="Pressures and flow data at the valve",
-        col.names = c("Measurement", "$P_1$" , "$P_2$", "$Flow$", "$\\Delta{P}$")) %>% 
+        col.names = c("Measu.", "$P_1$" , "$P_2$", "$Flow$", "$\\Delta{P}$")) %>% 
     add_header_above(c("", "$bar$", "$bar$", "$m^3/h$", "$bar$")) %>% 
     kable_classic( bootstrap_options = "striped", 
                    full_width = F, position = "left")
@@ -130,21 +130,32 @@ The different types of Control Characteristic Parameters for the valve can be se
 ```
 
 
-```{r kvkvs-typ-01-Example-2, echo=FALSE, fig.cap="Inherent Valve Characteristics valve typ 01"}
+```{r kvkvs-typ-01-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 01"}
 
-  plot_kv_kvs(cylinder$kv.b[1], cylinder$kv.d[1], cylinder$kv.e[1], cylinder$typ[1]) 
+  # https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
+
+  i <- 1
+  p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
+  p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
+  grid.arrange(p1, p2, nrow = 1)
   
 ```
 
-```{r kvkvs-typ-02-Example-2, echo=FALSE, fig.cap="Inherent Valve Characteristics valve typ 02"}
+```{r kvkvs-typ-02-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 02"}
 
-  plot_kv_kvs(cylinder$kv.b[2], cylinder$kv.d[2], cylinder$kv.e[2], cylinder$typ[2]) 
+  i <- 2
+  p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
+  p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
+  grid.arrange(p1, p2, nrow = 1)
   
 ```
 
-```{r kvkvs-typ-03-Example-2, echo=FALSE, fig.cap="Inherent Valve Characteristics valve typ 03"}
+```{r kvkvs-typ-03-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 03"}
 
-  plot_kv_kvs(cylinder$kv.b[3], cylinder$kv.d[3], cylinder$kv.e[3], cylinder$typ[3]) 
+  i <- 3
+  p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
+  p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
+  grid.arrange(p1, p2, nrow = 1)
   
 ```
 
@@ -215,7 +226,7 @@ so:
             position = scales::percent(position/100)) %>% 
     select(measurement, p1, p2, flow, dp, kv, sig_1, kv_kvs, position) %>% 
     kbl(caption ="Pressures and flow data at the valve",
-        col.names = c("Measurement", "$P_1$" , "$P_2$", "$Flow$", "$\\Delta{P}$", "$K_v$", "$\\sigma_{1}$", "$K_v/K_{vs}$", "Opening")) %>% 
+        col.names = c("Measu.", "$P_1$" , "$P_2$", "$Flow$", "$\\Delta{P}$", "$K_v$", "$\\sigma_{1}$", "$K_v/K_{vs}$", "Opening")) %>% 
     add_header_above(c("", "$bar$", "$bar$", "$m^3/h$", "$bar$", "$m^3/h$", "--", "%", "%")) %>% 
     kable_classic( bootstrap_options = "striped", 
                    full_width = F, position = "left") %>%
@@ -265,7 +276,7 @@ so:
             position = scales::percent(position/100)) %>% 
     select(measurement, p1, p2, flow, dp, kv, sig_1, kv_kvs, position) %>% 
     kbl(caption ="Pressures and flow data at the valve",
-        col.names = c("Measurement", "$P_1$" , "$P_2$", "$Flow$", "$\\Delta{P}$", "$K_v$", "$\\sigma_{1}$", "$K_v/K_{vs}$", "Opening")) %>% 
+        col.names = c("Measu.", "$P_1$" , "$P_2$", "$Flow$", "$\\Delta{P}$", "$K_v$", "$\\sigma_{1}$", "$K_v/K_{vs}$", "Opening")) %>% 
     add_header_above(c("", "$bar$", "$bar$", "$m^3/h$", "$bar$", "$m^3/h$", "--", "%", "%")) %>% 
     kable_classic( bootstrap_options = "striped", 
                    full_width = F, position = "left")%>%
@@ -316,7 +327,7 @@ so:
             position = scales::percent(position/100)) %>% 
     select(measurement, p1, p2, flow, dp, kv, sig_1, kv_kvs, position) %>% 
     kbl(caption ="Pressures and flow data at the valve",
-        col.names = c("Measurement", "$P_1$" , "$P_2$", "$Flow$", "$\\Delta{P}$", "$K_v$", "$\\sigma_{1}$", "$K_v/K_{vs}$", "Opening")) %>% 
+        col.names = c("Measu.", "$P_1$" , "$P_2$", "$Flow$", "$\\Delta{P}$", "$K_v$", "$\\sigma_{1}$", "$K_v/K_{vs}$", "Opening")) %>% 
     add_header_above(c("", "$bar$", "$bar$", "$m^3/h$", "$bar$", "$m^3/h$", "--", "%", "%")) %>% 
     kable_classic( bootstrap_options = "striped", 
                    full_width = F, position = "left")%>%
@@ -338,7 +349,7 @@ so:
             position = scales::percent(position/100)) %>% 
     select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
     kbl(caption ="Sigma value and cavitation's borders",
-        col.names = c("Measurement", "$P_1$" , "$P_2$", "$\\Delta{P}$",
+        col.names = c("Measu.", "$P_1$" , "$P_2$", "$\\Delta{P}$",
                       "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
     add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
     kable_classic( bootstrap_options = "striped",
@@ -384,7 +395,7 @@ so:
             position = scales::percent(position/100)) %>% 
     select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
     kbl(caption ="Sigma value and cavitation's borders",
-        col.names = c("Measurement", "$P_1$" , "$P_2$", "$\\Delta{P}$",
+        col.names = c("Measu.", "$P_1$" , "$P_2$", "$\\Delta{P}$",
                       "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
     add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
     kable_classic( bootstrap_options = "striped",
@@ -431,7 +442,7 @@ so:
             position = scales::percent(position/100)) %>% 
     select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
     kbl(caption ="Sigma value and cavitation's borders",
-        col.names = c("Measurement", "$P_1$" , "$P_2$", "$\\Delta{P}$",
+        col.names = c("Measu.", "$P_1$" , "$P_2$", "$\\Delta{P}$",
                       "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
     add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
     kable_classic( bootstrap_options = "striped",

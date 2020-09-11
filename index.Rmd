@@ -18,6 +18,7 @@ description: "(UNDER CONSTRUCTION!!!) ....In this documentation, I want to clari
   library("latex2exp")
   library("kableExtra")
   library("wcontrolvalve")
+  library("gridExtra")
 ```
 
 
