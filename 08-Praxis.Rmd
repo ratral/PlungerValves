@@ -132,19 +132,19 @@ The different types of Control Characteristic Parameters for the valve can be se
 
 ```{r kvkvs-typ-01-Example-2, echo=FALSE, fig.cap="Inherent Valve Characteristics valve typ 01"}
 
-  plot_kv_kvs(cylinder$kv.b[1], cylinder$kv.d[1], cylinder$kv.e[1], cylinder$typ[1]) 
+  plot_kv(cylinder$kv.b[1], cylinder$kv.d[1], cylinder$kv.e[1], d, cylinder$zvs[1], cylinder$typ[1]) 
   
 ```
 
 ```{r kvkvs-typ-02-Example-2, echo=FALSE, fig.cap="Inherent Valve Characteristics valve typ 02"}
 
-  plot_kv_kvs(cylinder$kv.b[2], cylinder$kv.d[2], cylinder$kv.e[2], cylinder$typ[2]) 
+  plot_kv(cylinder$kv.b[2], cylinder$kv.d[2], cylinder$kv.e[2], d, cylinder$zvs[2], cylinder$typ[2]) 
   
 ```
 
 ```{r kvkvs-typ-03-Example-2, echo=FALSE, fig.cap="Inherent Valve Characteristics valve typ 03"}
 
-  plot_kv_kvs(cylinder$kv.b[3], cylinder$kv.d[3], cylinder$kv.e[3], cylinder$typ[3]) 
+  plot_kv(cylinder$kv.b[3], cylinder$kv.d[3], cylinder$kv.e[3], d, cylinder$zvs[3], cylinder$typ[3]) 
   
 ```
 
