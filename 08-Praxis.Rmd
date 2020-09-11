@@ -132,30 +132,42 @@ The different types of Control Characteristic Parameters for the valve can be se
 
 ```{r kvkvs-typ-01-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 01"}
 
+<<<<<<< HEAD
   # https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
 
   i <- 1
   p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
   p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
   grid.arrange(p1, p2, nrow = 1)
+=======
+  plot_kv(cylinder$kv.b[1], cylinder$kv.d[1], cylinder$kv.e[1], d, cylinder$zvs[1], cylinder$typ[1]) 
+>>>>>>> 7dc33f63b0749f624e4422b4ae23c0849dd84a48
   
 ```
 
 ```{r kvkvs-typ-02-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 02"}
 
+<<<<<<< HEAD
   i <- 2
   p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
   p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
   grid.arrange(p1, p2, nrow = 1)
+=======
+  plot_kv(cylinder$kv.b[2], cylinder$kv.d[2], cylinder$kv.e[2], d, cylinder$zvs[2], cylinder$typ[2]) 
+>>>>>>> 7dc33f63b0749f624e4422b4ae23c0849dd84a48
   
 ```
 
 ```{r kvkvs-typ-03-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 03"}
 
+<<<<<<< HEAD
   i <- 3
   p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
   p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
   grid.arrange(p1, p2, nrow = 1)
+=======
+  plot_kv(cylinder$kv.b[3], cylinder$kv.d[3], cylinder$kv.e[3], d, cylinder$zvs[3], cylinder$typ[3]) 
+>>>>>>> 7dc33f63b0749f624e4422b4ae23c0849dd84a48
   
 ```
 
