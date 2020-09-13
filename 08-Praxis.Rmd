@@ -48,7 +48,8 @@ The steps to follow are those:
     mutate( kvs  = kv_value(d, zvs)) %>% 
     mutate( fps  = fp(kvs, d*1000, d1*1000, d2*1000)) %>% 
     mutate( flps = flp(kvs, fls, d*1000, d1*1000, d2*1000)) %>% 
-    select( typ, kv.b, kv.d, kv.e, kvs, zvs,  fls, fps, flps)
+    mutate( flps_fps = flps/fps) %>% 
+    select( typ, kv.b, kv.d, kv.e, kvs, zvs,  fls, fps, flps, flps_fps)
   
   # Calculation characteristics
   
@@ -75,15 +76,15 @@ The steps to follow are those:
   }
   
   data_analyse <- data_analyse %>% 
-    mutate( flp    = ifelse(kv > kvs, NA, fl_function( position, kv.b, kv.d, kv.e, flps)),
-            Sig_i  = ifelse(kv > kvs, NA, Sigma_i( position,  kv.b,  kv.d,  kv.e, flps)),  # Incipient Cavitation
-            Sig_c  = ifelse(kv > kvs, NA, Sigma_c( position,  kv.b,  kv.d,  kv.e, flps)),  # Constant Cavitation
-            Sig_mv = ifelse(kv > kvs, NA, Sigma_mv( position,  kv.b,  kv.d,  kv.e, flps)), #  Maximum Vibration Cavitation
-            regime = ifelse(kv > kvs, NA, cavtation_regime(position,  kv.b,  kv.d,  kv.e, flps, sig_1)))
+    mutate( flp_fp = ifelse(kv > kvs, NA, fl_function( position, kv.b, kv.d, kv.e, flps_fps)),
+            Sig_i  = ifelse(kv > kvs, NA, Sigma_i( position,  kv.b,  kv.d,  kv.e, flps_fps)),  # Incipient Cavitation
+            Sig_c  = ifelse(kv > kvs, NA, Sigma_c( position,  kv.b,  kv.d,  kv.e, flps_fps)),  # Constant Cavitation
+            Sig_mv = ifelse(kv > kvs, NA, Sigma_mv( position,  kv.b,  kv.d,  kv.e, flps_fps)), #  Maximum Vibration Cavitation
+            regime = ifelse(kv > kvs, NA, cavtation_regime(position,  kv.b,  kv.d,  kv.e, flps_fps, sig_1)))
   
 
   data_analyse <- data_analyse %>%
-    group_by(typ, kv.b, kv.d, kv.e, zvs, kvs, fls, fps, flps) %>% 
+    group_by(typ, kv.b, kv.d, kv.e, zvs, kvs, fls, fps, flps, flps_fps) %>% 
     nest()
 
   
@@ -132,43 +133,31 @@ The different types of Control Characteristic Parameters for the valve can be se
 
 ```{r kvkvs-typ-01-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 01"}
 
-<<<<<<< HEAD
-  # https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html
-
   i <- 1
   p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
   p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
   grid.arrange(p1, p2, nrow = 1)
-=======
-  plot_kv(cylinder$kv.b[1], cylinder$kv.d[1], cylinder$kv.e[1], d, cylinder$zvs[1], cylinder$typ[1]) 
->>>>>>> 7dc33f63b0749f624e4422b4ae23c0849dd84a48
   
 ```
 
 ```{r kvkvs-typ-02-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 02"}
 
-<<<<<<< HEAD
+
   i <- 2
   p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
   p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
   grid.arrange(p1, p2, nrow = 1)
-=======
-  plot_kv(cylinder$kv.b[2], cylinder$kv.d[2], cylinder$kv.e[2], d, cylinder$zvs[2], cylinder$typ[2]) 
->>>>>>> 7dc33f63b0749f624e4422b4ae23c0849dd84a48
   
 ```
 
 ```{r kvkvs-typ-03-Example-2, echo=FALSE, fig.cap="Valve Characteristics valve typ 03"}
 
-<<<<<<< HEAD
+
   i <- 3
   p1 <- plot_kv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], d, cylinder$zvs[i], cylinder$typ[i]) 
   p2 <- plot_zv(cylinder$kv.b[i], cylinder$kv.d[i], cylinder$kv.e[i], cylinder$zvs[i], cylinder$typ[i])
   grid.arrange(p1, p2, nrow = 1)
-=======
-  plot_kv(cylinder$kv.b[3], cylinder$kv.d[3], cylinder$kv.e[3], d, cylinder$zvs[3], cylinder$typ[3]) 
->>>>>>> 7dc33f63b0749f624e4422b4ae23c0849dd84a48
-  
+
 ```
 
 
@@ -225,7 +214,7 @@ so:
     
 ```
 
-## Step 4. Calculation of needes Kv, Zv, sigma, valve position, and  kv/kvs
+## Step 4. Calculation of needes $K_v$, $Z_v$, Sigma ($\sigma$), valve position, and  $k_v/k_{vs}$
 
 ### With the valve  `r data_analyse$typ[1]`
 
@@ -256,22 +245,13 @@ so:
     mutate( kv_kvs = kv_kvs * 100) %>% 
     rename( x = position, y = kv_kvs )
   
-  segment_data <- tibble ( x = data_points$x,
-                           y    = data_points$y*0,
-                           xend = data_points$x,
-                           yend = data_points$y) %>% 
-                  add_row( x    = data_points$x*0,
-                           y    = data_points$y,
-                           xend = data_points$x,
-                           yend = data_points$y)
-  
-  
-  plot_kv_kvs( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
-               data_analyse[i,]$kv.e, data_analyse[i,]$typ) +
-    geom_point( data = data_points, 
-                aes( x = x, y = y ), 
+  plot_kv_kvs(  data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
+                data_analyse[i,]$kv.e, data_analyse[i,]$typ) +
+   geom_point(  data = data_points, aes( x = x, y = y ), 
                 colour = "black", size = 2) +
-    geom_segment(data = segment_data, aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")
+  geom_segment( data = segment_data(data_points), 
+                aes(x = x, y = y, xend = xend, yend = yend), 
+                linetype = "dotted")
 
 ```
 
@@ -306,22 +286,13 @@ so:
     mutate( kv_kvs = kv_kvs * 100) %>% 
     rename( x = position, y = kv_kvs )
   
-  segment_data <- tibble ( x = data_points$x,
-                           y    = data_points$y*0,
-                           xend = data_points$x,
-                           yend = data_points$y) %>% 
-                  add_row( x    = data_points$x*0,
-                           y    = data_points$y,
-                           xend = data_points$x,
-                           yend = data_points$y)
-  
-  
-  plot_kv_kvs( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
-               data_analyse[i,]$kv.e, data_analyse[i,]$typ) +
-    geom_point( data = data_points, 
-                aes( x = x, y = y ), 
+  plot_kv_kvs(  data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
+                data_analyse[i,]$kv.e, data_analyse[i,]$typ) +
+   geom_point(  data = data_points, aes( x = x, y = y ), 
                 colour = "black", size = 2) +
-    geom_segment(data = segment_data, aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")
+  geom_segment( data = segment_data(data_points), 
+                aes(x = x, y = y, xend = xend, yend = yend), 
+                linetype = "dotted")
 
 ```
 
@@ -353,17 +324,17 @@ so:
 
 ```{r sigma1-Example-02, echo=FALSE}
   data_analyse$data[[1]] %>%  
-    mutate( sig_1  = round(sig_1,  2),
-            Sig_i  = round(Sig_i,  2),
-            Sig_c  = round(Sig_c,  2), 
+    mutate( sig_1  = round(sig_1, 2),
+            Sig_i  = round(Sig_i, 2),
+            Sig_c  = round(Sig_c, 2), 
             Sig_mv = round(Sig_mv, 2),
-            flp    = round(flp,  2),
+            flp_fp    = round(flp_fp, 2),
             position = scales::percent(position/100)) %>% 
-    select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
+    select(measurement,  position, flp_fp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
     kbl(caption ="Sigma value and cavitation's borders",
-        col.names = c("Measu.", "$P_1$" , "$P_2$", "$\\Delta{P}$",
-                      "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
-    add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
+        col.names = c("Measu.", "Opening", "$F_{LP}/F_{P}$", "$\\sigma_{1}$", 
+                      "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
+    add_header_above(c("", "%", "", "", "", "", "", "")) %>% 
     kable_classic( bootstrap_options = "striped",
                    full_width = F, position = "left") %>%
     footnote( symbol = c("NA values in $position$ and $\\sigma$, this means that the required flow capacity is not available.") )
@@ -374,23 +345,14 @@ so:
   i <- 1
 
   data_points <- data_analyse$data[[i]] %>% 
-    select( position, Sig_i) %>% 
-    rename( x = position, y = Sig_i )
-  
-  segment_data <- tibble ( x = data_points$x,
-                           y    = data_points$y*0,
-                           xend = data_points$x,
-                           yend = data_points$y) %>% 
-                  add_row( x    = data_points$x*0,
-                           y    = data_points$y,
-                           xend = data_points$x,
-                           yend = data_points$y)
-    
+    select( position, sig_1) %>% 
+    rename( x = position, y = sig_1 )
+
   plot_sigma( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
-              data_analyse[i,]$kv.e, data_analyse[i,]$fls, 
+              data_analyse[i,]$kv.e, data_analyse[i,]$flps_fps, 
               data_analyse[i,]$typ) +
     geom_point( data = data_points, aes( y = y, x = x ), colour = "black", size = 2) +
-    geom_segment(data = segment_data, aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")  
+    geom_segment(data = segment_data(data_points), aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")  
 
 ```
 
@@ -399,17 +361,17 @@ so:
 
 ```{r sigma2-Example-02, echo=FALSE}
   data_analyse$data[[2]] %>%  
-    mutate( sig_1  = round(sig_1,  2),
-            Sig_i  = round(Sig_i,  2),
-            Sig_c  = round(Sig_c,  2), 
+    mutate( sig_1  = round(sig_1, 2),
+            Sig_i  = round(Sig_i, 2),
+            Sig_c  = round(Sig_c, 2), 
             Sig_mv = round(Sig_mv, 2),
-            flp    = round(flp,  2),
+            flp_fp    = round(flp_fp, 2),
             position = scales::percent(position/100)) %>% 
-    select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
+    select(measurement,  position, flp_fp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
     kbl(caption ="Sigma value and cavitation's borders",
-        col.names = c("Measu.", "$P_1$" , "$P_2$", "$\\Delta{P}$",
-                      "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
-    add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
+        col.names = c("Measu.", "Opening", "$F_{LP}/F_{P}$", "$\\sigma_{1}$", 
+                      "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
+    add_header_above(c("", "%", "", "", "", "", "", "")) %>% 
     kable_classic( bootstrap_options = "striped",
                    full_width = F, position = "left") %>%
     footnote( symbol = c("NA values in $position$ and $\\sigma$, this means that the required flow capacity is not available.") )
@@ -421,23 +383,17 @@ so:
   i <- 2
 
   data_points <- data_analyse$data[[i]] %>% 
-    select( position, Sig_i) %>% 
-    rename( x = position, y = Sig_i )
+    select( position, sig_1) %>% 
+    rename( x = position, y = sig_1 )
 
-    segment_data <- tibble ( x = data_points$x,
-                           y    = data_points$y*0,
-                           xend = data_points$x,
-                           yend = data_points$y) %>% 
-                  add_row( x    = data_points$x*0,
-                           y    = data_points$y,
-                           xend = data_points$x,
-                           yend = data_points$y)
 
   plot_sigma( data_analyse[i,]$kv.b, data_analyse[i,]$kv.d, 
-              data_analyse[i,]$kv.e, data_analyse[i,]$fls, 
+              data_analyse[i,]$kv.e, data_analyse[i,]$flps_fps, 
               data_analyse[i,]$typ) +
-    geom_point( data = data_points, aes( y = y, x = x ), colour = "black", size = 2)  +
-    geom_segment(data = segment_data, aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")   
+    geom_point( data = data_points, aes( y = y, x = x ), 
+                colour = "black", size = 2)  +
+    geom_segment(data = segment_data(data_points), 
+                 aes(x = x, y = y, xend = xend, yend = yend), linetype = "dotted")   
 
 ```
 
@@ -450,13 +406,13 @@ so:
             Sig_i  = round(Sig_i, 2),
             Sig_c  = round(Sig_c, 2), 
             Sig_mv = round(Sig_mv, 2),
-            flp    = round(flp, 2),
+            flp_fp    = round(flp_fp, 2),
             position = scales::percent(position/100)) %>% 
-    select(measurement, p1, p2, dp, position, flp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
+    select(measurement,  position, flp_fp, sig_1, Sig_i, Sig_c, Sig_mv, regime) %>% 
     kbl(caption ="Sigma value and cavitation's borders",
-        col.names = c("Measu.", "$P_1$" , "$P_2$", "$\\Delta{P}$",
-                      "Opening", "$F_{LP}$", "$\\sigma_{1}$", "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
-    add_header_above(c("", "$bar$", "$bar$", "$bar$", "%", "", "", "", "", "", "")) %>% 
+        col.names = c("Measu.", "Opening", "$F_{LP}/F_{P}$", "$\\sigma_{1}$", 
+                      "$\\sigma_{i}$", "$\\sigma_{c}$", "$\\sigma_{mv}$", "Regime")) %>% 
+    add_header_above(c("", "%", "", "", "", "", "", "")) %>% 
     kable_classic( bootstrap_options = "striped",
                    full_width = F, position = "left") %>%
     footnote( symbol = c("NA values in $position$ and $\\sigma$, this means that the required flow capacity is not available.") )
@@ -468,5 +424,5 @@ the initial conclusions would be the following:
 
   - Only type 1 and 2 valves meet the required conditions; 
   - With the information of the minimum, average and maximum values, only a first approximation of the behavior of the valve is achieved. And it is used for the preselection of the type of valve required. Depending on the importance of the valve for the operation of the system, it is recommended to know all the values corresponding to all the operating scenarios. 
-  - This exercise is derived from the actual selection of two control valves on a water treatment plant. The valves are used to control the backwashing of the filters, and for this reason, it is extremely important to review all operating scenarios (see Example 3).
+  - This exercise is derived from the actual selection of two control valves on a water treatment plant. The valves are used to control the backwashing of the filters, and for this reason, it is extremely important to review all operating scenarios (see Example xx).
   
