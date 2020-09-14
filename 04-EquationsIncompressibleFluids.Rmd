@@ -38,7 +38,7 @@ Where:
 [@wagner2008]
 
 ```{r Effect-of-Fittings, echo=FALSE, fig.cap = 'Effect of fittings (reducer) on the flow capacity [@ansi/isa1985a]', fig.width = 8, fig.asp = 0.7, fig.align = "center"}
-  file_image <- here::here("image", "valve_with_fittings2.png")
+  file_image <- here::here("image", "valve_with_fittings3.png")
   knitr::include_graphics(file_image)
 ```
 

@@ -206,10 +206,10 @@ so:
 
 ```{r flp-Example-02, echo=FALSE}
   data_analyse %>% ungroup() %>% 
-    select(typ, kvs, zvs, fls, fps, flps) %>% 
+    select(typ, kvs, zvs, fls, fps, flps, flps_fps) %>% 
     kbl(caption ="Piping geometry factor and the combined liquid pressure recovery factor",
-        col.names = c("$Typ$", "$K_{v_s}$", "$\\zeta_{v_s}$", "$F_{L_s}$", "$F_{P_s}$", "$F_{LP_s}$"),
-        digits = c(0, 0, 2, 2, 2, 2)) %>% 
+        col.names = c("$Typ$", "$K_{v_s}$", "$\\zeta_{v_s}$", "$F_{L_s}$", "$F_{P_s}$", "$F_{LP_s}$", "$F_{LP_s}/F_{P_s}$"),
+        digits = c(0, 0, 3, 3, 3, 3, 3)) %>% 
     kable_classic( bootstrap_options = "striped", full_width = F, position = "left") 
     
 ```
