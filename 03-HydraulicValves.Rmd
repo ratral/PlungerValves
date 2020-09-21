@@ -60,35 +60,25 @@ According to this European Standard, the flow rate characteristic parameter of a
 \end{equation} 
 
 ## The flow basic characteristic curve (inherent flow characteristic).
+The characteristic of a control valve is defined as the flow rate depending on the valve's position. The control valve generates a change in the flow by changing the active area of control piston $A$, assuming a constant differential pressure $\Delta p$ and a constant density $\rho$.
 
-The characteristic of a control valve is defined as the flow rate depending on the position of the valve. The control valve generates a change in the flow by changing the active area of piston $A$. 
+If the characteristic curve is determined under unit conditions, referred to below as the _"basic characteristic curve"_. The valve characteristic curve is a function of valve position (degree of opening) $vp$ in percentage. The basic characteristic of the control valves ($K_v/K_{vs}$) depend of the position of the valve ($pv$).
 
-To perform a required flow characteristic curve, it is necessary to determine the characteristic opening curve that delivers the needed flow rate, taking into account the variable area of the cylinder area, according to the path of the regulating cylinder.
-
-A unique assignment assumes a constant differential pressure $\Delta p$ and a constant density $\rho$.
-
-If the characteristic curve is determined under unit conditions, referred to below as the *"basic characteristic curve"*. The valve characteristic curve is a function of valve position (degree of opening) $vp$ in percentage. 
-
-The characteristic curve of a control valve is the dependence of the flow on the actuating path. If the characteristic curve is determined under unit conditions, then the flow rate is the $k_v$ value. 
-
-The basic characteristic of the control valves plus a cylinder  will be ($K_v/K_{vs}$) depending on the position of the valve ($pv$). For the most precise interpretation in the function, we will use $x = valve \; position$ to define the valve position.
-
-\begin{equation}
+$$
   K_v/K_{vs} = f(x, (b, d, e))
-  (\#eq:characteristic-curve)  
-\end{equation} 
+$$
 
-In this document, the characteristic curves are approximated by means of the  Dose-Response Analysis ($dcr$).  Dose-response models are regression models where the independent variable referred to as the dose, or in our case, the opening degree of a valve. In contrast, the dependent variable is generally referred to as response or effect. 
+In this document, the characteristic curves are approximated by means of the  [Dose-Response Analysis](https://en.wikipedia.org/wiki/Dose%E2%80%93response_relationship) $(dcr)$.  Dose-response models are regression models where the independent variable referred to as the dose, or in our case, the opening degree of a valve. In contrast, the dependent variable is generally referred to as response or effect. 
 
-The full specification of a statistical dose-response (regression) model involves specifying how the mean is described by a parametric function of dose (valve position) as well as assumptions about the distribution of the response ($K_v$).
+The full specification of a statistical dose-response (regression) model involves specifying how the mean is described by a parametric function of dose (valve position) as well as assumptions about the distribution of the response ($K_v/K_{vs}$).
 
 A large number of more or less well-known model functions are building in $drc$.  These models are parameterized using a unified structure with the coefficients: 
 
   - $b$ denoting the steepness of the dose-response curve, 
-  - $c$ (in this case 0) and $d$ the lower and upper asymptotes or limits of the response, and, 
+  - $d$ is the lower and upper asymptotes or limits of the response, and, 
   - for some models, $e$ the effective dose. 
 
-By far the log-logistic models are the most used dose-response models. The four-parameter log-logistic model corresponds to the model function:
+By far the log-logistic models are the most used dose-response models. The three-parameter log-logistic model corresponds to the function:
 
 \begin{equation}
   f(x, (b, d, e)) =  \frac{d}{1 + \exp( b \cdot (\log{x} - \log{e}))}

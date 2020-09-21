@@ -21,9 +21,9 @@ The steps to follow are those:
   p1   <-   5.700   # bar
   p2   <-   4.800   # bar
   flow <- 795.600   # m3/h
-  d    <-   0.250   # m (DN of the valve)
-  D1   <-   0.250   # m (DN Pipe Upstream)
-  D2   <-   0.250   # m (DN Pipe Downstream)
+  d    <-   250     # mm (DN of the valve)
+  D1   <-   250     # mm (DN Pipe Upstream)
+  D2   <-   250     # mm (DN Pipe Downstream)
   
   # Cylinder parameter/Characteristics
   cylinder	<- "Equal Percentage"
